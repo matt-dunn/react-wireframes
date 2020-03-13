@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wireframe: WireFrameAnnotationsNotes should render correctly 1`] = `
+<WireFrameAnnotationsNotesContainer
+  id="wf-annotations"
+>
+  <li
+    className=""
+    id="wf-annotation-1"
+    key="1"
+  >
+    <header>
+      <IdentifierNote>
+        1
+      </IdentifierNote>
+      <h2>
+        Test component
+      </h2>
+    </header>
+    <article>
+      Test description
+    </article>
+  </li>
+</WireFrameAnnotationsNotesContainer>
+`;
+
+exports[`Wireframe: WireFrameAnnotationsNotes should render correctly with highlight 1`] = `
+<WireFrameAnnotationsNotesContainer
+  id="wf-annotations"
+>
+  <li
+    className="highlight"
+    id="wf-annotation-1"
+    key="1"
+  >
+    <header>
+      <IdentifierNote>
+        1
+      </IdentifierNote>
+      <h2>
+        Test component
+      </h2>
+    </header>
+    <article>
+      Test description
+    </article>
+  </li>
+</WireFrameAnnotationsNotesContainer>
+`;

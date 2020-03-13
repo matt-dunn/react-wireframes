@@ -1,0 +1,30 @@
+{
+  "transpileOnly": true,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "declaration": false,
+    "noImplicitAny": true,
+    "module": "esNext",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom", "esnext.intl", "es2017.intl", "es2018.intl"],
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+    }
+  },
+  "include": [
+    "**/*.ts*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wireframe: Identifier should render correctly 1`] = `
+<CSSTransition
+  className="fade-id"
+  classNames=""
+  in={true}
+  mountOnEnter={true}
+  timeout={250}
+  unmountOnExit={true}
+>
+  <IdentifierContainer
+    data-annotation-identifier={true}
+  >
+    123
+  </IdentifierContainer>
+</CSSTransition>
+`;
