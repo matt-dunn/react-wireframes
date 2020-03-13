@@ -29,6 +29,7 @@
     "jest-emotion": "^10.0.27",
     "jest-junit": "^10.0.0",
     "jsdom": "^16.2.1",
+    "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
     "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
