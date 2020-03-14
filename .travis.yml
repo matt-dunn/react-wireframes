@@ -12,3 +12,6 @@ deploy:
   local_dir: ./dist
   on:
     branch: master
+script:
+  - yarn test
+  - yarn build
