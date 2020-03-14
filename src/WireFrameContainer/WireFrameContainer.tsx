@@ -84,6 +84,9 @@ const WireFrameAnnotations = styled.div`
     h1 {
       flex-grow: 1;
       font-size: 1.5em;
+      margin: 0;
+      line-height: 1.5;
+      font-weight: lighter;
     }
   }
 `;

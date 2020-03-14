@@ -7,7 +7,7 @@
 import styled from "@emotion/styled";
 
 export const IdentifierBase = styled.cite`
-  border-radius: 50px;
+  border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;

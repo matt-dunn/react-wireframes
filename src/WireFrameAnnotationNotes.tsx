@@ -43,6 +43,7 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
       h2 {
         font-size: 1.2rem;
         margin: 0;
+        font-weight: normal;
       }
     }
     
