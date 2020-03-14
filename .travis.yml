@@ -13,5 +13,4 @@ deploy:
   on:
     branch: master
 script:
-  - yarn test
   - yarn build
