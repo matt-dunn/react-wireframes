@@ -5,7 +5,7 @@
  */
 
 import React, {
-  ComponentType, useCallback, useContext, useEffect, useState,
+  ComponentType, ReactNode, useCallback, useContext, useEffect, useState,
 } from "react";
 import styled from "@emotion/styled";
 import css from "@emotion/css";
@@ -15,6 +15,11 @@ import { WireFrameComponent, WireFrameComponentOptions } from "../api";
 import { WireFrameAnnotationContext } from "../context";
 
 import Identifier from "./Identifier";
+
+type WireFrameAnnotationProps = {
+  className?: string;
+  children?: ReactNode;
+}
 
 const Wrapper = styled.span<{show: boolean}>`
   position: relative;
@@ -41,11 +46,11 @@ const Wrapper = styled.span<{show: boolean}>`
 
 const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (isString(WrappedComponent) ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
 
-export const withWireFrameAnnotation = function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions) {
+export function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions) {
   const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
   Component.displayName = `withWireFrameAnnotation(${getDisplayName(WrappedComponent)})`;
 
-  function WireFrameAnnotation(props: P) {
+  function WireFrameAnnotation({ className, ...props }: P & WireFrameAnnotationProps) {
     const {
       register, unregister, onOpen, isOpen, highlightNote,
     } = useContext(WireFrameAnnotationContext);
@@ -77,10 +82,11 @@ export const withWireFrameAnnotation = function withWireFrameAnnotation<P extend
         onMouseOver={handleHighlightNote}
         onFocus={handleHighlightNote}
         onMouseLeave={handleHighlightNoteReset}
+        className={className}
       >
         {annotation && <Identifier annotation={annotation} show={show} />}
 
-        <Component {...props} />
+        <Component {...props as P} />
       </Wrapper>
     );
   }
@@ -88,4 +94,4 @@ export const withWireFrameAnnotation = function withWireFrameAnnotation<P extend
   WireFrameAnnotation.Component = Component;
 
   return WireFrameAnnotation;
-};
+}
