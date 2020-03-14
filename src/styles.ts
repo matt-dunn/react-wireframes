@@ -11,8 +11,9 @@ export const IdentifierBase = styled.cite`
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
-  width: 2em;
+  min-width: 2em;
   height: 2em;
+  padding: 0.25em;
   display: flex;
   align-items: center;
   justify-content: center;
