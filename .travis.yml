@@ -13,4 +13,4 @@ deploy:
   on:
     branch: master
 script:
-  - yarn build
+  - yarn build:all

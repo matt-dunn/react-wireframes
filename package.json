@@ -17,6 +17,7 @@
     "@types/react-transition-group": "^4.2.4",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
+    "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.29",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-react-app": "^9.1.1",
@@ -60,9 +61,11 @@
     "test": "jest",
     "coverage": "jest --collectCoverage",
     "start": "parcel demo/public/index.html --https --out-dir .build",
+    "storybook": "start-storybook --ci --port 8080",
+    "storybook:build": "build-storybook --output-dir dist/storybook",
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
-    "storybook": "start-storybook"
+    "build:all": "yarn build && yarn storybook:build"
   },
   "engines": {
     "node": ">=10",
