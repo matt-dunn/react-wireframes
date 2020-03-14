@@ -24,7 +24,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
 }
 
 .emotion-0 {
-  border-radius: 50px;
+  border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;

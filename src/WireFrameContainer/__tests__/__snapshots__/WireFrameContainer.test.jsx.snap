@@ -62,6 +62,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-14 {
@@ -171,6 +174,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 .emotion-10 li header h2 {
   font-size: 1.2rem;
   margin: 0;
+  font-weight: normal;
 }
 
 .emotion-10 li article {
@@ -178,7 +182,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 }
 
 .emotion-6 {
-  border-radius: 50px;
+  border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -444,6 +448,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-14 {
@@ -553,6 +560,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 .emotion-10 li header h2 {
   font-size: 1.2rem;
   margin: 0;
+  font-weight: normal;
 }
 
 .emotion-10 li article {
@@ -560,7 +568,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 }
 
 .emotion-6 {
-  border-radius: 50px;
+  border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -826,6 +834,9 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-14 {
@@ -935,6 +946,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 .emotion-10 li header h2 {
   font-size: 1.2rem;
   margin: 0;
+  font-weight: normal;
 }
 
 .emotion-10 li article {
@@ -942,7 +954,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-6 {
-  border-radius: 50px;
+  border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1219,6 +1231,9 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-2 {
@@ -1421,6 +1436,9 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-2 {
@@ -1623,6 +1641,9 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 1.5em;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 .emotion-2 {
