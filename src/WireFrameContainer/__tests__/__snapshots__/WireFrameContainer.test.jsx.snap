@@ -81,19 +81,21 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 }
 
 .emotion-2 {
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -104,7 +106,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   align-items: center;
   cursor: pointer;
   opacity: 1;
-  font-family: sans-serif;
 }
 
 .emotion-2:hover {
@@ -112,13 +113,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 }
 
 .emotion-2 span {
+  font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
   transition: transform 250ms;
   display: block;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 .emotion-4 {
@@ -183,8 +182,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
-  width: 2em;
+  min-width: 2em;
   height: 2em;
+  padding: 0.25em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -264,7 +264,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                     open={true}
                   >
                     <span>
-                      ⬅
+                      →
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
@@ -463,19 +463,21 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 }
 
 .emotion-2 {
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -486,7 +488,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   align-items: center;
   cursor: pointer;
   opacity: 1;
-  font-family: sans-serif;
 }
 
 .emotion-2:hover {
@@ -494,13 +495,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 }
 
 .emotion-2 span {
+  font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
   transition: transform 250ms;
   display: block;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 .emotion-4 {
@@ -565,8 +564,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
-  width: 2em;
+  min-width: 2em;
   height: 2em;
+  padding: 0.25em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -646,7 +646,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                     open={true}
                   >
                     <span>
-                      ⬅
+                      →
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
@@ -845,19 +845,21 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 {
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -868,7 +870,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   align-items: center;
   cursor: pointer;
   opacity: 1;
-  font-family: sans-serif;
 }
 
 .emotion-2:hover {
@@ -876,13 +877,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
   transition: transform 250ms;
   display: block;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 .emotion-4 {
@@ -947,8 +946,9 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
-  width: 2em;
+  min-width: 2em;
   height: 2em;
+  padding: 0.25em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1028,7 +1028,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                     open={true}
                   >
                     <span>
-                      ⬅
+                      →
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
@@ -1222,19 +1222,21 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 {
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1245,7 +1247,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   align-items: center;
   cursor: pointer;
   opacity: 0.25;
-  font-family: sans-serif;
 }
 
 .emotion-2:hover {
@@ -1253,10 +1254,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
   transition: transform 250ms;
   display: block;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 <WireFrameProvider
@@ -1318,7 +1323,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                     open={false}
                   >
                     <span>
-                      ⬅
+                      →
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
@@ -1419,19 +1424,21 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 {
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1442,7 +1449,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   align-items: center;
   cursor: pointer;
   opacity: 0.25;
-  font-family: sans-serif;
 }
 
 .emotion-2:hover {
@@ -1450,10 +1456,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
   transition: transform 250ms;
   display: block;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 <WireFrameProvider
@@ -1515,7 +1525,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                     open={false}
                   >
                     <span>
-                      ⬅
+                      →
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
@@ -1530,7 +1540,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 `;
 
 exports[`Wireframe: WireFrameContainer should render children with no wireframe components 1`] = `
-.emotion-2 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1542,6 +1552,120 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.emotion-6 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 400px;
+  padding: 0;
+  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-6 [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-4 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-left: 2px solid #555;
+  padding: 0;
+  width: 25%;
+  max-width: 400px;
+  min-width: 250px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fafafa;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  z-index: 6000;
+}
+
+.emotion-4 > header {
+  padding: 3px 10px;
+  background-color: #555;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 > header h1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 1.5em;
+}
+
+.emotion-2 {
+  font-size: 1.25em;
+  position: absolute;
+  left: -1.6em;
+  top: 50%;
+  background-color: #555;
+  color: #fff;
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 100ms;
+  transition: opacity 100ms;
+  min-height: 3em;
+  width: 1.6em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.25;
+}
+
+.emotion-2:hover {
+  opacity: 1;
+}
+
+.emotion-2 span {
+  font-weight: bold;
+  -webkit-transition: -webkit-transform 250ms;
+  -webkit-transition: transform 250ms;
+  transition: transform 250ms;
+  display: block;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 <WireFrameProvider
@@ -1563,7 +1687,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   >
     <WireFrameMainContainer>
       <div
-        className="emotion-2 emotion-3"
+        className="emotion-8 emotion-9"
       >
         <WireFrameBody>
           <div
@@ -1577,6 +1701,40 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
             </div>
           </div>
         </WireFrameBody>
+        <WireFrameAnnotationsContainer
+          open={false}
+        >
+          <div
+            className="emotion-6 emotion-7"
+            open={false}
+          >
+            <WireFrameAnnotations
+              data-annotations={true}
+            >
+              <div
+                className="emotion-4 emotion-5"
+                data-annotations={true}
+              >
+                <WireFrameAnnotationsToggle
+                  aria-label="Toggle annotations"
+                  onClick={[Function]}
+                  open={false}
+                >
+                  <div
+                    aria-label="Toggle annotations"
+                    className="emotion-2 emotion-3"
+                    onClick={[Function]}
+                    open={false}
+                  >
+                    <span>
+                      →
+                    </span>
+                  </div>
+                </WireFrameAnnotationsToggle>
+              </div>
+            </WireFrameAnnotations>
+          </div>
+        </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
   </WireFrameContainer>

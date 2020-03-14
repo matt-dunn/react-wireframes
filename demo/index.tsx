@@ -38,6 +38,7 @@ const app = (
     // defaultOpen={false}
   >
     <Main>
+      <WATest3>Hello</WATest3>
       <WATest>Hello</WATest>
       <WATest2>World</WATest2>
       <WATest2>World</WATest2>

@@ -89,30 +89,32 @@ const WireFrameAnnotations = styled.div`
 `;
 
 export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
+  font-size: 1.25em;
   position: absolute;
-  left: -1px;
+  left: -1.6em;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
-  transform: translate(-100%, -50%);
+  padding: 0.25em;
+  border-radius: 0.25em 0 0 0.25em;
+  transform: translateY(-50%);
   transition: opacity 100ms;
   min-height: 3em;
+  width: 1.6em;
   display: flex;
   align-items: center;
   cursor: pointer;
   opacity: ${({ open }) => (open && 1) || 0.25};
-  font-family: sans-serif;
   
   &:hover {
     opacity: 1;
   }
 
   span {
+    font-weight: bold;
     transition: transform ${transitionDuration}ms;
     display: block;
-    ${({ open }) => open && css`transform: rotate(180deg);`}
+    ${({ open }) => !open && css`transform: rotate(180deg);`};
   }
 `;
 
@@ -128,7 +130,7 @@ const WireFrameAnnotationsClose = styled.button`
 `;
 
 export const WireFrameContainer = ({ children, className, defaultOpen = true }: WireFrameProviderProps) => {
-  const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState((process as any).browser);
   const [isOpened, setIsOpened] = useState(false);
   const opening = useRef<number | undefined>();
 
@@ -194,16 +196,14 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
           {children}
         </WireFrameBody>
 
-        {(components && isClient)
-        && (
+        {isClient && (
           <WireFrameAnnotationsContainer open={open}>
             <WireFrameAnnotations data-annotations>
               <WireFrameAnnotationsToggle open={open} aria-label="Toggle annotations" onClick={handleToggle}>
-                <span>⬅</span>
+                <span>→</span>
               </WireFrameAnnotationsToggle>
 
-              {isOpened
-              && (
+              {isOpened && (
                 <>
                   <header>
                     <h1>Annotations</h1>
@@ -215,10 +215,12 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
                     </WireFrameAnnotationsClose>
                   </header>
 
+                  {components && (
                   <WireFrameAnnotationsNotes
                     components={components}
                     highlightedNote={highlightedNote}
                   />
+                  )}
                 </>
               )}
             </WireFrameAnnotations>
