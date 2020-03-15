@@ -1,5 +1,6 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
+import styled from "@emotion/styled";
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
 
@@ -15,10 +16,16 @@ const AppError = ({ error }: {error: Error}) => (
   </>
 );
 
+const Main = styled.main`
+  margin: 2rem;
+`;
+
 addDecorator(story => (
   <ErrorBoundary
     ErrorComponent={AppError}
   >
-    {story()}
+    <Main>
+      {story()}
+    </Main>
   </ErrorBoundary>
 ));
