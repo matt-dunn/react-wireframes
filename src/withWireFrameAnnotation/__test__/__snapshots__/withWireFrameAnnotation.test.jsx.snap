@@ -56,22 +56,22 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
   visibility: visible;
 }
 
-.emotion-0.fade-id.enter {
+.emotion-0.fade-Identifier.enter {
   opacity: 0;
   visibility: hidden;
 }
 
-.emotion-0.fade-id.enter-active {
+.emotion-0.fade-Identifier.enter-active {
   opacity: 0.75;
   visibility: visible;
 }
 
-.emotion-0.fade-id.exit {
+.emotion-0.fade-Identifier.exit {
   opacity: 0.75;
   visibility: visible;
 }
 
-.emotion-0.fade-id.exit-active {
+.emotion-0.fade-Identifier.exit-active {
   opacity: 0;
   visibility: hidden;
 }
@@ -127,7 +127,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
           show={true}
         >
           <CSSTransition
-            className="fade-id"
+            className="fade-Identifier"
             classNames=""
             in={true}
             mountOnEnter={true}
@@ -136,7 +136,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
           >
             <Transition
               appear={false}
-              className="fade-id"
+              className="fade-Identifier"
               enter={true}
               exit={true}
               in={true}
@@ -151,11 +151,11 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
               unmountOnExit={true}
             >
               <IdentifierContainer
-                className="fade-id"
+                className="fade-Identifier"
                 data-annotation-identifier={true}
               >
                 <cite
-                  className="fade-id emotion-0 emotion-1"
+                  className="fade-Identifier emotion-0 emotion-1"
                   data-annotation-identifier={true}
                 >
                   1
@@ -243,7 +243,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
           show={false}
         >
           <CSSTransition
-            className="fade-id"
+            className="fade-Identifier"
             classNames=""
             in={false}
             mountOnEnter={true}
@@ -252,7 +252,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
           >
             <Transition
               appear={false}
-              className="fade-id"
+              className="fade-Identifier"
               enter={true}
               exit={true}
               in={false}
@@ -347,7 +347,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
           show={false}
         >
           <CSSTransition
-            className="fade-id"
+            className="fade-Identifier"
             classNames=""
             in={false}
             mountOnEnter={true}
@@ -356,7 +356,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
           >
             <Transition
               appear={false}
-              className="fade-id"
+              className="fade-Identifier"
               enter={true}
               exit={true}
               in={false}

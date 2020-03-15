@@ -2,7 +2,7 @@
 
 exports[`Wireframe: Identifier should render correctly 1`] = `
 <CSSTransition
-  className="fade-id"
+  className="fade-Identifier"
   classNames=""
   in={true}
   mountOnEnter={true}

@@ -21,19 +21,19 @@ const IdentifierContainer = styled(IdentifierBase)`
   opacity: 0.75;
   visibility: visible;
 
-  &.fade-id.enter {
+  &.fade-Identifier.enter {
     opacity: 0;
     visibility: hidden;
   }
-  &.fade-id.enter-active {
+  &.fade-Identifier.enter-active {
     opacity: 0.75;
     visibility: visible;
   }
-  &.fade-id.exit {
+  &.fade-Identifier.exit {
     opacity: 0.75;
     visibility: visible;
   }
-  &.fade-id.exit-active {
+  &.fade-Identifier.exit-active {
     opacity: 0;
     visibility: hidden;
   }
@@ -45,17 +45,15 @@ type IdentifierProps = {
 }
 
 export const Identifier = ({ annotation, show = true }: IdentifierProps) => (
-  annotation && (
-    <CSSTransition
-      timeout={250}
-      className="fade-id"
-      in={show}
-      mountOnEnter
-      unmountOnExit
-    >
-      <IdentifierContainer data-annotation-identifier>{annotation.id}</IdentifierContainer>
-    </CSSTransition>
-  )
-) || null;
+  <CSSTransition
+    timeout={250}
+    className="fade-Identifier"
+    in={show}
+    mountOnEnter
+    unmountOnExit
+  >
+    <IdentifierContainer data-annotation-identifier>{annotation.id}</IdentifierContainer>
+  </CSSTransition>
+);
 
 export default Identifier;

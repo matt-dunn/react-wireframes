@@ -106,6 +106,36 @@ describe("Wireframe: API", () => {
       expect(api.getComponents().length).toEqual(0);
     });
 
+    it("should maintain multiple instances", () => {
+      api.register(MockedComponent, {
+        title: "Test component",
+        description: "Test description",
+      });
+
+      api.register(MockedComponent, {
+        title: "Test component",
+        description: "Test description",
+      });
+
+      expect(api.getComponents().length).toEqual(1);
+
+      expect(api.getComponents()[0]).toMatchObject({
+        count: 2,
+      });
+
+      api.unregister(MockedComponent);
+
+      expect(api.getComponents()[0]).toMatchObject({
+        count: 1,
+      });
+
+      expect(api.getComponents().length).toEqual(1);
+
+      api.unregister(MockedComponent);
+
+      expect(api.getComponents().length).toEqual(0);
+    });
+
     it("should not unregister an invalid component", () => {
       api.register(MockedComponent, {
         title: "Test component",
