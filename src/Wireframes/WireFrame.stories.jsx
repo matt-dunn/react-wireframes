@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { withWireFrameAnnotation, WireFrameContainer, WireFrameProvider } from "./index";
 import { API } from "./api";
 

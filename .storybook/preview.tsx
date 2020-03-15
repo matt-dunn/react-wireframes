@@ -1,8 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import { addDecorator } from '@storybook/react';
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
-import { GridExample } from "src/Wireframes/WireFrame.stories";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -16,15 +15,10 @@ const AppError = ({ error }: {error: Error}) => (
   </>
 );
 
-const app = (
+addDecorator(story => (
   <ErrorBoundary
     ErrorComponent={AppError}
   >
-    <GridExample />
+    {story()}
   </ErrorBoundary>
-);
-
-ReactDOM.render(
-  app,
-  document.getElementById("app"),
-);
+));

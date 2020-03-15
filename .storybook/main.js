@@ -17,6 +17,10 @@ module.exports = {
       },
     });
     config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve.alias = {
+      "src": "../src",
+    };
+
     return config;
   },
 };
