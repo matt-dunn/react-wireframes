@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
-import { GridExample } from "src/WireFrame.stories";
+import { GridExample } from "src/Wireframes/WireFrame.stories";
 
 const AppError = ({ error }: {error: Error}) => (
   <>
