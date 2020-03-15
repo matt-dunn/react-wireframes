@@ -7,3 +7,7 @@
 
 
 [Simple Storybook example](https://matt-dunn.github.io/react-wireframes/storybook/?path=/story/)
+
+## Example
+
+![](./docs/assets/wireframe-example.png)

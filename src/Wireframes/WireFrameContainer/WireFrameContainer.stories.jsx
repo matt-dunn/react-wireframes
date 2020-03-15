@@ -88,7 +88,7 @@ export const GridExample = () => (
           <div className="col">
             <WASection3>Component 3</WASection3>
           </div>
-          <div className="col-6">
+          <div className="col">
             <WASection4>Component 4</WASection4>
           </div>
           <div className="col">
