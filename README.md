@@ -6,4 +6,4 @@
 [Demo](https://matt-dunn.github.io/react-wireframes/)
 
 
-[Simple Storybook example](https://matt-dunn.github.io/react-wireframes/storybook/)
+[Simple Storybook example](https://matt-dunn.github.io/react-wireframes/storybook/?path=/story/)
