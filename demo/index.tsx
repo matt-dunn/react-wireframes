@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
-import { GridExample } from "src/Wireframes/WireFrame.stories";
+import { GridExample } from "src/Wireframes/WireFrameContainer/WireFrameContainer.stories";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

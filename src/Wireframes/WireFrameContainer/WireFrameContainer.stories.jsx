@@ -5,7 +5,7 @@ import { withWireFrameAnnotation, WireFrameContainer, WireFrameProvider } from "
 import { API } from "./api";
 
 export default {
-  title: "@matt-dunn/react-wireframes",
+  title: "@matt-dunn/react-wireframes/WireFrameContainer",
   parameters: {
     component: WireFrameContainer,
     componentSubtitle: "Annotate wireframe component",

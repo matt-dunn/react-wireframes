@@ -132,6 +132,9 @@ const WireFrameAnnotationsClose = styled.button`
   color: inherit;
 `;
 
+/**
+ * Use the WireFrameContainer at the top of your component tree...
+ * */
 export const WireFrameContainer = ({ children, className, defaultOpen = true }: WireFrameProviderProps) => {
   const [isClient, setIsClient] = useState((process as any).browser);
   const [isOpened, setIsOpened] = useState(false);
