@@ -6,7 +6,10 @@ import { API } from "./api";
 
 export default {
   title: "@matt-dunn/react-wireframes",
-  component: WireFrameContainer,
+  parameters: {
+    component: WireFrameContainer,
+    componentSubtitle: "Annotate wireframe component",
+  },
 };
 
 const Main = styled.div`
