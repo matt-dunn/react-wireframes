@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { withWireFrameAnnotation, WireFrameContainer, WireFrameProvider } from "./index";
-import { API } from "./api";
+import { withWireFrameAnnotation, WireFrameContainer, WireFrameProvider } from "../index";
+import { API } from "../api";
 
 export default {
   title: "@matt-dunn/react-wireframes/WireFrameContainer",
