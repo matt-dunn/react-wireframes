@@ -143,6 +143,10 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
 
   const api = useContext(WireFrameAnnotationContext);
 
+  if (!api) {
+    throw new TypeError("WireframeContainer does not have the api configured via it's WireFrameProvider");
+  }
+
   const [components, setComponents] = useState<WireFrameComponents>();
   const [highlightedNote, setHighlightedNote] = useState<WireFrameComponent | undefined>(undefined);
   const [open, setOpen] = useState(defaultOpen);

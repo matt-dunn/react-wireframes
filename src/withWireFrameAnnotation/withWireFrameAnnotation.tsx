@@ -51,9 +51,15 @@ export function withWireFrameAnnotation<P extends object>(WrappedComponent: Comp
   Component.displayName = `withWireFrameAnnotation(${getDisplayName(WrappedComponent)})`;
 
   function WireFrameAnnotation({ className, ...props }: P & WireFrameAnnotationProps) {
+    const api = useContext(WireFrameAnnotationContext);
+
+    if (!api) {
+      throw new TypeError("withWireFrameAnnotation does not have the api configured via it's WireFrameProvider");
+    }
+
     const {
       register, unregister, onOpen, isOpen, highlightNote,
-    } = useContext(WireFrameAnnotationContext);
+    } = api;
     const [annotation, setAnnotation] = useState<WireFrameComponent>();
     const [show, setShow] = useState(isOpen());
 
