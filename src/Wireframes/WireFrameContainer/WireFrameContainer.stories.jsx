@@ -19,7 +19,7 @@ const Main = styled.div`
 const Section = styled.div`
   border-radius: 0.5rem;
   padding: 2rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.4rem 0;
   background-color: #f0f0f0;
 `;
 
