@@ -1,0 +1,93 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import { withWireFrameAnnotation, WireFrameContainer, WireFrameProvider } from "../index";
+import { API } from "../api";
+import { Main, wireframeAPIGrid, wireframeAPISimple, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter } from "./WireFrameContainer.stories.fixtures";
+
+<Meta title="@matt-dunn/react-wireframes/WireFrameContainer" component={WireFrameContainer} />
+
+# WireFrameContainer
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec leo facilisis ultricies. Fusce quis massa finibus neque volutpat commodo. Nunc blandit dolor in mi viverra, sit amet imperdiet lectus euismod. Mauris et urna vitae dolor accumsan vehicula quis ut urna. Aenean tincidunt enim in pellentesque fringilla. Duis sagittis sem ac quam egestas elementum. Nulla a velit a diam congue euismod.
+
+<Props of={WireFrameContainer} />
+
+Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta. Sed vitae porttitor ligula. Fusce velit est, dapibus vehicula odio a, bibendum ornare nisi. Aenean sed odio et ipsum laoreet facilisis. Proin et lorem eget elit pellentesque tincidunt. Nullam ac urna sed massa tincidunt accumsan. Ut ultrices nibh ut consectetur tincidunt. Donec eget ullamcorper eros, vel congue mi. Suspendisse sapien erat, sagittis eget cursus nec, aliquam in mi.
+
+<Preview>
+    <Story name="Default Open">
+      <WireFrameProvider api={wireframeAPIGrid}>
+        <WireFrameContainer
+          className="container"
+        >
+          <Main>
+            <div className="row">
+              <div className="col">
+                <WAHeader>Header</WAHeader>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <WASection1>Component 1</WASection1>
+              </div>
+              <div className="col-6">
+                <WASection2>Component 2</WASection2>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <WASection3>Component 3</WASection3>
+              </div>
+              <div className="col">
+                <WASection4>Component 4</WASection4>
+              </div>
+              <div className="col">
+                <WASection5>Component 5</WASection5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <WAFooter>Footer</WAFooter>
+              </div>
+            </div>
+          </Main>
+        </WireFrameContainer>
+      </WireFrameProvider>
+    </Story>
+</Preview>
+
+## Example with the panel initially closed
+
+Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta. Sed vitae porttitor ligula. Fusce velit est, dapibus vehicula odio a, bibendum ornare nisi. Aenean sed odio et ipsum laoreet facilisis. Proin et lorem eget elit pellentesque tincidunt. Nullam ac urna sed massa tincidunt accumsan. Ut ultrices nibh ut consectetur tincidunt. Donec eget ullamcorper eros, vel congue mi. Suspendisse sapien erat, sagittis eget cursus nec, aliquam in mi.
+
+<Preview withToolbar>
+<Story name="Default Closed">
+  <WireFrameProvider api={wireframeAPISimple}>
+    <WireFrameContainer
+      className="container"
+      defaultOpen={false}
+    >
+      <Main>
+        <div className="row">
+          <div className="col">
+            <WASection1>Component 1</WASection1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <WASection3>Component 3</WASection3>
+          </div>
+          <div className="col">
+            <WASection5>Component 5</WASection5>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <WASection3>Component 3</WASection3>
+          </div>
+        </div>
+      </Main>
+    </WireFrameContainer>
+  </WireFrameProvider>
+</Story>
+</Preview>
