@@ -94,13 +94,13 @@ const WireFrameAnnotations = styled.div`
 export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  transform: translateY(-50%);
+  transform: translate(-100%, -50%);
   transition: opacity 100ms;
   min-height: 3em;
   width: 1.6em;

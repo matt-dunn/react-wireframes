@@ -86,15 +86,15 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
@@ -472,15 +472,15 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
@@ -858,15 +858,15 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
@@ -1239,15 +1239,15 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
@@ -1444,15 +1444,15 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
@@ -1649,15 +1649,15 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
 .emotion-2 {
   font-size: 1.25em;
   position: absolute;
-  left: -1.6em;
+  left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
   padding: 0.25em;
   border-radius: 0.25em 0 0 0.25em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
