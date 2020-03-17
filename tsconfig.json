@@ -6,7 +6,8 @@
     "esModuleInterop": true,
     "outDir": "./dist/",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "declarationMap": false,
     "noImplicitAny": true,
     "module": "esNext",
     "target": "es5",
@@ -22,7 +23,7 @@
     }
   },
   "include": [
-    "**/*.ts*"
+    "src/Wireframes/**/*.ts*"
   ],
   "exclude": [
     "node_modules"

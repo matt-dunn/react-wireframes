@@ -1,8 +1,19 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "1.0.16",
-  "main": "demo/index.html",
+  "version": "1.0.18",
+  "source": "src/WireFrames/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-dunn/react-wireframes.git"
+  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -10,6 +21,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@loadable/babel-plugin": "^5.12.0",
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/react": "^5.3.14",
     "@types/lodash": "^4.14.149",
@@ -19,6 +31,7 @@
     "@typescript-eslint/parser": "^2.3.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.29",
+    "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-react-app": "^9.1.1",
     "core-js": "^3.6.4",
@@ -35,6 +48,7 @@
     "jest-emotion": "^10.0.27",
     "jest-junit": "^10.0.0",
     "jsdom": "^16.2.1",
+    "microbundle": "^0.11.0",
     "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
     "react-docgen-typescript-loader": "^3.7.1",
@@ -47,6 +61,7 @@
     "@emotion/core": "^10.0.28",
     "@emotion/css": "^10.0.27",
     "@emotion/styled": "^10.0.27",
+    "@matt-dunn/react-wireframes": "^1.0.17",
     "bootstrap": "^4.4.1",
     "lodash": "^4.17.15",
     "react": "^16.13.0",
@@ -65,9 +80,11 @@
     "start": "parcel demo/public/index.html --https --out-dir .build",
     "storybook": "start-storybook --ci --port 8080",
     "storybook:build": "build-storybook --output-dir dist/storybook",
-    "prebuild": "yarn type-check && yarn lint && yarn coverage",
+    "prebuildXXX": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
-    "build:all": "yarn build && yarn storybook:build"
+    "build:all": "yarn build && yarn storybook:build",
+    "package:build": "microbundle",
+    "package:dev": "microbundle watch"
   },
   "engines": {
     "node": ">=10",
