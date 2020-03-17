@@ -5,7 +5,9 @@ import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { WireFrameContainer, WireFrameProvider } from "src/Wireframes";
+// import { WireFrameContainer, WireFrameProvider } from "src/Wireframes";
+// import { WireFrameContainer, WireFrameProvider } from "../dist/index";
+import { WireFrameContainer, WireFrameProvider } from "@matt-dunn/react-wireframes";
 import {
   Main, wireframeAPIGrid, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
 } from "src/Wireframes/WireFrameContainer/WireFrameContainer.stories.fixtures";

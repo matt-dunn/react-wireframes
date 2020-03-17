@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
-import { withWireFrameAnnotation } from "../index";
-import { API } from "../api";
+import { API, withWireFrameAnnotation } from "@matt-dunn/react-wireframes";
 
 export const Main = styled.div`
   margin: 10rem;

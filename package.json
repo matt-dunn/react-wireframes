@@ -1,6 +1,6 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "source": "src/WireFrames/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -57,11 +57,11 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/css": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@matt-dunn/react-wireframes": "^1.0.17",
+    "@matt-dunn/react-wireframes": "^1.0.18",
     "bootstrap": "^4.4.1",
     "lodash": "^4.17.15",
     "react": "^16.13.0",
