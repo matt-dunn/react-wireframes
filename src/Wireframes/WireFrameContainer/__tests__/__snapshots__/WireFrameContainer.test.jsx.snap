@@ -98,7 +98,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -484,7 +483,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -870,7 +868,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1251,7 +1248,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1456,7 +1452,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1661,7 +1656,6 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
