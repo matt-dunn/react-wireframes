@@ -5,7 +5,7 @@
  */
 
 import React, {
-  ReactNode, useContext, useEffect, useState, useCallback, useMemo, useRef,
+  ReactNode, useContext, useEffect, useState, useCallback, useMemo, useRef, useLayoutEffect,
 } from "react";
 import css from "@emotion/css";
 import styled from "@emotion/styled";
@@ -20,6 +20,8 @@ type WireFrameProviderProps = {
   className?: string;
   defaultOpen?: boolean;
 }
+
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const WireFrameMainContainer = styled.div`
   display: flex;
@@ -135,11 +137,11 @@ const WireFrameAnnotationsClose = styled.button`
  * Use the WireFrameContainer at the top of your component tree...
  * */
 export const WireFrameContainer = ({ children, className, defaultOpen = true }: WireFrameProviderProps) => {
-  const [isClient, setIsClient] = useState((process as any).browser);
+  const [isClient, setIsClient] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const opening = useRef<number | undefined>();
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setIsClient(true);
   }, []);
 
