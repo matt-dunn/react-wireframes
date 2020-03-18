@@ -94,7 +94,7 @@
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
     "build:all": "yarn build && yarn storybook:build",
-    "package:bundle": "microbundle",
+    "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup",
     "package:dev": "microbundle watch",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle"
   },
