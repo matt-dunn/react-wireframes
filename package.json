@@ -94,9 +94,9 @@
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
     "build:all": "yarn build && yarn storybook:build",
-    "package:build": "microbundle",
+    "package:bundle": "microbundle",
     "package:dev": "microbundle watch",
-    "build:package": "yarn prebuild && rimraf dist && yarn package:build"
+    "package:build": "yarn prebuild && rimraf dist && yarn package:bundle"
   },
   "engines": {
     "node": ">=10",
