@@ -8,11 +8,47 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   display: flex;
 }
 
+.emotion-16 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-16 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-16.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-16.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.emotion-14 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 400px;
+  padding: 0;
+  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
 .emotion-12 {
@@ -65,22 +101,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   margin: 0;
   line-height: 1.5;
   font-weight: lighter;
-}
-
-.emotion-14 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 400px;
-  padding: 0;
-  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 25%;
-  min-width: 250px;
 }
 
 .emotion-2 {
@@ -225,9 +245,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className="open"
+    >
       <div
-        className="emotion-16 emotion-17"
+        className="open emotion-16 emotion-17"
       >
         <WireFrameBody>
           <div
@@ -242,11 +264,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={true}
+          data-annotations-container={true}
         >
           <div
             className="emotion-14 emotion-15"
-            open={true}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}
@@ -395,11 +417,47 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   display: flex;
 }
 
+.emotion-16 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-16 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-16.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-16.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.emotion-14 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 400px;
+  padding: 0;
+  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
 .emotion-12 {
@@ -452,22 +510,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   margin: 0;
   line-height: 1.5;
   font-weight: lighter;
-}
-
-.emotion-14 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 400px;
-  padding: 0;
-  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 25%;
-  min-width: 250px;
 }
 
 .emotion-2 {
@@ -612,9 +654,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className="open"
+    >
       <div
-        className="emotion-16 emotion-17"
+        className="open emotion-16 emotion-17"
       >
         <WireFrameBody>
           <div
@@ -629,11 +673,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={true}
+          data-annotations-container={true}
         >
           <div
             className="emotion-14 emotion-15"
-            open={true}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}
@@ -782,11 +826,47 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   display: flex;
 }
 
+.emotion-16 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-16 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-16.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-16.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.emotion-14 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 400px;
+  padding: 0;
+  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
 .emotion-12 {
@@ -839,22 +919,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   margin: 0;
   line-height: 1.5;
   font-weight: lighter;
-}
-
-.emotion-14 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 400px;
-  padding: 0;
-  -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 25%;
-  min-width: 250px;
 }
 
 .emotion-2 {
@@ -999,9 +1063,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className="open"
+    >
       <div
-        className="emotion-16 emotion-17"
+        className="open emotion-16 emotion-17"
       >
         <WireFrameBody>
           <div
@@ -1016,11 +1082,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={true}
+          data-annotations-container={true}
         >
           <div
             className="emotion-14 emotion-15"
-            open={true}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}
@@ -1158,6 +1224,28 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   display: flex;
 }
 
+.emotion-8 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-8 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-8.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-8.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1177,14 +1265,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 0;
-  min-width: 0;
-}
-
-.emotion-6 [data-annotations] {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
 }
 
 .emotion-4 {
@@ -1298,9 +1378,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className=""
+    >
       <div
-        className="emotion-8 emotion-9"
+        className=" emotion-8 emotion-9"
       >
         <WireFrameBody>
           <div
@@ -1315,11 +1397,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={false}
+          data-annotations-container={true}
         >
           <div
             className="emotion-6 emotion-7"
-            open={false}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}
@@ -1362,6 +1444,28 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   display: flex;
 }
 
+.emotion-8 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-8 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-8.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-8.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1381,14 +1485,6 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 0;
-  min-width: 0;
-}
-
-.emotion-6 [data-annotations] {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
 }
 
 .emotion-4 {
@@ -1502,9 +1598,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className=""
+    >
       <div
-        className="emotion-8 emotion-9"
+        className=" emotion-8 emotion-9"
       >
         <WireFrameBody>
           <div
@@ -1519,11 +1617,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={false}
+          data-annotations-container={true}
         >
           <div
             className="emotion-6 emotion-7"
-            open={false}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}
@@ -1566,6 +1664,28 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   display: flex;
 }
 
+.emotion-8 [data-annotations-container] {
+  width: 0;
+  min-width: 0;
+}
+
+.emotion-8 [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-8.open [data-annotations-container] {
+  width: 25%;
+  min-width: 250px;
+}
+
+.emotion-8.open [data-annotations-container] [data-annotations] {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
 .emotion-0 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1585,14 +1705,6 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
-  width: 0;
-  min-width: 0;
-}
-
-.emotion-6 [data-annotations] {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
 }
 
 .emotion-4 {
@@ -1706,9 +1818,11 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   <WireFrameContainer
     defaultOpen={false}
   >
-    <WireFrameMainContainer>
+    <WireFrameMainContainer
+      className=""
+    >
       <div
-        className="emotion-8 emotion-9"
+        className=" emotion-8 emotion-9"
       >
         <WireFrameBody>
           <div
@@ -1723,11 +1837,11 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
           </div>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
-          open={false}
+          data-annotations-container={true}
         >
           <div
             className="emotion-6 emotion-7"
-            open={false}
+            data-annotations-container={true}
           >
             <WireFrameAnnotations
               data-annotations={true}

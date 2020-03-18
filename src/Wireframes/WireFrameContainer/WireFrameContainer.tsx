@@ -25,6 +25,26 @@ const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffec
 
 const WireFrameMainContainer = styled.div`
   display: flex;
+  
+  [data-annotations-container] {
+    width: 0;
+    min-width: 0;
+
+    [data-annotations] {
+      transform: translateX(100%);
+    }
+  }
+
+  &.open {
+    [data-annotations-container] {
+      width: 25%;
+      min-width: 250px;
+
+      [data-annotations] {
+        transform: translateX(0);
+      }
+    }
+  }
 `;
 
 const WireFrameBody = styled.div`
@@ -34,29 +54,12 @@ const WireFrameBody = styled.div`
 const transitionDuration = 250;
 const transition = `${transitionDuration}ms ease-in-out`;
 
-const WireFrameAnnotationsContainer = styled.div<{open: boolean}>`
+const WireFrameAnnotationsContainer = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   max-width: 400px;
   padding: 0;
   transition: width ${transition}, min-width ${transition};
-
-  ${({ open = true }) => {
-    if (open) {
-      return css`
-            width: 25%;
-            min-width: 250px;
-        `;
-    }
-    return css`
-            width: 0;
-            min-width: 0;
-            
-            [data-annotations] {
-              transform: translateX(100%);
-            }
-        `;
-  }};
 `;
 
 const WireFrameAnnotations = styled.div`
@@ -202,13 +205,13 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
 
   return (
     <WireFrameAnnotationContext.Provider value={api}>
-      <WireFrameMainContainer>
+      <WireFrameMainContainer className={(open && "open") || ""}>
         <WireFrameBody className={className}>
           {children}
         </WireFrameBody>
 
         {isClient && (
-          <WireFrameAnnotationsContainer open={open}>
+          <WireFrameAnnotationsContainer data-annotations-container>
             <WireFrameAnnotations data-annotations>
               <WireFrameAnnotationsToggle open={open} aria-label="Toggle annotations" onClick={handleToggle}>
                 <span>→</span>
