@@ -103,7 +103,6 @@ export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
   transform: translate(-100%, -50%);
   transition: opacity 100ms;
   min-height: 3em;
-  width: 1.6em;
   display: flex;
   align-items: center;
   cursor: pointer;
