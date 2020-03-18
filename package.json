@@ -95,7 +95,7 @@
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
     "build:all": "yarn build && yarn storybook:build",
     "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
-    "package:dev": "microbundle watch",
+    "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle"
   },
   "engines": {
