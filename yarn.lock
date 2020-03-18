@@ -1409,11 +1409,6 @@
   dependencies:
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
 
-"@matt-dunn/react-wireframes@^1.0.18":
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/@matt-dunn/react-wireframes/-/react-wireframes-1.0.19.tgz#1d6d24c317a898c5153e2145297a0293b179e9a8"
-  integrity sha512-geib3Z6Z7WxYa5WXgRlkIZ/t8tOdBQ22jc76yC4UlN1QPEVYspcRhrLG2u1RGKAzMEKtYp65grcOUQD6gFcg8Q==
-
 "@mdx-js/loader@^1.5.1":
   version "1.5.7"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.7.tgz#7e3ac1cecbf085f2d23ee5aa3431f338fb67fe3b"

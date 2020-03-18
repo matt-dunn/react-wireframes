@@ -80,7 +80,8 @@
     "scroll-into-view-if-needed": "^2.2.24"
   },
   "alias": {
-    "src": "./src"
+    "src": "./src",
+    "__src/Wireframes": "./dist"
   },
   "scripts": {
     "type-check": "tsc --noEmit --skipLibCheck",
