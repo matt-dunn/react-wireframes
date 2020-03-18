@@ -213,24 +213,22 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
               </WireFrameAnnotationsToggle>
 
               {isOpened && (
-                <div>
-                  <header className="annotations">
-                    <h1>Annotations</h1>
-                    <WireFrameAnnotationsClose
-                      aria-label="Close annotations"
-                      onClick={handleClose}
-                    >
-                      ×
-                    </WireFrameAnnotationsClose>
-                  </header>
+                <header className="annotations">
+                  <h1>Annotations</h1>
+                  <WireFrameAnnotationsClose
+                    aria-label="Close annotations"
+                    onClick={handleClose}
+                  >
+                    ×
+                  </WireFrameAnnotationsClose>
+                </header>
+              )}
 
-                  {components && (
-                  <WireFrameAnnotationsNotes
-                    components={components}
-                    highlightedNote={highlightedNote}
-                  />
-                  )}
-                </div>
+              {(isOpened && components) && (
+                <WireFrameAnnotationsNotes
+                  components={components}
+                  highlightedNote={highlightedNote}
+                />
               )}
             </WireFrameAnnotations>
           </WireFrameAnnotationsContainer>

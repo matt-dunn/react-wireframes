@@ -271,50 +271,28 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
-                <div>
-                  <header
-                    className="annotations"
+                <header
+                  className="annotations"
+                >
+                  <h1>
+                    Annotations
+                  </h1>
+                  <WireFrameAnnotationsClose
+                    aria-label="Close annotations"
+                    onClick={[Function]}
                   >
-                    <h1>
-                      Annotations
-                    </h1>
-                    <WireFrameAnnotationsClose
+                    <button
                       aria-label="Close annotations"
+                      className="emotion-4 emotion-5"
                       onClick={[Function]}
                     >
-                      <button
-                        aria-label="Close annotations"
-                        className="emotion-4 emotion-5"
-                        onClick={[Function]}
-                      >
-                        ×
-                      </button>
-                    </WireFrameAnnotationsClose>
-                  </header>
-                  <WireFrameAnnotationsNotes
-                    components={
-                      Array [
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 1,
-                          "options": Object {
-                            "description": "Test description 1",
-                            "title": "Test component 1",
-                          },
-                        },
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 2,
-                          "options": Object {
-                            "description": "Test description 2",
-                            "title": "Test component 2",
-                          },
-                        },
-                      ]
-                    }
-                    highlightedNote={
+                      ×
+                    </button>
+                  </WireFrameAnnotationsClose>
+                </header>
+                <WireFrameAnnotationsNotes
+                  components={
+                    Array [
                       Object {
                         "Component": [MockFunction],
                         "count": 1,
@@ -323,62 +301,82 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                           "description": "Test description 1",
                           "title": "Test component 1",
                         },
-                      }
+                      },
+                      Object {
+                        "Component": [MockFunction],
+                        "count": 1,
+                        "id": 2,
+                        "options": Object {
+                          "description": "Test description 2",
+                          "title": "Test component 2",
+                        },
+                      },
+                    ]
+                  }
+                  highlightedNote={
+                    Object {
+                      "Component": [MockFunction],
+                      "count": 1,
+                      "id": 1,
+                      "options": Object {
+                        "description": "Test description 1",
+                        "title": "Test component 1",
+                      },
                     }
+                  }
+                >
+                  <WireFrameAnnotationsNotesContainer
+                    id="wf-annotations"
                   >
-                    <WireFrameAnnotationsNotesContainer
+                    <ul
+                      className="emotion-10 emotion-11"
                       id="wf-annotations"
                     >
-                      <ul
-                        className="emotion-10 emotion-11"
-                        id="wf-annotations"
+                      <li
+                        className="highlight"
+                        id="wf-annotation-1"
+                        key="1"
                       >
-                        <li
-                          className="highlight"
-                          id="wf-annotation-1"
-                          key="1"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                1
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 1
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 1
-                          </article>
-                        </li>
-                        <li
-                          className=""
-                          id="wf-annotation-2"
-                          key="2"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                2
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 2
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 2
-                          </article>
-                        </li>
-                      </ul>
-                    </WireFrameAnnotationsNotesContainer>
-                  </WireFrameAnnotationsNotes>
-                </div>
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              1
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 1
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 1
+                        </article>
+                      </li>
+                      <li
+                        className=""
+                        id="wf-annotation-2"
+                        key="2"
+                      >
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              2
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 2
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 2
+                        </article>
+                      </li>
+                    </ul>
+                  </WireFrameAnnotationsNotesContainer>
+                </WireFrameAnnotationsNotes>
               </div>
             </WireFrameAnnotations>
           </div>
@@ -660,50 +658,37 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
-                <div>
-                  <header
-                    className="annotations"
+                <header
+                  className="annotations"
+                >
+                  <h1>
+                    Annotations
+                  </h1>
+                  <WireFrameAnnotationsClose
+                    aria-label="Close annotations"
+                    onClick={[Function]}
                   >
-                    <h1>
-                      Annotations
-                    </h1>
-                    <WireFrameAnnotationsClose
+                    <button
                       aria-label="Close annotations"
+                      className="emotion-4 emotion-5"
                       onClick={[Function]}
                     >
-                      <button
-                        aria-label="Close annotations"
-                        className="emotion-4 emotion-5"
-                        onClick={[Function]}
-                      >
-                        ×
-                      </button>
-                    </WireFrameAnnotationsClose>
-                  </header>
-                  <WireFrameAnnotationsNotes
-                    components={
-                      Array [
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 1,
-                          "options": Object {
-                            "description": "Test description 1",
-                            "title": "Test component 1",
-                          },
+                      ×
+                    </button>
+                  </WireFrameAnnotationsClose>
+                </header>
+                <WireFrameAnnotationsNotes
+                  components={
+                    Array [
+                      Object {
+                        "Component": [MockFunction],
+                        "count": 1,
+                        "id": 1,
+                        "options": Object {
+                          "description": "Test description 1",
+                          "title": "Test component 1",
                         },
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 2,
-                          "options": Object {
-                            "description": "Test description 2",
-                            "title": "Test component 2",
-                          },
-                        },
-                      ]
-                    }
-                    highlightedNote={
+                      },
                       Object {
                         "Component": [MockFunction],
                         "count": 1,
@@ -712,62 +697,73 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                           "description": "Test description 2",
                           "title": "Test component 2",
                         },
-                      }
+                      },
+                    ]
+                  }
+                  highlightedNote={
+                    Object {
+                      "Component": [MockFunction],
+                      "count": 1,
+                      "id": 2,
+                      "options": Object {
+                        "description": "Test description 2",
+                        "title": "Test component 2",
+                      },
                     }
+                  }
+                >
+                  <WireFrameAnnotationsNotesContainer
+                    id="wf-annotations"
                   >
-                    <WireFrameAnnotationsNotesContainer
+                    <ul
+                      className="emotion-10 emotion-11"
                       id="wf-annotations"
                     >
-                      <ul
-                        className="emotion-10 emotion-11"
-                        id="wf-annotations"
+                      <li
+                        className=""
+                        id="wf-annotation-1"
+                        key="1"
                       >
-                        <li
-                          className=""
-                          id="wf-annotation-1"
-                          key="1"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                1
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 1
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 1
-                          </article>
-                        </li>
-                        <li
-                          className="highlight"
-                          id="wf-annotation-2"
-                          key="2"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                2
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 2
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 2
-                          </article>
-                        </li>
-                      </ul>
-                    </WireFrameAnnotationsNotesContainer>
-                  </WireFrameAnnotationsNotes>
-                </div>
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              1
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 1
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 1
+                        </article>
+                      </li>
+                      <li
+                        className="highlight"
+                        id="wf-annotation-2"
+                        key="2"
+                      >
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              2
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 2
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 2
+                        </article>
+                      </li>
+                    </ul>
+                  </WireFrameAnnotationsNotesContainer>
+                </WireFrameAnnotationsNotes>
               </div>
             </WireFrameAnnotations>
           </div>
@@ -1049,103 +1045,101 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                     </span>
                   </div>
                 </WireFrameAnnotationsToggle>
-                <div>
-                  <header
-                    className="annotations"
+                <header
+                  className="annotations"
+                >
+                  <h1>
+                    Annotations
+                  </h1>
+                  <WireFrameAnnotationsClose
+                    aria-label="Close annotations"
+                    onClick={[Function]}
                   >
-                    <h1>
-                      Annotations
-                    </h1>
-                    <WireFrameAnnotationsClose
+                    <button
                       aria-label="Close annotations"
+                      className="emotion-4 emotion-5"
                       onClick={[Function]}
                     >
-                      <button
-                        aria-label="Close annotations"
-                        className="emotion-4 emotion-5"
-                        onClick={[Function]}
-                      >
-                        ×
-                      </button>
-                    </WireFrameAnnotationsClose>
-                  </header>
-                  <WireFrameAnnotationsNotes
-                    components={
-                      Array [
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 1,
-                          "options": Object {
-                            "description": "Test description 1",
-                            "title": "Test component 1",
-                          },
+                      ×
+                    </button>
+                  </WireFrameAnnotationsClose>
+                </header>
+                <WireFrameAnnotationsNotes
+                  components={
+                    Array [
+                      Object {
+                        "Component": [MockFunction],
+                        "count": 1,
+                        "id": 1,
+                        "options": Object {
+                          "description": "Test description 1",
+                          "title": "Test component 1",
                         },
-                        Object {
-                          "Component": [MockFunction],
-                          "count": 1,
-                          "id": 2,
-                          "options": Object {
-                            "description": "Test description 2",
-                            "title": "Test component 2",
-                          },
+                      },
+                      Object {
+                        "Component": [MockFunction],
+                        "count": 1,
+                        "id": 2,
+                        "options": Object {
+                          "description": "Test description 2",
+                          "title": "Test component 2",
                         },
-                      ]
-                    }
+                      },
+                    ]
+                  }
+                >
+                  <WireFrameAnnotationsNotesContainer
+                    id="wf-annotations"
                   >
-                    <WireFrameAnnotationsNotesContainer
+                    <ul
+                      className="emotion-10 emotion-11"
                       id="wf-annotations"
                     >
-                      <ul
-                        className="emotion-10 emotion-11"
-                        id="wf-annotations"
+                      <li
+                        className=""
+                        id="wf-annotation-1"
+                        key="1"
                       >
-                        <li
-                          className=""
-                          id="wf-annotation-1"
-                          key="1"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                1
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 1
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 1
-                          </article>
-                        </li>
-                        <li
-                          className=""
-                          id="wf-annotation-2"
-                          key="2"
-                        >
-                          <header>
-                            <IdentifierNote>
-                              <cite
-                                className="emotion-6 emotion-7"
-                              >
-                                2
-                              </cite>
-                            </IdentifierNote>
-                            <h2>
-                              Test component 2
-                            </h2>
-                          </header>
-                          <article>
-                            Test description 2
-                          </article>
-                        </li>
-                      </ul>
-                    </WireFrameAnnotationsNotesContainer>
-                  </WireFrameAnnotationsNotes>
-                </div>
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              1
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 1
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 1
+                        </article>
+                      </li>
+                      <li
+                        className=""
+                        id="wf-annotation-2"
+                        key="2"
+                      >
+                        <header>
+                          <IdentifierNote>
+                            <cite
+                              className="emotion-6 emotion-7"
+                            >
+                              2
+                            </cite>
+                          </IdentifierNote>
+                          <h2>
+                            Test component 2
+                          </h2>
+                        </header>
+                        <article>
+                          Test description 2
+                        </article>
+                      </li>
+                    </ul>
+                  </WireFrameAnnotationsNotesContainer>
+                </WireFrameAnnotationsNotes>
               </div>
             </WireFrameAnnotations>
           </div>
