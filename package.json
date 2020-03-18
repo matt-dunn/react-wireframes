@@ -81,7 +81,7 @@
   },
   "alias": {
     "src": "./src",
-    "src/Wireframes": "./dist"
+    "__src/Wireframes": "./dist"
   },
   "scripts": {
     "type-check": "tsc --noEmit --skipLibCheck",
