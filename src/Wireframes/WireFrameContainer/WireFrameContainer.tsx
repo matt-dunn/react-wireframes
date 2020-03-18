@@ -75,7 +75,7 @@ const WireFrameAnnotations = styled.div`
   transition: transform ${transition};
   z-index: 6000;
   
-  > header {
+  header.annotations {
     padding: 3px 10px;
     background-color: #555;
     color: #fff;
@@ -213,8 +213,8 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
               </WireFrameAnnotationsToggle>
 
               {isOpened && (
-                <>
-                  <header>
+                <div>
+                  <header className="annotations">
                     <h1>Annotations</h1>
                     <WireFrameAnnotationsClose
                       aria-label="Close annotations"
@@ -230,7 +230,7 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
                     highlightedNote={highlightedNote}
                   />
                   )}
-                </>
+                </div>
               )}
             </WireFrameAnnotations>
           </WireFrameAnnotationsContainer>

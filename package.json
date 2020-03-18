@@ -49,7 +49,7 @@
     "jest-emotion": "^10.0.27",
     "jest-junit": "^10.0.0",
     "jsdom": "^16.2.1",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0-next.8",
     "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
     "react-docgen-typescript-loader": "^3.7.1",
@@ -94,7 +94,7 @@
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./",
     "build:all": "yarn build && yarn storybook:build",
-    "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup",
+    "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle"
   },
