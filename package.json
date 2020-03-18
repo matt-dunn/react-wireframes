@@ -12,7 +12,8 @@
     "url": "https://github.com/matt-dunn/react-wireframes.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/Wireframes"
   ],
   "devDependencies": {
     "@babel/core": "^7.0.0-0",

@@ -33,7 +33,7 @@ module.exports = {
     });
     config.resolve.extensions.push('.ts', '.tsx');
     config.resolve.alias = {
-      "src": "../src",
+      "src": path.join(__dirname, "..", "src"),
     };
 
     return config;
