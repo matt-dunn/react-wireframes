@@ -1,6 +1,6 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "source": "src/WireFrames/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -81,7 +81,7 @@
   },
   "alias": {
     "src": "./src",
-    "__src/Wireframes": "./dist"
+    "src/Wireframes": "./dist"
   },
   "scripts": {
     "type-check": "tsc --noEmit --skipLibCheck",
