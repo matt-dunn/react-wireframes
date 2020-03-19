@@ -1,6 +1,15 @@
 language: node_js
 node_js:
   - 10
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, needed for cypress
+      - libgconf-2-4
+cache:
+  npm: true
+  directories:
+    - ~/.cache
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --1.19.2
   - export PATH="$HOME/.yarn/bin:$PATH"
@@ -14,3 +23,4 @@ deploy:
     branch: master
 script:
   - yarn build:all
+  - yarn test:e2e
