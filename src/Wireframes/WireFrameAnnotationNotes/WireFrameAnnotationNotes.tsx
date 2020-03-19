@@ -6,9 +6,9 @@
 
 import React from "react";
 import styled from "@emotion/styled";
-import { IdentifierBase } from "./styles";
 
-import { WireFrameComponent, WireFrameComponents } from "./api";
+import { IdentifierBase } from "../styles";
+import { WireFrameComponent, WireFrameComponents } from "../api";
 
 type WireFrameAnnotationsNotesProps = {
     components: WireFrameComponents;
