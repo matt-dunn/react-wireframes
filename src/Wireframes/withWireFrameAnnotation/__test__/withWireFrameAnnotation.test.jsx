@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
 import { WireFrameProvider } from "../../context";
@@ -17,6 +17,7 @@ describe("Wireframe: withWireFrameAnnotation", () => {
   let api;
   let Fragment;
   let WrappedComponent;
+  let ComponentTree;
   let highlightNote;
 
   beforeEach(() => {
@@ -31,9 +32,11 @@ describe("Wireframe: withWireFrameAnnotation", () => {
       description: <div>Description.</div>,
     });
 
+    ComponentTree = <WrappedComponent />;
+
     Fragment = (
       <WireFrameProvider api={api}>
-        <WrappedComponent />
+        {ComponentTree}
       </WireFrameProvider>
     );
   });
@@ -97,5 +100,11 @@ describe("Wireframe: withWireFrameAnnotation", () => {
 
     wrapper.unmount();
     expect(api.getComponents().length).toEqual(0);
+  });
+
+  it("should throw exception if api is not provided", () => {
+    expect(() => {
+      shallow(ComponentTree);
+    }).toThrow(TypeError);
   });
 });
