@@ -37,6 +37,7 @@
     "babel-preset-react-app": "^9.1.1",
     "concurrently": "^5.1.0",
     "core-js": "^3.6.4",
+    "coveralls": "^3.0.9",
     "cypress": "^4.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -93,6 +94,7 @@
     "test": "jest",
     "test:e2e": "concurrently --success first --kill-others \"cypress run\" \"yarn serve:prod\"",
     "coverage": "jest --collectCoverage",
+    "coverage:report": "cat ./reports/coverage/lcov.info | coveralls",
     "start": "parcel demo/public/index.html --https --out-dir .build",
     "storybook": "start-storybook --ci --port 8080",
     "storybook:build": "build-storybook --output-dir dist/storybook --quiet",
@@ -102,7 +104,8 @@
     "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
-    "serve:prod": "http-server ./dist/ --port 8080 --silent"
+    "serve:prod": "http-server ./dist/ --port 8080 --silent",
+    "ci": "yarn build:all && yarn coverage:report && yarn test:e2e"
   },
   "engines": {
     "node": ">=10",

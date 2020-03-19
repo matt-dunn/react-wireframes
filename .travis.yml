@@ -8,6 +8,7 @@ addons:
       - libgconf-2-4
 cache:
   npm: true
+  yarn: true
   directories:
     - ~/.cache
 before_install:
@@ -22,5 +23,4 @@ deploy:
   on:
     branch: master
 script:
-  - yarn build:all
-  - yarn test:e2e
+  - yarn ci
