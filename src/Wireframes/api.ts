@@ -117,9 +117,11 @@ export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
     },
     highlightNote: Component => apiOptions && apiOptions.highlightNote && apiOptions.highlightNote(getWireframeComponent(components, Component)),
     setOpen: (open) => {
-      isOpen = open;
+      if (open !== isOpen) {
+        isOpen = open;
 
-      openCallbacks.forEach(cb => cb(isOpen));
+        openCallbacks.forEach(cb => cb(isOpen));
+      }
 
       return isOpen;
     },

@@ -21,6 +21,9 @@ type WireFrameProviderProps = {
   defaultOpen?: boolean;
 }
 
+const transitionDuration = 250;
+const transition = `${transitionDuration}ms ease-in-out`;
+
 const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const WireFrameMainContainer = styled.div`
@@ -50,9 +53,6 @@ const WireFrameMainContainer = styled.div`
 const WireFrameBody = styled.div`
   flex-grow: 1;
 `;
-
-const transitionDuration = 250;
-const transition = `${transitionDuration}ms ease-in-out`;
 
 const WireFrameAnnotationsContainer = styled.div`
   flex-grow: 0;
@@ -137,7 +137,7 @@ const WireFrameAnnotationsClose = styled.button`
 `;
 
 /**
- * Use the WireFrameContainer at the top of your component tree...
+ * Use the WireFrameContainer at the top of your component tree
  * */
 export const WireFrameContainer = ({ children, className, defaultOpen = true }: WireFrameProviderProps) => {
   const [isClient, setIsClient] = useState(false);
@@ -164,6 +164,14 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
       highlightNote: wireFrameComponent => open && setHighlightedNote(wireFrameComponent),
     });
   }, [api, open]);
+
+  useEffect(() => {
+    const opener = api.onOpen(setOpen);
+
+    return () => {
+      opener.unregister();
+    };
+  }, [api]);
 
   useEffect(() => {
     api.setOpen(open);
@@ -204,41 +212,39 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
   }, [setOpen]);
 
   return (
-    <WireFrameAnnotationContext.Provider value={api}>
-      <WireFrameMainContainer className={(open && "open") || ""}>
-        <WireFrameBody className={className}>
-          {children}
-        </WireFrameBody>
+    <WireFrameMainContainer className={(open && "open") || ""}>
+      <WireFrameBody className={className}>
+        {children}
+      </WireFrameBody>
 
-        {isClient && (
-          <WireFrameAnnotationsContainer data-annotations-container>
-            <WireFrameAnnotations data-annotations>
-              <WireFrameAnnotationsToggle open={open} aria-label="Toggle annotations" onClick={handleToggle}>
-                <span>→</span>
-              </WireFrameAnnotationsToggle>
+      {isClient && (
+        <WireFrameAnnotationsContainer data-annotations-container>
+          <WireFrameAnnotations data-annotations>
+            <WireFrameAnnotationsToggle open={open} aria-label="Toggle annotations" onClick={handleToggle}>
+              <span>→</span>
+            </WireFrameAnnotationsToggle>
 
-              {isOpened && (
-                <header className="annotations">
-                  <h1>Annotations</h1>
-                  <WireFrameAnnotationsClose
-                    aria-label="Close annotations"
-                    onClick={handleClose}
-                  >
-                    ×
-                  </WireFrameAnnotationsClose>
-                </header>
-              )}
+            {isOpened && (
+              <header className="annotations">
+                <h1>Annotations</h1>
+                <WireFrameAnnotationsClose
+                  aria-label="Close annotations"
+                  onClick={handleClose}
+                >
+                  ×
+                </WireFrameAnnotationsClose>
+              </header>
+            )}
 
-              {(isOpened && components) && (
-                <WireFrameAnnotationsNotes
-                  components={components}
-                  highlightedNote={highlightedNote}
-                />
-              )}
-            </WireFrameAnnotations>
-          </WireFrameAnnotationsContainer>
-        )}
-      </WireFrameMainContainer>
-    </WireFrameAnnotationContext.Provider>
+            {(isOpened && components) && (
+              <WireFrameAnnotationsNotes
+                components={components}
+                highlightedNote={highlightedNote}
+              />
+            )}
+          </WireFrameAnnotations>
+        </WireFrameAnnotationsContainer>
+      )}
+    </WireFrameMainContainer>
   );
 };

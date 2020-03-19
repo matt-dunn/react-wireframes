@@ -11,6 +11,11 @@ import { CSSTransition } from "react-transition-group";
 import { IdentifierBase } from "../styles";
 import { WireFrameComponent } from "../api";
 
+type IdentifierProps = {
+  annotation: WireFrameComponent;
+  show: boolean;
+}
+
 const IdentifierContainer = styled(IdentifierBase)`
   position: absolute;
   top: -1em;
@@ -38,11 +43,6 @@ const IdentifierContainer = styled(IdentifierBase)`
     visibility: hidden;
   }
 `;
-
-type IdentifierProps = {
-  annotation: WireFrameComponent;
-  show: boolean;
-}
 
 export const Identifier = ({ annotation, show = true }: IdentifierProps) => (
   <CSSTransition
