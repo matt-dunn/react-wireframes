@@ -83,13 +83,20 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 }
 
 .emotion-12 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-12 header.annotations h1 {
@@ -152,7 +159,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   font-size: 1.5em;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -492,13 +499,20 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 }
 
 .emotion-12 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-12 header.annotations h1 {
@@ -561,7 +575,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   font-size: 1.5em;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -901,13 +915,20 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-12 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-12 header.annotations h1 {
@@ -970,7 +991,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   font-size: 1.5em;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -1299,13 +1320,20 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-4 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-4 header.annotations h1 {
@@ -1519,13 +1547,20 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 }
 
 .emotion-4 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-4 header.annotations h1 {
@@ -1739,13 +1774,20 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
 }
 
 .emotion-4 header.annotations {
-  padding: 3px 10px;
+  padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .emotion-4 header.annotations h1 {
