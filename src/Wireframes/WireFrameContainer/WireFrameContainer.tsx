@@ -19,6 +19,7 @@ type WireFrameProviderProps = {
   children: ReactNode;
   className?: string;
   defaultOpen?: boolean;
+  onScrollIntoView?: (el: Element, wireFrameComponent: WireFrameComponent) => void;
 }
 
 const transitionDuration = 250;
@@ -127,7 +128,7 @@ export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
   }
 `;
 
-const WireFrameAnnotationsClose = styled.button`
+export const WireFrameAnnotationsClose = styled.button`
   flex-grow: 0;
   cursor: pointer;
   line-height: 1;
@@ -141,7 +142,9 @@ const WireFrameAnnotationsClose = styled.button`
 /**
  * Use the WireFrameContainer at the top of your component tree
  * */
-export const WireFrameContainer = ({ children, className, defaultOpen = true }: WireFrameProviderProps) => {
+export const WireFrameContainer = ({
+  children, className, defaultOpen = true, onScrollIntoView,
+}: WireFrameProviderProps) => {
   const [isClient, setIsClient] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const opening = useRef<number | undefined>();
@@ -201,9 +204,13 @@ export const WireFrameContainer = ({ children, className, defaultOpen = true }: 
           scrollMode: "if-needed",
           boundary: document.getElementById("wf-annotations"),
         });
+
+        if (onScrollIntoView) {
+          onScrollIntoView(el, highlightedNote);
+        }
       }
     }
-  }, [highlightedNote]);
+  }, [highlightedNote, onScrollIntoView]);
 
   const handleToggle = useCallback(() => {
     setOpen(value => !value);

@@ -5,13 +5,13 @@
  */
 
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
 import { WireFrameProvider } from "../../context";
 import { API } from "../../api";
 
-import { WireFrameContainer as Component, WireFrameAnnotationsToggle } from "../WireFrameContainer";
+import { WireFrameContainer as Component, WireFrameAnnotationsToggle, WireFrameAnnotationsClose } from "../WireFrameContainer";
 
 jest.useFakeTimers();
 
@@ -20,19 +20,30 @@ describe("Wireframe: WireFrameContainer", () => {
   let MockedComponent1;
   let MockedComponent2;
   let Fragment;
+  let ComponentTree;
+  let onScrollIntoView;
 
   beforeEach(() => {
     api = API();
 
-    MockedComponent1 = jest.fn();
+    MockedComponent1 = jest.fn(() => <div>Mock component 1</div>);
     MockedComponent2 = jest.fn();
+
+    onScrollIntoView = jest.fn();
+
+    ComponentTree = (
+      <Component
+        defaultOpen={false}
+        onScrollIntoView={onScrollIntoView}
+      >
+        <div>Child component 1</div>
+        <div>Child component 2</div>
+      </Component>
+    );
 
     Fragment = (
       <WireFrameProvider api={api}>
-        <Component defaultOpen={false}>
-          <div>Child component 1</div>
-          <div>Child component 2</div>
-        </Component>
+        {ComponentTree}
       </WireFrameProvider>
     );
   });
@@ -117,6 +128,37 @@ describe("Wireframe: WireFrameContainer", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("should render children with annotation options but no wireframe components when close option is used", () => {
+    const wrapper = mount(Fragment);
+
+    act(() => {
+      api.register(MockedComponent1, {
+        title: "Test component 1",
+        description: "Test description 1",
+      });
+
+      api.register(MockedComponent2, {
+        title: "Test component 2",
+        description: "Test description 2",
+      });
+    });
+
+    wrapper.update();
+
+    // Toggle open
+    wrapper.find(WireFrameAnnotationsToggle).simulate("click");
+
+    wrapper.find(WireFrameAnnotationsClose).simulate("click");
+
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+
+    wrapper.update();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should highlight annotation", () => {
     const wrapper = mount(Fragment);
 
@@ -152,5 +194,40 @@ describe("Wireframe: WireFrameContainer", () => {
     wrapper.update();
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should throw exception if api is not provided", () => {
+    expect(() => {
+      shallow(ComponentTree);
+    }).toThrow(TypeError);
+  });
+
+  it("should highlight on hover", () => {
+    const app = document.createElement("div");
+    document.body.appendChild(app);
+    const wrapper = mount(Fragment, { attachTo: app });
+
+    act(() => {
+      api.register(MockedComponent1, {
+        title: "Test component 1",
+        description: "Test description 1",
+      });
+
+      api.register(MockedComponent2, {
+        title: "Test component 2",
+        description: "Test description 2",
+      });
+    });
+
+    // Toggle open
+    wrapper.find(WireFrameAnnotationsToggle).simulate("click");
+
+    act(() => {
+      api.highlightNote(MockedComponent1);
+    });
+
+    expect(onScrollIntoView).toHaveBeenCalled();
+
+    wrapper.unmount();
   });
 });
