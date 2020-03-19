@@ -254,9 +254,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   >
     <WireFrameMainContainer
       className="open"
+      data-wf-container={true}
     >
       <div
         className="open emotion-16 emotion-17"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -286,12 +288,14 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={true}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={true}
                   >
@@ -670,9 +674,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   >
     <WireFrameMainContainer
       className="open"
+      data-wf-container={true}
     >
       <div
         className="open emotion-16 emotion-17"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -702,12 +708,14 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={true}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={true}
                   >
@@ -1086,9 +1094,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   >
     <WireFrameMainContainer
       className="open"
+      data-wf-container={true}
     >
       <div
         className="open emotion-16 emotion-17"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -1118,12 +1128,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={true}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={true}
                   >
@@ -1408,9 +1420,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   >
     <WireFrameMainContainer
       className=""
+      data-wf-container={true}
     >
       <div
         className=" emotion-8 emotion-9"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -1440,12 +1454,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={false}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={false}
                   >
@@ -1635,9 +1651,11 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   >
     <WireFrameMainContainer
       className=""
+      data-wf-container={true}
     >
       <div
         className=" emotion-8 emotion-9"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -1667,12 +1685,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={false}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={false}
                   >
@@ -1862,9 +1882,11 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   >
     <WireFrameMainContainer
       className=""
+      data-wf-container={true}
     >
       <div
         className=" emotion-8 emotion-9"
+        data-wf-container={true}
       >
         <WireFrameBody>
           <div
@@ -1894,12 +1916,14 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
               >
                 <WireFrameAnnotationsToggle
                   aria-label="Toggle annotations"
+                  data-wf-toggle={true}
                   onClick={[Function]}
                   open={false}
                 >
                   <div
                     aria-label="Toggle annotations"
                     className="emotion-2 emotion-3"
+                    data-wf-toggle={true}
                     onClick={[Function]}
                     open={false}
                   >

@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "plugin:cypress/recommended"
+  ],
+  "rules": {
+    "cypress/no-unnecessary-waiting": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  }
+}
