@@ -4,7 +4,7 @@
  * @author Matt Dunn
  */
 /// <reference types="react" />
-import { WireFrameComponent, WireFrameComponents } from "./api";
+import { WireFrameComponent, WireFrameComponents } from "../api";
 declare type WireFrameAnnotationsNotesProps = {
     components: WireFrameComponents;
     highlightedNote?: WireFrameComponent;

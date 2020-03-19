@@ -13,7 +13,7 @@ export declare const WireFrameAnnotationsToggle: import("@emotion/styled-base").
     open: boolean;
 }, object>;
 /**
- * Use the WireFrameContainer at the top of your component tree...
+ * Use the WireFrameContainer at the top of your component tree
  * */
 export declare const WireFrameContainer: {
     ({ children, className, defaultOpen }: WireFrameProviderProps): JSX.Element;
