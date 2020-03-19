@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary should correctly show error 1`] = `
+<SimpleError
+  error={[Error: Mock error]}
+/>
+`;
+
+exports[`ErrorBoundary should render correctly 1`] = `"Simple"`;
