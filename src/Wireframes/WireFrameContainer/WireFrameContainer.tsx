@@ -81,10 +81,12 @@ const WireFrameAnnotations = styled.div`
   z-index: 6000;
   
   header.annotations {
-    padding: 3px 10px;
+    padding: 0.1em 0.75em;
     background-color: #555;
     color: #fff;
     display: flex;
+    flex-shrink: 0;
+    align-items: flex-start;
     
     h1 {
       flex-grow: 1;
@@ -132,7 +134,7 @@ const WireFrameAnnotationsClose = styled.button`
   font-size: 1.5em;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 0 0 0 0.25em;
   color: inherit;
 `;
 
