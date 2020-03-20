@@ -221,7 +221,7 @@ export const WireFrameContainer = ({
   }, [setOpen]);
 
   return (
-    <WireFrameMainContainer data-wf-container className={(open && "open") || ""}>
+    <WireFrameMainContainer data-test="container" className={(open && "open") || ""}>
       <WireFrameBody className={className}>
         {children}
       </WireFrameBody>
@@ -229,7 +229,7 @@ export const WireFrameContainer = ({
       {isClient && (
         <WireFrameAnnotationsContainer data-annotations-container>
           <WireFrameAnnotations data-annotations>
-            <WireFrameAnnotationsToggle open={open} data-wf-toggle aria-label="Toggle annotations" onClick={handleToggle}>
+            <WireFrameAnnotationsToggle open={open} data-test="toggle" aria-label="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireFrameAnnotationsToggle>
 
