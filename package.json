@@ -128,5 +128,12 @@
     "hooks": {
       "after:bump": "npx auto-changelog -p"
     }
+  },
+  "auto-changelog": {
+    "template": "./etc/changelog-template.hbs",
+    "unreleased": true,
+    "commitLimit": true,
+    "includeBranch": [
+    ]
   }
 }
