@@ -112,6 +112,7 @@
     "serve:prod": "http-server ./dist/ --port 8080 --silent",
     "ci": "yarn build:all && yarn coverage:report && yarn test:e2e",
     "version": "auto-changelog -p && git add CHANGELOG.md",
+    "prerelease": "yarn package:build",
     "release": "release-it"
   },
   "engines": {
