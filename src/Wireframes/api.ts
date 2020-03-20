@@ -5,6 +5,7 @@
  */
 
 import { ComponentType, ReactNode } from "react";
+import { getWireframeComponent, updateWireframeComponent } from "./utils";
 
 type APIOptions = {
   updater: (components: WireFrameComponents) => void;
@@ -37,17 +38,6 @@ export type WireFrameAnnotationAPI = {
   onOpen: (cb: OpenCallback) => {unregister: () => void};
   isOpen: () => boolean;
 }
-
-const getWireframeComponent = (
-  components: WireFrameComponents,
-  Component: ComponentType<any> | undefined,
-): WireFrameComponent | undefined => Component && components.find(c => c.Component === Component);
-
-const updateWireframeComponent = (
-  components: WireFrameComponents,
-  wireFrameComponent: WireFrameComponent,
-  updatedWireFrameComponent: WireFrameComponent,
-) => components.map(component => ((component === wireFrameComponent) ? updatedWireFrameComponent : component));
 
 export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
   let components: WireFrameComponents = [];

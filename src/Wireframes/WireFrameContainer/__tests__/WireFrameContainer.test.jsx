@@ -54,6 +54,21 @@ describe("Wireframe: WireFrameContainer", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("should default to open", () => {
+    const wrapper = mount(
+      <WireFrameProvider api={api}>
+        <Component>
+          <div>Child component 1</div>
+          <div>Child component 2</div>
+        </Component>
+      </WireFrameProvider>,
+    );
+
+    expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper.find(Component).find("div").at(0).hasClass("open")).toEqual(true);
+  });
+
   it("should render children with annotation options but no wireframe components when closed", () => {
     const wrapper = mount(Fragment);
 
