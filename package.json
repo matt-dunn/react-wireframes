@@ -1,6 +1,6 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "source": "src/WireFrames/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -31,6 +31,7 @@
     "@types/react-transition-group": "^4.2.4",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
+    "auto-changelog": "^1.16.2",
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.29",
     "babel-plugin-lodash": "^3.3.4",
@@ -108,7 +109,8 @@
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
     "serve:prod": "http-server ./dist/ --port 8080 --silent",
-    "ci": "yarn build:all && yarn coverage:report && yarn test:e2e"
+    "ci": "yarn build:all && yarn coverage:report && yarn test:e2e",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "engines": {
     "node": ">=10",
