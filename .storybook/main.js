@@ -13,14 +13,6 @@ module.exports = {
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
-      loader: require.resolve('babel-loader'),
-      options: {
-        presets: [['react-app', { flow: false, typescript: true }]],
-      },
-    });
-    config.module.rules.push({
-      test: /\.tsx?$/,
-      include: path.resolve(__dirname, "../src"),
       use: [
         require.resolve("ts-loader"),
         {
@@ -31,7 +23,7 @@ module.exports = {
         },
       ],
     });
-    config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx');
     config.resolve.alias = {
       "src": path.join(__dirname, "..", "src"),
     };
