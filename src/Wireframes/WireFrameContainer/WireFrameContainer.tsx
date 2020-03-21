@@ -5,7 +5,7 @@
  */
 
 import React, {
-  ReactNode, useContext, useEffect, useState, useCallback, useMemo, useRef, useLayoutEffect,
+  ReactNode, useContext, useEffect, useState, useCallback, useMemo, useRef,
 } from "react";
 import css from "@emotion/css";
 import styled from "@emotion/styled";
@@ -14,6 +14,7 @@ import scrollIntoView from "scroll-into-view-if-needed";
 import { WireFrameAnnotationContext } from "../context";
 import { WireFrameComponent, WireFrameComponents } from "../api";
 import { WireFrameAnnotationsNotes } from "../WireFrameAnnotationNotes";
+import { useIsomorphicLayoutEffect } from "../utils";
 
 type WireFrameProviderProps = {
   children: ReactNode;
@@ -24,8 +25,6 @@ type WireFrameProviderProps = {
 
 const transitionDuration = 250;
 const transition = `${transitionDuration}ms ease-in-out`;
-
-const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const WireFrameMainContainer = styled.div`
   display: flex;
@@ -205,6 +204,7 @@ export const WireFrameContainer = ({
           boundary: document.getElementById("wf-annotations"),
         });
 
+        /* istanbul ignore else */
         if (onScrollIntoView) {
           onScrollIntoView(el, highlightedNote);
         }
