@@ -67,6 +67,7 @@
     "regenerator-runtime": "^0.13.5",
     "release-it": "^13.1.1",
     "rimraf": "^3.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3"
   },
@@ -101,6 +102,7 @@
     "test": "jest",
     "test:e2e": "concurrently --success first --kill-others \"cross-env CYPRESS_BASE_URL=http://127.0.0.1:8080/ cypress run\" \"yarn serve:prod\"",
     "test:e2e:dev": "concurrently --success first --kill-others \"cross-env CYPRESS_BASE_URL=https://127.0.0.1:1234/ cypress open\" \"yarn start\"",
+    "test:e2e:stack": "jest --config ./e2e/jest.config.js ./e2e/",
     "coverage": "jest --collectCoverage",
     "coverage:report": "cat ./reports/coverage/lcov.info | coveralls",
     "start": "parcel demo/public/index.html --https --out-dir .build",

@@ -18,6 +18,7 @@ module.exports = {
     ["jest-junit", { outputDirectory: "./reports" }],
   ],
   testPathIgnorePatterns: [
+    "/e2e/",
     "/cypress/",
     "/dist/",
     "/node_modules",
