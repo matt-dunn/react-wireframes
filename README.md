@@ -1,7 +1,8 @@
 # TODO: Wireframes
 
 [![Build Status](https://travis-ci.org/matt-dunn/react-wireframes.svg?branch=master)](https://travis-ci.org/matt-dunn/react-wireframes)
-[![Coverage Status](https://coveralls.io/repos/github/matt-dunn/react-wireframes/badge.svg?branch=master&kill_cache=1)](https://coveralls.io/github/matt-dunn/react-wireframes?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/github/matt-dunn/react-wireframes/master)](https://coveralls.io/github/matt-dunn/react-wireframes?branch=master)
+
 
 [Demo](https://matt-dunn.github.io/react-wireframes/)
 
