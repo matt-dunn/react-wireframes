@@ -8,7 +8,9 @@ module.exports = {
       options: {
         configureJSX: true
       }
-    }
+    },
+    "@storybook/addon-a11y/register",
+    "@storybook/addon-knobs/register"
   ],
   webpackFinal: async config => {
     config.module.rules.push({

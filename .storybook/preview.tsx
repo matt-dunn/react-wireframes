@@ -1,6 +1,7 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import styled from "@emotion/styled";
+import { withA11y } from '@storybook/addon-a11y';
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
 
@@ -29,3 +30,5 @@ addDecorator(story => (
     </Main>
   </ErrorBoundary>
 ));
+
+addDecorator(withA11y);

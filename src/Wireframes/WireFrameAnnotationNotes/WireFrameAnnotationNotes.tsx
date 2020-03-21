@@ -7,8 +7,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { IdentifierBase } from "../styles";
 import { WireFrameComponent, WireFrameComponents } from "../api";
+import { WireFrameAnnotationsNote } from "./WireFrameAnnotationNote";
 
 type WireFrameAnnotationsNotesProps = {
     components: WireFrameComponents;
@@ -21,6 +21,7 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  outline: none;
   
   li {
     padding: 6px 0;
@@ -33,52 +34,18 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
     &.highlight {
       background-color: rgba(64, 134, 247, 0.25);
     }
-    
-    header {
-      display: flex;
-      padding: 0 10px;
-      margin-bottom: 5px;
-      align-items: center;
-      
-      h2 {
-        font-size: 1.2rem;
-        margin: 0;
-        font-weight: normal;
-      }
-    }
-    
-    article {
-      padding: 0 10px;
-    }
   }
 `;
 
-const IdentifierNote = styled(IdentifierBase)`
-  margin-right: 0.5em;
-  border-width: 1px;
-  border-style: solid;
-  font-size: 0.8em;
-`;
-
 export const WireFrameAnnotationsNotes = ({ components, highlightedNote }: WireFrameAnnotationsNotesProps) => (
-  <WireFrameAnnotationsNotesContainer id="wf-annotations">
+  <WireFrameAnnotationsNotesContainer id="wf-annotations" tabIndex={0}>
     {components.map(component => (
       <li
         key={component.id}
         id={`wf-annotation-${component.id}`}
         className={(highlightedNote === component && "highlight") || ""}
       >
-        <header>
-          <IdentifierNote>
-            {component.id}
-          </IdentifierNote>
-          <h2>
-            {component.options.title}
-          </h2>
-        </header>
-        <article>
-          {component.options.description}
-        </article>
+        <WireFrameAnnotationsNote component={component} />
       </li>
     ))}
   </WireFrameAnnotationsNotesContainer>
