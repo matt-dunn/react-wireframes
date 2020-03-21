@@ -23,8 +23,10 @@
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@loadable/babel-plugin": "^5.12.0",
+    "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-docs": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/react": "^5.3.17",
     "@types/enzyme": "^3.10.5",
     "@types/lodash": "^4.14.149",
     "@types/react-dom": "^16.9.5",
@@ -62,6 +64,7 @@
     "parcel-bundler": "^1.12.4",
     "react-docgen-typescript-loader": "^3.7.1",
     "react-is": "^16.13.0",
+    "regenerator-runtime": "^0.13.5",
     "release-it": "^13.1.1",
     "rimraf": "^3.0.2",
     "ts-loader": "^6.2.1",
@@ -133,7 +136,6 @@
     "template": "./etc/changelog-template.hbs",
     "unreleased": true,
     "commitLimit": true,
-    "includeBranch": [
-    ]
+    "includeBranch": []
   }
 }
