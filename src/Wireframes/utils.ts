@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import { ComponentType, useEffect, useLayoutEffect } from "react";
 import { WireFrameComponent, WireFrameComponents } from ".";
 
 export const getWireframeComponent = (
@@ -19,3 +19,6 @@ export const updateWireframeComponent = (
 
   return components;
 };
+
+/* istanbul ignore next */
+export const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;

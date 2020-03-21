@@ -63,6 +63,7 @@ export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
 
         components = updateWireframeComponent(components, component, updatedComponent);
 
+        /* istanbul ignore else */
         if (apiOptions.updater) {
           apiOptions.updater(components);
         }

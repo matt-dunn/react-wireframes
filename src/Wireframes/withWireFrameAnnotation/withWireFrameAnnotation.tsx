@@ -44,6 +44,7 @@ const Wrapper = styled.span<{show: boolean}>`
   }
 `;
 
+/* istanbul ignore next */
 const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (isString(WrappedComponent) ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
 
 export function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions) {
