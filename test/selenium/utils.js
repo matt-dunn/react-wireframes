@@ -1,11 +1,21 @@
 const { Builder, By, until } = require("selenium-webdriver");
 
+const IS_LOCAL = true;
+
 export async function getDriver(capabilities) {
+  if (IS_LOCAL) {
+    return new Builder()
+      // .withCapabilities(capabilities)
+      .forBrowser("chrome")
+      .build();
+  }
+
   return new Builder()
     .usingServer("http://hub-cloud.browserstack.com/wd/hub")
     .withCapabilities(capabilities)
     .build();
 }
+
 export async function getElementById(driver, { waitUntilTime }, id) {
   const el = await driver.wait(until.elementLocated(By.id(id)), waitUntilTime);
   return driver.wait(until.elementIsVisible(el), waitUntilTime);
