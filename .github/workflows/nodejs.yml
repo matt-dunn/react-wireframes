@@ -16,16 +16,17 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: GitHub Action for Yarn + Cypress
+      uses: KingScooty/actions-yarn-cy@1.0.0    - name: sonar-scanner
+      uses: Warchant/setup-sonar-scanner@v1
+    - run: yarn install
+    - run: yarn ci
       env:
         CI: true
