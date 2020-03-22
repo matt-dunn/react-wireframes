@@ -31,5 +31,6 @@ jobs:
     - run: yarn build:all
     - run: yarn test:e2e
     - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v1.0.1      env:
+      uses: coverallsapp/github-action@v1.0.1
+      env:
         CI: true
