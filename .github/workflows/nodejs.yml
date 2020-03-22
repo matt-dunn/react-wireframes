@@ -33,6 +33,7 @@ jobs:
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v1.0.1
       with:
+        path-to-lcov: ./reports/coverage/lcov.info
         github-token: ${{ secrets.github_token }}
       env:
         CI: true
