@@ -28,6 +28,8 @@ jobs:
       uses: Warchant/setup-sonar-scanner@v1
     - uses: actions/checkout@v2.0.0
     - run: yarn install
-    - run: yarn ci
-      env:
+    - run: yarn build:all
+    - run: yarn test:e2e
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v1.0.1      env:
         CI: true
