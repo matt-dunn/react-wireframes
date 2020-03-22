@@ -26,6 +26,7 @@ jobs:
       uses: KingScooty/actions-yarn-cy@1.0.0
     - name: sonar-scanner
       uses: Warchant/setup-sonar-scanner@v1
+    - uses: actions/checkout@cu-test
     - run: yarn install
     - run: yarn ci
       env:
