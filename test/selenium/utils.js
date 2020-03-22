@@ -39,7 +39,7 @@ export function getDefaultSettings() {
   }
 
   return {
-    waitUntilTime: 20000,
+    waitUntilTime: 40000,
     capabilities: {
       "browserstack.user": process.env.BROWSER_STACK_USER,
       "browserstack.key": process.env.BROWSER_STACK_KEY,

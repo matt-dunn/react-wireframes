@@ -7,11 +7,37 @@ const defaultSettings = getDefaultSettings();
 setupJest(defaultSettings);
 
 const capabilities = {
-  "browserName": "Chrome",
+  "os": "Windows",
+  "os_version": "10",
+  "browserName": "Edge",
   "browser_version": "81.0 beta",
-  "os": "OS X",
-  "os_version": "Catalina",
-  "resolution": "1024x768",
+  "browserstack.local": "false",
+  "browserstack.selenium_version": "3.5.2",
+
+  // "os": "Windows",
+  // "os_version": "10",
+  // "browserName": "IE",
+  // "browser_version": "11.0",
+  // "browserstack.local": "false",
+  // "browserstack.selenium_version": "3.5.2",
+
+  // "os_version": "7.0",
+  // "device": "Samsung Galaxy S8",
+  // "real_mobile": "true",
+  // "browserstack.local": "false",
+  // "browserName": "Android",
+
+  // "os_version": "13",
+  // "device": "iPad 7th",
+  // "real_mobile": "true",
+  // "browserstack.local": "false",
+  // "browserName": "iPad",
+
+  // "browserName": "Chrome",
+  // "browser_version": "81.0 beta",
+  // "os": "OS X",
+  // "os_version": "Catalina",
+  // "resolution": "1024x768",
 };
 
 describe("react-wireframes", () => {
