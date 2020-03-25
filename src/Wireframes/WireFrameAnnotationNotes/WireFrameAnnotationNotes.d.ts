@@ -8,9 +8,10 @@ import { WireFrameComponent, WireFrameComponents } from "../api";
 declare type WireFrameAnnotationsNotesProps = {
     components: WireFrameComponents;
     highlightedNote?: WireFrameComponent;
+    className?: string;
 };
 export declare const WireFrameAnnotationsNotes: {
-    ({ components, highlightedNote }: WireFrameAnnotationsNotesProps): JSX.Element;
+    ({ components, highlightedNote, className }: WireFrameAnnotationsNotesProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
         description: string;
@@ -26,6 +27,15 @@ export declare const WireFrameAnnotationsNotes: {
                 };
             };
             highlightedNote: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            className: {
                 defaultValue: null;
                 description: string;
                 name: string;
