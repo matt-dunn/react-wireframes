@@ -138,26 +138,33 @@ export const WireFrameAnnotationsClose = styled.button`
   color: inherit;
 `;
 
+const WireFrameAnnotationsNotesContainer = styled.div`
+  overflow: auto;
+`;
+
 /**
  * Use the WireFrameContainer at the top of your component tree
  * */
 export const WireFrameContainer = ({
   children, className, defaultOpen = true, onScrollIntoView,
 }: WireFrameProviderProps) => {
-  const [isClient, setIsClient] = useState(false);
-  const [isOpened, setIsOpened] = useState(false);
-  const opening = useRef<number | undefined>();
-
-  useIsomorphicLayoutEffect(() => {
-    setIsClient(true);
-  }, []);
-
   const api = useContext(WireFrameAnnotationContext);
 
   if (!api) {
     throw new TypeError("WireframeContainer does not have the api configured via it's WireFrameProvider");
   }
 
+  const [isClient, setIsClient] = useState(false);
+
+  useIsomorphicLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const opening = useRef<number | undefined>();
+  const container = useRef<HTMLDivElement>(null);
+  const annotationsContainer = useRef<HTMLDivElement>(null);
+
+  const [isOpened, setIsOpened] = useState(false);
   const [components, setComponents] = useState<WireFrameComponents>();
   const [highlightedNote, setHighlightedNote] = useState<WireFrameComponent | undefined>(undefined);
   const [open, setOpen] = useState(defaultOpen);
@@ -194,14 +201,15 @@ export const WireFrameContainer = ({
   }, [open]);
 
   useEffect(() => {
-    if (highlightedNote) {
-      const el = document.querySelector(`#wf-annotation-${highlightedNote.id}`);
+    if (highlightedNote && container.current) {
+      const el = container.current.querySelector(`#wf-annotation-${highlightedNote.id}`);
 
-      if (el) {
+      /* istanbul ignore else */
+      if (el && annotationsContainer.current) {
         scrollIntoView(el, {
           behavior: "smooth",
           scrollMode: "if-needed",
-          boundary: document.getElementById("wf-annotations"),
+          boundary: annotationsContainer.current,
         });
 
         /* istanbul ignore else */
@@ -221,7 +229,7 @@ export const WireFrameContainer = ({
   }, [setOpen]);
 
   return (
-    <WireFrameMainContainer data-test="container" className={(open && "open") || ""}>
+    <WireFrameMainContainer data-test="container" className={(open && "open") || ""} ref={container}>
       <WireFrameBody className={className}>
         {children}
       </WireFrameBody>
@@ -246,10 +254,14 @@ export const WireFrameContainer = ({
             )}
 
             {(isOpened && components) && (
-              <WireFrameAnnotationsNotes
-                components={components}
-                highlightedNote={highlightedNote}
-              />
+              <WireFrameAnnotationsNotesContainer
+                ref={annotationsContainer}
+              >
+                <WireFrameAnnotationsNotes
+                  components={components}
+                  highlightedNote={highlightedNote}
+                />
+              </WireFrameAnnotationsNotesContainer>
             )}
           </WireFrameAnnotations>
         </WireFrameAnnotationsContainer>

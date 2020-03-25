@@ -15,6 +15,8 @@ type WireFrameAnnotationsNoteProps = {
 }
 
 const WireFrameAnnotationsNoteContainer = styled.article`
+  font-size: 0.85rem;
+
   > header {
     display: flex;
     padding: 0 10px;

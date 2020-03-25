@@ -11,13 +11,12 @@ import { WireFrameComponent, WireFrameComponents } from "../api";
 import { WireFrameAnnotationsNote } from "./WireFrameAnnotationNote";
 
 type WireFrameAnnotationsNotesProps = {
-    components: WireFrameComponents;
-    highlightedNote?: WireFrameComponent;
+  components: WireFrameComponents;
+  highlightedNote?: WireFrameComponent;
+  className?: string;
 }
 
 const WireFrameAnnotationsNotesContainer = styled.ul`
-  overflow: auto;
-  font-size: 0.85rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,8 +36,8 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
   }
 `;
 
-export const WireFrameAnnotationsNotes = ({ components, highlightedNote }: WireFrameAnnotationsNotesProps) => (
-  <WireFrameAnnotationsNotesContainer id="wf-annotations" tabIndex={0}>
+export const WireFrameAnnotationsNotes = ({ components, highlightedNote, className }: WireFrameAnnotationsNotesProps) => (
+  <WireFrameAnnotationsNotesContainer id="wf-annotations" tabIndex={0} className={className}>
     {components.map(component => (
       <li
         key={component.id}

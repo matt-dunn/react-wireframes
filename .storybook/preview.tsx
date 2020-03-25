@@ -18,7 +18,7 @@ const AppError = ({ error }: {error: Error}) => (
 );
 
 const Main = styled.main`
-  margin: 2rem;
+  margin: 2em;
 `;
 
 addDecorator(story => (
