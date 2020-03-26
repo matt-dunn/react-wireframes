@@ -5,14 +5,13 @@
  */
 
 import React, {
-  ComponentType, ReactNode, useCallback, useContext, useEffect, useState,
+  ComponentType, ReactNode, useCallback, useEffect, useState,
 } from "react";
 import styled from "@emotion/styled";
 import css from "@emotion/css";
-import { isString } from "lodash";
 
 import { WireFrameComponent, WireFrameComponentOptions } from "../api";
-import { WireFrameAnnotationContext } from "../context";
+import { useApi } from "../useApi";
 
 import Identifier from "./Identifier";
 
@@ -45,22 +44,17 @@ const Wrapper = styled.span<{show: boolean}>`
 `;
 
 /* istanbul ignore next */
-const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (isString(WrappedComponent) ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
+const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (typeof WrappedComponent === "string" ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
 
 export function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions) {
   const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
   Component.displayName = `withWireFrameAnnotation(${getDisplayName(WrappedComponent)})`;
 
   function WireFrameAnnotation({ className, ...props }: P & WireFrameAnnotationProps) {
-    const api = useContext(WireFrameAnnotationContext);
-
-    if (!api) {
-      throw new TypeError("withWireFrameAnnotation does not have the api configured via it's WireFrameProvider");
-    }
-
     const {
       register, unregister, onOpen, isOpen, highlightNote,
-    } = api;
+    } = useApi();
+
     const [annotation, setAnnotation] = useState<WireFrameComponent>();
     const [show, setShow] = useState(isOpen());
 

@@ -5,16 +5,16 @@
  */
 
 import React, {
-  ReactNode, useContext, useEffect, useState, useCallback, useMemo, useRef,
+  ReactNode, useEffect, useState, useCallback, useMemo, useRef,
 } from "react";
 import css from "@emotion/css";
 import styled from "@emotion/styled";
 import scrollIntoView from "scroll-into-view-if-needed";
 
-import { WireFrameAnnotationContext } from "../context";
 import { WireFrameComponent, WireFrameComponents } from "../api";
 import { WireFrameAnnotationsNotes } from "../WireFrameAnnotationNotes";
 import { useIsomorphicLayoutEffect } from "../utils";
+import { useApi } from "../useApi";
 
 type WireFrameProviderProps = {
   children: ReactNode;
@@ -148,11 +148,7 @@ const WireFrameAnnotationsNotesContainer = styled.div`
 export const WireFrameContainer = ({
   children, className, defaultOpen = true, onScrollIntoView,
 }: WireFrameProviderProps) => {
-  const api = useContext(WireFrameAnnotationContext);
-
-  if (!api) {
-    throw new TypeError("WireframeContainer does not have the api configured via it's WireFrameProvider");
-  }
+  const api = useApi();
 
   const [isClient, setIsClient] = useState(false);
 

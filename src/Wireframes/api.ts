@@ -5,6 +5,7 @@
  */
 
 import { ComponentType, ReactNode } from "react";
+
 import { getWireframeComponent, updateWireframeComponent } from "./utils";
 
 type APIOptions = {
@@ -91,12 +92,10 @@ export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
 
       if (component) {
         if (component.count > 1) {
-          const updatedComponent = {
+          components = updateWireframeComponent(components, component, {
             ...component,
             count: component.count - 1,
-          };
-
-          components = updateWireframeComponent(components, component, updatedComponent);
+          });
         } else {
           components = components.filter(c => c !== component);
         }

@@ -8,6 +8,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { WireFrameComponent, WireFrameComponents } from "../api";
+
 import { WireFrameAnnotationsNote } from "./WireFrameAnnotationNote";
 
 type WireFrameAnnotationsNotesProps = {
