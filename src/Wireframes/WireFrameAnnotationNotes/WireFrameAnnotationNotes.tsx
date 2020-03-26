@@ -38,11 +38,11 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
 `;
 
 export const WireFrameAnnotationsNotes = ({ components, highlightedNote, className }: WireFrameAnnotationsNotesProps) => (
-  <WireFrameAnnotationsNotesContainer id="wf-annotations" tabIndex={0} className={className}>
+  <WireFrameAnnotationsNotesContainer tabIndex={0} className={className}>
     {components.map(component => (
       <li
         key={component.id}
-        id={`wf-annotation-${component.id}`}
+        data-annotation-id={component.id}
         className={(highlightedNote === component && "highlight") || ""}
       >
         <WireFrameAnnotationsNote component={component} />

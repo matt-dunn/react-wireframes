@@ -163,7 +163,7 @@ export const WireFrameContainer = ({
     setIsClient(true);
   }, []);
 
-  const opening = useRef<number | undefined>();
+  const opening = useRef<number>();
   const container = useRef<HTMLDivElement>(null);
   const annotationsContainer = useRef<HTMLDivElement>(null);
 
@@ -205,7 +205,7 @@ export const WireFrameContainer = ({
 
   useEffect(() => {
     if (highlightedNote && container.current) {
-      const el = container.current.querySelector(`#wf-annotation-${highlightedNote.id}`);
+      const el = container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`);
 
       /* istanbul ignore else */
       if (el && annotationsContainer.current) {

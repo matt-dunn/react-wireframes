@@ -97,6 +97,7 @@ export function withWireFrameAnnotation<P extends object>(WrappedComponent: Comp
   return WireFrameAnnotation;
 }
 
+/* istanbul ignore next */
 export const withWireFrameAnnotationInterfaceDefinition = <P extends object>(
   { WrappedComponent, options }: {WrappedComponent: ComponentType<P>; options: WireFrameComponentOptions}, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) => null;

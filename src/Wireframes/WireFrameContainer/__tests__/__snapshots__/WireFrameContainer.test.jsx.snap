@@ -589,7 +589,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 
 <li
               class="highlight"
-              id="wf-annotation-1"
+              data-annotation-id="1"
             >
               <article
                 class="emotion-2 emotion-3"
@@ -740,17 +740,15 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                       }
                     >
                       <WireFrameAnnotationsNotesContainer
-                        id="wf-annotations"
                         tabIndex={0}
                       >
                         <ul
                           className="emotion-14 emotion-15"
-                          id="wf-annotations"
                           tabIndex={0}
                         >
                           <li
                             className="highlight"
-                            id="wf-annotation-1"
+                            data-annotation-id={1}
                             key="1"
                           >
                             <WireFrameAnnotationsNote
@@ -791,7 +789,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                           </li>
                           <li
                             className=""
-                            id="wf-annotation-2"
+                            data-annotation-id={2}
                             key="2"
                           >
                             <WireFrameAnnotationsNote
@@ -1171,7 +1169,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 
 <li
               class=""
-              id="wf-annotation-1"
+              data-annotation-id="1"
             >
               <article
                 class="emotion-2 emotion-3"
@@ -1259,7 +1257,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 
 <li
               class="highlight"
-              id="wf-annotation-2"
+              data-annotation-id="2"
             >
               <article
                 class="emotion-2 emotion-3"
@@ -1414,17 +1412,15 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                       }
                     >
                       <WireFrameAnnotationsNotesContainer
-                        id="wf-annotations"
                         tabIndex={0}
                       >
                         <ul
                           className="emotion-14 emotion-15"
-                          id="wf-annotations"
                           tabIndex={0}
                         >
                           <li
                             className=""
-                            id="wf-annotation-1"
+                            data-annotation-id={1}
                             key="1"
                           >
                             <WireFrameAnnotationsNote
@@ -1465,7 +1461,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                           </li>
                           <li
                             className="highlight"
-                            id="wf-annotation-2"
+                            data-annotation-id={2}
                             key="2"
                           >
                             <WireFrameAnnotationsNote
@@ -1886,17 +1882,15 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                       }
                     >
                       <WireFrameAnnotationsNotesContainer
-                        id="wf-annotations"
                         tabIndex={0}
                       >
                         <ul
                           className="emotion-14 emotion-15"
-                          id="wf-annotations"
                           tabIndex={0}
                         >
                           <li
                             className=""
-                            id="wf-annotation-1"
+                            data-annotation-id={1}
                             key="1"
                           >
                             <WireFrameAnnotationsNote
@@ -1937,7 +1931,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                           </li>
                           <li
                             className=""
-                            id="wf-annotation-2"
+                            data-annotation-id={2}
                             key="2"
                           >
                             <WireFrameAnnotationsNote
