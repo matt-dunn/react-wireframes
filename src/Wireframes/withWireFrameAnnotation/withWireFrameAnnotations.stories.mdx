@@ -1,6 +1,6 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 
-import { API, withWireFrameAnnotation, WireFrameProvider, WireFrameAnnotationProps } from "src/Wireframes";
+import { API, withWireFrameAnnotation, WireFrameProvider, WireFrameAnnotationProps, withWireFrameAnnotationInterfaceDefinition } from "src/Wireframes";
 
 import { wireframeAPI, wireframeAPIOpen, WASample } from "./withWireFrameAnnotations.stories.fixtures";
 
@@ -10,7 +10,9 @@ import { wireframeAPI, wireframeAPIOpen, WASample } from "./withWireFrameAnnotat
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec leo facilisis ultricies. Fusce quis massa finibus neque volutpat commodo. Nunc blandit dolor in mi viverra, sit amet imperdiet lectus euismod. Mauris et urna vitae dolor accumsan vehicula quis ut urna. Aenean tincidunt enim in pellentesque fringilla. Duis sagittis sem ac quam egestas elementum. Nulla a velit a diam congue euismod.
 
-<Preview>
+<Props of={withWireFrameAnnotationInterfaceDefinition} />
+
+<Preview withSource={false}>
     <Story name="Default">
       <WireFrameProvider api={wireframeAPI}>
         <WASample>Header</WASample>
@@ -24,3 +26,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec
 </Preview>
 
 
+```js
+import { withWireFrameAnnotation } from "@matt-dunn/react-wireframes";
+
+const AnnotatedComponent = withWireFrameAnnotation(MyComponent, {
+  title: "String title or Component",
+  description: "String description or Component",
+});
+```
