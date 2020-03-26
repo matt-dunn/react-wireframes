@@ -50,11 +50,11 @@ const WireFrameMainContainer = styled.div`
   }
 `;
 
-const WireFrameBody = styled.div`
+const WireFrameBody = styled.main`
   flex-grow: 1;
 `;
 
-const WireFrameAnnotationsContainer = styled.div`
+const WireFrameAnnotationsContainer = styled.section`
   flex-grow: 0;
   flex-shrink: 0;
   max-width: 400px;
@@ -98,7 +98,7 @@ const WireFrameAnnotations = styled.div`
   }
 `;
 
-export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
+export const WireFrameAnnotationsToggle = styled.button<{open: boolean}>`
   font-size: 1.25em;
   position: absolute;
   left: 0;
@@ -106,6 +106,7 @@ export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   transform: translate(-100%, -50%);
   transition: opacity 100ms;
@@ -115,7 +116,10 @@ export const WireFrameAnnotationsToggle = styled.div<{open: boolean}>`
   cursor: pointer;
   opacity: ${({ open }) => (open && 1) || 0.25};
   
+  &:active,
+  &:focus,
   &:hover {
+    outline: none;
     opacity: 1;
   }
 
@@ -140,6 +144,9 @@ export const WireFrameAnnotationsClose = styled.button`
 
 const WireFrameAnnotationsNotesContainer = styled.div`
   overflow: auto;
+  z-index: 1;
+  position: relative;
+  background-color: inherit;
 `;
 
 /**
@@ -233,7 +240,7 @@ export const WireFrameContainer = ({
       {isClient && (
         <WireFrameAnnotationsContainer data-annotations-container>
           <WireFrameAnnotations data-annotations>
-            <WireFrameAnnotationsToggle open={open} data-test="toggle" aria-label="Toggle annotations" onClick={handleToggle}>
+            <WireFrameAnnotationsToggle open={open} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireFrameAnnotationsToggle>
 

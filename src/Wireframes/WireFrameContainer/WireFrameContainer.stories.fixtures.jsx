@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { API, withWireFrameAnnotation } from "src/Wireframes";
 
 export const Main = styled.div`
+  padding: 2em 4em;
 `;
 
 const Section = styled.div`

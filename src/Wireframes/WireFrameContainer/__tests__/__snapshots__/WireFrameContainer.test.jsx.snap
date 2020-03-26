@@ -118,6 +118,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -137,7 +138,10 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
   opacity: 1;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -187,7 +191,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -196,12 +200,12 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-8 emotion-9"
             data-annotations-container={true}
           >
@@ -213,22 +217,22 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={true}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
                 <header
                   className="annotations"
@@ -251,7 +255,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
                 </header>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -377,6 +381,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -396,7 +401,10 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   opacity: 1;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -424,6 +432,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 
 .emotion-16 {
   overflow: auto;
+  z-index: 1;
+  position: relative;
+  background-color: inherit;
 }
 
 .emotion-14 {
@@ -627,7 +638,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -636,12 +647,12 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-20 emotion-21"
             data-annotations-container={true}
           >
@@ -653,22 +664,22 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={true}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
                 <header
                   className="annotations"
@@ -826,7 +837,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                 </WireFrameAnnotationsNotesContainer>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -952,6 +963,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -971,7 +983,10 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   opacity: 1;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -999,6 +1014,9 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 
 .emotion-16 {
   overflow: auto;
+  z-index: 1;
+  position: relative;
+  background-color: inherit;
 }
 
 .emotion-14 {
@@ -1294,7 +1312,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -1303,12 +1321,12 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-20 emotion-21"
             data-annotations-container={true}
           >
@@ -1320,22 +1338,22 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={true}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
                 <header
                   className="annotations"
@@ -1493,7 +1511,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                 </WireFrameAnnotationsNotesContainer>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -1619,6 +1637,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -1638,7 +1657,10 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   opacity: 1;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -1666,6 +1688,9 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 
 .emotion-16 {
   overflow: auto;
+  z-index: 1;
+  position: relative;
+  background-color: inherit;
 }
 
 .emotion-14 {
@@ -1770,7 +1795,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -1779,12 +1804,12 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-20 emotion-21"
             data-annotations-container={true}
           >
@@ -1796,22 +1821,22 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={true}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
                 <header
                   className="annotations"
@@ -1958,7 +1983,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 </WireFrameAnnotationsNotesContainer>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -2084,6 +2109,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -2103,7 +2129,10 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   opacity: 0.25;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -2145,7 +2174,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -2154,12 +2183,12 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
@@ -2171,26 +2200,26 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={false}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -2316,6 +2345,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -2335,7 +2365,10 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   opacity: 0.25;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -2377,7 +2410,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -2386,12 +2419,12 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
@@ -2403,26 +2436,26 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={false}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -2548,6 +2581,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -2567,7 +2601,10 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   opacity: 0.25;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -2609,7 +2646,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -2618,12 +2655,12 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
@@ -2635,26 +2672,26 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={false}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>
@@ -2780,6 +2817,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   background-color: #555;
   color: #fff;
   padding: 0.25em;
+  border: none;
   border-radius: 0.25em 0 0 0.25em;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
@@ -2799,7 +2837,10 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
   opacity: 0.25;
 }
 
+.emotion-2:active,
+.emotion-2:focus,
 .emotion-2:hover {
+  outline: none;
   opacity: 1;
 }
 
@@ -2841,7 +2882,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
         data-test="container"
       >
         <WireFrameBody>
-          <div
+          <main
             className="emotion-0 emotion-1"
           >
             <div>
@@ -2850,12 +2891,12 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
             <div>
               Child component 2
             </div>
-          </div>
+          </main>
         </WireFrameBody>
         <WireFrameAnnotationsContainer
           data-annotations-container={true}
         >
-          <div
+          <section
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
@@ -2867,26 +2908,26 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
-                  aria-label="Toggle annotations"
                   data-test="toggle"
                   onClick={[Function]}
                   open={false}
+                  title="Toggle annotations"
                 >
-                  <div
-                    aria-label="Toggle annotations"
+                  <button
                     className="emotion-2 emotion-3"
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
+                    title="Toggle annotations"
                   >
                     <span>
                       →
                     </span>
-                  </div>
+                  </button>
                 </WireFrameAnnotationsToggle>
               </div>
             </WireFrameAnnotations>
-          </div>
+          </section>
         </WireFrameAnnotationsContainer>
       </div>
     </WireFrameMainContainer>

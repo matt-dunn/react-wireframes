@@ -17,8 +17,8 @@ const AppError = ({ error }: {error: Error}) => (
   </>
 );
 
-const Main = styled.main`
-  margin: 2em;
+const Main = styled.div`
+  padding: 20px;
 `;
 
 addDecorator(story => (

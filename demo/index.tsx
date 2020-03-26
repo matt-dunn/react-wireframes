@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styled from "@emotion/styled";
 
 import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
 
@@ -9,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { API, WireFrameContainer, WireFrameProvider } from "src/Wireframes";
 
 import {
-  WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
+  Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
 } from "src/Wireframes/WireFrameContainer/WireFrameContainer.stories.fixtures";
 
 const wireframeAPI = API();
@@ -23,10 +22,6 @@ const AppError = ({ error }: {error: Error}) => (
     </p>
   </>
 );
-
-export const Main = styled.div`
-  margin: 2em;
-`;
 
 const app = (
   <ErrorBoundary
