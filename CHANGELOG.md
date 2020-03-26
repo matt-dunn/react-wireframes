@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.3](https://github.com/matt-dunn/react-wireframes/compare/v1.1.2...v1.1.3)
+
+> 26 March 2020
+
+- Fix types location [`d9a45c3`](https://github.com/matt-dunn/react-wireframes/commit/d9a45c3fe034ad0841700db76f1c890ebc9c4459)
+
 #### [v1.1.2](https://github.com/matt-dunn/react-wireframes/compare/v1.1.1...v1.1.2)
 
 > 26 March 2020
