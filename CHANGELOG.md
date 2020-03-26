@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.2](https://github.com/matt-dunn/react-wireframes/compare/v1.1.1...v1.1.2)
+
+> 26 March 2020
+
+- Update deps + remove lodash [`a6f581e`](https://github.com/matt-dunn/react-wireframes/commit/a6f581e221b8b076a3fb0e7a7e1bfdeff41b2a3c)
+- Improve support for multiple instances [`531d207`](https://github.com/matt-dunn/react-wireframes/commit/531d2078acd994f7cb1834b68a3c69638da6d44e)
+- Improve semantics and styling [`93113f3`](https://github.com/matt-dunn/react-wireframes/commit/93113f3a238eb08275a730941f4f04659e25b2c7)
+
 #### [v1.1.1](https://github.com/matt-dunn/react-wireframes/compare/v1.1.0...v1.1.1)
 
 > 25 March 2020

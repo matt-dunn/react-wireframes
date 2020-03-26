@@ -1,6 +1,6 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "source": "src/WireFrames/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
