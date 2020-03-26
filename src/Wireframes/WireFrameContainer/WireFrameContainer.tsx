@@ -211,6 +211,7 @@ export const WireFrameContainer = ({
       if (el && annotationsContainer.current) {
         scrollIntoView(el, {
           behavior: "smooth",
+          block: "start",
           scrollMode: "if-needed",
           boundary: annotationsContainer.current,
         });
