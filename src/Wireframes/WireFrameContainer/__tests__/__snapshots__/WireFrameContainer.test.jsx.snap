@@ -609,15 +609,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                 </article>
               </article>
             </li>,
-            Object {
-              "Component": [MockFunction],
-              "count": 1,
-              "id": 1,
-              "options": Object {
-                "description": "Test description 1",
-                "title": "Test component 1",
-              },
-            },
           ],
         ],
         "results": Array [
@@ -1189,15 +1180,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                 </article>
               </article>
             </li>,
-            Object {
-              "Component": [MockFunction],
-              "count": 1,
-              "id": 1,
-              "options": Object {
-                "description": "Test description 1",
-                "title": "Test component 1",
-              },
-            },
           ],
           Array [
             .emotion-2 {
@@ -1277,15 +1259,6 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                 </article>
               </article>
             </li>,
-            Object {
-              "Component": [MockFunction],
-              "count": 1,
-              "id": 2,
-              "options": Object {
-                "description": "Test description 2",
-                "title": "Test component 2",
-              },
-            },
           ],
         ],
         "results": Array [

@@ -9,7 +9,8 @@ import React, {
 } from "react";
 import css from "@emotion/css";
 import styled from "@emotion/styled";
-import scrollIntoView from "scroll-into-view-if-needed";
+
+import { useScrollElementIntoView } from "../../useScrollElementIntoView";
 
 import { WireFrameComponent, WireFrameComponents } from "../api";
 import { WireFrameAnnotationsNotes } from "../WireFrameAnnotationNotes";
@@ -20,7 +21,7 @@ type WireFrameProviderProps = {
   children: ReactNode;
   className?: string;
   defaultOpen?: boolean;
-  onScrollIntoView?: (el: Element, wireFrameComponent: WireFrameComponent) => void;
+  onScrollIntoView?: (el: Element) => void;
 }
 
 const transitionDuration = 250;
@@ -203,26 +204,11 @@ export const WireFrameContainer = ({
     }
   }, [open]);
 
-  useEffect(() => {
-    if (highlightedNote && container.current) {
-      const el = container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`);
-
-      /* istanbul ignore else */
-      if (el && annotationsContainer.current) {
-        scrollIntoView(el, {
-          behavior: "smooth",
-          block: "start",
-          scrollMode: "if-needed",
-          boundary: annotationsContainer.current,
-        });
-
-        /* istanbul ignore else */
-        if (onScrollIntoView) {
-          onScrollIntoView(el, highlightedNote);
-        }
-      }
-    }
-  }, [highlightedNote, onScrollIntoView]);
+  useScrollElementIntoView({
+    element: ((highlightedNote && container.current) && container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`)) || null,
+    boundary: annotationsContainer.current,
+    onScrollIntoView,
+  });
 
   const handleToggle = useCallback(() => {
     setOpen(value => !value);
