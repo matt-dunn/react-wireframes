@@ -21,7 +21,7 @@ export const IdentifierContainer = styled.cite`
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;

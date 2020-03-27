@@ -498,7 +498,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -573,7 +573,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1143,7 +1143,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1218,7 +1218,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1298,7 +1298,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1872,7 +1872,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   white-space: nowrap;
   min-width: 2em;
   height: 2em;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
