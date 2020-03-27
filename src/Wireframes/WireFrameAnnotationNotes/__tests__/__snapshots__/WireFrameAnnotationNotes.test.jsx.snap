@@ -10,7 +10,7 @@ exports[`Wireframe: WireFrameAnnotationsNotes should render correctly 1`] = `
     key="1"
   >
     <WireFrameAnnotationsNote
-      component={
+      annotation={
         Object {
           "Component": [MockFunction],
           "count": 1,
@@ -36,7 +36,7 @@ exports[`Wireframe: WireFrameAnnotationsNotes should render correctly with highl
     key="1"
   >
     <WireFrameAnnotationsNote
-      component={
+      annotation={
         Object {
           "Component": [MockFunction],
           "count": 1,

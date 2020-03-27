@@ -7,13 +7,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { WireFrameComponent, WireFrameComponents } from "../api";
+import { WireFrameAnnotation, WireFrameAnnotations } from "../api";
 
 import { WireFrameAnnotationsNote } from "./WireFrameAnnotationNote";
 
 type WireFrameAnnotationsNotesProps = {
-  components: WireFrameComponents;
-  highlightedNote?: WireFrameComponent;
+  annotations: WireFrameAnnotations;
+  highlightedNote?: WireFrameAnnotation;
   className?: string;
 }
 
@@ -37,15 +37,15 @@ const WireFrameAnnotationsNotesContainer = styled.ul`
   }
 `;
 
-export const WireFrameAnnotationsNotes = ({ components, highlightedNote, className }: WireFrameAnnotationsNotesProps) => (
+export const WireFrameAnnotationsNotes = ({ annotations, highlightedNote, className }: WireFrameAnnotationsNotesProps) => (
   <WireFrameAnnotationsNotesContainer tabIndex={0} className={className}>
-    {components.map(component => (
+    {annotations.map(annotation => (
       <li
-        key={component.id}
-        data-annotation-id={component.id}
-        className={(highlightedNote === component && "highlight") || ""}
+        key={annotation.id}
+        data-annotation-id={annotation.id}
+        className={(highlightedNote === annotation && "highlight") || ""}
       >
-        <WireFrameAnnotationsNote component={component} />
+        <WireFrameAnnotationsNote annotation={annotation} />
       </li>
     ))}
   </WireFrameAnnotationsNotesContainer>

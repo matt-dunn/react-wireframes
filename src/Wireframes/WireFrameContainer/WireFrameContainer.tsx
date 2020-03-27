@@ -12,7 +12,7 @@ import styled from "@emotion/styled";
 
 import { useScrollElementIntoView } from "../../useScrollElementIntoView";
 
-import { WireFrameComponent, WireFrameComponents } from "../api";
+import { WireFrameAnnotation, WireFrameAnnotations } from "../api";
 import { WireFrameAnnotationsNotes } from "../WireFrameAnnotationNotes";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { useApi } from "../useApi";
@@ -63,7 +63,7 @@ const WireFrameAnnotationsContainer = styled.section`
   transition: width ${transition}, min-width ${transition};
 `;
 
-const WireFrameAnnotations = styled.div`
+const WireFrameAnnotationsWrapper = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   border-left: 2px solid #555;
@@ -169,14 +169,14 @@ export const WireFrameContainer = ({
   const annotationsContainer = useRef<HTMLDivElement>(null);
 
   const [isOpened, setIsOpened] = useState(false);
-  const [components, setComponents] = useState<WireFrameComponents>();
-  const [highlightedNote, setHighlightedNote] = useState<WireFrameComponent | undefined>(undefined);
+  const [annotations, setAnnotations] = useState<WireFrameAnnotations>();
+  const [highlightedNote, setHighlightedNote] = useState<WireFrameAnnotation | undefined>(undefined);
   const [open, setOpen] = useState(defaultOpen);
 
   useMemo(() => {
     api.setOptions({
-      updater: setComponents,
-      highlightNote: wireFrameComponent => open && setHighlightedNote(wireFrameComponent),
+      updater: setAnnotations,
+      highlightNote: wireFrameAnnotation => open && setHighlightedNote(wireFrameAnnotation),
     });
   }, [api, open]);
 
@@ -226,7 +226,7 @@ export const WireFrameContainer = ({
 
       {isClient && (
         <WireFrameAnnotationsContainer data-annotations-container>
-          <WireFrameAnnotations data-annotations>
+          <WireFrameAnnotationsWrapper data-annotations>
             <WireFrameAnnotationsToggle open={open} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireFrameAnnotationsToggle>
@@ -243,17 +243,17 @@ export const WireFrameContainer = ({
               </header>
             )}
 
-            {(isOpened && components) && (
+            {(isOpened && annotations) && (
               <WireFrameAnnotationsNotesContainer
                 ref={annotationsContainer}
               >
                 <WireFrameAnnotationsNotes
-                  components={components}
+                  annotations={annotations}
                   highlightedNote={highlightedNote}
                 />
               </WireFrameAnnotationsNotesContainer>
             )}
-          </WireFrameAnnotations>
+          </WireFrameAnnotationsWrapper>
         </WireFrameAnnotationsContainer>
       )}
     </WireFrameMainContainer>

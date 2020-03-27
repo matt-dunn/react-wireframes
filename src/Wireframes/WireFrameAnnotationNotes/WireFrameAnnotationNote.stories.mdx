@@ -2,7 +2,7 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
 import { WireFrameAnnotationsNote } from "./WireFrameAnnotationNote";
-import { componentLongDescription } from "./WireFrameAnnotationNotes.stories.fixtures";
+import { annotationLongDescription } from "./WireFrameAnnotationNotes.stories.fixtures";
 
 <Meta title="@matt-dunn/react-wireframes/WireFrameAnnotationsNote" component={WireFrameAnnotationsNote} decorators={[withKnobs]} />
 
@@ -17,8 +17,8 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 <Preview>
     <Story name="Annotation">
         <WireFrameAnnotationsNote
-            component={{
-                         id: 1,
+            annotation={{
+                         id: number("id", 1),
                          count: 1,
                          Component: () => {},
                          options: {
@@ -30,7 +30,7 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
     </Story>
     <Story name="Annotation with long description">
         <WireFrameAnnotationsNote
-            component={componentLongDescription}
+            annotation={annotationLongDescription}
         />
     </Story>
 </Preview>

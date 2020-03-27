@@ -170,7 +170,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -209,7 +209,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
             className="emotion-8 emotion-9"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
@@ -254,7 +254,7 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
                   </WireFrameAnnotationsClose>
                 </header>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -264,30 +264,30 @@ exports[`Wireframe: WireFrameContainer should default to open 1`] = `
 `;
 
 exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
-.emotion-22 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-22 [data-annotations-container] {
+.emotion-32 [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-22 [data-annotations-container] [data-annotations] {
+.emotion-32 [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-22.open [data-annotations-container] {
+.emotion-32.open [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-22.open [data-annotations-container] [data-annotations] {
+.emotion-32.open [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -300,7 +300,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   flex-grow: 1;
 }
 
-.emotion-20 {
+.emotion-30 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -314,7 +314,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
-.emotion-18 {
+.emotion-28 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -345,7 +345,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   z-index: 6000;
 }
 
-.emotion-18 header.annotations {
+.emotion-28 header.annotations {
   padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
@@ -362,7 +362,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   align-items: flex-start;
 }
 
-.emotion-18 header.annotations h1 {
+.emotion-28 header.annotations h1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -430,38 +430,38 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   color: inherit;
 }
 
-.emotion-16 {
+.emotion-26 {
   overflow: auto;
   z-index: 1;
   position: relative;
   background-color: inherit;
 }
 
-.emotion-14 {
+.emotion-24 {
   list-style: none;
   margin: 0;
   padding: 0;
   outline: none;
 }
 
-.emotion-14 li {
+.emotion-24 li {
   padding: 6px 0;
   border-bottom: 1px solid #ccc;
 }
 
-.emotion-14 li:last-child {
+.emotion-24 li:last-child {
   border-bottom: none;
 }
 
-.emotion-14 li.highlight {
+.emotion-24 li.highlight {
   background-color: rgba(64,134,247,0.25);
 }
 
-.emotion-8 {
+.emotion-13 {
   font-size: 0.85rem;
 }
 
-.emotion-8 > header {
+.emotion-13 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -474,17 +474,24 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   align-items: center;
 }
 
-.emotion-8 > header h2 {
+.emotion-13 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-8 > article {
+.emotion-13 > article {
   padding: 0 10px;
 }
 
-.emotion-6 {
+.emotion-9 {
+  margin-right: 0.5em;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.8em;
+}
+
+.emotion-7 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -515,7 +522,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -532,11 +539,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
       [MockFunction] {
         "calls": Array [
           Array [
-            .emotion-2 {
+            .emotion-3 {
   font-size: 0.85rem;
 }
 
-.emotion-2 > header {
+.emotion-3 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -549,17 +556,17 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
   align-items: center;
 }
 
-.emotion-2 > header h2 {
+.emotion-3 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-2 > article {
+.emotion-3 > article {
   padding: 0 10px;
 }
 
-.emotion-0 {
+.emotion-1 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -592,11 +599,12 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
               data-annotation-id="1"
             >
               <article
-                class="emotion-2 emotion-3"
+                class="emotion-3 emotion-4"
               >
                 <header>
                   <cite
-                    class="emotion-0 emotion-1"
+                    class="emotion-0 emotion-1 emotion-2"
+                    data-annotation-identifier="true"
                   >
                     1
                   </cite>
@@ -625,7 +633,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
       data-test="container"
     >
       <div
-        className="open emotion-22 emotion-23"
+        className="open emotion-32 emotion-33"
         data-test="container"
       >
         <WireFrameBody>
@@ -644,14 +652,14 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
           data-annotations-container={true}
         >
           <section
-            className="emotion-20 emotion-21"
+            className="emotion-30 emotion-31"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
-                className="emotion-18 emotion-19"
+                className="emotion-28 emotion-29"
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
@@ -693,10 +701,10 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                 </header>
                 <WireFrameAnnotationsNotesContainer>
                   <div
-                    className="emotion-16 emotion-17"
+                    className="emotion-26 emotion-27"
                   >
                     <WireFrameAnnotationsNotes
-                      components={
+                      annotations={
                         Array [
                           Object {
                             "Component": [MockFunction],
@@ -734,7 +742,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                         tabIndex={0}
                       >
                         <ul
-                          className="emotion-14 emotion-15"
+                          className="emotion-24 emotion-25"
                           tabIndex={0}
                         >
                           <li
@@ -743,7 +751,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                             key="1"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -757,15 +765,48 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 1,
+                                          "options": Object {
+                                            "description": "Test description 1",
+                                            "title": "Test component 1",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 1,
+                                            "options": Object {
+                                              "description": "Test description 1",
+                                              "title": "Test component 1",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        1
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            1
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -784,7 +825,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                             key="2"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -798,15 +839,48 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 2,
+                                          "options": Object {
+                                            "description": "Test description 2",
+                                            "title": "Test component 2",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 2,
+                                            "options": Object {
+                                              "description": "Test description 2",
+                                              "title": "Test component 2",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        2
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            2
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -825,7 +899,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
                   </div>
                 </WireFrameAnnotationsNotesContainer>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -835,30 +909,30 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 1`] = `
 `;
 
 exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
-.emotion-22 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-22 [data-annotations-container] {
+.emotion-32 [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-22 [data-annotations-container] [data-annotations] {
+.emotion-32 [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-22.open [data-annotations-container] {
+.emotion-32.open [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-22.open [data-annotations-container] [data-annotations] {
+.emotion-32.open [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -871,7 +945,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   flex-grow: 1;
 }
 
-.emotion-20 {
+.emotion-30 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -885,7 +959,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
-.emotion-18 {
+.emotion-28 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -916,7 +990,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   z-index: 6000;
 }
 
-.emotion-18 header.annotations {
+.emotion-28 header.annotations {
   padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
@@ -933,7 +1007,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   align-items: flex-start;
 }
 
-.emotion-18 header.annotations h1 {
+.emotion-28 header.annotations h1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1001,38 +1075,38 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   color: inherit;
 }
 
-.emotion-16 {
+.emotion-26 {
   overflow: auto;
   z-index: 1;
   position: relative;
   background-color: inherit;
 }
 
-.emotion-14 {
+.emotion-24 {
   list-style: none;
   margin: 0;
   padding: 0;
   outline: none;
 }
 
-.emotion-14 li {
+.emotion-24 li {
   padding: 6px 0;
   border-bottom: 1px solid #ccc;
 }
 
-.emotion-14 li:last-child {
+.emotion-24 li:last-child {
   border-bottom: none;
 }
 
-.emotion-14 li.highlight {
+.emotion-24 li.highlight {
   background-color: rgba(64,134,247,0.25);
 }
 
-.emotion-8 {
+.emotion-13 {
   font-size: 0.85rem;
 }
 
-.emotion-8 > header {
+.emotion-13 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1045,17 +1119,24 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   align-items: center;
 }
 
-.emotion-8 > header h2 {
+.emotion-13 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-8 > article {
+.emotion-13 > article {
   padding: 0 10px;
 }
 
-.emotion-6 {
+.emotion-9 {
+  margin-right: 0.5em;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.8em;
+}
+
+.emotion-7 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -1086,7 +1167,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -1103,11 +1184,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
       [MockFunction] {
         "calls": Array [
           Array [
-            .emotion-2 {
+            .emotion-3 {
   font-size: 0.85rem;
 }
 
-.emotion-2 > header {
+.emotion-3 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1120,17 +1201,17 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   align-items: center;
 }
 
-.emotion-2 > header h2 {
+.emotion-3 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-2 > article {
+.emotion-3 > article {
   padding: 0 10px;
 }
 
-.emotion-0 {
+.emotion-1 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -1163,11 +1244,12 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
               data-annotation-id="1"
             >
               <article
-                class="emotion-2 emotion-3"
+                class="emotion-3 emotion-4"
               >
                 <header>
                   <cite
-                    class="emotion-0 emotion-1"
+                    class="emotion-0 emotion-1 emotion-2"
+                    data-annotation-identifier="true"
                   >
                     1
                   </cite>
@@ -1182,11 +1264,11 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
             </li>,
           ],
           Array [
-            .emotion-2 {
+            .emotion-3 {
   font-size: 0.85rem;
 }
 
-.emotion-2 > header {
+.emotion-3 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1199,17 +1281,17 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
   align-items: center;
 }
 
-.emotion-2 > header h2 {
+.emotion-3 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-2 > article {
+.emotion-3 > article {
   padding: 0 10px;
 }
 
-.emotion-0 {
+.emotion-1 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -1242,11 +1324,12 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
               data-annotation-id="2"
             >
               <article
-                class="emotion-2 emotion-3"
+                class="emotion-3 emotion-4"
               >
                 <header>
                   <cite
-                    class="emotion-0 emotion-1"
+                    class="emotion-0 emotion-1 emotion-2"
+                    data-annotation-identifier="true"
                   >
                     2
                   </cite>
@@ -1279,7 +1362,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
       data-test="container"
     >
       <div
-        className="open emotion-22 emotion-23"
+        className="open emotion-32 emotion-33"
         data-test="container"
       >
         <WireFrameBody>
@@ -1298,14 +1381,14 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
           data-annotations-container={true}
         >
           <section
-            className="emotion-20 emotion-21"
+            className="emotion-30 emotion-31"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
-                className="emotion-18 emotion-19"
+                className="emotion-28 emotion-29"
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
@@ -1347,10 +1430,10 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                 </header>
                 <WireFrameAnnotationsNotesContainer>
                   <div
-                    className="emotion-16 emotion-17"
+                    className="emotion-26 emotion-27"
                   >
                     <WireFrameAnnotationsNotes
-                      components={
+                      annotations={
                         Array [
                           Object {
                             "Component": [MockFunction],
@@ -1388,7 +1471,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                         tabIndex={0}
                       >
                         <ul
-                          className="emotion-14 emotion-15"
+                          className="emotion-24 emotion-25"
                           tabIndex={0}
                         >
                           <li
@@ -1397,7 +1480,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                             key="1"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -1411,15 +1494,48 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 1,
+                                          "options": Object {
+                                            "description": "Test description 1",
+                                            "title": "Test component 1",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 1,
+                                            "options": Object {
+                                              "description": "Test description 1",
+                                              "title": "Test component 1",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        1
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            1
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1438,7 +1554,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                             key="2"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -1452,15 +1568,48 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 2,
+                                          "options": Object {
+                                            "description": "Test description 2",
+                                            "title": "Test component 2",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 2,
+                                            "options": Object {
+                                              "description": "Test description 2",
+                                              "title": "Test component 2",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        2
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            2
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -1479,7 +1628,7 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
                   </div>
                 </WireFrameAnnotationsNotesContainer>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -1489,30 +1638,30 @@ exports[`Wireframe: WireFrameContainer should highlight annotation 2`] = `
 `;
 
 exports[`Wireframe: WireFrameContainer should render children with annotation options and wireframe components when open 1`] = `
-.emotion-22 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-22 [data-annotations-container] {
+.emotion-32 [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-22 [data-annotations-container] [data-annotations] {
+.emotion-32 [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-22.open [data-annotations-container] {
+.emotion-32.open [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-22.open [data-annotations-container] [data-annotations] {
+.emotion-32.open [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -1525,7 +1674,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   flex-grow: 1;
 }
 
-.emotion-20 {
+.emotion-30 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -1539,7 +1688,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
-.emotion-18 {
+.emotion-28 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -1570,7 +1719,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   z-index: 6000;
 }
 
-.emotion-18 header.annotations {
+.emotion-28 header.annotations {
   padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
@@ -1587,7 +1736,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   align-items: flex-start;
 }
 
-.emotion-18 header.annotations h1 {
+.emotion-28 header.annotations h1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1655,38 +1804,38 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   color: inherit;
 }
 
-.emotion-16 {
+.emotion-26 {
   overflow: auto;
   z-index: 1;
   position: relative;
   background-color: inherit;
 }
 
-.emotion-14 {
+.emotion-24 {
   list-style: none;
   margin: 0;
   padding: 0;
   outline: none;
 }
 
-.emotion-14 li {
+.emotion-24 li {
   padding: 6px 0;
   border-bottom: 1px solid #ccc;
 }
 
-.emotion-14 li:last-child {
+.emotion-24 li:last-child {
   border-bottom: none;
 }
 
-.emotion-14 li.highlight {
+.emotion-24 li.highlight {
   background-color: rgba(64,134,247,0.25);
 }
 
-.emotion-8 {
+.emotion-13 {
   font-size: 0.85rem;
 }
 
-.emotion-8 > header {
+.emotion-13 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1699,17 +1848,24 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
   align-items: center;
 }
 
-.emotion-8 > header h2 {
+.emotion-13 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
 
-.emotion-8 > article {
+.emotion-13 > article {
   padding: 0 10px;
 }
 
-.emotion-6 {
+.emotion-9 {
+  margin-right: 0.5em;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.8em;
+}
+
+.emotion-7 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -1740,7 +1896,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -1760,7 +1916,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
       data-test="container"
     >
       <div
-        className="open emotion-22 emotion-23"
+        className="open emotion-32 emotion-33"
         data-test="container"
       >
         <WireFrameBody>
@@ -1779,14 +1935,14 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
           data-annotations-container={true}
         >
           <section
-            className="emotion-20 emotion-21"
+            className="emotion-30 emotion-31"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
-                className="emotion-18 emotion-19"
+                className="emotion-28 emotion-29"
                 data-annotations={true}
               >
                 <WireFrameAnnotationsToggle
@@ -1828,10 +1984,10 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                 </header>
                 <WireFrameAnnotationsNotesContainer>
                   <div
-                    className="emotion-16 emotion-17"
+                    className="emotion-26 emotion-27"
                   >
                     <WireFrameAnnotationsNotes
-                      components={
+                      annotations={
                         Array [
                           Object {
                             "Component": [MockFunction],
@@ -1858,7 +2014,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                         tabIndex={0}
                       >
                         <ul
-                          className="emotion-14 emotion-15"
+                          className="emotion-24 emotion-25"
                           tabIndex={0}
                         >
                           <li
@@ -1867,7 +2023,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                             key="1"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -1881,15 +2037,48 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 1,
+                                          "options": Object {
+                                            "description": "Test description 1",
+                                            "title": "Test component 1",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 1,
+                                            "options": Object {
+                                              "description": "Test description 1",
+                                              "title": "Test component 1",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        1
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            1
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1908,7 +2097,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                             key="2"
                           >
                             <WireFrameAnnotationsNote
-                              component={
+                              annotation={
                                 Object {
                                   "Component": [MockFunction],
                                   "count": 1,
@@ -1922,15 +2111,48 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                             >
                               <WireFrameAnnotationsNoteContainer>
                                 <article
-                                  className="emotion-8 emotion-9"
+                                  className="emotion-13 emotion-14"
                                 >
                                   <header>
-                                    <IdentifierNote>
-                                      <cite
-                                        className="emotion-6 emotion-7"
+                                    <IdentifierNote
+                                      annotation={
+                                        Object {
+                                          "Component": [MockFunction],
+                                          "count": 1,
+                                          "id": 2,
+                                          "options": Object {
+                                            "description": "Test description 2",
+                                            "title": "Test component 2",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Identifier
+                                        annotation={
+                                          Object {
+                                            "Component": [MockFunction],
+                                            "count": 1,
+                                            "id": 2,
+                                            "options": Object {
+                                              "description": "Test description 2",
+                                              "title": "Test component 2",
+                                            },
+                                          }
+                                        }
+                                        className="emotion-9 emotion-6"
                                       >
-                                        2
-                                      </cite>
+                                        <IdentifierContainer
+                                          className="emotion-9 emotion-6"
+                                          data-annotation-identifier={true}
+                                        >
+                                          <cite
+                                            className="emotion-6 emotion-7 emotion-8"
+                                            data-annotation-identifier={true}
+                                          >
+                                            2
+                                          </cite>
+                                        </IdentifierContainer>
+                                      </Identifier>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -1949,7 +2171,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                   </div>
                 </WireFrameAnnotationsNotesContainer>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -2117,7 +2339,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -2159,7 +2381,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
@@ -2185,7 +2407,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                   </button>
                 </WireFrameAnnotationsToggle>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -2353,7 +2575,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -2395,7 +2617,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
@@ -2421,7 +2643,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                   </button>
                 </WireFrameAnnotationsToggle>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -2589,7 +2811,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -2631,7 +2853,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
@@ -2657,7 +2879,7 @@ exports[`Wireframe: WireFrameContainer should render children with annotation op
                   </button>
                 </WireFrameAnnotationsToggle>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>
@@ -2825,7 +3047,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -2867,7 +3089,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
             className="emotion-6 emotion-7"
             data-annotations-container={true}
           >
-            <WireFrameAnnotations
+            <WireFrameAnnotationsWrapper
               data-annotations={true}
             >
               <div
@@ -2893,7 +3115,7 @@ exports[`Wireframe: WireFrameContainer should render children with no wireframe 
                   </button>
                 </WireFrameAnnotationsToggle>
               </div>
-            </WireFrameAnnotations>
+            </WireFrameAnnotationsWrapper>
           </section>
         </WireFrameAnnotationsContainer>
       </div>

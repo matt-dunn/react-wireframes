@@ -7,11 +7,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { IdentifierBase } from "../styles";
-import { WireFrameComponent } from "../api";
+import Identifier from "../components/Identifier";
+import { WireFrameAnnotation } from "../api";
 
 type WireFrameAnnotationsNoteProps = {
-    component: WireFrameComponent;
+  annotation: WireFrameAnnotation;
 }
 
 const WireFrameAnnotationsNoteContainer = styled.article`
@@ -35,25 +35,23 @@ const WireFrameAnnotationsNoteContainer = styled.article`
   }
 `;
 
-const IdentifierNote = styled(IdentifierBase)`
+const IdentifierNote = styled(Identifier)`
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
   font-size: 0.8em;
 `;
 
-export const WireFrameAnnotationsNote = ({ component }: WireFrameAnnotationsNoteProps) => (
+export const WireFrameAnnotationsNote = ({ annotation }: WireFrameAnnotationsNoteProps) => (
   <WireFrameAnnotationsNoteContainer>
     <header>
-      <IdentifierNote>
-        {component.id}
-      </IdentifierNote>
+      <IdentifierNote annotation={annotation} />
       <h2>
-        {component.options.title}
+        {annotation.options.title}
       </h2>
     </header>
     <article>
-      {component.options.description}
+      {annotation.options.description}
     </article>
   </WireFrameAnnotationsNoteContainer>
 );

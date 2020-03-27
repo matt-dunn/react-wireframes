@@ -1,29 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
-.emotion-2 {
+.emotion-7 {
   position: relative;
 }
 
-.emotion-2 [disabled] {
+.emotion-7 [disabled] {
   pointer-events: none;
 }
 
-.emotion-2:hover {
+.emotion-7:hover {
   z-index: 5000;
 }
 
-.emotion-2:hover > * {
+.emotion-7:hover > * {
   box-shadow: 0 0 0 1px #4086f7 !important;
 }
 
-.emotion-2:hover > [data-annotation-identifier] {
+.emotion-7:hover > [data-annotation-identifier] {
   -webkit-transition: opacity 0ms,visibility 0ms;
   transition: opacity 0ms,visibility 0ms;
   opacity: 1;
 }
 
-.emotion-0 {
+.emotion-3 {
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 4000;
+  cursor: default;
+  -webkit-transition: opacity 250ms,visibility 250ms;
+  transition: opacity 250ms,visibility 250ms;
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.enter {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-3.fade-Identifier.enter-active {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.exit {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.exit-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-1 {
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
@@ -56,22 +88,22 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
   visibility: visible;
 }
 
-.emotion-0.fade-Identifier.enter {
+.emotion-1.fade-Identifier.enter {
   opacity: 0;
   visibility: hidden;
 }
 
-.emotion-0.fade-Identifier.enter-active {
+.emotion-1.fade-Identifier.enter-active {
   opacity: 0.75;
   visibility: visible;
 }
 
-.emotion-0.fade-Identifier.exit {
+.emotion-1.fade-Identifier.exit {
   opacity: 0.75;
   visibility: visible;
 }
 
-.emotion-0.fade-Identifier.exit-active {
+.emotion-1.fade-Identifier.exit-active {
   opacity: 0;
   visibility: hidden;
 }
@@ -79,7 +111,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -90,7 +122,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
     }
   }
 >
-  <WireFrameAnnotation>
+  <WrappedWireFrameAnnotation>
     <Wrapper
       onFocus={[Function]}
       onMouseLeave={[Function]}
@@ -98,12 +130,12 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
       show={true}
     >
       <span
-        className="emotion-2 emotion-3"
+        className="emotion-7 emotion-8"
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <Identifier
+        <IdentifierComponent
           annotation={
             Object {
               "Component": Object {
@@ -151,19 +183,69 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
               unmountOnExit={true}
             >
               <IdentifierContainer
+                annotation={
+                  Object {
+                    "Component": Object {
+                      "$$typeof": Symbol(react.memo),
+                      "compare": null,
+                      "displayName": "withWireFrameAnnotation(Component)",
+                      "type": [Function],
+                    },
+                    "count": 1,
+                    "id": 1,
+                    "options": Object {
+                      "description": <div>
+                        Description.
+                      </div>,
+                      "title": <div>
+                        Title
+                      </div>,
+                    },
+                  }
+                }
                 className="fade-Identifier"
                 data-annotation-identifier={true}
               >
-                <cite
-                  className="fade-Identifier emotion-0 emotion-1"
+                <Identifier
+                  annotation={
+                    Object {
+                      "Component": Object {
+                        "$$typeof": Symbol(react.memo),
+                        "compare": null,
+                        "displayName": "withWireFrameAnnotation(Component)",
+                        "type": [Function],
+                      },
+                      "count": 1,
+                      "id": 1,
+                      "options": Object {
+                        "description": <div>
+                          Description.
+                        </div>,
+                        "title": <div>
+                          Title
+                        </div>,
+                      },
+                    }
+                  }
+                  className="fade-Identifier emotion-3 emotion-0"
                   data-annotation-identifier={true}
                 >
-                  1
-                </cite>
+                  <IdentifierContainer
+                    className="fade-Identifier emotion-3 emotion-0"
+                    data-annotation-identifier={true}
+                  >
+                    <cite
+                      className="fade-Identifier emotion-0 emotion-1 emotion-2"
+                      data-annotation-identifier={true}
+                    >
+                      1
+                    </cite>
+                  </IdentifierContainer>
+                </Identifier>
               </IdentifierContainer>
             </Transition>
           </CSSTransition>
-        </Identifier>
+        </IdentifierComponent>
         <withWireFrameAnnotation(Component)>
           <Component>
             <div>
@@ -173,7 +255,7 @@ exports[`Wireframe: withWireFrameAnnotation should highlight annotation 1`] = `
         </withWireFrameAnnotation(Component)>
       </span>
     </Wrapper>
-  </WireFrameAnnotation>
+  </WrappedWireFrameAnnotation>
 </WireFrameProvider>
 `;
 
@@ -195,7 +277,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -206,7 +288,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
     }
   }
 >
-  <WireFrameAnnotation>
+  <WrappedWireFrameAnnotation>
     <Wrapper
       onFocus={[Function]}
       onMouseLeave={[Function]}
@@ -219,7 +301,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <Identifier
+        <IdentifierComponent
           annotation={
             Object {
               "Component": Object {
@@ -267,7 +349,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
               unmountOnExit={true}
             />
           </CSSTransition>
-        </Identifier>
+        </IdentifierComponent>
         <withWireFrameAnnotation(Component)>
           <Component>
             <div>
@@ -277,7 +359,7 @@ exports[`Wireframe: withWireFrameAnnotation should render annotation identifier 
         </withWireFrameAnnotation(Component)>
       </span>
     </Wrapper>
-  </WireFrameAnnotation>
+  </WrappedWireFrameAnnotation>
 </WireFrameProvider>
 `;
 
@@ -299,7 +381,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
 <WireFrameProvider
   api={
     Object {
-      "getComponents": [Function],
+      "getAnnotations": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
@@ -310,7 +392,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
     }
   }
 >
-  <WireFrameAnnotation>
+  <WrappedWireFrameAnnotation>
     <Wrapper
       onFocus={[Function]}
       onMouseLeave={[Function]}
@@ -323,7 +405,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <Identifier
+        <IdentifierComponent
           annotation={
             Object {
               "Component": Object {
@@ -371,7 +453,7 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
               unmountOnExit={true}
             />
           </CSSTransition>
-        </Identifier>
+        </IdentifierComponent>
         <withWireFrameAnnotation(Component)>
           <Component>
             <div>
@@ -381,6 +463,6 @@ exports[`Wireframe: withWireFrameAnnotation should render without identifier whe
         </withWireFrameAnnotation(Component)>
       </span>
     </Wrapper>
-  </WireFrameAnnotation>
+  </WrappedWireFrameAnnotation>
 </WireFrameProvider>
 `;

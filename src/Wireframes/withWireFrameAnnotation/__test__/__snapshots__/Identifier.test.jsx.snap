@@ -10,9 +10,12 @@ exports[`Wireframe: Identifier should render correctly 1`] = `
   unmountOnExit={true}
 >
   <IdentifierContainer
+    annotation={
+      Object {
+        "id": "123",
+      }
+    }
     data-annotation-identifier={true}
-  >
-    123
-  </IdentifierContainer>
+  />
 </CSSTransition>
 `;

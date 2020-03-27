@@ -10,7 +10,7 @@ import React, {
 import styled from "@emotion/styled";
 import css from "@emotion/css";
 
-import { WireFrameComponent, WireFrameComponentOptions } from "../api";
+import { WireFrameAnnotation, WireFrameAnnotationOptions } from "../api";
 import { useApi } from "../useApi";
 
 import Identifier from "./Identifier";
@@ -46,16 +46,16 @@ const Wrapper = styled.span<{show: boolean}>`
 /* istanbul ignore next */
 const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (typeof WrappedComponent === "string" ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
 
-export function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions) {
+export function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameAnnotationOptions) {
   const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
   Component.displayName = `withWireFrameAnnotation(${getDisplayName(WrappedComponent)})`;
 
-  function WireFrameAnnotation({ className, ...props }: P & WireFrameAnnotationProps) {
+  function WrappedWireFrameAnnotation({ className, ...props }: P & WireFrameAnnotationProps) {
     const {
       register, unregister, onOpen, isOpen, highlightNote,
     } = useApi();
 
-    const [annotation, setAnnotation] = useState<WireFrameComponent>();
+    const [annotation, setAnnotation] = useState<WireFrameAnnotation>();
     const [show, setShow] = useState(isOpen());
 
     useEffect(() => {
@@ -92,12 +92,12 @@ export function withWireFrameAnnotation<P extends object>(WrappedComponent: Comp
     );
   }
 
-  WireFrameAnnotation.Component = Component;
+  WrappedWireFrameAnnotation.Component = Component;
 
-  return WireFrameAnnotation;
+  return WrappedWireFrameAnnotation;
 }
 
 /* istanbul ignore next */
 export const withWireFrameAnnotationInterfaceDefinition = <P extends object>(
-  { WrappedComponent, options }: {WrappedComponent: ComponentType<P>; options: WireFrameComponentOptions}, // eslint-disable-line @typescript-eslint/no-unused-vars
+  { WrappedComponent, options }: {WrappedComponent: ComponentType<P>; options: WireFrameAnnotationOptions}, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) => null;

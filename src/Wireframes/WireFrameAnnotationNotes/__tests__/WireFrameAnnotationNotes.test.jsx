@@ -11,12 +11,12 @@ import { WireFrameAnnotationsNotes as Component } from "../WireFrameAnnotationNo
 
 describe("Wireframe: WireFrameAnnotationsNotes", () => {
   let MockedComponent;
-  let components;
+  let annotations;
 
   beforeEach(() => {
     MockedComponent = jest.fn();
 
-    components = [
+    annotations = [
       {
         id: 1,
         count: 1,
@@ -34,7 +34,7 @@ describe("Wireframe: WireFrameAnnotationsNotes", () => {
 
     const wrapper = shallow(
       <Component
-        components={components}
+        annotations={annotations}
         highlightedNote={highlightedNote}
       />,
     );
@@ -43,11 +43,11 @@ describe("Wireframe: WireFrameAnnotationsNotes", () => {
   });
 
   it("should render correctly with highlight", () => {
-    const highlightedNote = components[0];
+    const highlightedNote = annotations[0];
 
     const wrapper = shallow(
       <Component
-        components={components}
+        annotations={annotations}
         highlightedNote={highlightedNote}
       />,
     );

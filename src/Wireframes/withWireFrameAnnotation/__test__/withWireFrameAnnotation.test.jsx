@@ -44,9 +44,9 @@ describe("Wireframe: withWireFrameAnnotation", () => {
   it("should render without identifier when closed", () => {
     const wrapper = mount(Fragment);
 
-    const component = api.getComponents()[0];
+    const annotation = api.getAnnotations()[0];
 
-    expect(component).toEqual({
+    expect(annotation).toEqual({
       id: 1,
       count: 1,
       Component: WrappedComponent.Component,
@@ -82,7 +82,7 @@ describe("Wireframe: withWireFrameAnnotation", () => {
 
     wrapper.simulate("mouseover");
 
-    expect(highlightNote).toHaveBeenCalledWith(api.getComponents()[0]);
+    expect(highlightNote).toHaveBeenCalledWith(api.getAnnotations()[0]);
 
     wrapper.update();
 
@@ -96,10 +96,10 @@ describe("Wireframe: withWireFrameAnnotation", () => {
   it("should unregister when unmounted", () => {
     const wrapper = mount(Fragment);
 
-    expect(api.getComponents().length).toEqual(1);
+    expect(api.getAnnotations().length).toEqual(1);
 
     wrapper.unmount();
-    expect(api.getComponents().length).toEqual(0);
+    expect(api.getAnnotations().length).toEqual(0);
   });
 
   it("should throw exception if api is not provided", () => {

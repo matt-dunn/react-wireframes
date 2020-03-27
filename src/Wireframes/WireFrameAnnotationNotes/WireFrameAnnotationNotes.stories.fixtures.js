@@ -31,7 +31,7 @@ export const multiple = [
   },
 ];
 
-export const componentSimple = {
+export const annotationSimple = {
   id: 1,
   count: 1,
   Component: () => {},
@@ -41,7 +41,7 @@ export const componentSimple = {
   },
 };
 
-export const componentLongDescription = {
+export const annotationLongDescription = {
   id: 1,
   count: 1,
   Component: () => {},

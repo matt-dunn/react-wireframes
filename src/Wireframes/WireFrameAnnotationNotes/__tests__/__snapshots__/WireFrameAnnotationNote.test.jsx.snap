@@ -3,9 +3,19 @@
 exports[`Wireframe: WireFrameAnnotationsNote should render correctly 1`] = `
 <WireFrameAnnotationsNoteContainer>
   <header>
-    <IdentifierNote>
-      1
-    </IdentifierNote>
+    <IdentifierNote
+      annotation={
+        Object {
+          "Component": [MockFunction],
+          "count": 1,
+          "id": 1,
+          "options": Object {
+            "description": "Test description",
+            "title": "Test component",
+          },
+        }
+      }
+    />
     <h2>
       Test component
     </h2>
