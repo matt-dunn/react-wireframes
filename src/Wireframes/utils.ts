@@ -1,6 +1,6 @@
 import { ComponentType, useEffect, useLayoutEffect } from "react";
 
-import { WireFrameComponent, WireFrameComponents } from ".";
+import { WireFrameComponent, WireFrameComponents } from "./api";
 
 export const getWireframeComponent = (
   components: WireFrameComponents,

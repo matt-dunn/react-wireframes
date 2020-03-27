@@ -5,7 +5,7 @@
  */
 
 /* istanbul ignore file */
-export * from "./withWireFrameAnnotation";
-export * from "./WireFrameContainer";
-export * from "./api";
+export { WireFrameAnnotationAPI, API } from "./api";
+export { withWireFrameAnnotation } from "./withWireFrameAnnotation";
+export { WireFrameContainer } from "./WireFrameContainer";
 export { WireFrameProvider } from "./context";
