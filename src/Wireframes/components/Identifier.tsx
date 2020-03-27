@@ -7,10 +7,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { WireFrameAnnotation } from "../api";
+import { WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
-  annotation: WireFrameAnnotation;
+  annotation: WireframeAnnotation;
   className?: string;
 }
 

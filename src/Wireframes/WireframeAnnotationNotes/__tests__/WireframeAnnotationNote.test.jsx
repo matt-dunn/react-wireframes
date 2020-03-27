@@ -7,12 +7,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { Identifier as Component } from "../Identifier";
-import { WireframeAnnotation } from "../../api";
+import { WireframeAnnotationsNote as Component } from "../WireframeAnnotationNote";
 
 describe("Wireframe: WireframeAnnotationsNote", () => {
   let MockedComponent;
-  let annotation: WireframeAnnotation;
+  let annotation;
 
   beforeEach(() => {
     MockedComponent = jest.fn();
@@ -36,18 +35,5 @@ describe("Wireframe: WireframeAnnotationsNote", () => {
     );
 
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should render ID as a locale string", () => {
-    const wrapper = shallow(
-      <Component
-        annotation={{
-          ...annotation,
-          id: 12345678,
-        }}
-      />,
-    );
-
-    expect(wrapper.text()).toBe((12345678).toLocaleString());
   });
 });

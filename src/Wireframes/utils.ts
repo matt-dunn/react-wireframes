@@ -1,21 +1,21 @@
 import { ComponentType, useEffect, useLayoutEffect } from "react";
 
-import { WireFrameAnnotation, WireFrameAnnotations } from "./api";
+import { WireframeAnnotation, WireframeAnnotations } from "./api";
 
 export const getWireframeAnnotation = (
-  annotations: WireFrameAnnotations,
+  annotations: WireframeAnnotations,
   Component: ComponentType<any> | undefined,
-): WireFrameAnnotation | undefined => Component && annotations.find(c => c.Component === Component);
+): WireframeAnnotation | undefined => Component && annotations.find(c => c.Component === Component);
 
 export const updateWireframeAnnotation = (
-  annotations: WireFrameAnnotations,
-  wireFrameAnnotation: WireFrameAnnotation,
-  updatedWireFrameAnnotation: WireFrameAnnotation,
+  annotations: WireframeAnnotations,
+  wireFrameAnnotation: WireframeAnnotation,
+  updatedWireframeAnnotation: WireframeAnnotation,
 ) => {
   const currentAnnotation = getWireframeAnnotation(annotations, wireFrameAnnotation.Component);
 
   if (currentAnnotation) {
-    return annotations.map(annotation => (annotation === wireFrameAnnotation ? updatedWireFrameAnnotation : annotation));
+    return annotations.map(annotation => (annotation === wireFrameAnnotation ? updatedWireframeAnnotation : annotation));
   }
 
   return annotations;

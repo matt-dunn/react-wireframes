@@ -2,13 +2,13 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import { useApi } from "../useApi";
-import { WireFrameProvider } from "../context";
-import { WireFrameAnnotationAPI } from "../api";
+import { WireframeProvider } from "../context";
+import { WireframeAnnotationAPI } from "../api";
 
-const mockApi = {} as WireFrameAnnotationAPI;
+const mockApi = {} as WireframeAnnotationAPI;
 
 type MockProps = {
-  getApi?: (api: WireFrameAnnotationAPI) => void;
+  getApi?: (api: WireframeAnnotationAPI) => void;
 }
 
 const Mock = ({ getApi }: MockProps) => {
@@ -26,11 +26,11 @@ describe("Wireframe: useApi", () => {
     const getApi = jest.fn();
 
     mount(
-      <WireFrameProvider
+      <WireframeProvider
         api={mockApi}
       >
         <Mock getApi={getApi} />
-      </WireFrameProvider>,
+      </WireframeProvider>,
     );
 
     expect(getApi).toBeCalledWith(mockApi);
