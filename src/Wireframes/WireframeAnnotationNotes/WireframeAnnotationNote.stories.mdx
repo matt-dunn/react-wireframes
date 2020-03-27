@@ -30,7 +30,15 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
     </Story>
     <Story name="Annotation with long description">
         <WireframeAnnotationsNote
-            annotation={annotationLongDescription}
+            annotation={{
+                         id: number("id", 1, { min: 1, step: 1, defaultValue: 10, value: 5 }),
+                         count: 1,
+                         Component: () => {},
+                         options: {
+                           title: text("Title", "Test component with long description"),
+                           description: text("Description", "Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta."),
+                         },
+                       }}
         />
     </Story>
 </Preview>
