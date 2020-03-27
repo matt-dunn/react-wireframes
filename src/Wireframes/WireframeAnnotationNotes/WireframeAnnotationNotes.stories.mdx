@@ -1,4 +1,6 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import {
+  Meta, Story, Props, Preview,
+} from "@storybook/addon-docs/blocks";
 
 import { WireframeAnnotationsNotes } from "./WireframeAnnotationNotes";
 
@@ -17,19 +19,18 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 <Preview>
     <Story name="Single Annotation">
         <WireframeAnnotationsNotes
-            annotations={single}
+          annotations={single}
         />
     </Story>
     <Story name="Multiple Annotation">
         <WireframeAnnotationsNotes
-            annotations={multiple}
+          annotations={multiple}
         />
     </Story>
     <Story name="Highlighted Annotation">
         <WireframeAnnotationsNotes
-            annotations={multiple}
-            highlightedNote={multiple[0]}
+          annotations={multiple}
+          highlightedNote={multiple[0]}
         />
     </Story>
 </Preview>
-
