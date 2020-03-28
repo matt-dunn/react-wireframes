@@ -5,9 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master, cu-test ]
+    branches:
+    - master,
+    - cu-test
   pull_request:
-    branches: [ master ]
+    branches:
+    - master
 
 jobs:
   build:
@@ -22,18 +25,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: GitHub Action for Yarn + Cypress
-      uses: KingScooty/actions-yarn-cy@1.0.0
     - uses: actions/checkout@v2.0.0
-    - run: yarn install
-    - run: yarn build:all
-    - run: yarn test:e2e
-    - name: sonar-scanner
-      uses: Warchant/setup-sonar-scanner@v1
-    - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v1.0.1
+    - name: Install and build
+    - run: yarn install | yarn ci
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.1
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        path-to-lcov: ./reports/coverage/lcov.info
-        github-token: ${{ secrets.github_token }}
-      env:
-        CI: true
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       publish_dir: ./dist
+    env:
+      CI: true
+
+  
