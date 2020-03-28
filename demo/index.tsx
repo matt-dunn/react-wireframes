@@ -27,6 +27,7 @@ const app = (
   <ErrorBoundary
     ErrorComponent={AppError}
   >
+    <h1>DEMO</h1>
     <WireframeProvider
       api={wireframeAPI}
     >
