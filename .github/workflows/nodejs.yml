@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - uses: actions/checkout@v2.0.0
     - name: Install and build
-    - run: yarn install | yarn ci
+      run: yarn install | yarn ci
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
     - name: Deploy
