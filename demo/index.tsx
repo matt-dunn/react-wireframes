@@ -9,7 +9,7 @@ import { API, WireframeContainer, WireframeProvider } from "src/Wireframes";
 
 import {
   Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
-} from "src/Wireframes/WireframeContainer/WireframeContainer.stories.fixtures";
+} from "src/Wireframes/WireframeContainer/__stories__/WireframeContainer.stories.fixtures";
 
 const wireframeAPI = API();
 
