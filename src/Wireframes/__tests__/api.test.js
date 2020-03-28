@@ -25,13 +25,13 @@ describe("Wireframe: API", () => {
   });
 
   describe("register", () => {
-    it("should register a component as a single wireframe component", () => {
-      const component = api.register(MockedComponent, {
+    it("should register a component as a single wireframe annotation", () => {
+      const annotation = api.register(MockedComponent, {
         title: "Test component",
         description: "Test description",
       });
 
-      expect(component).toEqual({
+      expect(annotation).toEqual({
         id: 1,
         count: 1,
         Component: MockedComponent,
@@ -41,9 +41,9 @@ describe("Wireframe: API", () => {
         },
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toEqual({
+      expect(api.getAnnotations()[0]).toEqual({
         id: 1,
         count: 1,
         Component: MockedComponent,
@@ -58,9 +58,9 @@ describe("Wireframe: API", () => {
         description: "Test description with different title",
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toEqual({
+      expect(api.getAnnotations()[0]).toEqual({
         id: 1,
         count: 2,
         Component: MockedComponent,
@@ -72,12 +72,12 @@ describe("Wireframe: API", () => {
     });
 
     it("should call updater when a component is registered", () => {
-      const component = api.register(MockedComponent, {
+      const annotation = api.register(MockedComponent, {
         title: "Test component",
         description: "Test description",
       });
 
-      expect(updater).toHaveBeenCalledWith([component]);
+      expect(updater).toHaveBeenCalledWith([annotation]);
 
       api.register(MockedComponent, {
         title: "Test component",
@@ -95,15 +95,15 @@ describe("Wireframe: API", () => {
         description: "Test description",
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toMatchObject({
+      expect(api.getAnnotations()[0]).toMatchObject({
         count: 1,
       });
 
       api.unregister(MockedComponent);
 
-      expect(api.getComponents().length).toEqual(0);
+      expect(api.getAnnotations().length).toEqual(0);
     });
 
     it("should maintain multiple instances", () => {
@@ -117,23 +117,23 @@ describe("Wireframe: API", () => {
         description: "Test description",
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toMatchObject({
+      expect(api.getAnnotations()[0]).toMatchObject({
         count: 2,
       });
 
       api.unregister(MockedComponent);
 
-      expect(api.getComponents()[0]).toMatchObject({
+      expect(api.getAnnotations()[0]).toMatchObject({
         count: 1,
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
       api.unregister(MockedComponent);
 
-      expect(api.getComponents().length).toEqual(0);
+      expect(api.getAnnotations().length).toEqual(0);
     });
 
     it("should not unregister an invalid component", () => {
@@ -142,47 +142,47 @@ describe("Wireframe: API", () => {
         description: "Test description",
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toMatchObject({
+      expect(api.getAnnotations()[0]).toMatchObject({
         count: 1,
       });
 
       api.unregister(() => {
       });
 
-      expect(api.getComponents().length).toEqual(1);
+      expect(api.getAnnotations().length).toEqual(1);
 
-      expect(api.getComponents()[0]).toMatchObject({
+      expect(api.getAnnotations()[0]).toMatchObject({
         count: 1,
       });
     });
 
     it("should call updater when a component is unregistered", () => {
-      const component = api.register(MockedComponent, {
+      const annotation = api.register(MockedComponent, {
         title: "Test component",
         description: "Test description",
       });
 
       api.unregister(MockedComponent);
 
-      expect(updater).toHaveBeenCalledWith([component]);
+      expect(updater).toHaveBeenCalledWith([annotation]);
     });
   });
 
   describe("highlightNote", () => {
-    it("should call highlight callback with correct wireframe component", () => {
-      const component = api.register(MockedComponent, {
+    it("should call highlight callback with correct wireframe annotation", () => {
+      const annotation = api.register(MockedComponent, {
         title: "Test component",
         description: "Test description",
       });
 
       api.highlightNote(MockedComponent);
 
-      expect(highlightNote).toHaveBeenCalledWith(component);
+      expect(highlightNote).toHaveBeenCalledWith(annotation);
     });
 
-    it("should not call highlight callback with unregistered component", () => {
+    it("should not call highlight callback with unregistered annotation", () => {
       api.register(MockedComponent, {
         title: "Test component",
         description: "Test description",

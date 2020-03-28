@@ -3,7 +3,7 @@ import { addDecorator } from '@storybook/react';
 import styled from "@emotion/styled";
 import { withA11y } from '@storybook/addon-a11y';
 
-import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -17,8 +17,8 @@ const AppError = ({ error }: {error: Error}) => (
   </>
 );
 
-const Main = styled.main`
-  margin: 2rem;
+const Main = styled.div`
+  padding: 20px;
 `;
 
 addDecorator(story => (

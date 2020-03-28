@@ -1,9 +1,9 @@
-import { getWireframeComponent, updateWireframeComponent } from "../utils";
+import { getWireframeAnnotation, updateWireframeAnnotation } from "../utils";
 
 const MockedComponent1 = jest.fn();
 const MockedComponent2 = jest.fn();
 
-const components = [
+const annotations = [
   {
     id: 1,
     count: 1,
@@ -25,47 +25,46 @@ const components = [
 ];
 
 describe("Wireframe: Utils", () => {
-  describe("getWireframeComponent", () => {
-    it("should return a found component", () => {
-      expect(getWireframeComponent(
-        components,
+  describe("getWireframeAnnotation", () => {
+    it("should return a found annotation", () => {
+      expect(getWireframeAnnotation(
+        annotations,
         MockedComponent1,
-      )).toEqual(components[0]);
+      )).toEqual(annotations[0]);
 
-      expect(getWireframeComponent(
-        components,
+      expect(getWireframeAnnotation(
+        annotations,
         MockedComponent2,
-      )).toEqual(components[1]);
+      )).toEqual(annotations[1]);
     });
 
-    it("should return undefined if component is not found", () => {
-      expect(getWireframeComponent(
-        components,
+    it("should return undefined if annotation is not found", () => {
+      expect(getWireframeAnnotation(
+        annotations,
         MockedComponent1,
-      )).toEqual(components[0]);
+      )).toEqual(annotations[0]);
 
-      expect(getWireframeComponent(
-        components,
+      expect(getWireframeAnnotation(
+        annotations,
         MockedComponent2,
-      )).toEqual(components[1]);
+      )).toEqual(annotations[1]);
     });
   });
 
-  describe("updateWireframeComponent", () => {
-    it("should update a component and return a new collection when found", () => {
-      const updatedComponents = updateWireframeComponent(
-        components,
-        // {},
-        components[0],
+  describe("updateWireframeAnnotation", () => {
+    it("should update an annotation and return a new collection when found", () => {
+      const updatedAnnotations = updateWireframeAnnotation(
+        annotations,
+        annotations[0],
         {
-          ...components[0],
+          ...annotations[0],
           count: 2,
         },
       );
 
-      expect(updatedComponents === components).not.toEqual(true);
+      expect(updatedAnnotations === annotations).not.toEqual(true);
 
-      expect(updatedComponents).toEqual([{
+      expect(updatedAnnotations).toEqual([{
         id: 1,
         count: 2,
         Component: MockedComponent1,
@@ -73,20 +72,20 @@ describe("Wireframe: Utils", () => {
           title: "Test component 1",
           description: "Test description 1",
         },
-      }, components[1]]);
+      }, annotations[1]]);
     });
   });
 
   it("should not update collection when not found", () => {
-    const updatedComponents = updateWireframeComponent(
-      components,
+    const updatedAnnotations = updateWireframeAnnotation(
+      annotations,
       {},
       {
-        ...components[0],
+        ...annotations[0],
         count: 2,
       },
     );
 
-    expect(updatedComponents === components).toEqual(true);
+    expect(updatedAnnotations === annotations).toEqual(true);
   });
 });

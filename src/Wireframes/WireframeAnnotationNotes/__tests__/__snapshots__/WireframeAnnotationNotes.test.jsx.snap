@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
+<WireframeAnnotationNotesContainer
+  tabIndex={0}
+>
+  <li
+    className=""
+    data-annotation-id={1}
+    key="1"
+  >
+    <WireframeAnnotationNote
+      annotation={
+        Object {
+          "Component": [MockFunction],
+          "count": 1,
+          "id": 1,
+          "options": Object {
+            "description": "Test description",
+            "title": "Test component",
+          },
+        }
+      }
+    />
+  </li>
+</WireframeAnnotationNotesContainer>
+`;
+
+exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highlight 1`] = `
+<WireframeAnnotationNotesContainer
+  tabIndex={0}
+>
+  <li
+    className="highlight"
+    data-annotation-id={1}
+    key="1"
+  >
+    <WireframeAnnotationNote
+      annotation={
+        Object {
+          "Component": [MockFunction],
+          "count": 1,
+          "id": 1,
+          "options": Object {
+            "description": "Test description",
+            "title": "Test component",
+          },
+        }
+      }
+    />
+  </li>
+</WireframeAnnotationNotesContainer>
+`;

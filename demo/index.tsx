@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { API, WireFrameContainer, WireFrameProvider } from "src/Wireframes";
+import { API, WireframeContainer, WireframeProvider } from "src/Wireframes";
 
 import {
   Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
-} from "src/Wireframes/WireFrameContainer/WireFrameContainer.stories.fixtures";
+} from "src/Wireframes/WireframeContainer/__stories__/WireframeContainer.stories.fixtures";
 
 const wireframeAPI = API();
 
@@ -27,10 +27,10 @@ const app = (
   <ErrorBoundary
     ErrorComponent={AppError}
   >
-    <WireFrameProvider
+    <WireframeProvider
       api={wireframeAPI}
     >
-      <WireFrameContainer
+      <WireframeContainer
         className="container"
       >
         <Main>
@@ -64,8 +64,8 @@ const app = (
             </div>
           </div>
         </Main>
-      </WireFrameContainer>
-    </WireFrameProvider>
+      </WireframeContainer>
+    </WireframeProvider>
   </ErrorBoundary>
 );
 

@@ -7,7 +7,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import Component from "../ErrorBoundary";
+import { ErrorBoundary as Component } from "../ErrorBoundary";
 
 const SimpleError = ({ error }: {error: Error}) => (
   <>

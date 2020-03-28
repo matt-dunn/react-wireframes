@@ -1,0 +1,39 @@
+import {
+  Meta, Story, Props, Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { WireframeProvider, withWireframeAnnotation } from "src/Wireframes";
+import { withWireframeAnnotationInterfaceDefinition } from "../withWireframeAnnotation";
+
+import { wireframeAPI, wireframeAPIOpen, WASample } from "./withWireframeAnnotations.stories.fixtures";
+
+<Meta title="@matt-dunn/react-wireframes/withWireframeAnnotation" component={withWireframeAnnotation} />
+
+# withWireframeAnnotation
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec leo facilisis ultricies. Fusce quis massa finibus neque volutpat commodo. Nunc blandit dolor in mi viverra, sit amet imperdiet lectus euismod. Mauris et urna vitae dolor accumsan vehicula quis ut urna. Aenean tincidunt enim in pellentesque fringilla. Duis sagittis sem ac quam egestas elementum. Nulla a velit a diam congue euismod.
+
+<Props of={withWireframeAnnotationInterfaceDefinition} />
+
+<Preview withSource={false}>
+    <Story name="Default">
+      <WireframeProvider api={wireframeAPI}>
+        <WASample>Header</WASample>
+      </WireframeProvider>
+    </Story>
+    <Story name="With annotation identifier">
+      <WireframeProvider api={wireframeAPIOpen}>
+        <WASample>Header</WASample>
+      </WireframeProvider>
+    </Story>
+</Preview>
+
+
+```js
+import { withWireframeAnnotation } from "@matt-dunn/react-wireframes";
+
+const AnnotatedComponent = withWireframeAnnotation(MyComponent, {
+  title: "String title | Component",
+  description: "String description | Component",
+});
+```

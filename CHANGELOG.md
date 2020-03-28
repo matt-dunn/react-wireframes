@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.3](https://github.com/matt-dunn/react-wireframes/compare/v1.1.2...v1.1.3)
+
+> 26 March 2020
+
+- Fix types location [`d9a45c3`](https://github.com/matt-dunn/react-wireframes/commit/d9a45c3fe034ad0841700db76f1c890ebc9c4459)
+
+#### [v1.1.2](https://github.com/matt-dunn/react-wireframes/compare/v1.1.1...v1.1.2)
+
+> 26 March 2020
+
+- Update deps + remove lodash [`a6f581e`](https://github.com/matt-dunn/react-wireframes/commit/a6f581e221b8b076a3fb0e7a7e1bfdeff41b2a3c)
+- Improve support for multiple instances [`531d207`](https://github.com/matt-dunn/react-wireframes/commit/531d2078acd994f7cb1834b68a3c69638da6d44e)
+- Improve semantics and styling [`93113f3`](https://github.com/matt-dunn/react-wireframes/commit/93113f3a238eb08275a730941f4f04659e25b2c7)
+
+#### [v1.1.1](https://github.com/matt-dunn/react-wireframes/compare/v1.1.0...v1.1.1)
+
+> 25 March 2020
+
+- Initial selenium setup connected to browserstack [`#7`](https://github.com/matt-dunn/react-wireframes/pull/7)
+- #5 Increase coverage [`#6`](https://github.com/matt-dunn/react-wireframes/pull/6)
+- Feature/storybook [`#4`](https://github.com/matt-dunn/react-wireframes/pull/4)
+- #1 Refactor WireFrameAnnotationsNotes and create WireFrameAnnotationsNote component with stories and tests [`a3a4eb1`](https://github.com/matt-dunn/react-wireframes/commit/a3a4eb170e541b2ab0f0cf7f445299a6d9f49603)
+
 #### [v1.1.0](https://github.com/matt-dunn/react-wireframes/compare/v1.0.28...v1.1.0)
 
 > 20 March 2020
