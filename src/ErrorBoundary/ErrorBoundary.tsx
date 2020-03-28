@@ -12,7 +12,7 @@ type ErrorBoundaryState = {
   error?: Error;
 }
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
 
@@ -34,5 +34,3 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     return (error && <ErrorComponent error={error} />) || children;
   }
 }
-
-export default ErrorBoundary;

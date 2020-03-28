@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import ErrorBoundary from "src/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

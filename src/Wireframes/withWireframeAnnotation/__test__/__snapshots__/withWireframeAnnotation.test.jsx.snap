@@ -135,7 +135,7 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <IdentifierComponent
+        <Identifier
           annotation={
             Object {
               "Component": Object {
@@ -245,7 +245,7 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
               </IdentifierContainer>
             </Transition>
           </CSSTransition>
-        </IdentifierComponent>
+        </Identifier>
         <withWireframeAnnotation(Component)>
           <Component>
             <div>
@@ -301,7 +301,7 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <IdentifierComponent
+        <Identifier
           annotation={
             Object {
               "Component": Object {
@@ -349,7 +349,7 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
               unmountOnExit={true}
             />
           </CSSTransition>
-        </IdentifierComponent>
+        </Identifier>
         <withWireframeAnnotation(Component)>
           <Component>
             <div>
@@ -405,7 +405,7 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
       >
-        <IdentifierComponent
+        <Identifier
           annotation={
             Object {
               "Component": Object {
@@ -453,7 +453,7 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
               unmountOnExit={true}
             />
           </CSSTransition>
-        </IdentifierComponent>
+        </Identifier>
         <withWireframeAnnotation(Component)>
           <Component>
             <div>

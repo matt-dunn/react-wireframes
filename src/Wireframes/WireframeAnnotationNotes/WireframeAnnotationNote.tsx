@@ -7,7 +7,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Identifier from "../components/Identifier";
+import { Identifier } from "../components/Identifier";
 import { WireframeAnnotation } from "../api";
 
 type WireframeAnnotationsNoteProps = {
@@ -42,7 +42,7 @@ const IdentifierNote = styled(Identifier)`
   font-size: 0.8em;
 `;
 
-export const WireframeAnnotationsNote = ({ annotation }: WireframeAnnotationsNoteProps) => (
+export const WireframeAnnotationNote = ({ annotation }: WireframeAnnotationsNoteProps) => (
   <WireframeAnnotationsNoteContainer>
     <header>
       <IdentifierNote annotation={annotation} />

@@ -7,7 +7,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { IdentifierComponent as Component } from "../Identifier";
+import { Identifier as Component } from "../Identifier";
 
 describe("Wireframe: Identifier", () => {
   it("should render correctly", () => {

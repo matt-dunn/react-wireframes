@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
-<WireframeAnnotationsNotesContainer
+<WireframeAnnotationNotesContainer
   tabIndex={0}
 >
   <li
@@ -9,7 +9,7 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
     data-annotation-id={1}
     key="1"
   >
-    <WireframeAnnotationsNote
+    <WireframeAnnotationNote
       annotation={
         Object {
           "Component": [MockFunction],
@@ -23,11 +23,11 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
       }
     />
   </li>
-</WireframeAnnotationsNotesContainer>
+</WireframeAnnotationNotesContainer>
 `;
 
 exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highlight 1`] = `
-<WireframeAnnotationsNotesContainer
+<WireframeAnnotationNotesContainer
   tabIndex={0}
 >
   <li
@@ -35,7 +35,7 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highl
     data-annotation-id={1}
     key="1"
   >
-    <WireframeAnnotationsNote
+    <WireframeAnnotationNote
       annotation={
         Object {
           "Component": [MockFunction],
@@ -49,5 +49,5 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highl
       }
     />
   </li>
-</WireframeAnnotationsNotesContainer>
+</WireframeAnnotationNotesContainer>
 `;

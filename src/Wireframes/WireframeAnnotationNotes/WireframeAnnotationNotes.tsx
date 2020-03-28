@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 
 import { WireframeAnnotation, WireframeAnnotations } from "../api";
 
-import { WireframeAnnotationsNote } from "./WireframeAnnotationNote";
+import { WireframeAnnotationNote } from "./WireframeAnnotationNote";
 
 type WireframeAnnotationsNotesProps = {
   annotations: WireframeAnnotations;
@@ -17,7 +17,7 @@ type WireframeAnnotationsNotesProps = {
   className?: string;
 }
 
-const WireframeAnnotationsNotesContainer = styled.ul`
+const WireframeAnnotationNotesContainer = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,16 +37,16 @@ const WireframeAnnotationsNotesContainer = styled.ul`
   }
 `;
 
-export const WireframeAnnotationsNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => (
-  <WireframeAnnotationsNotesContainer tabIndex={0} className={className}>
+export const WireframeAnnotationNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => (
+  <WireframeAnnotationNotesContainer tabIndex={0} className={className}>
     {annotations.map(annotation => (
       <li
         key={annotation.id}
         data-annotation-id={annotation.id}
         className={(highlightedNote === annotation && "highlight") || ""}
       >
-        <WireframeAnnotationsNote annotation={annotation} />
+        <WireframeAnnotationNote annotation={annotation} />
       </li>
     ))}
-  </WireframeAnnotationsNotesContainer>
+  </WireframeAnnotationNotesContainer>
 );

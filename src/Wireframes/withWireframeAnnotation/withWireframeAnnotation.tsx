@@ -13,7 +13,7 @@ import css from "@emotion/css";
 import { WireframeAnnotation, WireframeAnnotationOptions } from "../api";
 import { useApi } from "../useApi";
 
-import Identifier from "./Identifier";
+import { Identifier } from "./Identifier";
 
 type WireframeAnnotationProps = {
   className?: string;
@@ -50,6 +50,7 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
   const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
   Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
 
+  // eslint-disable-next-line react/no-multi-comp
   function WrappedWireframeAnnotation({ className, ...props }: P & WireframeAnnotationProps) {
     const {
       register, unregister, onOpen, isOpen, highlightNote,

@@ -8,7 +8,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { CSSTransition } from "react-transition-group";
 
-import Identifier from "../components/Identifier";
+import { Identifier as IdentifierBase } from "../components/Identifier";
 import { WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
@@ -16,7 +16,7 @@ type IdentifierProps = {
   show: boolean;
 }
 
-const IdentifierContainer = styled(Identifier)`
+const IdentifierContainer = styled(IdentifierBase)`
   position: absolute;
   top: -1em;
   left: -1em;
@@ -44,7 +44,7 @@ const IdentifierContainer = styled(Identifier)`
   }
 `;
 
-export const IdentifierComponent = ({ annotation, show = true }: IdentifierProps) => (
+export const Identifier = ({ annotation, show = true }: IdentifierProps) => (
   <CSSTransition
     timeout={250}
     className="fade-Identifier"
@@ -55,5 +55,3 @@ export const IdentifierComponent = ({ annotation, show = true }: IdentifierProps
     <IdentifierContainer data-annotation-identifier annotation={annotation} />
   </CSSTransition>
 );
-
-export default IdentifierComponent;

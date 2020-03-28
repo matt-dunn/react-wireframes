@@ -1,7 +1,8 @@
 module.exports =  {
     plugins: [
         "react-hooks",
-        "emotion"
+        "emotion",
+        "filenames",
     ],
     env: {
         es6: true,
@@ -49,6 +50,18 @@ module.exports =  {
                 "@typescript-eslint/no-explicit-any": "off",
                 "@typescript-eslint/no-empty-function": "off"
             },
+        },
+        {
+            files: ["*.jsx", "*.tsx", "*.mdx"],
+            extends: [
+              "plugin:import/errors",
+              "plugin:import/warnings",
+              "plugin:import/typescript",
+            ],
+            rules: {
+                "filenames/match-exported": [ 2, "pascal" ],
+                "import/no-default-export": 2,
+            }
         }
     ],
     settings: {
@@ -85,6 +98,8 @@ module.exports =  {
             "jsx": "never",
             "ts": "never",
             "tsx": "never",
-        }]
+        }],
+        "react/no-multi-comp": ["error", { "ignoreStateless": false }],
+        "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
     }
 };

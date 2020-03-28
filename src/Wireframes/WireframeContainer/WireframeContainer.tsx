@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import { useScrollElementIntoView } from "../../useScrollElementIntoView";
 
 import { WireframeAnnotation, WireframeAnnotations } from "../api";
-import { WireframeAnnotationsNotes } from "../WireframeAnnotationNotes";
+import { WireframeAnnotationNotes } from "../WireframeAnnotationNotes";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { useApi } from "../useApi";
 
@@ -143,7 +143,7 @@ export const WireframeAnnotationsClose = styled.button`
   color: inherit;
 `;
 
-const WireframeAnnotationsNotesContainer = styled.div`
+const WireframeAnnotationNotesContainer = styled.div`
   overflow: auto;
   z-index: 1;
   position: relative;
@@ -244,14 +244,14 @@ export const WireframeContainer = ({
             )}
 
             {(isOpened && annotations) && (
-              <WireframeAnnotationsNotesContainer
+              <WireframeAnnotationNotesContainer
                 ref={annotationsContainer}
               >
-                <WireframeAnnotationsNotes
+                <WireframeAnnotationNotes
                   annotations={annotations}
                   highlightedNote={highlightedNote}
                 />
-              </WireframeAnnotationsNotesContainer>
+              </WireframeAnnotationNotesContainer>
             )}
           </WireframeAnnotationsWrapper>
         </WireframeAnnotationsContainer>

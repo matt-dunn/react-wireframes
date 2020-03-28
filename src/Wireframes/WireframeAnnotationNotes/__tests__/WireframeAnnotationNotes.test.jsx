@@ -7,7 +7,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { WireframeAnnotationsNotes as Component } from "../WireframeAnnotationNotes";
+import { WireframeAnnotationNotes as Component } from "../WireframeAnnotationNotes";
 
 describe("Wireframe: WireframeAnnotationsNotes", () => {
   let MockedComponent;

@@ -32,5 +32,3 @@ export const IdentifierContainer = styled.cite`
 export const Identifier = ({ annotation, className }: IdentifierProps) => (
   <IdentifierContainer data-annotation-identifier className={className}>{annotation.id.toLocaleString()}</IdentifierContainer>
 );
-
-export default Identifier;

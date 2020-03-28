@@ -699,11 +699,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                     </button>
                   </WireframeAnnotationsClose>
                 </header>
-                <WireframeAnnotationsNotesContainer>
+                <WireframeAnnotationNotesContainer>
                   <div
                     className="emotion-26 emotion-27"
                   >
-                    <WireframeAnnotationsNotes
+                    <WireframeAnnotationNotes
                       annotations={
                         Array [
                           Object {
@@ -738,7 +738,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                         }
                       }
                     >
-                      <WireframeAnnotationsNotesContainer
+                      <WireframeAnnotationNotesContainer
                         tabIndex={0}
                       >
                         <ul
@@ -750,7 +750,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                             data-annotation-id={1}
                             key="1"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -817,14 +817,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                           <li
                             className=""
                             data-annotation-id={2}
                             key="2"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -891,13 +891,13 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                         </ul>
-                      </WireframeAnnotationsNotesContainer>
-                    </WireframeAnnotationsNotes>
+                      </WireframeAnnotationNotesContainer>
+                    </WireframeAnnotationNotes>
                   </div>
-                </WireframeAnnotationsNotesContainer>
+                </WireframeAnnotationNotesContainer>
               </div>
             </WireframeAnnotationsWrapper>
           </section>
@@ -1428,11 +1428,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                     </button>
                   </WireframeAnnotationsClose>
                 </header>
-                <WireframeAnnotationsNotesContainer>
+                <WireframeAnnotationNotesContainer>
                   <div
                     className="emotion-26 emotion-27"
                   >
-                    <WireframeAnnotationsNotes
+                    <WireframeAnnotationNotes
                       annotations={
                         Array [
                           Object {
@@ -1467,7 +1467,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                         }
                       }
                     >
-                      <WireframeAnnotationsNotesContainer
+                      <WireframeAnnotationNotesContainer
                         tabIndex={0}
                       >
                         <ul
@@ -1479,7 +1479,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                             data-annotation-id={1}
                             key="1"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -1546,14 +1546,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                           <li
                             className="highlight"
                             data-annotation-id={2}
                             key="2"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -1620,13 +1620,13 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                         </ul>
-                      </WireframeAnnotationsNotesContainer>
-                    </WireframeAnnotationsNotes>
+                      </WireframeAnnotationNotesContainer>
+                    </WireframeAnnotationNotes>
                   </div>
-                </WireframeAnnotationsNotesContainer>
+                </WireframeAnnotationNotesContainer>
               </div>
             </WireframeAnnotationsWrapper>
           </section>
@@ -1982,11 +1982,11 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                     </button>
                   </WireframeAnnotationsClose>
                 </header>
-                <WireframeAnnotationsNotesContainer>
+                <WireframeAnnotationNotesContainer>
                   <div
                     className="emotion-26 emotion-27"
                   >
-                    <WireframeAnnotationsNotes
+                    <WireframeAnnotationNotes
                       annotations={
                         Array [
                           Object {
@@ -2010,7 +2010,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                         ]
                       }
                     >
-                      <WireframeAnnotationsNotesContainer
+                      <WireframeAnnotationNotesContainer
                         tabIndex={0}
                       >
                         <ul
@@ -2022,7 +2022,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                             data-annotation-id={1}
                             key="1"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -2089,14 +2089,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                           <li
                             className=""
                             data-annotation-id={2}
                             key="2"
                           >
-                            <WireframeAnnotationsNote
+                            <WireframeAnnotationNote
                               annotation={
                                 Object {
                                   "Component": [MockFunction],
@@ -2163,13 +2163,13 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                   </article>
                                 </article>
                               </WireframeAnnotationsNoteContainer>
-                            </WireframeAnnotationsNote>
+                            </WireframeAnnotationNote>
                           </li>
                         </ul>
-                      </WireframeAnnotationsNotesContainer>
-                    </WireframeAnnotationsNotes>
+                      </WireframeAnnotationNotesContainer>
+                    </WireframeAnnotationNotes>
                   </div>
-                </WireframeAnnotationsNotesContainer>
+                </WireframeAnnotationNotesContainer>
               </div>
             </WireframeAnnotationsWrapper>
           </section>
