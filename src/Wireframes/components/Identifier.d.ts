@@ -38,4 +38,4 @@ export declare const Identifier: {
         };
     };
 };
-export default Identifier;
+export {};

@@ -8,7 +8,7 @@ declare type ErrorBoundaryProps = {
 declare type ErrorBoundaryState = {
     error?: Error;
 };
-declare class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export declare class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoundaryProps);
     static getDerivedStateFromError(error: Error): {
         error: Error;
@@ -16,4 +16,4 @@ declare class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryS
     componentDidCatch(error: Error, errorInfo: any): void;
     render(): {} | null | undefined;
 }
-export default ErrorBoundary;
+export {};

@@ -10,7 +10,7 @@ declare type WireframeAnnotationsNotesProps = {
     highlightedNote?: WireframeAnnotation;
     className?: string;
 };
-export declare const WireframeAnnotationsNotes: {
+export declare const WireframeAnnotationNotes: {
     ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps): JSX.Element;
     displayName: string;
     __docgenInfo: {

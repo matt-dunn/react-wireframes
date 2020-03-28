@@ -8,7 +8,7 @@ import { WireframeAnnotation } from "../api";
 declare type WireframeAnnotationsNoteProps = {
     annotation: WireframeAnnotation;
 };
-export declare const WireframeAnnotationsNote: {
+export declare const WireframeAnnotationNote: {
     ({ annotation }: WireframeAnnotationsNoteProps): JSX.Element;
     displayName: string;
     __docgenInfo: {

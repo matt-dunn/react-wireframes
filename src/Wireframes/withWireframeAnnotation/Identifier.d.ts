@@ -9,7 +9,7 @@ declare type IdentifierProps = {
     annotation: WireframeAnnotation;
     show: boolean;
 };
-export declare const IdentifierComponent: {
+export declare const Identifier: {
     ({ annotation, show }: IdentifierProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
@@ -39,4 +39,4 @@ export declare const IdentifierComponent: {
         };
     };
 };
-export default IdentifierComponent;
+export {};
