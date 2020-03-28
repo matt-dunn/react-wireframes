@@ -113,7 +113,7 @@
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
     "serve:prod": "http-server ./dist/ --port 8080 --silent",
-    "ci": "yarn build:all && yarn coverage:report && yarn test:e2e",
+    "ci": "yarn build:all && yarn test:e2e",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "prerelease": "yarn package:build",
     "release": "release-it"
