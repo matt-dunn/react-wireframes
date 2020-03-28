@@ -4,12 +4,12 @@
  * @author Matt Dunn
  */
 /// <reference types="react" />
-import { WireFrameComponent } from "../api";
+import { WireframeAnnotation } from "../api";
 declare type IdentifierProps = {
-    annotation: WireFrameComponent;
+    annotation: WireframeAnnotation;
     show: boolean;
 };
-export declare const Identifier: {
+export declare const IdentifierComponent: {
     ({ annotation, show }: IdentifierProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
@@ -39,4 +39,4 @@ export declare const Identifier: {
         };
     };
 };
-export default Identifier;
+export default IdentifierComponent;

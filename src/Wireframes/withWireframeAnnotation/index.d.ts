@@ -3,4 +3,4 @@
  *
  * @author Matt Dunn
  */
-export * from "./withWireFrameAnnotation";
+export * from "./withWireframeAnnotation";

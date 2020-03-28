@@ -4,14 +4,14 @@
  * @author Matt Dunn
  */
 import React, { ReactNode } from "react";
-import { WireFrameAnnotationAPI } from "./api";
-export declare const WireFrameAnnotationContext: React.Context<WireFrameAnnotationAPI | undefined>;
-declare type WireFrameProviderProps = {
+import { WireframeAnnotationAPI } from "./api";
+export declare const WireframeAnnotationContext: React.Context<WireframeAnnotationAPI | undefined>;
+declare type WireframeProviderProps = {
     children: ReactNode;
-    api: WireFrameAnnotationAPI;
+    api: WireframeAnnotationAPI;
 };
-export declare const WireFrameProvider: {
-    ({ children, api }: WireFrameProviderProps): JSX.Element;
+export declare const WireframeProvider: {
+    ({ children, api }: WireframeProviderProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
         description: string;

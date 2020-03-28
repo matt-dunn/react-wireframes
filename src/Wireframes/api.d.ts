@@ -5,25 +5,25 @@
  */
 import { ComponentType, ReactNode } from "react";
 declare type APIOptions = {
-    updater: (components: WireFrameComponents) => void;
-    highlightNote?: (component?: WireFrameComponent) => void;
+    updater: (annotations: WireframeAnnotations) => void;
+    highlightNote?: (annotation?: WireframeAnnotation) => void;
 };
-export declare type WireFrameComponentOptions = {
+export declare type WireframeAnnotationOptions = {
     title: ReactNode;
     description: ReactNode;
 };
-export declare type WireFrameComponent = {
+export declare type WireframeAnnotation = {
     id: number;
     Component: ComponentType<any>;
     count: number;
-    options: WireFrameComponentOptions;
+    options: WireframeAnnotationOptions;
 };
-export declare type WireFrameComponents = WireFrameComponent[];
+export declare type WireframeAnnotations = WireframeAnnotation[];
 declare type OpenCallback = (isOpen: boolean) => void;
-export declare type WireFrameAnnotationAPI = {
+export declare type WireframeAnnotationAPI = {
     setOptions: (options: APIOptions) => APIOptions;
-    getComponents: () => WireFrameComponents;
-    register: (Component: ComponentType<any>, options: WireFrameComponentOptions) => WireFrameComponent;
+    getAnnotations: () => WireframeAnnotations;
+    register: (Component: ComponentType<any>, options: WireframeAnnotationOptions) => WireframeAnnotation;
     unregister: (Component: ComponentType<any>) => void;
     highlightNote: (Component: ComponentType<any> | undefined) => void;
     setOpen: (isOpen: boolean) => boolean;
@@ -32,7 +32,7 @@ export declare type WireFrameAnnotationAPI = {
     };
     isOpen: () => boolean;
 };
-export declare function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI;
+export declare function API(defaultOptions?: APIOptions): WireframeAnnotationAPI;
 export declare namespace API {
     var displayName: string;
     var __docgenInfo: {

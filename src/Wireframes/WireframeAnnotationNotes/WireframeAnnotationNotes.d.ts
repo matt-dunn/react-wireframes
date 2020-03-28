@@ -4,20 +4,20 @@
  * @author Matt Dunn
  */
 /// <reference types="react" />
-import { WireFrameComponent, WireFrameComponents } from "../api";
-declare type WireFrameAnnotationsNotesProps = {
-    components: WireFrameComponents;
-    highlightedNote?: WireFrameComponent;
+import { WireframeAnnotation, WireframeAnnotations } from "../api";
+declare type WireframeAnnotationsNotesProps = {
+    annotations: WireframeAnnotations;
+    highlightedNote?: WireframeAnnotation;
     className?: string;
 };
-export declare const WireFrameAnnotationsNotes: {
-    ({ components, highlightedNote, className }: WireFrameAnnotationsNotesProps): JSX.Element;
+export declare const WireframeAnnotationsNotes: {
+    ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
         description: string;
         displayName: string;
         props: {
-            components: {
+            annotations: {
                 defaultValue: null;
                 description: string;
                 name: string;

@@ -3,4 +3,4 @@
  *
  * @author Matt Dunn
  */
-export declare const useApi: () => import("./api").WireFrameAnnotationAPI;
+export declare const useApi: () => import("./api").WireframeAnnotationAPI;

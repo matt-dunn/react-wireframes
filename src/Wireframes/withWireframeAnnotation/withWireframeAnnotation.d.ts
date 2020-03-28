@@ -4,19 +4,19 @@
  * @author Matt Dunn
  */
 import React, { ComponentType, ReactNode } from "react";
-import { WireFrameComponentOptions } from "../api";
-declare type WireFrameAnnotationProps = {
+import { WireframeAnnotationOptions } from "../api";
+declare type WireframeAnnotationProps = {
     className?: string;
     children?: ReactNode;
 };
-export declare function withWireFrameAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireFrameComponentOptions): {
-    ({ className, ...props }: P & WireFrameAnnotationProps): JSX.Element;
+export declare function withWireframeAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireframeAnnotationOptions): {
+    ({ className, ...props }: P & WireframeAnnotationProps): JSX.Element;
     Component: React.NamedExoticComponent<P>;
 };
-export declare const withWireFrameAnnotationInterfaceDefinition: {
+export declare const withWireframeAnnotationInterfaceDefinition: {
     <P extends object>({ WrappedComponent, options }: {
         WrappedComponent: React.ComponentType<P>;
-        options: WireFrameComponentOptions;
+        options: WireframeAnnotationOptions;
     }): null;
     displayName: string;
     __docgenInfo: {
