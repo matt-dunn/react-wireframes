@@ -1,18 +1,18 @@
 const { Builder, By, until } = require("selenium-webdriver");
 
-const IS_LOCAL = true;
+const USE_BROWSER_STACK = process.env.USE_BROWSER_STACK || false;
 
 export async function getDriver(capabilities) {
-  if (IS_LOCAL) {
+  if (USE_BROWSER_STACK) {
     return new Builder()
-      // .withCapabilities(capabilities)
-      .forBrowser("chrome")
+      .usingServer("http://hub-cloud.browserstack.com/wd/hub")
+      .withCapabilities(capabilities)
       .build();
   }
 
   return new Builder()
-    .usingServer("http://hub-cloud.browserstack.com/wd/hub")
-    .withCapabilities(capabilities)
+    // .withCapabilities(capabilities)
+    .forBrowser("chrome")
     .build();
 }
 

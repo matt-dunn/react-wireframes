@@ -1,24 +1,24 @@
 import { ComponentType, useEffect, useLayoutEffect } from "react";
 
-import { WireFrameComponent, WireFrameComponents } from "./api";
+import { WireframeAnnotation, WireframeAnnotations } from "./api";
 
-export const getWireframeComponent = (
-  components: WireFrameComponents,
+export const getWireframeAnnotation = (
+  annotations: WireframeAnnotations,
   Component: ComponentType<any> | undefined,
-): WireFrameComponent | undefined => Component && components.find(c => c.Component === Component);
+): WireframeAnnotation | undefined => Component && annotations.find(c => c.Component === Component);
 
-export const updateWireframeComponent = (
-  components: WireFrameComponents,
-  wireFrameComponent: WireFrameComponent,
-  updatedWireFrameComponent: WireFrameComponent,
+export const updateWireframeAnnotation = (
+  annotations: WireframeAnnotations,
+  wireFrameAnnotation: WireframeAnnotation,
+  updatedWireframeAnnotation: WireframeAnnotation,
 ) => {
-  const currentComponent = getWireframeComponent(components, wireFrameComponent.Component);
+  const currentAnnotation = getWireframeAnnotation(annotations, wireFrameAnnotation.Component);
 
-  if (currentComponent) {
-    return components.map(component => (component === wireFrameComponent ? updatedWireFrameComponent : component));
+  if (currentAnnotation) {
+    return annotations.map(annotation => (annotation === wireFrameAnnotation ? updatedWireframeAnnotation : annotation));
   }
 
-  return components;
+  return annotations;
 };
 
 /* istanbul ignore next */

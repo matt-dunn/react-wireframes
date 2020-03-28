@@ -6,33 +6,33 @@
 
 import { ComponentType, ReactNode } from "react";
 
-import { getWireframeComponent, updateWireframeComponent } from "./utils";
+import { getWireframeAnnotation, updateWireframeAnnotation } from "./utils";
 
 type APIOptions = {
-  updater: (components: WireFrameComponents) => void;
-  highlightNote?: (component?: WireFrameComponent) => void;
+  updater: (annotations: WireframeAnnotations) => void;
+  highlightNote?: (annotation?: WireframeAnnotation) => void;
 }
 
-export type WireFrameComponentOptions = {
+export type WireframeAnnotationOptions = {
   title: ReactNode;
   description: ReactNode;
 }
 
-export type WireFrameComponent = {
+export type WireframeAnnotation = {
   id: number;
   Component: ComponentType<any>;
   count: number;
-  options: WireFrameComponentOptions;
+  options: WireframeAnnotationOptions;
 }
 
-export type WireFrameComponents = WireFrameComponent[];
+export type WireframeAnnotations = WireframeAnnotation[];
 
 type OpenCallback = (isOpen: boolean) => void;
 
-export type WireFrameAnnotationAPI = {
+export type WireframeAnnotationAPI = {
   setOptions: (options: APIOptions) => APIOptions;
-  getComponents: () => WireFrameComponents;
-  register: (Component: ComponentType<any>, options: WireFrameComponentOptions) => WireFrameComponent;
+  getAnnotations: () => WireframeAnnotations;
+  register: (Component: ComponentType<any>, options: WireframeAnnotationOptions) => WireframeAnnotation;
   unregister: (Component: ComponentType<any>) => void;
   highlightNote: (Component: ComponentType<any> | undefined) => void;
   setOpen: (isOpen: boolean) => boolean;
@@ -40,8 +40,8 @@ export type WireFrameAnnotationAPI = {
   isOpen: () => boolean;
 }
 
-export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
-  let components: WireFrameComponents = [];
+export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
+  let annotations: WireframeAnnotations = [];
   let apiOptions: APIOptions = defaultOptions || {} as APIOptions;
 
   let openCallbacks: OpenCallback[] = [];
@@ -52,60 +52,60 @@ export function API(defaultOptions?: APIOptions): WireFrameAnnotationAPI {
       apiOptions = options;
       return apiOptions;
     },
-    getComponents: () => components,
+    getAnnotations: () => annotations,
     register: (Component, options) => {
-      const component = getWireframeComponent(components, Component);
+      const annotation = getWireframeAnnotation(annotations, Component);
 
-      if (component) {
-        const updatedComponent = {
-          ...component,
-          count: component.count + 1,
+      if (annotation) {
+        const updatedAnnotation = {
+          ...annotation,
+          count: annotation.count + 1,
         };
 
-        components = updateWireframeComponent(components, component, updatedComponent);
+        annotations = updateWireframeAnnotation(annotations, annotation, updatedAnnotation);
 
         /* istanbul ignore else */
         if (apiOptions.updater) {
-          apiOptions.updater(components);
+          apiOptions.updater(annotations);
         }
 
-        return updatedComponent;
+        return updatedAnnotation;
       }
 
-      const newComponent = {
-        id: components.length + 1,
+      const newAnnotation = {
+        id: annotations.length + 1,
         Component,
         count: 1,
         options,
       };
 
-      components = [...components, newComponent];
+      annotations = [...annotations, newAnnotation];
 
       if (apiOptions.updater) {
-        apiOptions.updater(components);
+        apiOptions.updater(annotations);
       }
 
-      return newComponent;
+      return newAnnotation;
     },
     unregister: (Component) => {
-      const component = getWireframeComponent(components, Component);
+      const annotation = getWireframeAnnotation(annotations, Component);
 
-      if (component) {
-        if (component.count > 1) {
-          components = updateWireframeComponent(components, component, {
-            ...component,
-            count: component.count - 1,
+      if (annotation) {
+        if (annotation.count > 1) {
+          annotations = updateWireframeAnnotation(annotations, annotation, {
+            ...annotation,
+            count: annotation.count - 1,
           });
         } else {
-          components = components.filter(c => c !== component);
+          annotations = annotations.filter(c => c !== annotation);
         }
 
         if (apiOptions.updater) {
-          apiOptions.updater(components);
+          apiOptions.updater(annotations);
         }
       }
     },
-    highlightNote: Component => apiOptions && apiOptions.highlightNote && apiOptions.highlightNote(getWireframeComponent(components, Component)),
+    highlightNote: Component => apiOptions && apiOptions.highlightNote && apiOptions.highlightNote(getWireframeAnnotation(annotations, Component)),
     setOpen: (open) => {
       if (open !== isOpen) {
         isOpen = open;

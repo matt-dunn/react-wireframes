@@ -27,6 +27,17 @@ module.exports =  {
     },
     overrides: [
         {
+            files: ["*.mdx"],
+            extends:  [
+                "plugin:mdx/recommended",
+            ],
+            rules:  {
+                "react/jsx-indent": "off",
+                "react/jsx-filename-extension": "off",
+                "semi": "off"
+            },
+        },
+        {
             files: ["*.ts", "*.tsx"],
             extends:  [
                 "plugin:@typescript-eslint/recommended",
