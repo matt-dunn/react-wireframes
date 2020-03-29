@@ -2,10 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.4](https://github.com/matt-dunn/react-wireframes/compare/v1.1.3...v1.1.4)
+
+> 29 March 2020
+
+- Add meta tags to demo index [`#16`](https://github.com/matt-dunn/react-wireframes/pull/16)
+- Remove travis config [`#12`](https://github.com/matt-dunn/react-wireframes/pull/12)
+- Cu test [`#11`](https://github.com/matt-dunn/react-wireframes/pull/11)
+- Chore/improve naming [`#10`](https://github.com/matt-dunn/react-wireframes/pull/10)
+- Rename component to annotation and refactor Identifier component [`9013b5b`](https://github.com/matt-dunn/react-wireframes/commit/9013b5b2ae3d61d0a279a556e23eb41878d4f195)
+
 #### [v1.1.3](https://github.com/matt-dunn/react-wireframes/compare/v1.1.2...v1.1.3)
 
 > 26 March 2020
 
+- Release 1.1.3 [`756698b`](https://github.com/matt-dunn/react-wireframes/commit/756698be0e67c8dbb8b80ae5116f3786dcc2d5d5)
 - Fix types location [`d9a45c3`](https://github.com/matt-dunn/react-wireframes/commit/d9a45c3fe034ad0841700db76f1c890ebc9c4459)
 
 #### [v1.1.2](https://github.com/matt-dunn/react-wireframes/compare/v1.1.1...v1.1.2)
