@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.5](https://github.com/matt-dunn/react-wireframes/compare/v1.1.4...v1.1.5)
+
+> 29 March 2020
+
+- Update peerDependencies [`ffdf60a`](https://github.com/matt-dunn/react-wireframes/commit/ffdf60a31f89cbe089902591966da27314763edb)
+
 #### [v1.1.4](https://github.com/matt-dunn/react-wireframes/compare/v1.1.3...v1.1.4)
 
 > 29 March 2020
