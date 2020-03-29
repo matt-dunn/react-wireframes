@@ -488,17 +488,22 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 .emotion-7 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -511,12 +516,27 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <WireframeProvider
@@ -567,13 +587,18 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-1 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -586,12 +611,27 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <li
@@ -1133,17 +1173,22 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 .emotion-7 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1156,12 +1201,27 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <WireframeProvider
@@ -1212,13 +1272,18 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1231,12 +1296,27 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <li
@@ -1292,13 +1372,18 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1311,12 +1396,27 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <li
@@ -1862,17 +1962,22 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 .emotion-7 {
+  box-sizing: border-box;
   border-radius: 2em;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
   min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
   height: 2em;
   padding: 0.25em 0.5em;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1885,12 +1990,27 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: initial;
+  overflow: visible;
   font-style: normal;
   font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-right: 0.5em;
   border-width: 1px;
   border-style: solid;
-  font-size: 0.8em;
+  font-size: 0.75rem;
 }
 
 <WireframeProvider
