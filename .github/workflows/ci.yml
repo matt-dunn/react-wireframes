@@ -23,12 +23,11 @@ jobs:
       run: yarn install
     - name: Build
       run: yarn ci
-    - uses: mathrix-education/sonar-scanner@master
-      with:
-        version: 4.2.0.1873 # required
-        typescript: true
-        scan: true
-        args: --debug -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     env:
       CI: true
 
