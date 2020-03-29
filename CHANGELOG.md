@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.0](https://github.com/matt-dunn/react-wireframes/compare/v1.1.5...v1.2.0)
+
+> 29 March 2020
+
+- Update snapshots [`cb315dd`](https://github.com/matt-dunn/react-wireframes/commit/cb315dd2c362462f6deb62808f25af1e880c3edf)
+- Reset identifier styles [`2202207`](https://github.com/matt-dunn/react-wireframes/commit/220220799280c53120310d993146ba0001e61983)
+
 #### [v1.1.5](https://github.com/matt-dunn/react-wireframes/compare/v1.1.4...v1.1.5)
 
 > 29 March 2020
 
 - Update peerDependencies [`ffdf60a`](https://github.com/matt-dunn/react-wireframes/commit/ffdf60a31f89cbe089902591966da27314763edb)
+- Release 1.1.5 [`18807dc`](https://github.com/matt-dunn/react-wireframes/commit/18807dc1d4e4b7eaeef06c04d5a0420b652cba1c)
 
 #### [v1.1.4](https://github.com/matt-dunn/react-wireframes/compare/v1.1.3...v1.1.4)
 
