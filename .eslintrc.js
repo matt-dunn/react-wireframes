@@ -101,5 +101,6 @@ module.exports =  {
         }],
         "react/no-multi-comp": ["error", { "ignoreStateless": false }],
         "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "peerDependencies": true}]
     }
 };
