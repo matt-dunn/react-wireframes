@@ -492,8 +492,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -587,8 +589,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1177,8 +1181,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1272,8 +1278,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1372,8 +1380,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1966,8 +1976,10 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;

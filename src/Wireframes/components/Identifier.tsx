@@ -15,8 +15,10 @@ type IdentifierProps = {
 }
 
 export const IdentifierContainer = styled.cite`
+  all: initial;
   box-sizing: border-box;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;

@@ -34,7 +34,7 @@ const app = (
         className="container"
       >
         <Main>
-          <div className="row">
+          <div className="row" style={{ boxSizing: "content-box", fontSize: "2em" }}>
             <div className="col">
               <WAHeader>Header</WAHeader>
             </div>

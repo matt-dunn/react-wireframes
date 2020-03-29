@@ -2,6 +2,7 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import styled from "@emotion/styled";
 import { withA11y } from '@storybook/addon-a11y';
+import "loki/configure-react";
 
 import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
 
