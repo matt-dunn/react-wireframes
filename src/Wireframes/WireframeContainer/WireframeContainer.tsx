@@ -56,6 +56,9 @@ const WireframeBody = styled.main`
 `;
 
 const WireframeAnnotationsContainer = styled.section`
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   flex-grow: 0;
   flex-shrink: 0;
   max-width: 400px;
@@ -87,7 +90,7 @@ const WireframeAnnotationsWrapper = styled.div`
     color: #fff;
     display: flex;
     flex-shrink: 0;
-    align-items: flex-start;
+    align-items: center;
     
     h1 {
       flex-grow: 1;
@@ -100,22 +103,23 @@ const WireframeAnnotationsWrapper = styled.div`
 `;
 
 export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   transform: translate(-100%, -50%);
   transition: opacity 100ms;
-  min-height: 3em;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  cursor: pointer;
   opacity: ${({ open }) => (open && 1) || 0.25};
+  font-size: 1rem;
+  min-height: 3.5em;
   
   &:active,
   &:focus,
@@ -125,6 +129,12 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
   }
 
   span {
+    all: initial;
+    cursor: pointer;
+    color: inherit;
+    padding: 0.25em;
+    font-size: 1.25em;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-weight: bold;
     transition: transform ${transitionDuration}ms;
     display: block;
@@ -134,12 +144,15 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
 
 export const WireframeAnnotationsClose = styled.button`
   flex-grow: 0;
+  align-self: flex-start;
   cursor: pointer;
   line-height: 1;
   font-size: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: transparent;
   border: none;
-  padding: 0 0 0 0.25em;
+  padding: 0;
+  margin: 0 0 0 0.25em;
   color: inherit;
 `;
 
