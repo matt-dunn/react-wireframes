@@ -1,3 +1,5 @@
+import styled from "@emotion/styled";
+
 export const single = [
   {
     id: 1,
@@ -30,3 +32,7 @@ export const multiple = [
     },
   },
 ];
+
+export const Container = styled.article`
+  max-width: 25em;
+`;
