@@ -40,6 +40,7 @@ const IdentifierNote = styled(Identifier)`
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  align-self: flex-start;
 `;
 
 export const WireframeAnnotationNote = ({ annotation }: WireframeAnnotationsNoteProps) => (

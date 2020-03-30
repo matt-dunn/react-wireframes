@@ -5,7 +5,9 @@ import {
 import { WireframeProvider, withWireframeAnnotation } from "src/Wireframes";
 import { withWireframeAnnotationInterfaceDefinition } from "../withWireframeAnnotation";
 
-import { wireframeAPI, wireframeAPIOpen, WASample } from "./withWireframeAnnotations.stories.fixtures";
+import {
+  wireframeAPI, wireframeAPIOpen, WASample, Container,
+} from "./withWireframeAnnotations.stories.fixtures";
 
 <Meta title="@matt-dunn/react-wireframes/withWireframeAnnotation" component={withWireframeAnnotation} />
 
@@ -17,14 +19,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec
 
 <Preview withSource={false}>
     <Story name="Default">
-      <WireframeProvider api={wireframeAPI}>
-        <WASample>Header</WASample>
-      </WireframeProvider>
+        <Container>
+            <WireframeProvider api={wireframeAPI}>
+                <WASample>Header</WASample>
+            </WireframeProvider>
+        </Container>
     </Story>
     <Story name="With annotation identifier">
-      <WireframeProvider api={wireframeAPIOpen}>
-        <WASample>Header</WASample>
-      </WireframeProvider>
+        <Container>
+            <WireframeProvider api={wireframeAPIOpen}>
+                <WASample>Header</WASample>
+            </WireframeProvider>
+        </Container>
     </Story>
 </Preview>
 

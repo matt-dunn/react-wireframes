@@ -7,6 +7,8 @@ import {
 
 import { WireframeAnnotationNote } from "../WireframeAnnotationNote";
 
+import { Container } from "./WireframeAnnotationNotes.stories.fixtures";
+
 <Meta title="@matt-dunn/react-wireframes/WireframeAnnotationNote" component={WireframeAnnotationNote} decorators={[withKnobs]} />
 
 # WireframeAnnotationNote
@@ -19,31 +21,35 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 
 <Preview>
     <Story name="Annotation">
-        <WireframeAnnotationNote
-          annotation={{
-            id: number("id", 1),
-            count: 1,
-            Component: () => {},
-            options: {
-              title: text("Title", "Test component"),
-              description: text("Description", "Test description"),
-            },
-          }}
-        />
+        <Container>
+            <WireframeAnnotationNote
+              annotation={{
+                id: number("id", 1),
+                count: 1,
+                Component: () => {},
+                options: {
+                  title: text("Title", "Test component"),
+                  description: text("Description", "Test description"),
+                },
+              }}
+            />
+        </Container>
     </Story>
     <Story name="Annotation with long description">
-        <WireframeAnnotationNote
-          annotation={{
-            id: number("id", 1, {
-              min: 1, step: 1, defaultValue: 10, value: 5,
-            }),
-            count: 1,
-            Component: () => {},
-            options: {
-              title: text("Title", "Test component with long description"),
-              description: text("Description", "Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta."),
-            },
-          }}
-        />
+        <Container>
+            <WireframeAnnotationNote
+              annotation={{
+                id: number("id", 1, {
+                  min: 1, step: 1, defaultValue: 10, value: 5,
+                }),
+                count: 1,
+                Component: () => {},
+                options: {
+                  title: text("Title", "Test component with long description"),
+                  description: text("Description", "Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta."),
+                },
+              }}
+            />
+        </Container>
     </Story>
 </Preview>

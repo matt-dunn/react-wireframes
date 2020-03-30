@@ -38,6 +38,9 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 }
 
 .emotion-8 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -93,10 +96,10 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-6 header.annotations h1 {
@@ -111,31 +114,34 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 1;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -146,6 +152,12 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -158,12 +170,17 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   cursor: pointer;
   line-height: 1;
   font-size: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: transparent;
   border: none;
-  padding: 0 0 0 0.25em;
+  padding: 0;
+  margin: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -301,6 +318,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-30 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -356,10 +376,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-28 header.annotations h1 {
@@ -374,31 +394,34 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 1;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -409,6 +432,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -421,12 +450,17 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   cursor: pointer;
   line-height: 1;
   font-size: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: transparent;
   border: none;
-  padding: 0 0 0 0.25em;
+  padding: 0;
+  margin: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -489,11 +523,17 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -537,6 +577,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <WireframeProvider
@@ -587,8 +630,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -632,6 +678,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <li
@@ -986,6 +1035,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-30 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -1041,10 +1093,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-28 header.annotations h1 {
@@ -1059,31 +1111,34 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 1;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -1094,6 +1149,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -1106,12 +1167,17 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   cursor: pointer;
   line-height: 1;
   font-size: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: transparent;
   border: none;
-  padding: 0 0 0 0.25em;
+  padding: 0;
+  margin: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -1174,11 +1240,17 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1222,6 +1294,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <WireframeProvider
@@ -1272,8 +1347,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1317,6 +1395,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <li
@@ -1372,8 +1453,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-1 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -1417,6 +1501,9 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <li
@@ -1775,6 +1862,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-30 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -1830,10 +1920,10 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-28 header.annotations h1 {
@@ -1848,31 +1938,34 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 1;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -1883,6 +1976,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -1895,12 +1994,17 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   cursor: pointer;
   line-height: 1;
   font-size: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: transparent;
   border: none;
-  padding: 0 0 0 0.25em;
+  padding: 0;
+  margin: 0 0 0 0.25em;
   color: inherit;
 }
 
@@ -1963,11 +2067,17 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .emotion-7 {
+  all: initial;
   box-sizing: border-box;
+  line-height: 1;
   border-radius: 2em;
+  color: #333;
   background-color: yellow;
   border-color: #caca00;
   white-space: nowrap;
@@ -2011,6 +2121,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   border-width: 1px;
   border-style: solid;
   font-size: 0.75rem;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 <WireframeProvider
@@ -2338,6 +2451,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-6 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -2393,10 +2509,10 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-4 header.annotations h1 {
@@ -2411,31 +2527,34 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 0.25;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -2446,6 +2565,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -2574,6 +2699,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-6 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -2629,10 +2757,10 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-4 header.annotations h1 {
@@ -2647,31 +2775,34 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 0.25;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -2682,6 +2813,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -2810,6 +2947,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-6 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -2865,10 +3005,10 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-4 header.annotations h1 {
@@ -2883,31 +3023,34 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 0.25;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -2918,6 +3061,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;
@@ -3046,6 +3195,9 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
 }
 
 .emotion-6 {
+  all: initial;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -3101,10 +3253,10 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-4 header.annotations h1 {
@@ -3119,31 +3271,34 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
 }
 
 .emotion-2 {
-  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 0;
   top: 50%;
   background-color: #555;
   color: #fff;
-  padding: 0.25em;
   border: none;
-  border-radius: 0.25em 0 0 0.25em;
+  border-radius: 0.5rem 0 0 0.5rem;
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
-  min-height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
   opacity: 0.25;
+  font-size: 1rem;
+  min-height: 3.5em;
 }
 
 .emotion-2:active,
@@ -3154,6 +3309,12 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
 }
 
 .emotion-2 span {
+  all: initial;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25em;
+  font-size: 1.25em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: bold;
   -webkit-transition: -webkit-transform 250ms;
   -webkit-transition: transform 250ms;

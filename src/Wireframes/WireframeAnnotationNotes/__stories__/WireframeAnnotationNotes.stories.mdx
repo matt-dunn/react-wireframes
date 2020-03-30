@@ -4,7 +4,7 @@ import {
 
 import { WireframeAnnotationNotes } from "../WireframeAnnotationNotes";
 
-import { single, multiple } from "./WireframeAnnotationNotes.stories.fixtures";
+import { single, multiple, Container } from "./WireframeAnnotationNotes.stories.fixtures";
 
 <Meta title="@matt-dunn/react-wireframes/WireframeAnnotationNotes" component={WireframeAnnotationNotes} />
 
@@ -18,19 +18,25 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 
 <Preview>
     <Story name="Single Annotation">
-        <WireframeAnnotationNotes
-          annotations={single}
-        />
+        <Container>
+            <WireframeAnnotationNotes
+              annotations={single}
+            />
+        </Container>
     </Story>
     <Story name="Multiple Annotation">
-        <WireframeAnnotationNotes
-          annotations={multiple}
-        />
+        <Container>
+            <WireframeAnnotationNotes
+              annotations={multiple}
+            />
+        </Container>
     </Story>
     <Story name="Highlighted Annotation">
-        <WireframeAnnotationNotes
-          annotations={multiple}
-          highlightedNote={multiple[0]}
-        />
+        <Container>
+            <WireframeAnnotationNotes
+              annotations={multiple}
+              highlightedNote={multiple[0]}
+            />
+        </Container>
     </Story>
 </Preview>

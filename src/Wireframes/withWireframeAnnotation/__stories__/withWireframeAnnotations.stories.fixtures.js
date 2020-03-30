@@ -19,3 +19,7 @@ export const wireframeAPI = API();
 export const wireframeAPIOpen = API();
 
 wireframeAPIOpen.setOpen(true);
+
+export const Container = styled.article`
+  max-width: 25em;
+`;

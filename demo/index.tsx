@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./bootstrap.scss";
 
 import { API, WireframeContainer, WireframeProvider } from "src/Wireframes";
 
