@@ -28,8 +28,8 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
                 count: 1,
                 Component: () => {},
                 options: {
-                  title: text("Title", "Test component"),
-                  description: text("Description", "Test description"),
+                  title: text("Title", "Test component", "1"),
+                  description: text("Description", "Test description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "1"),
                 },
               }}
             />
@@ -45,10 +45,26 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
                 count: 1,
                 Component: () => {},
                 options: {
-                  title: text("Title", "Test component with long description"),
-                  description: text("Description", "Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta."),
+                  title: text("Title", "Test component with long title and description", "2"),
+                  description: text("Description", "Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus. Nunc malesuada erat eu magna dignissim porta.", "2"),
                 },
               }}
+            />
+        </Container>
+    </Story>
+    <Story name="Annotation with highlight">
+        <Container>
+            <WireframeAnnotationNote
+              annotation={{
+                id: number("id", 1),
+                count: 1,
+                Component: () => {},
+                options: {
+                  title: text("Title", "Test component", "3"),
+                  description: text("Description", "Test description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "3"),
+                },
+              }}
+              isHighlighted
             />
         </Container>
     </Story>

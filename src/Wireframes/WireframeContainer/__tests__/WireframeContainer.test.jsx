@@ -11,7 +11,9 @@ import { act } from "react-dom/test-utils";
 import { WireframeProvider } from "../../context";
 import { API } from "../../api";
 
-import { WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose } from "../WireframeContainer";
+import {
+  WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose,
+} from "../WireframeContainer";
 
 jest.useFakeTimers();
 

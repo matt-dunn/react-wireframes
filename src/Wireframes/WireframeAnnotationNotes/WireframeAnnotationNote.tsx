@@ -6,20 +6,23 @@
 
 import React from "react";
 import styled from "@emotion/styled";
+import css from "@emotion/css";
 
 import { Identifier } from "../components/Identifier";
 import { WireframeAnnotation } from "../api";
 
 type WireframeAnnotationsNoteProps = {
   annotation: WireframeAnnotation;
+  isHighlighted?: boolean;
 }
 
-const WireframeAnnotationsNoteContainer = styled.article`
+const WireframeAnnotationsNoteContainer = styled.article<{isHighlighted: boolean}>`
   font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
 
   > header {
     display: flex;
-    padding: 0 10px;
     margin-bottom: 5px;
     align-items: center;
     
@@ -30,9 +33,9 @@ const WireframeAnnotationsNoteContainer = styled.article`
     }
   }
   
-  > article {
-    padding: 0 10px;
-  }
+  ${({ isHighlighted }) => isHighlighted && css`
+      background-color: rgba(64, 134, 247, 0.25);
+  `}
 `;
 
 const IdentifierNote = styled(Identifier)`
@@ -43,8 +46,8 @@ const IdentifierNote = styled(Identifier)`
   align-self: flex-start;
 `;
 
-export const WireframeAnnotationNote = ({ annotation }: WireframeAnnotationsNoteProps) => (
-  <WireframeAnnotationsNoteContainer>
+export const WireframeAnnotationNote = ({ annotation, isHighlighted = false }: WireframeAnnotationsNoteProps) => (
+  <WireframeAnnotationsNoteContainer isHighlighted={isHighlighted}>
     <header>
       <IdentifierNote annotation={annotation} />
       <h2>

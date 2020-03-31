@@ -5,8 +5,8 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
   tabIndex={0}
 >
   <li
-    className=""
     data-annotation-id={1}
+    data-highlighted={false}
     key="1"
   >
     <WireframeAnnotationNote
@@ -21,6 +21,7 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly 1`] = `
           },
         }
       }
+      isHighlighted={false}
     />
   </li>
 </WireframeAnnotationNotesContainer>
@@ -31,8 +32,8 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highl
   tabIndex={0}
 >
   <li
-    className="highlight"
     data-annotation-id={1}
+    data-highlighted={true}
     key="1"
   >
     <WireframeAnnotationNote
@@ -47,6 +48,7 @@ exports[`Wireframe: WireframeAnnotationsNotes should render correctly with highl
           },
         }
       }
+      isHighlighted={true}
     />
   </li>
 </WireframeAnnotationNotesContainer>

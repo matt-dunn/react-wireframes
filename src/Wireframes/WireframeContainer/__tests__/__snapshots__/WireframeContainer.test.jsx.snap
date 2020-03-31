@@ -1,30 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wireframe: WireframeContainer should default to open 1`] = `
-.emotion-10 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-10 [data-annotations-container] {
+.emotion-14 [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-10 [data-annotations-container] [data-annotations] {
+.emotion-14 [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-10.open [data-annotations-container] {
+.emotion-14.open [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-10.open [data-annotations-container] [data-annotations] {
+.emotion-14.open [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -37,7 +37,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   flex-grow: 1;
 }
 
-.emotion-8 {
+.emotion-12 {
   all: initial;
   font-family: inherit;
   line-height: 1.5;
@@ -54,7 +54,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
 }
 
-.emotion-6 {
+.emotion-10 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -85,7 +85,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   z-index: 6000;
 }
 
-.emotion-6 header.annotations {
+.emotion-10 header.annotations {
   padding: 0.1em 0.75em;
   background-color: #555;
   color: #fff;
@@ -102,7 +102,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   align-items: center;
 }
 
-.emotion-6 header.annotations h1 {
+.emotion-10 header.annotations h1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -184,6 +184,38 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   color: inherit;
 }
 
+.emotion-8 {
+  overflow: auto;
+  z-index: 1;
+  position: relative;
+  background-color: inherit;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  padding: 0 20px;
+  text-align: center;
+  color: #888;
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <WireframeProvider
   api={
     Object {
@@ -204,7 +236,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
       data-test="container"
     >
       <div
-        className="open emotion-10 emotion-11"
+        className="open emotion-14 emotion-15"
         data-test="container"
       >
         <WireframeBody>
@@ -223,14 +255,14 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
           data-annotations-container={true}
         >
           <section
-            className="emotion-8 emotion-9"
+            className="emotion-12 emotion-13"
             data-annotations-container={true}
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
             >
               <div
-                className="emotion-6 emotion-7"
+                className="emotion-10 emotion-11"
                 data-annotations={true}
               >
                 <WireframeAnnotationsToggle
@@ -270,6 +302,21 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
                     </button>
                   </WireframeAnnotationsClose>
                 </header>
+                <WireframeAnnotationNotesContainer>
+                  <div
+                    className="emotion-8 emotion-9"
+                  >
+                    <WireframeAnnotationNotes>
+                      <NoAnnotations>
+                        <div
+                          className="emotion-6 emotion-7"
+                        >
+                          No annotations on this page
+                        </div>
+                      </NoAnnotations>
+                    </WireframeAnnotationNotes>
+                  </div>
+                </WireframeAnnotationNotesContainer>
               </div>
             </WireframeAnnotationsWrapper>
           </section>
@@ -469,6 +516,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   z-index: 1;
   position: relative;
   background-color: inherit;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emotion-24 {
@@ -478,29 +533,21 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   outline: none;
 }
 
-.emotion-24 li {
-  padding: 6px 0;
+.emotion-24 li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
-.emotion-24 li:last-child {
-  border-bottom: none;
-}
-
-.emotion-24 li.highlight {
-  background-color: rgba(64,134,247,0.25);
-}
-
-.emotion-13 {
+.emotion-22 {
   font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
 }
 
-.emotion-13 > header {
+.emotion-22 > header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 10px;
   margin-bottom: 5px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -508,14 +555,10 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   align-items: center;
 }
 
-.emotion-13 > header h2 {
+.emotion-22 > header h2 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
-}
-
-.emotion-13 > article {
-  padding: 0 10px;
 }
 
 .emotion-9 {
@@ -582,6 +625,31 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   align-self: flex-start;
 }
 
+.emotion-13 {
+  font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
+  background-color: rgba(64,134,247,0.25);
+}
+
+.emotion-13 > header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-13 > header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
 <WireframeProvider
   api={
     Object {
@@ -602,34 +670,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
       [MockFunction] {
         "calls": Array [
           Array [
-            .emotion-3 {
-  font-size: 0.85rem;
-}
-
-.emotion-3 > header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 10px;
-  margin-bottom: 5px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-3 > header h2 {
-  font-size: 1.2rem;
-  margin: 0;
-  font-weight: normal;
-}
-
-.emotion-3 > article {
-  padding: 0 10px;
-}
-
-.emotion-1 {
+            .emotion-1 {
   all: initial;
   box-sizing: border-box;
   line-height: 1;
@@ -683,9 +724,34 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   align-self: flex-start;
 }
 
+.emotion-3 {
+  font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
+  background-color: rgba(64,134,247,0.25);
+}
+
+.emotion-3 > header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 > header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
 <li
-              class="highlight"
               data-annotation-id="1"
+              data-highlighted="true"
             >
               <article
                 class="emotion-3 emotion-4"
@@ -835,8 +901,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                           tabIndex={0}
                         >
                           <li
-                            className="highlight"
                             data-annotation-id={1}
+                            data-highlighted={true}
                             key="1"
                           >
                             <WireframeAnnotationNote
@@ -851,8 +917,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                   },
                                 }
                               }
+                              isHighlighted={true}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={true}
+                              >
                                 <article
                                   className="emotion-13 emotion-14"
                                 >
@@ -909,8 +978,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                             </WireframeAnnotationNote>
                           </li>
                           <li
-                            className=""
                             data-annotation-id={2}
+                            data-highlighted={false}
                             key="2"
                           >
                             <WireframeAnnotationNote
@@ -925,10 +994,13 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                   },
                                 }
                               }
+                              isHighlighted={false}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={false}
+                              >
                                 <article
-                                  className="emotion-13 emotion-14"
+                                  className="emotion-22 emotion-14"
                                 >
                                   <header>
                                     <IdentifierNote
@@ -1186,6 +1258,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   z-index: 1;
   position: relative;
   background-color: inherit;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emotion-24 {
@@ -1195,21 +1275,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   outline: none;
 }
 
-.emotion-24 li {
-  padding: 6px 0;
+.emotion-24 li:not(:last-child) {
   border-bottom: 1px solid #ccc;
-}
-
-.emotion-24 li:last-child {
-  border-bottom: none;
-}
-
-.emotion-24 li.highlight {
-  background-color: rgba(64,134,247,0.25);
 }
 
 .emotion-13 {
   font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
 }
 
 .emotion-13 > header {
@@ -1217,7 +1290,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 10px;
   margin-bottom: 5px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1229,10 +1301,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
-}
-
-.emotion-13 > article {
-  padding: 0 10px;
 }
 
 .emotion-9 {
@@ -1299,6 +1367,31 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   align-self: flex-start;
 }
 
+.emotion-22 {
+  font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
+  background-color: rgba(64,134,247,0.25);
+}
+
+.emotion-22 > header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-22 > header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
 <WireframeProvider
   api={
     Object {
@@ -1321,6 +1414,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
           Array [
             .emotion-3 {
   font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
 }
 
 .emotion-3 > header {
@@ -1328,7 +1423,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 10px;
   margin-bottom: 5px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1340,10 +1434,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
-}
-
-.emotion-3 > article {
-  padding: 0 10px;
 }
 
 .emotion-1 {
@@ -1401,8 +1491,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 <li
-              class=""
               data-annotation-id="1"
+              data-highlighted="false"
             >
               <article
                 class="emotion-3 emotion-4"
@@ -1425,34 +1515,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
             </li>,
           ],
           Array [
-            .emotion-3 {
-  font-size: 0.85rem;
-}
-
-.emotion-3 > header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 10px;
-  margin-bottom: 5px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-3 > header h2 {
-  font-size: 1.2rem;
-  margin: 0;
-  font-weight: normal;
-}
-
-.emotion-3 > article {
-  padding: 0 10px;
-}
-
-.emotion-1 {
+            .emotion-1 {
   all: initial;
   box-sizing: border-box;
   line-height: 1;
@@ -1506,9 +1569,34 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   align-self: flex-start;
 }
 
+.emotion-3 {
+  font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
+  background-color: rgba(64,134,247,0.25);
+}
+
+.emotion-3 > header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 > header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
 <li
-              class="highlight"
               data-annotation-id="2"
+              data-highlighted="true"
             >
               <article
                 class="emotion-3 emotion-4"
@@ -1662,8 +1750,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                           tabIndex={0}
                         >
                           <li
-                            className=""
                             data-annotation-id={1}
+                            data-highlighted={false}
                             key="1"
                           >
                             <WireframeAnnotationNote
@@ -1678,8 +1766,11 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                   },
                                 }
                               }
+                              isHighlighted={false}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={false}
+                              >
                                 <article
                                   className="emotion-13 emotion-14"
                                 >
@@ -1736,8 +1827,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                             </WireframeAnnotationNote>
                           </li>
                           <li
-                            className="highlight"
                             data-annotation-id={2}
+                            data-highlighted={true}
                             key="2"
                           >
                             <WireframeAnnotationNote
@@ -1752,10 +1843,13 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                   },
                                 }
                               }
+                              isHighlighted={true}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={true}
+                              >
                                 <article
-                                  className="emotion-13 emotion-14"
+                                  className="emotion-22 emotion-14"
                                 >
                                   <header>
                                     <IdentifierNote
@@ -2013,6 +2107,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   z-index: 1;
   position: relative;
   background-color: inherit;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emotion-24 {
@@ -2022,21 +2124,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   outline: none;
 }
 
-.emotion-24 li {
-  padding: 6px 0;
+.emotion-24 li:not(:last-child) {
   border-bottom: 1px solid #ccc;
-}
-
-.emotion-24 li:last-child {
-  border-bottom: none;
-}
-
-.emotion-24 li.highlight {
-  background-color: rgba(64,134,247,0.25);
 }
 
 .emotion-13 {
   font-size: 0.85rem;
+  word-break: break-word;
+  padding: 6px 10px;
 }
 
 .emotion-13 > header {
@@ -2044,7 +2139,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 10px;
   margin-bottom: 5px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2056,10 +2150,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
-}
-
-.emotion-13 > article {
-  padding: 0 10px;
 }
 
 .emotion-9 {
@@ -2251,8 +2341,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                           tabIndex={0}
                         >
                           <li
-                            className=""
                             data-annotation-id={1}
+                            data-highlighted={false}
                             key="1"
                           >
                             <WireframeAnnotationNote
@@ -2267,8 +2357,11 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                   },
                                 }
                               }
+                              isHighlighted={false}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={false}
+                              >
                                 <article
                                   className="emotion-13 emotion-14"
                                 >
@@ -2325,8 +2418,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                             </WireframeAnnotationNote>
                           </li>
                           <li
-                            className=""
                             data-annotation-id={2}
+                            data-highlighted={false}
                             key="2"
                           >
                             <WireframeAnnotationNote
@@ -2341,8 +2434,11 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                   },
                                 }
                               }
+                              isHighlighted={false}
                             >
-                              <WireframeAnnotationsNoteContainer>
+                              <WireframeAnnotationsNoteContainer
+                                isHighlighted={false}
+                              >
                                 <article
                                   className="emotion-13 emotion-14"
                                 >
