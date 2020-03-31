@@ -26,6 +26,16 @@ const SectionLarge = styled(Section)`
   min-height: 14rem;
 `;
 
+export const WATest1 = withWireframeAnnotation(Section, {
+  title: "Component 1",
+  description: "Component description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
+});
+
+export const WATest2 = withWireframeAnnotation(Section, {
+  title: "Component 2",
+  description: "Component description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
+});
+
 export const WAHeader = withWireframeAnnotation(Section, {
   title: "Header",
   description: "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
@@ -62,6 +72,7 @@ export const WASection5 = withWireframeAnnotation(Section, {
 });
 
 const wireframeAPI = API();
+const wireframeAPI2 = API();
 
 const AppError = ({ error }: {error: Error}) => (
   <>
@@ -86,6 +97,19 @@ const app = (
         <Main>
           <div className="row">
             <div className="col">
+              <WireframeProvider
+                api={wireframeAPI2}
+              >
+                <div style={{ border: "1px solid #ccc", margin: "0 0 20px 0" }}>
+                  <WireframeContainer
+                    fixed={false}
+                    className="container"
+                  >
+                    <WATest1>Component</WATest1>
+                    <WATest2>Component 2</WATest2>
+                  </WireframeContainer>
+                </div>
+              </WireframeProvider>
               <WAHeader>Header</WAHeader>
             </div>
           </div>

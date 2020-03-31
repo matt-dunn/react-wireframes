@@ -23,7 +23,7 @@ const WireframeAnnotationNotesContainer = styled.ul`
   padding: 0;
   outline: none;
   
-  li:not(:last-child) {
+  > li:not(:last-child) {
     border-bottom: 1px solid #ccc;
   }
 `;
