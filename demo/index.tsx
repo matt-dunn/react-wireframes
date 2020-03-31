@@ -71,6 +71,10 @@ export const WASection5 = withWireframeAnnotation(Section, {
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 });
 
+const WireframeContainerInner = styled(WireframeContainer)`
+  margin-top: 20px;
+`;
+
 const wireframeAPI = API();
 const wireframeAPI2 = API();
 
@@ -101,13 +105,14 @@ const app = (
                 api={wireframeAPI2}
               >
                 <div style={{ border: "1px solid #ccc", margin: "0 0 20px 0" }}>
-                  <WireframeContainer
+                  <WireframeContainerInner
                     fixed={false}
                     className="container"
+                    defaultOpen={false}
                   >
                     <WATest1>Component</WATest1>
                     <WATest2>Component 2</WATest2>
-                  </WireframeContainer>
+                  </WireframeContainerInner>
                 </div>
               </WireframeProvider>
               <WAHeader>Header</WAHeader>
