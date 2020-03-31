@@ -7,7 +7,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { WireframeAnnotationNotes as Component } from "../WireframeAnnotationNotes";
+import { WireframeAnnotationNotes as Component, NoAnnotations } from "../WireframeAnnotationNotes";
 
 describe("Wireframe: WireframeAnnotationsNotes", () => {
   let MockedComponent;
@@ -53,5 +53,26 @@ describe("Wireframe: WireframeAnnotationsNotes", () => {
     );
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+
+  it("should display message when there are no annotations", () => {
+    const wrapper = shallow(
+      <Component />,
+    );
+
+    expect(wrapper.find(NoAnnotations).length).toBe(1);
+
+    wrapper.setProps({
+      annotations,
+    });
+
+    expect(wrapper.find(NoAnnotations).length).toBe(0);
+
+    wrapper.setProps({
+      annotations: [],
+    });
+
+    expect(wrapper.find(NoAnnotations).length).toBe(1);
   });
 });

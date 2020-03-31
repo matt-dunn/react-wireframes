@@ -12,7 +12,7 @@ import { WireframeAnnotation, WireframeAnnotations } from "../api";
 import { WireframeAnnotationNote } from "./WireframeAnnotationNote";
 
 type WireframeAnnotationsNotesProps = {
-  annotations: WireframeAnnotations;
+  annotations?: WireframeAnnotations;
   highlightedNote?: WireframeAnnotation;
   className?: string;
 }
@@ -23,30 +23,40 @@ const WireframeAnnotationNotesContainer = styled.ul`
   padding: 0;
   outline: none;
   
-  li {
-    padding: 6px 0;
+  li:not(:last-child) {
     border-bottom: 1px solid #ccc;
-    
-    &:last-child {
-      border-bottom: none;
-    }
-    
-    &.highlight {
-      background-color: rgba(64, 134, 247, 0.25);
-    }
   }
 `;
 
-export const WireframeAnnotationNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => (
-  <WireframeAnnotationNotesContainer tabIndex={0} className={className}>
-    {annotations.map(annotation => (
-      <li
-        key={annotation.id}
-        data-annotation-id={annotation.id}
-        className={(highlightedNote === annotation && "highlight") || ""}
-      >
-        <WireframeAnnotationNote annotation={annotation} />
-      </li>
-    ))}
-  </WireframeAnnotationNotesContainer>
-);
+export const NoAnnotations = styled.div`
+  padding: 0 20px;
+  text-align: center;
+  color: #888;
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1;
+  align-items: center;
+  display: flex;
+`;
+
+export const WireframeAnnotationNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => {
+  if (annotations && annotations.length > 0) {
+    return (
+      <WireframeAnnotationNotesContainer tabIndex={0} className={className}>
+        {annotations.map(annotation => (
+          <li
+            key={annotation.id}
+            data-annotation-id={annotation.id}
+            data-highlighted={highlightedNote === annotation}
+          >
+            <WireframeAnnotationNote annotation={annotation} isHighlighted={highlightedNote === annotation} />
+          </li>
+        ))}
+      </WireframeAnnotationNotesContainer>
+    );
+  }
+
+  return (
+    <NoAnnotations>No annotations on this page</NoAnnotations>
+  );
+};

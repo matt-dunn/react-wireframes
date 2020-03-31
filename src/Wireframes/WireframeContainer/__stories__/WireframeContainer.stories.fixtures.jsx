@@ -1,9 +1,14 @@
+import React, { useEffect } from "react";
 import styled from "@emotion/styled";
+import { Preview } from "@storybook/addon-docs/blocks";
 
-import { API, withWireframeAnnotation } from "src/Wireframes";
+import {
+  API, withWireframeAnnotation, WireframeProvider, WireframeContainer,
+} from "src/Wireframes";
 
 export const Main = styled.div`
   padding: 2em 4em;
+  min-height: 30em;
 `;
 
 const Section = styled.div`
@@ -55,3 +60,29 @@ export const WASection5 = withWireframeAnnotation(Section, {
 export const wireframeAPIGrid = API();
 
 export const wireframeAPISimple = API();
+
+export const wireframeAPIEmpty = API();
+
+export const WireframeProviderWithKnobs = ({ children, open = false }) => { // eslint-disable-line react/prop-types
+  useEffect(() => {
+    wireframeAPISimple.setOpen(open);
+  }, [open]);
+
+  return (
+    <WireframeProvider api={wireframeAPISimple}>
+      <WireframeContainer
+        className="container"
+        defaultOpen={open}
+      >
+        {children}
+      </WireframeContainer>
+    </WireframeProvider>
+  );
+};
+
+export const PreviewContainer = styled(Preview)`
+  [scale] {
+    overflow: hidden;
+    border: 1px solid #f5f5f5;
+  }
+`;
