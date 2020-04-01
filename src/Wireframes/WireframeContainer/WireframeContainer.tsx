@@ -19,8 +19,8 @@ import { useApi } from "../useApi";
 
 type WireframeContainerProps = {
   children: ReactNode;
-  className?: string;
   defaultOpen?: boolean;
+  className?: string;
   /**
    * Fix the WireframeContainer to the viewport
    */
