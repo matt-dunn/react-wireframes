@@ -15,7 +15,7 @@ context("WireframeContainer", () => {
 
     cy.screenshot("open");
 
-    cy.get("[data-test=\"toggle\"]")
+    cy.get("#app > div > section > div > [data-test=\"toggle\"]")
       .click()
       .get("[data-test=\"container\"]")
       .should("not.have.class", "open")
@@ -26,7 +26,7 @@ context("WireframeContainer", () => {
     // cy.wait(1000)
     cy.screenshot("closed");
 
-    cy.get("[data-test=\"toggle\"]")
+    cy.get("#app > div > section > div > [data-test=\"toggle\"]")
       .click()
       .get("[data-test=\"container\"]")
       .should("have.class", "open")
