@@ -161,8 +161,6 @@ const WireframeAnnotationNotesContainer = styled.div`
   z-index: 1;
   position: relative;
   background-color: inherit;
-  flex-grow: 1;
-  display: flex;
 `;
 
 /**

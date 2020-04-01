@@ -29,7 +29,7 @@ const WireframeAnnotationNotesContainer = styled.ul`
 `;
 
 export const NoAnnotations = styled.div`
-  padding: 0 20px;
+  padding: 20px;
   text-align: center;
   color: #888;
   font-size: 2rem;
