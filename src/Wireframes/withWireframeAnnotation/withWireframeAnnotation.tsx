@@ -109,3 +109,8 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
 export const withWireframeAnnotationInterfaceDefinition = <P extends object>(
   { WrappedComponent, options }: {WrappedComponent: ComponentType<P>; options: WireframeAnnotationOptions}, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) => null;
+
+/* istanbul ignore next */
+export const WireframeAnnotationPropsInterfaceDefinition = <P extends object>(
+  { className, outline = true, children }: WireframeAnnotationProps, // eslint-disable-line @typescript-eslint/no-unused-vars
+) => null;

@@ -121,10 +121,10 @@ const app = (
                     <WAHeader>Header</WAHeader>
                     <div className="row">
                       <div className="col-6">
-                        <WASection3>Component 1</WASection3>
+                        <WASection3>Component 3</WASection3>
                       </div>
                       <div className="col-6">
-                        <WASection4>Component 2</WASection4>
+                        <WASection4>Component 4</WASection4>
                       </div>
                     </div>
                     <div className="row">
