@@ -189,18 +189,10 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   z-index: 1;
   position: relative;
   background-color: inherit;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .emotion-6 {
-  padding: 0 20px;
+  padding: 20px;
   text-align: center;
   color: #888;
   font-size: 2rem;
@@ -516,14 +508,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   z-index: 1;
   position: relative;
   background-color: inherit;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .emotion-24 {
@@ -1267,14 +1251,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   z-index: 1;
   position: relative;
   background-color: inherit;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .emotion-24 {
@@ -2134,14 +2110,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   z-index: 1;
   position: relative;
   background-color: inherit;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .emotion-24 {
