@@ -17,11 +17,15 @@ import { WireframeAnnotationNotes } from "../WireframeAnnotationNotes";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { useApi } from "../useApi";
 
-type WireframeProviderProps = {
+type WireframeContainerProps = {
   children: ReactNode;
-  className?: string;
   defaultOpen?: boolean;
-  onScrollIntoView?: (el: Element) => void;
+  className?: string;
+  fixed?: boolean;
+  onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, el: Element) => void;
+  /**
+   * Fix the WireframeContainer to the viewport
+   */
 }
 
 const transitionDuration = 250;
@@ -169,8 +173,8 @@ const WireframeAnnotationNotesContainer = styled.div`
  * Use the WireframeContainer at the top of your component tree
  * */
 export const WireframeContainer = ({
-  children, className, defaultOpen = true, onScrollIntoView,
-}: WireframeProviderProps) => {
+  children, className, defaultOpen = true, onHighlightAnnotation,
+}: WireframeContainerProps) => {
   const api = useApi();
 
   const [isClient, setIsClient] = useState(false);
@@ -222,7 +226,7 @@ export const WireframeContainer = ({
   useScrollElementIntoView({
     element: ((highlightedNote && container.current) && container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`)) || null,
     boundary: annotationsContainer.current,
-    onScrollIntoView,
+    onScrollIntoView: useCallback(el => (onHighlightAnnotation && highlightedNote) && onHighlightAnnotation(highlightedNote, el), [onHighlightAnnotation, highlightedNote]),
   });
 
   const handleToggle = useCallback(() => {

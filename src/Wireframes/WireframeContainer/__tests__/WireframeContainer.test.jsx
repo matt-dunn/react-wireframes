@@ -23,7 +23,7 @@ describe("Wireframe: WireframeContainer", () => {
   let MockedComponent2;
   let Fragment;
   let ComponentTree;
-  let onScrollIntoView;
+  let onHighlightAnnotation;
 
   beforeEach(() => {
     api = API();
@@ -31,12 +31,12 @@ describe("Wireframe: WireframeContainer", () => {
     MockedComponent1 = jest.fn(() => <div>Mock component 1</div>);
     MockedComponent2 = jest.fn();
 
-    onScrollIntoView = jest.fn();
+    onHighlightAnnotation = jest.fn();
 
     ComponentTree = (
       <Component
         defaultOpen={false}
-        onScrollIntoView={onScrollIntoView}
+        onHighlightAnnotation={onHighlightAnnotation}
       >
         <div>Child component 1</div>
         <div>Child component 2</div>
@@ -243,7 +243,19 @@ describe("Wireframe: WireframeContainer", () => {
       api.highlightNote(MockedComponent1);
     });
 
-    expect(onScrollIntoView).toHaveBeenCalled();
+    expect(onHighlightAnnotation).toBeCalledWith(
+      api.getAnnotations()[0],
+      document.querySelectorAll("[data-annotation-id]")[0],
+    );
+
+    act(() => {
+      api.highlightNote(MockedComponent2);
+    });
+
+    expect(onHighlightAnnotation).toBeCalledWith(
+      api.getAnnotations()[1],
+      document.querySelectorAll("[data-annotation-id]")[1],
+    );
 
     wrapper.unmount();
   });

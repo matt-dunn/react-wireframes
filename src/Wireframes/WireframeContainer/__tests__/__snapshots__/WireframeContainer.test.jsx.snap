@@ -666,10 +666,19 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={
+    onHighlightAnnotation={
       [MockFunction] {
         "calls": Array [
           Array [
+            Object {
+              "Component": [MockFunction],
+              "count": 1,
+              "id": 1,
+              "options": Object {
+                "description": "Test description 1",
+                "title": "Test component 1",
+              },
+            },
             .emotion-1 {
   all: initial;
   box-sizing: border-box;
@@ -1408,10 +1417,19 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={
+    onHighlightAnnotation={
       [MockFunction] {
         "calls": Array [
           Array [
+            Object {
+              "Component": [MockFunction],
+              "count": 1,
+              "id": 1,
+              "options": Object {
+                "description": "Test description 1",
+                "title": "Test component 1",
+              },
+            },
             .emotion-3 {
   font-size: 0.85rem;
   word-break: break-word;
@@ -1515,6 +1533,15 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
             </li>,
           ],
           Array [
+            Object {
+              "Component": [MockFunction],
+              "count": 1,
+              "id": 2,
+              "options": Object {
+                "description": "Test description 2",
+                "title": "Test component 2",
+              },
+            },
             .emotion-1 {
   all: initial;
   box-sizing: border-box;
@@ -2232,7 +2259,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={[MockFunction]}
+    onHighlightAnnotation={[MockFunction]}
   >
     <WireframeMainContainer
       className="open"
@@ -2693,7 +2720,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={[MockFunction]}
+    onHighlightAnnotation={[MockFunction]}
   >
     <WireframeMainContainer
       className=""
@@ -2941,7 +2968,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={[MockFunction]}
+    onHighlightAnnotation={[MockFunction]}
   >
     <WireframeMainContainer
       className=""
@@ -3189,7 +3216,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={[MockFunction]}
+    onHighlightAnnotation={[MockFunction]}
   >
     <WireframeMainContainer
       className=""
@@ -3437,7 +3464,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
 >
   <WireframeContainer
     defaultOpen={false}
-    onScrollIntoView={[MockFunction]}
+    onHighlightAnnotation={[MockFunction]}
   >
     <WireframeMainContainer
       className=""
