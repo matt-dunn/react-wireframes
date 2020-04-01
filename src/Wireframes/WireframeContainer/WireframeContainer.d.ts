@@ -4,11 +4,13 @@
  * @author Matt Dunn
  */
 import React, { ReactNode } from "react";
-declare type WireframeProviderProps = {
+import { WireframeAnnotation } from "../api";
+declare type WireframeContainerProps = {
     children: ReactNode;
-    className?: string;
     defaultOpen?: boolean;
-    onScrollIntoView?: (el: Element) => void;
+    className?: string;
+    fixed?: boolean;
+    onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, el: Element) => void;
 };
 export declare const WireframeAnnotationsToggle: import("@emotion/styled-base").StyledComponent<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {
     open: boolean;
@@ -18,21 +20,12 @@ export declare const WireframeAnnotationsClose: import("@emotion/styled-base").S
  * Use the WireframeContainer at the top of your component tree
  * */
 export declare const WireframeContainer: {
-    ({ children, className, defaultOpen, onScrollIntoView, }: WireframeProviderProps): JSX.Element;
+    ({ children, className, defaultOpen, onHighlightAnnotation, }: WireframeContainerProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
         description: string;
         displayName: string;
         props: {
-            className: {
-                defaultValue: null;
-                description: string;
-                name: string;
-                required: boolean;
-                type: {
-                    name: string;
-                };
-            };
             defaultOpen: {
                 defaultValue: {
                     value: boolean;
@@ -44,7 +37,25 @@ export declare const WireframeContainer: {
                     name: string;
                 };
             };
-            onScrollIntoView: {
+            className: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            fixed: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onHighlightAnnotation: {
                 defaultValue: null;
                 description: string;
                 name: string;
