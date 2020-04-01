@@ -50,4 +50,18 @@ describe("Wireframe: WireframeAnnotationsNote", () => {
 
     expect(wrapper.text()).toBe((12345678).toLocaleString());
   });
+
+  it("should render ID with parent ID", () => {
+    const wrapper = shallow(
+      <Component
+        annotation={{
+          ...annotation,
+          id: 12,
+        }}
+        parentId={1}
+      />,
+    );
+
+    expect(wrapper.text()).toBe("1.12");
+  });
 });

@@ -13,6 +13,7 @@ import { WireframeAnnotation } from "../api";
 
 type WireframeAnnotationsNoteProps = {
   annotation: WireframeAnnotation;
+  parentId?: number;
   isHighlighted?: boolean;
 }
 
@@ -46,10 +47,10 @@ const IdentifierNote = styled(Identifier)`
   align-self: flex-start;
 `;
 
-export const WireframeAnnotationNote = ({ annotation, isHighlighted = false }: WireframeAnnotationsNoteProps) => (
+export const WireframeAnnotationNote = ({ annotation, parentId, isHighlighted = false }: WireframeAnnotationsNoteProps) => (
   <WireframeAnnotationsNoteContainer isHighlighted={isHighlighted}>
     <header>
-      <IdentifierNote annotation={annotation} />
+      <IdentifierNote annotation={annotation} parentId={parentId} />
       <h2>
         {annotation.options.title}
       </h2>

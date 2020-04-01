@@ -38,11 +38,18 @@ export type WireframeAnnotationAPI = {
   setOpen: (isOpen: boolean) => boolean;
   onOpen: (cb: OpenCallback) => {unregister: () => void};
   isOpen: () => boolean;
+  setParentReference: (id?: number) => void;
+  getParentReference: () => number | undefined;
+}
+
+export type withWireframeAnnotationProps = {
+  annotationId?: number;
 }
 
 export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
   let annotations: WireframeAnnotations = [];
   let apiOptions: APIOptions = defaultOptions || {} as APIOptions;
+  let parentReference: number | undefined;
 
   let openCallbacks: OpenCallback[] = [];
   let isOpen = false;
@@ -125,5 +132,9 @@ export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
       };
     },
     isOpen: () => isOpen,
+    setParentReference: (id) => {
+      parentReference = id;
+    },
+    getParentReference: () => parentReference,
   };
 }

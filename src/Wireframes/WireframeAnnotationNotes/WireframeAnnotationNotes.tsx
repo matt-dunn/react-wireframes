@@ -13,6 +13,7 @@ import { WireframeAnnotationNote } from "./WireframeAnnotationNote";
 
 type WireframeAnnotationsNotesProps = {
   annotations?: WireframeAnnotations;
+  parentId?: number;
   highlightedNote?: WireframeAnnotation;
   className?: string;
 }
@@ -39,7 +40,9 @@ export const NoAnnotations = styled.div`
   display: flex;
 `;
 
-export const WireframeAnnotationNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => {
+export const WireframeAnnotationNotes = ({
+  annotations, parentId, highlightedNote, className,
+}: WireframeAnnotationsNotesProps) => {
   if (annotations && annotations.length > 0) {
     return (
       <WireframeAnnotationNotesContainer tabIndex={0} className={className}>
@@ -49,7 +52,7 @@ export const WireframeAnnotationNotes = ({ annotations, highlightedNote, classNa
             data-annotation-id={annotation.id}
             data-highlighted={highlightedNote === annotation}
           >
-            <WireframeAnnotationNote annotation={annotation} isHighlighted={highlightedNote === annotation} />
+            <WireframeAnnotationNote annotation={annotation} parentId={parentId} isHighlighted={highlightedNote === annotation} />
           </li>
         ))}
       </WireframeAnnotationNotesContainer>

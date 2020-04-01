@@ -5,12 +5,13 @@
  */
 
 import React, {
-  ComponentType, ReactNode, useCallback, useEffect, useState,
+  ComponentType, ReactElement, ReactNode, useCallback, useEffect, useState,
 } from "react";
 import styled from "@emotion/styled";
 import css from "@emotion/css";
+import classnames from "classnames";
 
-import { WireframeAnnotation, WireframeAnnotationOptions } from "../api";
+import { WireframeAnnotation, WireframeAnnotationOptions, withWireframeAnnotationProps } from "../api";
 import { useApi } from "../useApi";
 
 import { Identifier } from "./Identifier";
@@ -18,6 +19,7 @@ import { Identifier } from "./Identifier";
 type WireframeAnnotationProps = {
   className?: string;
   children?: ReactNode;
+  outline?: boolean;
 }
 
 const Wrapper = styled.span<{show: boolean}>`
@@ -27,7 +29,7 @@ const Wrapper = styled.span<{show: boolean}>`
     pointer-events: none;
   }
   
-  &:hover {
+  &.outline:hover {
     ${({ show }) => show && css`
       z-index: 5000;
       
@@ -35,7 +37,9 @@ const Wrapper = styled.span<{show: boolean}>`
         box-shadow: 0 0 0 1px #4086f7 !important;
       }
     `}
+  }
 
+  &:hover {
     > [data-annotation-identifier] {
         transition: opacity 0ms, visibility 0ms;
         opacity: 1;
@@ -51,9 +55,9 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
   Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
 
   // eslint-disable-next-line react/no-multi-comp
-  function WrappedWireframeAnnotation({ className, ...props }: P & WireframeAnnotationProps) {
+  function WrappedWireframeAnnotation({ className, outline = true, ...props }: P & WireframeAnnotationProps): ReactElement<P & withWireframeAnnotationProps> {
     const {
-      register, unregister, onOpen, isOpen, highlightNote,
+      register, unregister, onOpen, isOpen, highlightNote, getParentReference,
     } = useApi();
 
     const [annotation, setAnnotation] = useState<WireframeAnnotation>();
@@ -84,11 +88,14 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
         onMouseOver={handleHighlightNote}
         onFocus={handleHighlightNote}
         onMouseLeave={handleHighlightNoteReset}
-        className={className}
+        className={classnames({ "outline": outline }, className)}
       >
-        {annotation && <Identifier annotation={annotation} show={show} />}
+        {annotation && <Identifier annotation={annotation} parentId={getParentReference()} show={show} />}
 
-        <Component {...props as P} />
+        <Component
+          {...props as P}
+          annotationId={annotation && annotation.id}
+        />
       </Wrapper>
     );
   }

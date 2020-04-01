@@ -215,12 +215,14 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -255,7 +257,6 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-10 emotion-11"
@@ -645,12 +646,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -812,7 +815,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -1392,12 +1394,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -1675,7 +1679,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -2230,12 +2233,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2273,7 +2278,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -2695,12 +2699,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2738,7 +2744,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -2947,12 +2952,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2990,7 +2997,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -3199,12 +3205,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -3242,7 +3250,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -3451,12 +3458,14 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -3494,7 +3503,6 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
-              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"

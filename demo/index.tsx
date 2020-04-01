@@ -26,16 +26,6 @@ const SectionLarge = styled(Section)`
   min-height: 14rem;
 `;
 
-export const WATest1 = withWireframeAnnotation(Section, {
-  title: "Component 1",
-  description: "Component description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
-
-export const WATest2 = withWireframeAnnotation(Section, {
-  title: "Component 2",
-  description: "Component description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
-
 export const WAHeader = withWireframeAnnotation(Section, {
   title: "Header",
   description: "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
@@ -71,8 +61,13 @@ export const WASection5 = withWireframeAnnotation(Section, {
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 });
 
+export const WAWireframeProvider = withWireframeAnnotation(WireframeProvider, {
+  title: "Nested Annotations",
+  description: "Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
+});
+
 const WireframeContainerInner = styled(WireframeContainer)`
-  margin-top: 20px;
+  margin: 25px 40px 0 40px;
 `;
 
 const wireframeAPI = API();
@@ -101,20 +96,6 @@ const app = (
         <Main>
           <div className="row">
             <div className="col">
-              <WireframeProvider
-                api={wireframeAPI2}
-              >
-                <div style={{ border: "1px solid #ccc", margin: "0 0 20px 0" }}>
-                  <WireframeContainerInner
-                    fixed={false}
-                    className="container"
-                    defaultOpen={false}
-                  >
-                    <WATest1>Component</WATest1>
-                    <WATest2>Component 2</WATest2>
-                  </WireframeContainerInner>
-                </div>
-              </WireframeProvider>
               <WAHeader>Header</WAHeader>
             </div>
           </div>
@@ -124,6 +105,36 @@ const app = (
             </div>
             <div className="col-6">
               <WASection2>Component 2</WASection2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <WAWireframeProvider
+                outline={false}
+                api={wireframeAPI2}
+              >
+                <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+                  <WireframeContainerInner
+                    fixed={false}
+                    defaultOpen={false}
+                  >
+                    <WAHeader>Header</WAHeader>
+                    <div className="row">
+                      <div className="col-6">
+                        <WASection3>Component 1</WASection3>
+                      </div>
+                      <div className="col-6">
+                        <WASection4>Component 2</WASection4>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <WAFooter>Footer</WAFooter>
+                      </div>
+                    </div>
+                  </WireframeContainerInner>
+                </div>
+              </WAWireframeProvider>
             </div>
           </div>
           <div className="row">

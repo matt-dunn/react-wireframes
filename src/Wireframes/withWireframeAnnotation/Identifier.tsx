@@ -13,6 +13,7 @@ import { WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
   annotation: WireframeAnnotation;
+  parentId?: number;
   show: boolean;
 }
 
@@ -44,7 +45,7 @@ const IdentifierContainer = styled(IdentifierBase)`
   }
 `;
 
-export const Identifier = ({ annotation, show = true }: IdentifierProps) => (
+export const Identifier = ({ annotation, parentId, show = true }: IdentifierProps) => (
   <CSSTransition
     timeout={250}
     className="fade-Identifier"
@@ -52,6 +53,6 @@ export const Identifier = ({ annotation, show = true }: IdentifierProps) => (
     mountOnEnter
     unmountOnExit
   >
-    <IdentifierContainer data-annotation-identifier annotation={annotation} />
+    <IdentifierContainer data-annotation-identifier annotation={annotation} parentId={parentId} />
   </CSSTransition>
 );

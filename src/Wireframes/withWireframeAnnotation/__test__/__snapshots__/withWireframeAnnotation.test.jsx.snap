@@ -9,11 +9,11 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
   pointer-events: none;
 }
 
-.emotion-7:hover {
+.emotion-7.outline:hover {
   z-index: 5000;
 }
 
-.emotion-7:hover > * {
+.emotion-7.outline:hover > * {
   box-shadow: 0 0 0 1px #4086f7 !important;
 }
 
@@ -135,25 +135,28 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
 >
   <WrappedWireframeAnnotation>
     <Wrapper
+      className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       show={true}
     >
       <span
-        className="emotion-7 emotion-8"
+        className="outline emotion-7 emotion-8"
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
@@ -269,8 +272,12 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
             </Transition>
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)>
-          <Component>
+        <withWireframeAnnotation(Component)
+          annotationId={1}
+        >
+          <Component
+            annotationId={1}
+          >
             <div>
               MOCK COMPONENT
             </div>
@@ -301,25 +308,28 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
 >
   <WrappedWireframeAnnotation>
     <Wrapper
+      className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       show={false}
     >
       <span
-        className="emotion-0 emotion-1"
+        className="outline emotion-0 emotion-1"
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
@@ -373,8 +383,12 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
             />
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)>
-          <Component>
+        <withWireframeAnnotation(Component)
+          annotationId={1}
+        >
+          <Component
+            annotationId={1}
+          >
             <div>
               MOCK COMPONENT
             </div>
@@ -405,25 +419,28 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
 >
   <WrappedWireframeAnnotation>
     <Wrapper
+      className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       show={false}
     >
       <span
-        className="emotion-0 emotion-1"
+        className="outline emotion-0 emotion-1"
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
@@ -477,8 +494,12 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
             />
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)>
-          <Component>
+        <withWireframeAnnotation(Component)
+          annotationId={1}
+        >
+          <Component
+            annotationId={1}
+          >
             <div>
               MOCK COMPONENT
             </div>

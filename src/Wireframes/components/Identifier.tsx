@@ -11,6 +11,7 @@ import { WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
   annotation: WireframeAnnotation;
+  parentId?: number;
   className?: string;
 }
 
@@ -46,6 +47,8 @@ export const IdentifierContainer = styled.cite`
   flex-shrink: 0;
 `;
 
-export const Identifier = ({ annotation, className }: IdentifierProps) => (
-  <IdentifierContainer data-annotation-identifier className={className}>{annotation.id.toLocaleString()}</IdentifierContainer>
+const getId = (id: number, parentId?: number) => `${(parentId && `${parentId}.`) || ""}${id.toLocaleString()}`;
+
+export const Identifier = ({ annotation, parentId, className }: IdentifierProps) => (
+  <IdentifierContainer data-annotation-identifier className={className}>{getId(annotation.id, parentId)}</IdentifierContainer>
 );
