@@ -21,11 +21,7 @@ type WireframeContainerProps = {
   children: ReactNode;
   defaultOpen?: boolean;
   className?: string;
-  fixed?: boolean;
   onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, el: Element) => void;
-  /**
-   * Fix the WireframeContainer to the viewport
-   */
 }
 
 const transitionDuration = 250;
