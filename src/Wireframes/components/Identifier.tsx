@@ -57,10 +57,10 @@ const getParentId = (parent: ParentReference): number[] => {
   return [parent.id];
 };
 
-const getId = (id: number, parentReference?: ParentReference) => [...(parentReference && getParentId(parentReference)) || [], id].join(".");
-
 const Identifier = ({ annotation, parentReference, className }: IdentifierProps) => (
-  <IdentifierContainer data-annotation-identifier className={className}>{getId(annotation.id, parentReference)}</IdentifierContainer>
+  <IdentifierContainer data-annotation-identifier className={className}>
+    {[...(parentReference && getParentId(parentReference)) || [], annotation.id].join(".")}
+  </IdentifierContainer>
 );
 
 const IdentifierMemo = React.memo(Identifier);
