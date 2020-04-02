@@ -11,8 +11,8 @@ import { WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
   annotation: WireframeAnnotation;
-  parentId?: number;
   className?: string;
+  parentId?: number;
 }
 
 export const IdentifierContainer = styled.cite`

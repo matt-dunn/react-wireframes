@@ -93,6 +93,22 @@ describe("Wireframe: withWireframeAnnotation", () => {
     expect(highlightNote).toHaveBeenCalledWith(undefined);
   });
 
+  it("should show annotation highlighted", () => {
+    const wrapper = mount(
+      <WireframeProvider api={api}>
+        <WrappedComponent isHighlighted />
+      </WireframeProvider>,
+    );
+
+    act(() => {
+      api.setOpen(true);
+    });
+
+    wrapper.update();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should unregister when unmounted", () => {
     const wrapper = mount(Fragment);
 

@@ -13,9 +13,9 @@ import { WireframeAnnotationNote } from "./WireframeAnnotationNote";
 
 type WireframeAnnotationsNotesProps = {
   annotations?: WireframeAnnotations;
-  parentId?: number;
   highlightedNote?: WireframeAnnotation;
   className?: string;
+  parentId?: number;
 }
 
 const WireframeAnnotationNotesContainer = styled.ul`

@@ -9,14 +9,17 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
   pointer-events: none;
 }
 
+.emotion-7.outlined,
 .emotion-7.outline:hover {
   z-index: 5000;
 }
 
+.emotion-7.outlined > *,
 .emotion-7.outline:hover > * {
   box-shadow: 0 0 0 1px #4086f7 !important;
 }
 
+.emotion-7.outlined > [data-annotation-identifier],
 .emotion-7:hover > [data-annotation-identifier] {
   -webkit-transition: opacity 0ms,visibility 0ms;
   transition: opacity 0ms,visibility 0ms;
@@ -298,6 +301,7 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
   pointer-events: none;
 }
 
+.emotion-0.outlined > [data-annotation-identifier],
 .emotion-0:hover > [data-annotation-identifier] {
   -webkit-transition: opacity 0ms,visibility 0ms;
   transition: opacity 0ms,visibility 0ms;
@@ -409,6 +413,7 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
   pointer-events: none;
 }
 
+.emotion-0.outlined > [data-annotation-identifier],
 .emotion-0:hover > [data-annotation-identifier] {
   -webkit-transition: opacity 0ms,visibility 0ms;
   transition: opacity 0ms,visibility 0ms;
@@ -492,6 +497,300 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
               timeout={250}
               unmountOnExit={true}
             />
+          </CSSTransition>
+        </Identifier>
+        <withWireframeAnnotation(Component)
+          annotationId={1}
+        >
+          <Component
+            annotationId={1}
+          >
+            <div>
+              MOCK COMPONENT
+            </div>
+          </Component>
+        </withWireframeAnnotation(Component)>
+      </span>
+    </Wrapper>
+  </WrappedWireframeAnnotation>
+</WireframeProvider>
+`;
+
+exports[`Wireframe: withWireframeAnnotation should show annotation highlighted 1`] = `
+.emotion-7 {
+  position: relative;
+}
+
+.emotion-7 [disabled] {
+  pointer-events: none;
+}
+
+.emotion-7.outlined,
+.emotion-7.outline:hover {
+  z-index: 5000;
+}
+
+.emotion-7.outlined > *,
+.emotion-7.outline:hover > * {
+  box-shadow: 0 0 0 1px #4086f7 !important;
+}
+
+.emotion-7.outlined > [data-annotation-identifier],
+.emotion-7:hover > [data-annotation-identifier] {
+  -webkit-transition: opacity 0ms,visibility 0ms;
+  transition: opacity 0ms,visibility 0ms;
+  opacity: 1;
+}
+
+.emotion-3 {
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 4000;
+  cursor: default;
+  -webkit-transition: opacity 250ms,visibility 250ms;
+  transition: opacity 250ms,visibility 250ms;
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.enter {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-3.fade-Identifier.enter-active {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.exit {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-3.fade-Identifier.exit-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-1 {
+  all: initial;
+  box-sizing: border-box;
+  line-height: 1;
+  border-radius: 2em;
+  color: #333;
+  background-color: yellow;
+  border-color: #caca00;
+  white-space: nowrap;
+  min-width: 2em;
+  max-width: initial;
+  min-height: auto;
+  max-height: initial;
+  height: 2em;
+  padding: 0.25em 0.5em;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: initial;
+  overflow: visible;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 4000;
+  cursor: default;
+  -webkit-transition: opacity 250ms,visibility 250ms;
+  transition: opacity 250ms,visibility 250ms;
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-1.fade-Identifier.enter {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-1.fade-Identifier.enter-active {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-1.fade-Identifier.exit {
+  opacity: 0.75;
+  visibility: visible;
+}
+
+.emotion-1.fade-Identifier.exit-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+<WireframeProvider
+  api={
+    Object {
+      "getAnnotations": [Function],
+      "getParentReference": [Function],
+      "highlightNote": [Function],
+      "isOpen": [Function],
+      "onOpen": [Function],
+      "register": [Function],
+      "setOpen": [Function],
+      "setOptions": [Function],
+      "setParentReference": [Function],
+      "unregister": [Function],
+    }
+  }
+>
+  <WrappedWireframeAnnotation
+    isHighlighted={true}
+  >
+    <Wrapper
+      className="outline outlined"
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      show={true}
+    >
+      <span
+        className="outline outlined emotion-7 emotion-8"
+        onFocus={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+      >
+        <Identifier
+          annotation={
+            Object {
+              "Component": Object {
+                "$$typeof": Symbol(react.memo),
+                "compare": null,
+                "displayName": "withWireframeAnnotation(Component)",
+                "type": [Function],
+              },
+              "count": 1,
+              "id": 1,
+              "options": Object {
+                "description": <div>
+                  Description.
+                </div>,
+                "title": <div>
+                  Title
+                </div>,
+              },
+            }
+          }
+          show={true}
+        >
+          <CSSTransition
+            className="fade-Identifier"
+            classNames=""
+            in={true}
+            mountOnEnter={true}
+            timeout={250}
+            unmountOnExit={true}
+          >
+            <Transition
+              appear={false}
+              className="fade-Identifier"
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={250}
+              unmountOnExit={true}
+            >
+              <IdentifierContainer
+                annotation={
+                  Object {
+                    "Component": Object {
+                      "$$typeof": Symbol(react.memo),
+                      "compare": null,
+                      "displayName": "withWireframeAnnotation(Component)",
+                      "type": [Function],
+                    },
+                    "count": 1,
+                    "id": 1,
+                    "options": Object {
+                      "description": <div>
+                        Description.
+                      </div>,
+                      "title": <div>
+                        Title
+                      </div>,
+                    },
+                  }
+                }
+                className="fade-Identifier"
+                data-annotation-identifier={true}
+              >
+                <Identifier
+                  annotation={
+                    Object {
+                      "Component": Object {
+                        "$$typeof": Symbol(react.memo),
+                        "compare": null,
+                        "displayName": "withWireframeAnnotation(Component)",
+                        "type": [Function],
+                      },
+                      "count": 1,
+                      "id": 1,
+                      "options": Object {
+                        "description": <div>
+                          Description.
+                        </div>,
+                        "title": <div>
+                          Title
+                        </div>,
+                      },
+                    }
+                  }
+                  className="fade-Identifier emotion-3 emotion-0"
+                  data-annotation-identifier={true}
+                >
+                  <IdentifierContainer
+                    className="fade-Identifier emotion-3 emotion-0"
+                    data-annotation-identifier={true}
+                  >
+                    <cite
+                      className="fade-Identifier emotion-0 emotion-1 emotion-2"
+                      data-annotation-identifier={true}
+                    >
+                      1
+                    </cite>
+                  </IdentifierContainer>
+                </Identifier>
+              </IdentifierContainer>
+            </Transition>
           </CSSTransition>
         </Identifier>
         <withWireframeAnnotation(Component)

@@ -20,6 +20,7 @@ type WireframeAnnotationProps = {
   className?: string;
   children?: ReactNode;
   outline?: boolean;
+  isHighlighted?: boolean;
 }
 
 const Wrapper = styled.span<{show: boolean}>`
@@ -29,6 +30,7 @@ const Wrapper = styled.span<{show: boolean}>`
     pointer-events: none;
   }
   
+  &.outlined,
   &.outline:hover {
     ${({ show }) => show && css`
       z-index: 5000;
@@ -39,6 +41,7 @@ const Wrapper = styled.span<{show: boolean}>`
     `}
   }
 
+  &.outlined,
   &:hover {
     > [data-annotation-identifier] {
         transition: opacity 0ms, visibility 0ms;
@@ -55,7 +58,9 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
   Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
 
   // eslint-disable-next-line react/no-multi-comp
-  function WrappedWireframeAnnotation({ className, outline = true, ...props }: P & WireframeAnnotationProps): ReactElement<P & withWireframeAnnotationProps> {
+  function WrappedWireframeAnnotation({
+    className, outline = true, isHighlighted = false, ...props
+  }: P & WireframeAnnotationProps): ReactElement<P & withWireframeAnnotationProps> {
     const {
       register, unregister, onOpen, isOpen, highlightNote, getParentReference,
     } = useApi();
@@ -88,7 +93,7 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
         onMouseOver={handleHighlightNote}
         onFocus={handleHighlightNote}
         onMouseLeave={handleHighlightNoteReset}
-        className={classnames({ "outline": outline }, className)}
+        className={classnames({ "outline": outline, "outlined": isHighlighted && show }, className)}
       >
         {annotation && <Identifier annotation={annotation} parentId={getParentReference()} show={show} />}
 
@@ -112,5 +117,7 @@ export const withWireframeAnnotationInterfaceDefinition = <P extends object>(
 
 /* istanbul ignore next */
 export const WireframeAnnotationPropsInterfaceDefinition = <P extends object>(
-  { className, outline = true, children }: WireframeAnnotationProps, // eslint-disable-line @typescript-eslint/no-unused-vars
+  {
+    className, outline = true, isHighlighted = false, children,
+  }: WireframeAnnotationProps, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) => null;

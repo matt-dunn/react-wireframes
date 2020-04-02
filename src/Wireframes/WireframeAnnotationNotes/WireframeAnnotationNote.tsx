@@ -13,8 +13,8 @@ import { WireframeAnnotation } from "../api";
 
 type WireframeAnnotationsNoteProps = {
   annotation: WireframeAnnotation;
-  parentId?: number;
   isHighlighted?: boolean;
+  parentId?: number;
 }
 
 const WireframeAnnotationsNoteContainer = styled.article<{isHighlighted: boolean}>`

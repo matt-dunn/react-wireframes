@@ -177,7 +177,7 @@ const WireframeAnnotationNotesContainer = styled.div`
  * Use the WireframeContainer at the top of your component tree
  * */
 export const WireframeContainer = ({
-  children, className, defaultOpen = true, onHighlightAnnotation, fixed,
+  children, className, defaultOpen = true, onHighlightAnnotation, fixed = true,
 }: WireframeContainerProps) => {
   const api = useApi();
 
