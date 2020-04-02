@@ -271,7 +271,7 @@ export const WireframeContainer = ({
                   >
                     <WireframeAnnotationNotes
                       annotations={annotations}
-                      parentId={api.getParentReference()}
+                      parentReference={api.getParentReference()}
                       highlightedNote={highlightedNote}
                     />
                   </WireframeAnnotationNotesContainer>

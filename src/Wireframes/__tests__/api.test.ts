@@ -237,5 +237,21 @@ describe("Wireframe: API", () => {
 
       expect(onOpenRegistered).toHaveBeenCalledTimes(1);
     });
+
+    it("should set parent reference", () => {
+      const onOpenRegistered = jest.fn();
+
+      const onOpen = api.onOpen(onOpenRegistered);
+
+      api.setOpen(true);
+
+      expect(onOpenRegistered).toHaveBeenCalledWith(true);
+
+      onOpen.unregister();
+
+      api.setOpen(true);
+
+      expect(onOpenRegistered).toHaveBeenCalledTimes(1);
+    });
   });
 });

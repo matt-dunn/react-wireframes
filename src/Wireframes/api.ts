@@ -29,6 +29,11 @@ export type WireframeAnnotations = WireframeAnnotation[];
 
 type OpenCallback = (isOpen: boolean) => void;
 
+export type ParentReference = {
+  id: number;
+  api: WireframeAnnotationAPI;
+}
+
 export type WireframeAnnotationAPI = {
   setOptions: (options: APIOptions) => APIOptions;
   getAnnotations: () => WireframeAnnotations;
@@ -38,8 +43,8 @@ export type WireframeAnnotationAPI = {
   setOpen: (isOpen: boolean) => boolean;
   onOpen: (cb: OpenCallback) => {unregister: () => void};
   isOpen: () => boolean;
-  setParentReference: (id?: number) => void;
-  getParentReference: () => number | undefined;
+  setParentReference: (parentReference: ParentReference) => void;
+  getParentReference: () => ParentReference | undefined;
 }
 
 export type withWireframeAnnotationProps = {
@@ -49,7 +54,7 @@ export type withWireframeAnnotationProps = {
 export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
   let annotations: WireframeAnnotations = [];
   let apiOptions: APIOptions = defaultOptions || {} as APIOptions;
-  let parentReference: number | undefined;
+  let parentReference: ParentReference | undefined;
 
   let openCallbacks: OpenCallback[] = [];
   let isOpen = false;
@@ -132,8 +137,8 @@ export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
       };
     },
     isOpen: () => isOpen,
-    setParentReference: (id) => {
-      parentReference = id;
+    setParentReference: (reference) => {
+      parentReference = reference;
     },
     getParentReference: () => parentReference,
   };

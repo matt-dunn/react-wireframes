@@ -72,6 +72,7 @@ const WireframeContainerInner = styled(WireframeContainer)`
 
 const wireframeAPI = API();
 const wireframeAPI2 = API();
+const wireframeAPI3 = API();
 
 const AppError = ({ error }: {error: Error}) => (
   <>
@@ -119,6 +120,36 @@ const app = (
                     defaultOpen={false}
                   >
                     <WAHeader>Header</WAHeader>
+                    <div className="row">
+                      <div className="col">
+                        <WAWireframeProvider
+                          outline={false}
+                          api={wireframeAPI3}
+                        >
+                          <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+                            <WireframeContainerInner
+                              fixed={false}
+                              defaultOpen={false}
+                            >
+                              <WAHeader>Header</WAHeader>
+                              <div className="row">
+                                <div className="col-6">
+                                  <WASection3>Component 3</WASection3>
+                                </div>
+                                <div className="col-6">
+                                  <WASection4>Component 4</WASection4>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col">
+                                  <WAFooter>Footer</WAFooter>
+                                </div>
+                              </div>
+                            </WireframeContainerInner>
+                          </div>
+                        </WAWireframeProvider>
+                      </div>
+                    </div>
                     <div className="row">
                       <div className="col-6">
                         <WASection3>Component 3</WASection3>

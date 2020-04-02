@@ -4,7 +4,9 @@
  * @author Matt Dunn
  */
 
-import React, { createContext, ReactNode, useEffect } from "react";
+import React, {
+  createContext, ReactNode, useContext, useEffect,
+} from "react";
 
 import { WireframeAnnotationAPI, withWireframeAnnotationProps } from "./api";
 
@@ -16,9 +18,13 @@ type WireframeProviderProps = {
 }
 
 export const WireframeProvider = ({ children, api, annotationId }: WireframeProviderProps & withWireframeAnnotationProps) => {
+  const parentApi = useContext(WireframeAnnotationContext);
+
   useEffect(() => {
-    api.setParentReference(annotationId);
-  }, [api, annotationId]);
+    if (parentApi && annotationId) {
+      api.setParentReference({ api: parentApi, id: annotationId });
+    }
+  }, [api, parentApi, annotationId]);
 
   return (
     <WireframeAnnotationContext.Provider value={api}>

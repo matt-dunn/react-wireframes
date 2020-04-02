@@ -7,12 +7,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { WireframeAnnotation } from "../api";
+import { ParentReference, WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
   annotation: WireframeAnnotation;
   className?: string;
-  parentId?: number;
+  parentReference?: ParentReference;
 }
 
 export const IdentifierContainer = styled.cite`
@@ -47,8 +47,22 @@ export const IdentifierContainer = styled.cite`
   flex-shrink: 0;
 `;
 
-const getId = (id: number, parentId?: number) => `${(parentId && `${parentId}.`) || ""}${id.toLocaleString()}`;
+const getParentId = (parent: ParentReference): number[] => {
+  const p = parent.api.getParentReference();
 
-export const Identifier = ({ annotation, parentId, className }: IdentifierProps) => (
-  <IdentifierContainer data-annotation-identifier className={className}>{getId(annotation.id, parentId)}</IdentifierContainer>
+  if (p) {
+    return [...getParentId(p), parent.id];
+  }
+
+  return [parent.id];
+};
+
+const getId = (id: number, parentReference?: ParentReference) => [...(parentReference && getParentId(parentReference)) || [], id].join(".");
+
+const Identifier = ({ annotation, parentReference, className }: IdentifierProps) => (
+  <IdentifierContainer data-annotation-identifier className={className}>{getId(annotation.id, parentReference)}</IdentifierContainer>
 );
+
+const IdentifierMemo = React.memo(Identifier);
+
+export { IdentifierMemo as Identifier };

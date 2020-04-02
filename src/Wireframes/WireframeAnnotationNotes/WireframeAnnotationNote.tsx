@@ -9,12 +9,12 @@ import styled from "@emotion/styled";
 import css from "@emotion/css";
 
 import { Identifier } from "../components/Identifier";
-import { WireframeAnnotation } from "../api";
+import { ParentReference, WireframeAnnotation } from "../api";
 
 type WireframeAnnotationsNoteProps = {
   annotation: WireframeAnnotation;
   isHighlighted?: boolean;
-  parentId?: number;
+  parentReference?: ParentReference;
 }
 
 const WireframeAnnotationsNoteContainer = styled.article<{isHighlighted: boolean}>`
@@ -47,10 +47,10 @@ const IdentifierNote = styled(Identifier)`
   align-self: flex-start;
 `;
 
-export const WireframeAnnotationNote = ({ annotation, parentId, isHighlighted = false }: WireframeAnnotationsNoteProps) => (
+export const WireframeAnnotationNote = ({ annotation, parentReference, isHighlighted = false }: WireframeAnnotationsNoteProps) => (
   <WireframeAnnotationsNoteContainer isHighlighted={isHighlighted}>
     <header>
-      <IdentifierNote annotation={annotation} parentId={parentId} />
+      <IdentifierNote annotation={annotation} parentReference={parentReference} />
       <h2>
         {annotation.options.title}
       </h2>

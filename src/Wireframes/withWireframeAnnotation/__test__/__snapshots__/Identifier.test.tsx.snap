@@ -12,7 +12,7 @@ exports[`Wireframe: Identifier should render correctly 1`] = `
   <IdentifierContainer
     annotation={
       Object {
-        "id": "123",
+        "id": 123,
       }
     }
     data-annotation-identifier={true}

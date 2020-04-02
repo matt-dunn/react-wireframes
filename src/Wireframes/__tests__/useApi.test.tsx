@@ -6,7 +6,6 @@ import { WireframeProvider } from "../context";
 import { WireframeAnnotationAPI } from "../api";
 
 const mockApi = {
-  setParentReference: () => {},
 } as WireframeAnnotationAPI;
 
 type MockProps = {

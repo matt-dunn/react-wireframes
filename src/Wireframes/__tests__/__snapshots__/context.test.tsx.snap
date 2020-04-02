@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wireframe: WireframeProvider should render children 1`] = `
+<WireframeProvider
+  api={Object {}}
+>
+  <div>
+    Child
+  </div>
+</WireframeProvider>
+`;
+
+exports[`Wireframe: WireframeProvider should render children 2`] = `
+<WireframeProvider
+  api={
+    Object {
+      "setParentReference": [MockFunction],
+    }
+  }
+>
+  <WireframeProvider
+    annotationId={12}
+    api={
+      Object {
+        "setParentReference": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "api": Object {
+                  "setParentReference": [MockFunction],
+                },
+                "id": 12,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
+  >
+    <div>
+      Child
+    </div>
+  </WireframeProvider>
+</WireframeProvider>
+`;
