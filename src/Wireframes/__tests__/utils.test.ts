@@ -79,7 +79,7 @@ describe("Wireframe: Utils", () => {
   it("should not update collection when not found", () => {
     const updatedAnnotations = updateWireframeAnnotation(
       annotations,
-      {},
+      {} as any,
       {
         ...annotations[0],
         count: 2,

@@ -7,6 +7,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 
+import { WireframeAnnotation } from "../../api";
+
 import { Identifier as Component } from "../Identifier";
 
 describe("Wireframe: Identifier", () => {
@@ -14,8 +16,8 @@ describe("Wireframe: Identifier", () => {
     const wrapper = shallow(
       <Component
         annotation={{
-          id: "123",
-        }}
+          id: 123,
+        } as WireframeAnnotation}
       />,
     );
 

@@ -4,30 +4,30 @@
  * @author Matt Dunn
  */
 
-import React from "react";
+import React, { ComponentType, ReactElement } from "react";
 import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
 import { WireframeProvider } from "../../context";
-import { API } from "../../api";
+import { API, WireframeAnnotationAPI } from "../../api";
 
 import { withWireframeAnnotation } from "../withWireframeAnnotation";
 
 describe("Wireframe: withWireframeAnnotation", () => {
-  let api;
-  let Fragment;
-  let WrappedComponent;
-  let ComponentTree;
-  let highlightNote;
+  let api: WireframeAnnotationAPI;
+  let Fragment: ReactElement;
+  let WrappedComponent: ComponentType<any>;
+  let ComponentTree: ReactElement;
+  let highlightNote: any;
 
   beforeEach(() => {
     highlightNote = jest.fn();
 
     api = API({
       highlightNote,
-    });
+    } as any);
 
-    WrappedComponent = withWireframeAnnotation(() => <div>MOCK COMPONENT</div>, {
+    WrappedComponent = withWireframeAnnotation(() => <div>MOCK COMPONENT</div> as any, {
       title: <div>Title</div>,
       description: <div>Description.</div>,
     });
@@ -49,7 +49,7 @@ describe("Wireframe: withWireframeAnnotation", () => {
     expect(annotation).toEqual({
       id: 1,
       count: 1,
-      Component: WrappedComponent.Component,
+      Component: (WrappedComponent as any).Component,
       options: {
         title: <div>Title</div>,
         description: <div>Description.</div>,

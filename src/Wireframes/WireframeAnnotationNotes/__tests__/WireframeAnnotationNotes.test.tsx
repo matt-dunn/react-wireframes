@@ -7,11 +7,13 @@
 import React from "react";
 import { shallow } from "enzyme";
 
+import { WireframeAnnotations } from "../../api";
+
 import { WireframeAnnotationNotes as Component, NoAnnotations } from "../WireframeAnnotationNotes";
 
 describe("Wireframe: WireframeAnnotationsNotes", () => {
   let MockedComponent;
-  let annotations;
+  let annotations: WireframeAnnotations;
 
   beforeEach(() => {
     MockedComponent = jest.fn();

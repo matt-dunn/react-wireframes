@@ -235,7 +235,7 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
                 className="fade-Identifier"
                 data-annotation-identifier={true}
               >
-                <Memo(Identifier2)
+                <Memo(Identifier)
                   annotation={
                     Object {
                       "Component": Object {
@@ -270,7 +270,7 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
                       1
                     </cite>
                   </IdentifierContainer>
-                </Memo(Identifier2)>
+                </Memo(Identifier)>
               </IdentifierContainer>
             </Transition>
           </CSSTransition>
@@ -753,7 +753,7 @@ exports[`Wireframe: withWireframeAnnotation should show annotation highlighted 1
                 className="fade-Identifier"
                 data-annotation-identifier={true}
               >
-                <Memo(Identifier2)
+                <Memo(Identifier)
                   annotation={
                     Object {
                       "Component": Object {
@@ -788,7 +788,7 @@ exports[`Wireframe: withWireframeAnnotation should show annotation highlighted 1
                       1
                     </cite>
                   </IdentifierContainer>
-                </Memo(Identifier2)>
+                </Memo(Identifier)>
               </IdentifierContainer>
             </Transition>
           </CSSTransition>
