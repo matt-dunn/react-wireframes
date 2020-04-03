@@ -9,7 +9,7 @@ import { mount } from "enzyme";
 
 import { WireframeAnnotationAPI } from "../api";
 
-import { WireframeProvider } from "../context";
+import { WireframeProvider } from "../WireframeProvider";
 
 describe("Wireframe: WireframeProvider", () => {
   it("should render children", () => {
