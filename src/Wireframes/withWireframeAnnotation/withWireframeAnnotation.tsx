@@ -5,7 +5,7 @@
  */
 
 import React, {
-  ComponentType, ReactElement, ReactNode, useCallback, useEffect, useState,
+  ComponentType, ReactElement, ReactNode, useCallback, useEffect, useMemo, useState,
 } from "react";
 import styled from "@emotion/styled";
 import css from "@emotion/css";
@@ -13,6 +13,7 @@ import classnames from "classnames";
 
 import { WireframeAnnotation, WireframeAnnotationOptions, withWireframeAnnotationProps } from "../api";
 import { useApi } from "../useApi";
+import { WireframeProvider } from "../context";
 
 import { Identifier } from "./Identifier";
 
@@ -87,6 +88,10 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
       highlightNote(undefined);
     }, [highlightNote]);
 
+    const additionalProps = useMemo(() => ((annotation && WrappedComponent === WireframeProvider) && {
+      annotationId: annotation.id,
+    }) || undefined, [annotation]);
+
     return (
       <Wrapper
         show={show}
@@ -99,7 +104,7 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
 
         <Component
           {...props as P}
-          annotationId={annotation && annotation.id}
+          {...additionalProps}
         />
       </Wrapper>
     );

@@ -130,6 +130,7 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
   opacity: ${({ open }) => (open && 1) || 0.25};
   font-size: 1rem;
   min-height: 3.5em;
+  cursor: pointer;
   
   &:active,
   &:focus,
@@ -140,7 +141,6 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
 
   span {
     all: initial;
-    cursor: pointer;
     color: inherit;
     padding: 0.25em;
     font-size: 1.25em;

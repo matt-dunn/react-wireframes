@@ -275,12 +275,8 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
             </Transition>
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)
-          annotationId={1}
-        >
-          <Component
-            annotationId={1}
-          >
+        <withWireframeAnnotation(Component)>
+          <Component>
             <div>
               MOCK COMPONENT
             </div>
@@ -387,12 +383,8 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
             />
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)
-          annotationId={1}
-        >
-          <Component
-            annotationId={1}
-          >
+        <withWireframeAnnotation(Component)>
+          <Component>
             <div>
               MOCK COMPONENT
             </div>
@@ -499,12 +491,8 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
             />
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)
-          annotationId={1}
-        >
-          <Component
-            annotationId={1}
-          >
+        <withWireframeAnnotation(Component)>
+          <Component>
             <div>
               MOCK COMPONENT
             </div>
@@ -793,12 +781,8 @@ exports[`Wireframe: withWireframeAnnotation should show annotation highlighted 1
             </Transition>
           </CSSTransition>
         </Identifier>
-        <withWireframeAnnotation(Component)
-          annotationId={1}
-        >
-          <Component
-            annotationId={1}
-          >
+        <withWireframeAnnotation(Component)>
+          <Component>
             <div>
               MOCK COMPONENT
             </div>
