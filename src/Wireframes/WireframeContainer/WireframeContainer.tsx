@@ -254,30 +254,29 @@ export const WireframeContainer = ({
               <span>→</span>
             </WireframeAnnotationsToggle>
 
-            {isOpened
-              && (
-                <>
-                  <header className="annotations">
-                    <h1>Annotations</h1>
-                    <WireframeAnnotationsClose
-                      aria-label="Close annotations"
-                      onClick={handleClose}
-                    >
-                      ×
-                    </WireframeAnnotationsClose>
-                  </header>
-                  <WireframeAnnotationNotesContainer
-                    ref={annotationsContainer}
-                  >
-                    <WireframeAnnotationNotes
-                      annotations={annotations}
-                      parentReference={api.getParentReference()}
-                      highlightedNote={highlightedNote}
-                    />
-                  </WireframeAnnotationNotesContainer>
-                </>
-              )
-            }
+            {isOpened && (
+              <header className="annotations">
+                <h1>Annotations</h1>
+                <WireframeAnnotationsClose
+                  aria-label="Close annotations"
+                  onClick={handleClose}
+                >
+                  ×
+                </WireframeAnnotationsClose>
+              </header>
+            )}
+
+            {isOpened && (
+            <WireframeAnnotationNotesContainer
+              ref={annotationsContainer}
+            >
+              <WireframeAnnotationNotes
+                annotations={annotations}
+                parentReference={api.getParentReference()}
+                highlightedNote={highlightedNote}
+              />
+            </WireframeAnnotationNotesContainer>
+            )}
           </WireframeAnnotationsWrapper>
         </WireframeAnnotationsContainer>
       )}
