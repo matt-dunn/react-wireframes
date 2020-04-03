@@ -4,19 +4,29 @@
  * @author Matt Dunn
  */
 /// <reference types="react" />
-import { WireframeAnnotation } from "../api";
+import { ParentReference, WireframeAnnotation } from "../api";
 declare type IdentifierProps = {
     annotation: WireframeAnnotation;
-    show: boolean;
+    parentReference?: ParentReference;
+    show?: boolean;
 };
 export declare const Identifier: {
-    ({ annotation, show }: IdentifierProps): JSX.Element;
+    ({ annotation, parentReference, show }: IdentifierProps): JSX.Element;
     displayName: string;
     __docgenInfo: {
         description: string;
         displayName: string;
         props: {
             annotation: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            parentReference: {
                 defaultValue: null;
                 description: string;
                 name: string;

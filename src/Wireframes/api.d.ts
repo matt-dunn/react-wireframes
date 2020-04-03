@@ -20,6 +20,10 @@ export declare type WireframeAnnotation = {
 };
 export declare type WireframeAnnotations = WireframeAnnotation[];
 declare type OpenCallback = (isOpen: boolean) => void;
+export declare type ParentReference = {
+    id: number;
+    api: WireframeAnnotationAPI;
+};
 export declare type WireframeAnnotationAPI = {
     setOptions: (options: APIOptions) => APIOptions;
     getAnnotations: () => WireframeAnnotations;
@@ -31,6 +35,11 @@ export declare type WireframeAnnotationAPI = {
         unregister: () => void;
     };
     isOpen: () => boolean;
+    setParentReference: (parentReference: ParentReference) => void;
+    getParentReference: () => ParentReference | undefined;
+};
+export declare type withWireframeAnnotationProps = {
+    annotationId?: number;
 };
 export declare function API(defaultOptions?: APIOptions): WireframeAnnotationAPI;
 export declare namespace API {
