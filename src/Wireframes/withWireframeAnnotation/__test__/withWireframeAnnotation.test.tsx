@@ -8,7 +8,7 @@ import React, { ComponentType, ReactElement } from "react";
 import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
-import { WireframeProvider } from "../../context";
+import { WireframeProvider } from "../../WireframeProvider";
 import { API, WireframeAnnotationAPI } from "../../api";
 
 import { withWireframeAnnotation } from "../withWireframeAnnotation";
@@ -97,6 +97,29 @@ describe("Wireframe: withWireframeAnnotation", () => {
     const wrapper = mount(
       <WireframeProvider api={api}>
         <WrappedComponent isHighlighted />
+      </WireframeProvider>,
+    );
+
+    act(() => {
+      api.setOpen(true);
+    });
+
+    wrapper.update();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should nest providers", () => {
+    const WrappedFragment = withWireframeAnnotation(WireframeProvider, {
+      title: <div>Title</div>,
+      description: <div>Description.</div>,
+    });
+
+    const wrapper = mount(
+      <WireframeProvider api={api}>
+        <WrappedFragment api={API()}>
+          children
+        </WrappedFragment>
       </WireframeProvider>,
     );
 

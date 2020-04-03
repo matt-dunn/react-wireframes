@@ -8,7 +8,7 @@ import React, { FC, ReactElement } from "react";
 import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
-import { WireframeProvider } from "../../context";
+import { WireframeProvider } from "../../WireframeProvider";
 import { API, WireframeAnnotationAPI } from "../../api";
 
 import {

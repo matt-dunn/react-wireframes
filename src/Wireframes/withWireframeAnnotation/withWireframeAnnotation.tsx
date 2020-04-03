@@ -13,7 +13,7 @@ import classnames from "classnames";
 
 import { WireframeAnnotation, WireframeAnnotationOptions, withWireframeAnnotationProps } from "../api";
 import { useApi } from "../useApi";
-import { WireframeProvider } from "../context";
+import { WireframeProvider } from "../WireframeProvider";
 
 import { Identifier } from "./Identifier";
 

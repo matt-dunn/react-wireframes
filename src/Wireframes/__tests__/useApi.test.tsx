@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import { useApi } from "../useApi";
-import { WireframeProvider } from "../context";
+import { WireframeProvider } from "../WireframeProvider";
 import { WireframeAnnotationAPI } from "../api";
 
 const mockApi = {

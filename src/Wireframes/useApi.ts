@@ -6,7 +6,7 @@
 
 import { useContext } from "react";
 
-import { WireframeAnnotationContext } from "./context";
+import { WireframeAnnotationContext } from "./WireframeProvider";
 
 export const useApi = () => {
   const api = useContext(WireframeAnnotationContext);

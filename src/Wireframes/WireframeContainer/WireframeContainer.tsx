@@ -141,6 +141,7 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
 
   span {
     all: initial;
+    cursor: inherit;
     color: inherit;
     padding: 0.25em;
     font-size: 1.25em;

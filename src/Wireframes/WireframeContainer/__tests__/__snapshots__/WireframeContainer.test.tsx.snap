@@ -157,6 +157,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -482,6 +483,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -1231,6 +1233,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -2096,6 +2099,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -2685,6 +2689,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -2939,6 +2944,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -3193,6 +3199,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
@@ -3447,6 +3454,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
 
 .emotion-2 span {
   all: initial;
+  cursor: inherit;
   color: inherit;
   padding: 0.25em;
   font-size: 1.25em;
