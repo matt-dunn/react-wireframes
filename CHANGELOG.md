@@ -2,12 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.1](https://github.com/matt-dunn/react-wireframes/compare/v1.2.0...v1.2.1)
+
+> 3 April 2020
+
+- Feature/multi support [`#19`](https://github.com/matt-dunn/react-wireframes/pull/19)
+- Story improvements including no annotations state [`#18`](https://github.com/matt-dunn/react-wireframes/pull/18)
+- Feature/style updates [`#17`](https://github.com/matt-dunn/react-wireframes/pull/17)
+- Add more examples to demo [`64f18ff`](https://github.com/matt-dunn/react-wireframes/commit/64f18ff8f77f55e48cc10d8699e5c3bab2f07adf)
+
 #### [v1.2.0](https://github.com/matt-dunn/react-wireframes/compare/v1.1.5...v1.2.0)
 
 > 29 March 2020
 
 - Update snapshots [`cb315dd`](https://github.com/matt-dunn/react-wireframes/commit/cb315dd2c362462f6deb62808f25af1e880c3edf)
 - Reset identifier styles [`2202207`](https://github.com/matt-dunn/react-wireframes/commit/220220799280c53120310d993146ba0001e61983)
+- Release 1.2.0 [`ed2f4d5`](https://github.com/matt-dunn/react-wireframes/commit/ed2f4d5d4a3d13b98de1cdde4227d16a2873763e)
 
 #### [v1.1.5](https://github.com/matt-dunn/react-wireframes/compare/v1.1.4...v1.1.5)
 
