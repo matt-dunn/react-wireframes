@@ -2,11 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.3](https://github.com/matt-dunn/react-wireframes/compare/v1.2.2...v1.2.3)
+
+> 3 April 2020
+
+- Refactor provider [`195e3eb`](https://github.com/matt-dunn/react-wireframes/commit/195e3eb3197324342f074eeaf209e798def4038f)
+- Only pass annotation ID to provider [`d84e407`](https://github.com/matt-dunn/react-wireframes/commit/d84e407426788a38ce99a31cfa96a04032d5d69c)
+- Update test dep [`2647f06`](https://github.com/matt-dunn/react-wireframes/commit/2647f06570045498cbbd2872181b693b429d4522)
+
 #### [v1.2.2](https://github.com/matt-dunn/react-wireframes/compare/v1.2.1...v1.2.2)
 
 > 3 April 2020
 
 - Update deps [`ae460e4`](https://github.com/matt-dunn/react-wireframes/commit/ae460e448498769cf79ec212204d8985856d8278)
+- Release 1.2.2 [`52e06fd`](https://github.com/matt-dunn/react-wireframes/commit/52e06fd542a44e351b7500f1a531e84cdc32e166)
 
 #### [v1.2.1](https://github.com/matt-dunn/react-wireframes/compare/v1.2.0...v1.2.1)
 
