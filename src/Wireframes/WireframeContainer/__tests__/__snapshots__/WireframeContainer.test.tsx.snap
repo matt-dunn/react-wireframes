@@ -944,7 +944,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -969,7 +969,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1021,7 +1021,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1046,7 +1046,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -1809,7 +1809,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1834,7 +1834,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1886,7 +1886,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1911,7 +1911,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -2398,7 +2398,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -2423,7 +2423,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -2475,7 +2475,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                         }
                                       }
                                     >
-                                      <Memo(Identifier)
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -2500,7 +2500,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Memo(Identifier)>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2

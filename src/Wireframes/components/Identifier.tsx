@@ -47,22 +47,12 @@ export const IdentifierContainer = styled.cite`
   flex-shrink: 0;
 `;
 
-const getParentId = (parent: ParentReference): number[] => {
-  const p = parent.api.getParentReference();
+const getParentId = (parent?: ParentReference): number[] | undefined => parent && [...getParentId(parent.api.getParentReference()) || [], parent.id];
 
-  if (p) {
-    return [...getParentId(p), parent.id];
-  }
-
-  return [parent.id];
-};
-
-const Identifier = ({ annotation, parentReference, className }: IdentifierProps) => (
+export const IdentifierBase = ({ annotation, parentReference, className }: IdentifierProps) => (
   <IdentifierContainer data-annotation-identifier className={className}>
     {[...(parentReference && getParentId(parentReference)) || [], annotation.id].join(".")}
   </IdentifierContainer>
 );
 
-const IdentifierMemo = React.memo(Identifier);
-
-export { IdentifierMemo as Identifier };
+export const Identifier = React.memo<IdentifierProps>(IdentifierBase);
