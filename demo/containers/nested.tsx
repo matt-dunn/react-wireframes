@@ -1,10 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import styled from "@emotion/styled";
-
-import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
-
-import "./bootstrap.scss";
 
 import {
   API, WireframeContainer, WireframeProvider, withWireframeAnnotation,
@@ -74,123 +69,104 @@ const wireframeAPI = API();
 const wireframeAPI2 = API();
 const wireframeAPI3 = API();
 
-const AppError = ({ error }: {error: Error}) => (
-  <>
-    <h1>An error occurred</h1>
-    <p>
-      DEBUG:
-      {error.message}
-    </p>
-  </>
-);
-
-const app = (
-  <ErrorBoundary
-    ErrorComponent={AppError}
+export const Nested = () => (
+  <WireframeProvider
+    api={wireframeAPI}
   >
-    <WireframeProvider
-      api={wireframeAPI}
+    <WireframeContainer
+      className="container"
     >
-      <WireframeContainer
-        className="container"
-      >
-        <Main>
-          <div className="row">
-            <div className="col">
-              <WAHeader>Header</WAHeader>
-            </div>
+      <Main>
+        <div className="row">
+          <div className="col">
+            <WAHeader>Header</WAHeader>
           </div>
-          <div className="row">
-            <div className="col-6">
-              <WASection1>Component 1</WASection1>
-            </div>
-            <div className="col-6">
-              <WASection2>Component 2</WASection2>
-            </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <WASection1>Component 1</WASection1>
           </div>
-          <div className="row">
-            <div className="col">
-              <WAWireframeProvider
-                outline={false}
-                api={wireframeAPI2}
-              >
-                <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
-                  <WireframeContainerInner
-                    fixed={false}
-                    defaultOpen={false}
-                  >
-                    <WAHeader>Header</WAHeader>
-                    <div className="row">
-                      <div className="col">
-                        <WAWireframeProvider
-                          outline={false}
-                          api={wireframeAPI3}
-                        >
-                          <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
-                            <WireframeContainerInner
-                              fixed={false}
-                              defaultOpen={false}
-                            >
-                              <WAHeader>Header</WAHeader>
-                              <div className="row">
-                                <div className="col-6">
-                                  <WASection3>Component 3</WASection3>
-                                </div>
-                                <div className="col-6">
-                                  <WASection4>Component 4</WASection4>
-                                </div>
+          <div className="col-6">
+            <WASection2>Component 2</WASection2>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <WAWireframeProvider
+              outline={false}
+              api={wireframeAPI2}
+            >
+              <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+                <WireframeContainerInner
+                  fixed={false}
+                  defaultOpen={false}
+                >
+                  <WAHeader>Header</WAHeader>
+                  <div className="row">
+                    <div className="col">
+                      <WAWireframeProvider
+                        outline={false}
+                        api={wireframeAPI3}
+                      >
+                        <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+                          <WireframeContainerInner
+                            fixed={false}
+                            defaultOpen={false}
+                          >
+                            <WAHeader>Header</WAHeader>
+                            <div className="row">
+                              <div className="col-6">
+                                <WASection3>Component 3</WASection3>
                               </div>
-                              <div className="row">
-                                <div className="col">
-                                  <WAFooter>Footer</WAFooter>
-                                </div>
+                              <div className="col-6">
+                                <WASection4>Component 4</WASection4>
                               </div>
-                            </WireframeContainerInner>
-                          </div>
-                        </WAWireframeProvider>
-                      </div>
+                            </div>
+                            <div className="row">
+                              <div className="col">
+                                <WAFooter>Footer</WAFooter>
+                              </div>
+                            </div>
+                          </WireframeContainerInner>
+                        </div>
+                      </WAWireframeProvider>
                     </div>
-                    <div className="row">
-                      <div className="col-6">
-                        <WASection3>Component 3</WASection3>
-                      </div>
-                      <div className="col-6">
-                        <WASection4>Component 4</WASection4>
-                      </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-6">
+                      <WASection3>Component 3</WASection3>
                     </div>
-                    <div className="row">
-                      <div className="col">
-                        <WAFooter>Footer</WAFooter>
-                      </div>
+                    <div className="col-6">
+                      <WASection4>Component 4</WASection4>
                     </div>
-                  </WireframeContainerInner>
-                </div>
-              </WAWireframeProvider>
-            </div>
+                  </div>
+                  <div className="row">
+                    <div className="col">
+                      <WAFooter>Footer</WAFooter>
+                    </div>
+                  </div>
+                </WireframeContainerInner>
+              </div>
+            </WAWireframeProvider>
           </div>
-          <div className="row">
-            <div className="col">
-              <WASection3>Component 3</WASection3>
-            </div>
-            <div className="col">
-              <WASection4>Component 4</WASection4>
-            </div>
-            <div className="col">
-              <WASection5>Component 5</WASection5>
-            </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <WASection3>Component 3</WASection3>
           </div>
-          <div className="row">
-            <div className="col">
-              <WAFooter>Footer</WAFooter>
-            </div>
+          <div className="col">
+            <WASection4>Component 4</WASection4>
           </div>
-        </Main>
-      </WireframeContainer>
-    </WireframeProvider>
-  </ErrorBoundary>
-);
-
-ReactDOM.render(
-  app,
-  document.getElementById("app"),
+          <div className="col">
+            <WASection5>Component 5</WASection5>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <WAFooter>Footer</WAFooter>
+          </div>
+        </div>
+      </Main>
+    </WireframeContainer>
+  </WireframeProvider>
 );
