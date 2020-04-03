@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.2](https://github.com/matt-dunn/react-wireframes/compare/v1.2.1...v1.2.2)
+
+> 3 April 2020
+
+- Update deps [`ae460e4`](https://github.com/matt-dunn/react-wireframes/commit/ae460e448498769cf79ec212204d8985856d8278)
+
 #### [v1.2.1](https://github.com/matt-dunn/react-wireframes/compare/v1.2.0...v1.2.1)
 
 > 3 April 2020
