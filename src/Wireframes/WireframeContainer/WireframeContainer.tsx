@@ -21,6 +21,10 @@ type WireframeContainerProps = {
   children: ReactNode;
   defaultOpen?: boolean;
   className?: string;
+  /**
+   * Fix the WireframeContainer to the viewport
+   */
+  fixed?: boolean;
   onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, el: Element) => void;
 }
 
@@ -29,8 +33,9 @@ const transition = `${transitionDuration}ms ease-in-out`;
 
 const WireframeMainContainer = styled.div`
   display: flex;
-  
-  [data-annotations-container] {
+  overflow: hidden;
+
+  > [data-annotations-container] {
     width: 0;
     min-width: 0;
 
@@ -40,11 +45,11 @@ const WireframeMainContainer = styled.div`
   }
 
   &.open {
-    [data-annotations-container] {
+    > [data-annotations-container] {
       width: 25%;
       min-width: 250px;
 
-      [data-annotations] {
+      > [data-annotations] {
         transform: translateX(0);
       }
     }
@@ -64,9 +69,10 @@ const WireframeAnnotationsContainer = styled.section`
   max-width: 400px;
   padding: 0;
   transition: width ${transition}, min-width ${transition};
+  position: relative;
 `;
 
-const WireframeAnnotationsWrapper = styled.div`
+const WireframeAnnotationsWrapper = styled.div<{fixed?: boolean}>`
   flex-grow: 0;
   flex-shrink: 0;
   border-left: 2px solid #555;
@@ -74,7 +80,6 @@ const WireframeAnnotationsWrapper = styled.div`
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -83,6 +88,11 @@ const WireframeAnnotationsWrapper = styled.div`
   flex-direction: column;
   transition: transform ${transition};
   z-index: 6000;
+  position: absolute;
+
+  ${({ fixed }) => fixed !== false && css`
+    position: fixed;
+  `}
   
   header.annotations {
     padding: 0.1em 0.75em;
@@ -167,7 +177,7 @@ const WireframeAnnotationNotesContainer = styled.div`
  * Use the WireframeContainer at the top of your component tree
  * */
 export const WireframeContainer = ({
-  children, className, defaultOpen = true, onHighlightAnnotation,
+  children, className, defaultOpen = true, onHighlightAnnotation, fixed = true,
 }: WireframeContainerProps) => {
   const api = useApi();
 
@@ -232,41 +242,41 @@ export const WireframeContainer = ({
   }, [setOpen]);
 
   return (
-    <WireframeMainContainer data-test="container" className={(open && "open") || ""} ref={container}>
+    <WireframeMainContainer data-test="container" className={(open && "open") || ""}>
       <WireframeBody className={className}>
         {children}
       </WireframeBody>
 
       {isClient && (
-        <WireframeAnnotationsContainer data-annotations-container>
-          <WireframeAnnotationsWrapper data-annotations>
+        <WireframeAnnotationsContainer data-annotations-container ref={container}>
+          <WireframeAnnotationsWrapper data-annotations fixed={fixed}>
             <WireframeAnnotationsToggle open={open} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireframeAnnotationsToggle>
 
-            {isOpened
-              && (
-                <>
-                  <header className="annotations">
-                    <h1>Annotations</h1>
-                    <WireframeAnnotationsClose
-                      aria-label="Close annotations"
-                      onClick={handleClose}
-                    >
-                      ×
-                    </WireframeAnnotationsClose>
-                  </header>
-                  <WireframeAnnotationNotesContainer
-                    ref={annotationsContainer}
-                  >
-                    <WireframeAnnotationNotes
-                      annotations={annotations}
-                      highlightedNote={highlightedNote}
-                    />
-                  </WireframeAnnotationNotesContainer>
-                </>
-              )
-            }
+            {isOpened && (
+              <header className="annotations">
+                <h1>Annotations</h1>
+                <WireframeAnnotationsClose
+                  aria-label="Close annotations"
+                  onClick={handleClose}
+                >
+                  ×
+                </WireframeAnnotationsClose>
+              </header>
+            )}
+
+            {isOpened && (
+            <WireframeAnnotationNotesContainer
+              ref={annotationsContainer}
+            >
+              <WireframeAnnotationNotes
+                annotations={annotations}
+                parentReference={api.getParentReference()}
+                highlightedNote={highlightedNote}
+              />
+            </WireframeAnnotationNotesContainer>
+            )}
           </WireframeAnnotationsWrapper>
         </WireframeAnnotationsContainer>
       )}

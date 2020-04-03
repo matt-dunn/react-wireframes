@@ -4,12 +4,12 @@
  * @author Matt Dunn
  */
 
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 
 import { WireframeProvider } from "../../context";
-import { API } from "../../api";
+import { API, WireframeAnnotationAPI } from "../../api";
 
 import {
   WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose,
@@ -18,12 +18,12 @@ import {
 jest.useFakeTimers();
 
 describe("Wireframe: WireframeContainer", () => {
-  let api;
-  let MockedComponent1;
-  let MockedComponent2;
-  let Fragment;
-  let ComponentTree;
-  let onHighlightAnnotation;
+  let api: WireframeAnnotationAPI;
+  let MockedComponent1: FC<any>;
+  let MockedComponent2: FC<any>;
+  let Fragment: ReactElement;
+  let ComponentTree: ReactElement;
+  let onHighlightAnnotation: any;
 
   beforeEach(() => {
     api = API();

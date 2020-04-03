@@ -48,4 +48,51 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
             />
         </div>
     </Story>
+    <Story name="Identifier with parent ID">
+        <div style={{ display: "flex" }}>
+            <Identifier
+              annotation={{
+                id: 12,
+                count: 1,
+                Component: () => {},
+                options: {
+                  title: "Test component",
+                  description: "Test description",
+                },
+              }}
+              parentReference={{
+                id: 1,
+                api: {
+                  getParentReference: () => {},
+                },
+              }}
+            />
+        </div>
+    </Story>
+    <Story name="Identifier with nested parent ID">
+        <div style={{ display: "flex" }}>
+            <Identifier
+              annotation={{
+                id: 12,
+                count: 1,
+                Component: () => {},
+                options: {
+                  title: "Test component",
+                  description: "Test description",
+                },
+              }}
+              parentReference={{
+                id: 1,
+                api: {
+                  getParentReference: () => ({
+                    id: 2,
+                    api: {
+                      getParentReference: () => {},
+                    },
+                  }),
+                },
+              }}
+            />
+        </div>
+    </Story>
 </Preview>

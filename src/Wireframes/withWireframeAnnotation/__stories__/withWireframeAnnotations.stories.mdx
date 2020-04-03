@@ -3,7 +3,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 
 import { WireframeProvider, withWireframeAnnotation } from "src/Wireframes";
-import { withWireframeAnnotationInterfaceDefinition } from "../withWireframeAnnotation";
+import { withWireframeAnnotationInterfaceDefinition, WireframeAnnotationPropsInterfaceDefinition } from "../withWireframeAnnotation";
 
 import {
   wireframeAPI, wireframeAPIOpen, WASample, Container,
@@ -17,6 +17,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec
 
 <Props of={withWireframeAnnotationInterfaceDefinition} />
 
+Returns a *WrappedComponent* decorated with the following props.
+
+<Props of={WireframeAnnotationPropsInterfaceDefinition} />
+
 <Preview withSource={false}>
     <Story name="Default">
         <Container>
@@ -29,6 +33,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare ligula nec
         <Container>
             <WireframeProvider api={wireframeAPIOpen}>
                 <WASample>Component</WASample>
+            </WireframeProvider>
+        </Container>
+    </Story>
+    <Story name="With annotation highlighted">
+        <Container>
+            <WireframeProvider api={wireframeAPIOpen}>
+                <WASample isHighlighted>Component</WASample>
             </WireframeProvider>
         </Container>
     </Story>

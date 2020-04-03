@@ -4,13 +4,15 @@
  * @author Matt Dunn
  */
 
-import { API } from "../api";
+import { FC } from "react";
+
+import { API, WireframeAnnotationAPI } from "../api";
 
 describe("Wireframe: API", () => {
-  let api;
-  let MockedComponent;
-  let updater;
-  let highlightNote;
+  let api: WireframeAnnotationAPI;
+  let MockedComponent: FC<any>;
+  let updater: any;
+  let highlightNote: any;
 
   beforeEach(() => {
     MockedComponent = jest.fn();
@@ -148,8 +150,7 @@ describe("Wireframe: API", () => {
         count: 1,
       });
 
-      api.unregister(() => {
-      });
+      api.unregister((() => null) as FC<any>);
 
       expect(api.getAnnotations().length).toEqual(1);
 
@@ -188,7 +189,7 @@ describe("Wireframe: API", () => {
         description: "Test description",
       });
 
-      api.highlightNote(() => {});
+      api.highlightNote((() => null) as FC<any>);
 
       expect(highlightNote).toHaveBeenCalledWith(undefined);
     });
@@ -236,6 +237,18 @@ describe("Wireframe: API", () => {
       api.setOpen(true);
 
       expect(onOpenRegistered).toHaveBeenCalledTimes(1);
+    });
+
+    it("should set parent reference", () => {
+      api.setParentReference({
+        id: 1,
+        api,
+      });
+
+      expect(api.getParentReference()).toEqual({
+        id: 1,
+        api,
+      });
     });
   });
 });

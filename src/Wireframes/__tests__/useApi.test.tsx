@@ -5,7 +5,8 @@ import { useApi } from "../useApi";
 import { WireframeProvider } from "../context";
 import { WireframeAnnotationAPI } from "../api";
 
-const mockApi = {} as WireframeAnnotationAPI;
+const mockApi = {
+} as WireframeAnnotationAPI;
 
 type MockProps = {
   getApi?: (api: WireframeAnnotationAPI) => void;

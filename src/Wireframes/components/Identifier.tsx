@@ -7,11 +7,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { WireframeAnnotation } from "../api";
+import { ParentReference, WireframeAnnotation } from "../api";
 
 type IdentifierProps = {
   annotation: WireframeAnnotation;
   className?: string;
+  parentReference?: ParentReference;
 }
 
 export const IdentifierContainer = styled.cite`
@@ -46,6 +47,12 @@ export const IdentifierContainer = styled.cite`
   flex-shrink: 0;
 `;
 
-export const Identifier = ({ annotation, className }: IdentifierProps) => (
-  <IdentifierContainer data-annotation-identifier className={className}>{annotation.id.toLocaleString()}</IdentifierContainer>
+const getParentId = (parent?: ParentReference): number[] | undefined => parent && [...getParentId(parent.api.getParentReference()) || [], parent.id];
+
+export const IdentifierBase = ({ annotation, parentReference, className }: IdentifierProps) => (
+  <IdentifierContainer data-annotation-identifier className={className}>
+    {[...(parentReference && getParentId(parentReference)) || [], annotation.id].join(".")}
+  </IdentifierContainer>
 );
+
+export const Identifier = React.memo<IdentifierProps>(IdentifierBase);

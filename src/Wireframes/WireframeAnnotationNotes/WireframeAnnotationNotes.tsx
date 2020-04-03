@@ -7,7 +7,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { WireframeAnnotation, WireframeAnnotations } from "../api";
+import { ParentReference, WireframeAnnotation, WireframeAnnotations } from "../api";
 
 import { WireframeAnnotationNote } from "./WireframeAnnotationNote";
 
@@ -15,6 +15,7 @@ type WireframeAnnotationsNotesProps = {
   annotations?: WireframeAnnotations;
   highlightedNote?: WireframeAnnotation;
   className?: string;
+  parentReference?: ParentReference;
 }
 
 const WireframeAnnotationNotesContainer = styled.ul`
@@ -23,7 +24,7 @@ const WireframeAnnotationNotesContainer = styled.ul`
   padding: 0;
   outline: none;
   
-  li:not(:last-child) {
+  > li:not(:last-child) {
     border-bottom: 1px solid #ccc;
   }
 `;
@@ -39,7 +40,9 @@ export const NoAnnotations = styled.div`
   display: flex;
 `;
 
-export const WireframeAnnotationNotes = ({ annotations, highlightedNote, className }: WireframeAnnotationsNotesProps) => {
+export const WireframeAnnotationNotes = ({
+  annotations, parentReference, highlightedNote, className,
+}: WireframeAnnotationsNotesProps) => {
   if (annotations && annotations.length > 0) {
     return (
       <WireframeAnnotationNotesContainer tabIndex={0} className={className}>
@@ -49,7 +52,7 @@ export const WireframeAnnotationNotes = ({ annotations, highlightedNote, classNa
             data-annotation-id={annotation.id}
             data-highlighted={highlightedNote === annotation}
           >
-            <WireframeAnnotationNote annotation={annotation} isHighlighted={highlightedNote === annotation} />
+            <WireframeAnnotationNote annotation={annotation} parentReference={parentReference} isHighlighted={highlightedNote === annotation} />
           </li>
         ))}
       </WireframeAnnotationNotesContainer>

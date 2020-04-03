@@ -5,12 +5,13 @@
  */
 
 import React, {
-  ComponentType, ReactNode, useCallback, useEffect, useState,
+  ComponentType, ReactElement, ReactNode, useCallback, useEffect, useState,
 } from "react";
 import styled from "@emotion/styled";
 import css from "@emotion/css";
+import classnames from "classnames";
 
-import { WireframeAnnotation, WireframeAnnotationOptions } from "../api";
+import { WireframeAnnotation, WireframeAnnotationOptions, withWireframeAnnotationProps } from "../api";
 import { useApi } from "../useApi";
 
 import { Identifier } from "./Identifier";
@@ -18,6 +19,8 @@ import { Identifier } from "./Identifier";
 type WireframeAnnotationProps = {
   className?: string;
   children?: ReactNode;
+  outline?: boolean;
+  isHighlighted?: boolean;
 }
 
 const Wrapper = styled.span<{show: boolean}>`
@@ -27,7 +30,8 @@ const Wrapper = styled.span<{show: boolean}>`
     pointer-events: none;
   }
   
-  &:hover {
+  &.outlined,
+  &.outline:hover {
     ${({ show }) => show && css`
       z-index: 5000;
       
@@ -35,7 +39,10 @@ const Wrapper = styled.span<{show: boolean}>`
         box-shadow: 0 0 0 1px #4086f7 !important;
       }
     `}
+  }
 
+  &.outlined,
+  &:hover {
     > [data-annotation-identifier] {
         transition: opacity 0ms, visibility 0ms;
         opacity: 1;
@@ -51,9 +58,11 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
   Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
 
   // eslint-disable-next-line react/no-multi-comp
-  function WrappedWireframeAnnotation({ className, ...props }: P & WireframeAnnotationProps) {
+  function WrappedWireframeAnnotation({
+    className, outline = true, isHighlighted = false, ...props
+  }: P & WireframeAnnotationProps): ReactElement<P & withWireframeAnnotationProps> {
     const {
-      register, unregister, onOpen, isOpen, highlightNote,
+      register, unregister, onOpen, isOpen, highlightNote, getParentReference,
     } = useApi();
 
     const [annotation, setAnnotation] = useState<WireframeAnnotation>();
@@ -84,11 +93,14 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
         onMouseOver={handleHighlightNote}
         onFocus={handleHighlightNote}
         onMouseLeave={handleHighlightNoteReset}
-        className={className}
+        className={classnames({ "outline": outline, "outlined": isHighlighted && show }, className)}
       >
-        {annotation && <Identifier annotation={annotation} show={show} />}
+        {annotation && <Identifier annotation={annotation} parentReference={getParentReference()} show={show} />}
 
-        <Component {...props as P} />
+        <Component
+          {...props as P}
+          annotationId={annotation && annotation.id}
+        />
       </Wrapper>
     );
   }
@@ -101,4 +113,11 @@ export function withWireframeAnnotation<P extends object>(WrappedComponent: Comp
 /* istanbul ignore next */
 export const withWireframeAnnotationInterfaceDefinition = <P extends object>(
   { WrappedComponent, options }: {WrappedComponent: ComponentType<P>; options: WireframeAnnotationOptions}, // eslint-disable-line @typescript-eslint/no-unused-vars
+) => null;
+
+/* istanbul ignore next */
+export const WireframeAnnotationPropsInterfaceDefinition = <P extends object>(
+  {
+    className, outline = true, isHighlighted = false, children, // eslint-disable-line @typescript-eslint/no-unused-vars
+  }: WireframeAnnotationProps,
 ) => null;

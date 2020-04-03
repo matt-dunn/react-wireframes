@@ -6,25 +6,26 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-14 [data-annotations-container] {
+.emotion-14 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-14 [data-annotations-container] [data-annotations] {
+.emotion-14 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-14.open [data-annotations-container] {
+.emotion-14.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-14.open [data-annotations-container] [data-annotations] {
+.emotion-14.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -52,6 +53,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-10 {
@@ -67,7 +69,6 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -83,6 +84,8 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-10 header.annotations {
@@ -212,12 +215,14 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -252,6 +257,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-10 emotion-11"
@@ -325,25 +331,26 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-32 [data-annotations-container] {
+.emotion-32 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-32 [data-annotations-container] [data-annotations] {
+.emotion-32 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-32.open [data-annotations-container] {
+.emotion-32.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-32.open [data-annotations-container] [data-annotations] {
+.emotion-32.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -371,6 +378,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-28 {
@@ -386,7 +394,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -402,6 +409,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-28 header.annotations {
@@ -517,7 +526,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   outline: none;
 }
 
-.emotion-24 li:not(:last-child) {
+.emotion-24 > li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -638,12 +647,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -805,6 +816,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -932,7 +944,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -957,7 +969,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1009,7 +1021,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1034,7 +1046,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -1068,25 +1080,26 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-32 [data-annotations-container] {
+.emotion-32 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-32 [data-annotations-container] [data-annotations] {
+.emotion-32 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-32.open [data-annotations-container] {
+.emotion-32.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-32.open [data-annotations-container] [data-annotations] {
+.emotion-32.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -1114,6 +1127,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-28 {
@@ -1129,7 +1143,6 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -1145,6 +1158,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-28 header.annotations {
@@ -1260,7 +1275,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   outline: none;
 }
 
-.emotion-24 li:not(:last-child) {
+.emotion-24 > li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -1381,12 +1396,14 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -1664,6 +1681,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -1791,7 +1809,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1816,7 +1834,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -1868,7 +1886,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -1893,7 +1911,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -1927,25 +1945,26 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-32 [data-annotations-container] {
+.emotion-32 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-32 [data-annotations-container] [data-annotations] {
+.emotion-32 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-32.open [data-annotations-container] {
+.emotion-32.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-32.open [data-annotations-container] [data-annotations] {
+.emotion-32.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -1973,6 +1992,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-28 {
@@ -1988,7 +2008,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -2004,6 +2023,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-28 header.annotations {
@@ -2119,7 +2140,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   outline: none;
 }
 
-.emotion-24 li:not(:last-child) {
+.emotion-24 > li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -2215,12 +2236,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2258,6 +2281,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-28 emotion-29"
@@ -2374,7 +2398,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -2399,7 +2423,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                             1
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 1
@@ -2451,7 +2475,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                         }
                                       }
                                     >
-                                      <Identifier
+                                      <Memo(IdentifierBase)
                                         annotation={
                                           Object {
                                             "Component": [MockFunction],
@@ -2476,7 +2500,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                                             2
                                           </cite>
                                         </IdentifierContainer>
-                                      </Identifier>
+                                      </Memo(IdentifierBase)>
                                     </IdentifierNote>
                                     <h2>
                                       Test component 2
@@ -2510,25 +2534,26 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-8 [data-annotations-container] {
+.emotion-8 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-8 [data-annotations-container] [data-annotations] {
+.emotion-8 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-8.open [data-annotations-container] {
+.emotion-8.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-8.open [data-annotations-container] [data-annotations] {
+.emotion-8.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -2556,6 +2581,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-4 {
@@ -2571,7 +2597,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -2587,6 +2612,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-4 header.annotations {
@@ -2676,12 +2703,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2719,6 +2748,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -2758,25 +2788,26 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-8 [data-annotations-container] {
+.emotion-8 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-8 [data-annotations-container] [data-annotations] {
+.emotion-8 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-8.open [data-annotations-container] {
+.emotion-8.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-8.open [data-annotations-container] [data-annotations] {
+.emotion-8.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -2804,6 +2835,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-4 {
@@ -2819,7 +2851,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -2835,6 +2866,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-4 header.annotations {
@@ -2924,12 +2957,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -2967,6 +3002,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -3006,25 +3042,26 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-8 [data-annotations-container] {
+.emotion-8 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-8 [data-annotations-container] [data-annotations] {
+.emotion-8 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-8.open [data-annotations-container] {
+.emotion-8.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-8.open [data-annotations-container] [data-annotations] {
+.emotion-8.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -3052,6 +3089,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-4 {
@@ -3067,7 +3105,6 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -3083,6 +3120,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-4 header.annotations {
@@ -3172,12 +3211,14 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -3215,6 +3256,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
@@ -3254,25 +3296,26 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
-.emotion-8 [data-annotations-container] {
+.emotion-8 > [data-annotations-container] {
   width: 0;
   min-width: 0;
 }
 
-.emotion-8 [data-annotations-container] [data-annotations] {
+.emotion-8 > [data-annotations-container] [data-annotations] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.emotion-8.open [data-annotations-container] {
+.emotion-8.open > [data-annotations-container] {
   width: 25%;
   min-width: 250px;
 }
 
-.emotion-8.open [data-annotations-container] [data-annotations] {
+.emotion-8.open > [data-annotations-container] > [data-annotations] {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -3300,6 +3343,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   padding: 0;
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
+  position: relative;
 }
 
 .emotion-4 {
@@ -3315,7 +3359,6 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   width: 25%;
   max-width: 400px;
   min-width: 250px;
-  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -3331,6 +3374,8 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   -webkit-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   z-index: 6000;
+  position: absolute;
+  position: fixed;
 }
 
 .emotion-4 header.annotations {
@@ -3420,12 +3465,14 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   api={
     Object {
       "getAnnotations": [Function],
+      "getParentReference": [Function],
       "highlightNote": [Function],
       "isOpen": [Function],
       "onOpen": [Function],
       "register": [Function],
       "setOpen": [Function],
       "setOptions": [Function],
+      "setParentReference": [Function],
       "unregister": [Function],
     }
   }
@@ -3463,6 +3510,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
           >
             <WireframeAnnotationsWrapper
               data-annotations={true}
+              fixed={true}
             >
               <div
                 className="emotion-4 emotion-5"
