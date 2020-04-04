@@ -5,27 +5,40 @@
  */
 
 import React, {
-  ReactNode, useEffect, useState, useCallback, useMemo, useRef,
+  ReactNode, useEffect, useState, useCallback, useMemo, useRef, useContext, createContext,
 } from "react";
 import css from "@emotion/css";
 import styled from "@emotion/styled";
 
 import { useScrollElementIntoView } from "../../useScrollElementIntoView";
 
-import { WireframeAnnotation, WireframeAnnotations } from "../api";
+import {
+  API, WireframeAnnotation, WireframeAnnotationAPI, WireframeAnnotations,
+} from "../api";
 import { WireframeAnnotationNotes } from "../WireframeAnnotationNotes";
 import { useIsomorphicLayoutEffect } from "../utils";
-import { useApi } from "../useApi";
+import { WireframeAnnotationComponentContext, WireframeAnnotationContext, WireframeProvider } from "../WireframeProvider";
 
 type WireframeContainerProps = {
   children: ReactNode;
-  defaultOpen?: boolean;
   className?: string;
+
+  /**
+   * Set the default annotation open state
+   */
+  defaultOpen?: boolean;
+
   /**
    * Fix the WireframeContainer to the viewport
    */
   fixed?: boolean;
-  onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, el: Element) => void;
+
+  /**
+   * Called
+   * @param wireframeAnnotation   Highlighted annotation
+   * @param element               Attached DOM element
+   */
+  onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, element: Element) => void;
 }
 
 const transitionDuration = 250;
@@ -174,19 +187,32 @@ const WireframeAnnotationNotesContainer = styled.div`
   background-color: inherit;
 `;
 
+export const ActiveWireframeAnnotationContext = createContext<WireframeAnnotationAPI | undefined>(undefined);
+
 /**
  * Use the WireframeContainer at the top of your component tree
  * */
 export const WireframeContainer = ({
   children, className, defaultOpen = true, onHighlightAnnotation, fixed = true,
 }: WireframeContainerProps) => {
-  const api = useApi();
-
   const [isClient, setIsClient] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
     setIsClient(true);
   }, []);
+
+  const activeAPI = useContext(ActiveWireframeAnnotationContext);
+
+  const api = useMemo(() => activeAPI || API(), [activeAPI]);
+
+  const parentAPI = useContext(WireframeAnnotationContext);
+  const parentAnnotation = useContext(WireframeAnnotationComponentContext);
+
+  useMemo(() => {
+    if (parentAPI && parentAnnotation) {
+      api.setParentReference({ api: parentAPI, id: parentAnnotation.id });
+    }
+  }, [api, parentAPI, parentAnnotation]);
 
   const opening = useRef<number>();
   const container = useRef<HTMLDivElement>(null);
@@ -217,6 +243,10 @@ export const WireframeContainer = ({
   }, [api, open]);
 
   useEffect(() => {
+    setOpen(defaultOpen);
+  }, [api, defaultOpen]);
+
+  useEffect(() => {
     clearTimeout(opening.current);
 
     if (open) {
@@ -243,12 +273,15 @@ export const WireframeContainer = ({
   }, [setOpen]);
 
   return (
-    <WireframeMainContainer data-test="container" className={(open && "open") || ""}>
-      <WireframeBody className={className}>
-        {children}
-      </WireframeBody>
+    <WireframeProvider
+      api={api}
+    >
+      <WireframeMainContainer data-test="container" className={(open && "open") || ""}>
+        <WireframeBody className={className}>
+          {children}
+        </WireframeBody>
 
-      {isClient && (
+        {isClient && (
         <WireframeAnnotationsContainer data-annotations-container ref={container}>
           <WireframeAnnotationsWrapper data-annotations fixed={fixed}>
             <WireframeAnnotationsToggle open={open} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
@@ -280,7 +313,8 @@ export const WireframeContainer = ({
             )}
           </WireframeAnnotationsWrapper>
         </WireframeAnnotationsContainer>
-      )}
-    </WireframeMainContainer>
+        )}
+      </WireframeMainContainer>
+    </WireframeProvider>
   );
 };

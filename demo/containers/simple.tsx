@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import {
-  API, WireframeContainer, WireframeProvider, withWireframeAnnotation,
+  WireframeContainer, withWireframeAnnotation,
 } from "src/Wireframes";
 
 export const Main = styled.div`
@@ -56,51 +56,40 @@ export const WASection5 = withWireframeAnnotation(Section, {
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 });
 
-export const WAWireframeProvider = withWireframeAnnotation(WireframeProvider, {
-  title: "Nested Annotations",
-  description: "Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
-
-const wireframeAPI = API();
-
 export const Simple = () => (
-  <WireframeProvider
-    api={wireframeAPI}
+  <WireframeContainer
+    className="container"
   >
-    <WireframeContainer
-      className="container"
-    >
-      <Main>
-        <div className="row">
-          <div className="col">
-            <WAHeader>Header</WAHeader>
-          </div>
+    <Main>
+      <div className="row">
+        <div className="col">
+          <WAHeader>Header</WAHeader>
         </div>
-        <div className="row">
-          <div className="col-6">
-            <WASection1>Component 1</WASection1>
-          </div>
-          <div className="col-6">
-            <WASection2>Component 2</WASection2>
-          </div>
+      </div>
+      <div className="row">
+        <div className="col-6">
+          <WASection1>Component 1</WASection1>
         </div>
-        <div className="row">
-          <div className="col">
-            <WASection3>Component 3</WASection3>
-          </div>
-          <div className="col">
-            <WASection4>Component 4</WASection4>
-          </div>
-          <div className="col">
-            <WASection5>Component 5</WASection5>
-          </div>
+        <div className="col-6">
+          <WASection2>Component 2</WASection2>
         </div>
-        <div className="row">
-          <div className="col">
-            <WAFooter>Footer</WAFooter>
-          </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <WASection3>Component 3</WASection3>
         </div>
-      </Main>
-    </WireframeContainer>
-  </WireframeProvider>
+        <div className="col">
+          <WASection4>Component 4</WASection4>
+        </div>
+        <div className="col">
+          <WASection5>Component 5</WASection5>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <WAFooter>Footer</WAFooter>
+        </div>
+      </div>
+    </Main>
+  </WireframeContainer>
 );

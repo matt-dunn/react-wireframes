@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import { Preview } from "@storybook/addon-docs/blocks";
 
 import {
-  API, withWireframeAnnotation, WireframeProvider, WireframeContainer,
+  withWireframeAnnotation,
 } from "src/Wireframes";
 
 export const Main = styled.div`
@@ -56,29 +55,6 @@ export const WASection5 = withWireframeAnnotation(Section, {
   title: "Component 5",
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 });
-
-export const wireframeAPIGrid = API();
-
-export const wireframeAPISimple = API();
-
-export const wireframeAPIEmpty = API();
-
-export const WireframeProviderWithKnobs = ({ children, open = false }) => { // eslint-disable-line react/prop-types
-  useEffect(() => {
-    wireframeAPISimple.setOpen(open);
-  }, [open]);
-
-  return (
-    <WireframeProvider api={wireframeAPISimple}>
-      <WireframeContainer
-        className="container"
-        defaultOpen={open}
-      >
-        {children}
-      </WireframeContainer>
-    </WireframeProvider>
-  );
-};
 
 export const PreviewContainer = styled(Preview)`
   [scale] {

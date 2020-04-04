@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
-import { withWireframeAnnotation, API } from "src/Wireframes";
+import { withWireframeAnnotation } from "src/Wireframes";
+import { API } from "../../api";
 
 const Section = styled.div`
   border-radius: 0.5rem;
