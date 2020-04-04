@@ -4,6 +4,9 @@ import { withWireframeAnnotation } from "src/Wireframes";
 import { API } from "../../api";
 
 const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.5rem;
   padding: 2rem;
   margin: 0 0 1rem 0;

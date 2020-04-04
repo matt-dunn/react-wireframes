@@ -11,7 +11,6 @@ import css from "@emotion/css";
 import styled from "@emotion/styled";
 
 import { useScrollElementIntoView } from "../../useScrollElementIntoView";
-
 import {
   API, WireframeAnnotation, WireframeAnnotationAPI, WireframeAnnotations,
 } from "../api";

@@ -10,8 +10,14 @@ export const Main = styled.div`
   min-height: 30em;
 `;
 
-const Section = styled.div`
+const SectionBase = styled.div`
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Section = styled(SectionBase)`
   padding: 2rem;
   margin: 0 0 1.4rem 0;
   background-color: #f0f0f0;
