@@ -47,10 +47,6 @@ export type WireframeAnnotationAPI = {
   getParentReference: () => ParentReference | undefined;
 }
 
-export type withWireframeAnnotationProps = {
-  annotationId?: number;
-}
-
 export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
   let annotations: WireframeAnnotations = [];
   let apiOptions: APIOptions = defaultOptions || {} as APIOptions;

@@ -5,14 +5,13 @@
  */
 
 import React, { FC, ReactElement } from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 
-import { WireframeProvider } from "../../WireframeProvider";
-import { API, WireframeAnnotationAPI } from "../../api";
-
+import { WireframeAnnotationContext, WireframeProvider, WireframeAnnotationComponentContext } from "../../WireframeProvider";
+import { API, WireframeAnnotation, WireframeAnnotationAPI } from "../../api";
 import {
-  WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose,
+  WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose, ActiveWireframeAnnotationContext,
 } from "../WireframeContainer";
 
 jest.useFakeTimers();
@@ -22,7 +21,6 @@ describe("Wireframe: WireframeContainer", () => {
   let MockedComponent1: FC<any>;
   let MockedComponent2: FC<any>;
   let Fragment: ReactElement;
-  let ComponentTree: ReactElement;
   let onHighlightAnnotation: any;
 
   beforeEach(() => {
@@ -33,20 +31,16 @@ describe("Wireframe: WireframeContainer", () => {
 
     onHighlightAnnotation = jest.fn();
 
-    ComponentTree = (
-      <Component
-        defaultOpen={false}
-        onHighlightAnnotation={onHighlightAnnotation}
-      >
-        <div>Child component 1</div>
-        <div>Child component 2</div>
-      </Component>
-    );
-
     Fragment = (
-      <WireframeProvider api={api}>
-        {ComponentTree}
-      </WireframeProvider>
+      <ActiveWireframeAnnotationContext.Provider value={api}>
+        <Component
+          defaultOpen={false}
+          onHighlightAnnotation={onHighlightAnnotation}
+        >
+          <div>Child component 1</div>
+          <div>Child component 2</div>
+        </Component>
+      </ActiveWireframeAnnotationContext.Provider>
     );
   });
 
@@ -213,12 +207,6 @@ describe("Wireframe: WireframeContainer", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should throw exception if api is not provided", () => {
-    expect(() => {
-      shallow(ComponentTree);
-    }).toThrow(TypeError);
-  });
-
   it("should highlight on hover", () => {
     const app = document.createElement("div");
     document.body.appendChild(app);
@@ -258,5 +246,29 @@ describe("Wireframe: WireframeContainer", () => {
     );
 
     wrapper.unmount();
+  });
+
+  it("should nest containers", () => {
+    const annotation = {
+      id: 42,
+    } as WireframeAnnotation;
+
+    const parentAPI = API();
+    const setParentReferenceSpy = jest.spyOn(api, "setParentReference");
+
+    const wrapper = mount(
+      <WireframeAnnotationContext.Provider value={parentAPI}>
+        <WireframeAnnotationComponentContext.Provider value={annotation}>
+          {Fragment}
+        </WireframeAnnotationComponentContext.Provider>
+      </WireframeAnnotationContext.Provider>,
+    );
+
+    expect(wrapper).toMatchSnapshot();
+
+    expect(setParentReferenceSpy).toBeCalledWith({
+      api: parentAPI,
+      id: 42,
+    });
   });
 });

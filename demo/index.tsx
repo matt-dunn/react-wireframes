@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import { ErrorBoundary } from "../src/ErrorBoundary/ErrorBoundary";
 
@@ -23,13 +23,13 @@ const app = (
   <ErrorBoundary
     ErrorComponent={AppError}
   >
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={Simple} />
         <Route exact path="/nested/" component={Nested} />
         <Route component={Simple} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   </ErrorBoundary>
 );
 

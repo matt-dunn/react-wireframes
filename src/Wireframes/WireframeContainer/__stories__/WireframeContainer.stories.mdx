@@ -4,11 +4,11 @@ import {
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 import {
-  WireframeContainer, WireframeProvider,
+  WireframeContainer,
 } from "src/Wireframes";
 
 import {
-  PreviewContainer as Preview, Main, wireframeAPIGrid, wireframeAPIEmpty, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter, WireframeProviderWithKnobs,
+  PreviewContainer as Preview, Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
 } from "./WireframeContainer.stories.fixtures";
 
 <Meta title="@matt-dunn/react-wireframes/WireframeContainer" component={WireframeContainer} decorators={[withKnobs]} />
@@ -23,7 +23,6 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 
 <Preview>
     <Story name="Default Open">
-      <WireframeProvider api={wireframeAPIGrid}>
         <WireframeContainer
           className="container"
         >
@@ -59,7 +58,6 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
             </div>
           </Main>
         </WireframeContainer>
-      </WireframeProvider>
     </Story>
 </Preview>
 
@@ -69,7 +67,10 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
 
 <Preview>
     <Story name="Default Closed">
-      <WireframeProviderWithKnobs open={boolean("Open", false)}>
+        <WireframeContainer
+          className="container"
+          defaultOpen={boolean("Open", false)}
+        >
           <Main>
             <div className="row">
               <div className="col">
@@ -90,7 +91,7 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
               </div>
             </div>
           </Main>
-      </WireframeProviderWithKnobs>
+        </WireframeContainer>
     </Story>
 </Preview>
 
@@ -100,12 +101,10 @@ Suspendisse tristique nulla vitae vestibulum lacinia. Cras sit amet luctus metus
 
 <Preview>
     <Story name="No annotations">
-      <WireframeProvider api={wireframeAPIEmpty}>
         <WireframeContainer
           className="container"
         >
             <Main />
         </WireframeContainer>
-      </WireframeProvider>
     </Story>
 </Preview>

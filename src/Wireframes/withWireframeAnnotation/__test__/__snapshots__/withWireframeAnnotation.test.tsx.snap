@@ -579,7 +579,6 @@ exports[`Wireframe: withWireframeAnnotation should nest providers 1`] = `
           </CSSTransition>
         </Identifier>
         <withWireframeAnnotation(WireframeProvider)
-          annotationId={1}
           api={
             Object {
               "getAnnotations": [Function],
@@ -596,7 +595,6 @@ exports[`Wireframe: withWireframeAnnotation should nest providers 1`] = `
           }
         >
           <WireframeProvider
-            annotationId={1}
             api={
               Object {
                 "getAnnotations": [Function],

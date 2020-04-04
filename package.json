@@ -115,7 +115,6 @@
     "storybook:build": "build-storybook --output-dir dist/storybook --quiet",
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
-    "postbuild": "cp ./demo/public/404.md ./dist/",
     "build:all": "yarn build && yarn storybook:build && yarn test:e2e",
     "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch -w --jsx=React.createElement",
