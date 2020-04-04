@@ -4,7 +4,7 @@
  * @author Matt Dunn
  */
 import React, { ComponentType, ReactNode } from "react";
-import { WireframeAnnotationOptions, withWireframeAnnotationProps } from "../api";
+import { WireframeAnnotationOptions } from "../api";
 declare type WireframeAnnotationProps = {
     className?: string;
     children?: ReactNode;
@@ -12,7 +12,7 @@ declare type WireframeAnnotationProps = {
     isHighlighted?: boolean;
 };
 export declare function withWireframeAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireframeAnnotationOptions): {
-    ({ className, outline, isHighlighted, ...props }: P & WireframeAnnotationProps): React.ReactElement<P & withWireframeAnnotationProps, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
+    ({ className, outline, isHighlighted, ...props }: P & WireframeAnnotationProps): React.ReactElement<P, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
     Component: React.NamedExoticComponent<P>;
 };
 export declare const withWireframeAnnotationInterfaceDefinition: {
@@ -47,7 +47,7 @@ export declare const withWireframeAnnotationInterfaceDefinition: {
     };
 };
 export declare const WireframeAnnotationPropsInterfaceDefinition: {
-    <P extends object>({ className, outline, isHighlighted, children, }: WireframeAnnotationProps): null;
+    <P extends object>({ outline, isHighlighted, }: WireframeAnnotationProps): null;
     displayName: string;
     __docgenInfo: {
         description: string;

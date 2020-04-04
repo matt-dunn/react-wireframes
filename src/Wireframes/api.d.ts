@@ -38,9 +38,6 @@ export declare type WireframeAnnotationAPI = {
     setParentReference: (parentReference: ParentReference) => void;
     getParentReference: () => ParentReference | undefined;
 };
-export declare type withWireframeAnnotationProps = {
-    annotationId?: number;
-};
 export declare function API(defaultOptions?: APIOptions): WireframeAnnotationAPI;
 export declare namespace API {
     var displayName: string;
