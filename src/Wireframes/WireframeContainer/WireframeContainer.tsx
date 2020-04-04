@@ -33,7 +33,6 @@ type WireframeContainerProps = {
   fixed?: boolean;
 
   /**
-   * Called
    * @param wireframeAnnotation   Highlighted annotation
    * @param element               Attached DOM element
    */
