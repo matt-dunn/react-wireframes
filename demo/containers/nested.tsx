@@ -27,49 +27,49 @@ const SectionLarge = styled(Section)`
   min-height: 14rem;
 `;
 
-export const WANested = withWireframeAnnotation("div", {
+export const WANested = withWireframeAnnotation({
   title: "Nested Annotations",
   description: "Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})("div");
 
 const WireframeContainerInner = styled(WireframeContainer)`
   margin: 25px 40px 0 40px;
 `;
 
-export const WAHeader = withWireframeAnnotation(Section, {
+export const WAHeader = withWireframeAnnotation({
   title: "Header",
   description: "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
-export const WAFooter = withWireframeAnnotation(Section, {
+export const WAFooter = withWireframeAnnotation({
   title: "Footer",
   description: "Footer description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
-export const WASection1 = withWireframeAnnotation(SectionLarge, {
+export const WASection1 = withWireframeAnnotation({
   title: "Component 1",
   description: "Component 1 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(SectionLarge);
 
-export const WASection2 = withWireframeAnnotation(SectionLarge, {
+export const WASection2 = withWireframeAnnotation({
   title: "Component 2",
   description: "Component 2 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(SectionLarge);
 
-export const WASection3 = withWireframeAnnotation(Section, {
+export const WASection3 = withWireframeAnnotation({
   title: "Component 3",
   description: "Component 3 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
-export const WASection4 = withWireframeAnnotation(Section, {
+export const WASection4 = withWireframeAnnotation({
   title: "Component 4",
   description: "Component 4 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
-export const WASection5 = withWireframeAnnotation(Section, {
+export const WASection5 = withWireframeAnnotation({
   title: "Component 5",
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
 export const Nested = () => (
   <WireframeContainer

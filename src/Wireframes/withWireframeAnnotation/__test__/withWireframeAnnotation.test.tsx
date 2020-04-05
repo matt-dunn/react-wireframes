@@ -27,10 +27,10 @@ describe("Wireframe: withWireframeAnnotation", () => {
       highlightNote,
     } as any);
 
-    WrappedComponent = withWireframeAnnotation(() => <div>MOCK COMPONENT</div> as any, {
+    WrappedComponent = withWireframeAnnotation({
       title: <div>Title</div>,
       description: <div>Description.</div>,
-    });
+    })(() => <div>MOCK COMPONENT</div> as any);
 
     ComponentTree = <WrappedComponent />;
 
@@ -110,10 +110,10 @@ describe("Wireframe: withWireframeAnnotation", () => {
   });
 
   it("should nest providers", () => {
-    const WrappedFragment = withWireframeAnnotation(WireframeProvider, {
+    const WrappedFragment = withWireframeAnnotation({
       title: <div>Title</div>,
       description: <div>Description.</div>,
-    });
+    })(WireframeProvider);
 
     const wrapper = mount(
       <WireframeProvider api={api}>

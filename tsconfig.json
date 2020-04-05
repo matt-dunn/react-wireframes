@@ -23,7 +23,8 @@
     }
   },
   "include": [
-    "src/Wireframes/**/*.ts*"
+    "src/**/*.ts*",
+    "demo/**/*.ts*"
   ],
   "exclude": [
     "node_modules"
