@@ -54,71 +54,69 @@ const Wrapper = styled.span<{show: boolean}>`
 /* istanbul ignore next */
 const getDisplayName = (WrappedComponent: ComponentType<any> | string) => (typeof WrappedComponent === "string" ? WrappedComponent : WrappedComponent.displayName || WrappedComponent.name || "Component");
 
-export function withWireframeAnnotation<P extends object>(WrappedComponent: ComponentType<P> | string, options: WireframeAnnotationOptions) {
-  const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
-  Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
+export function withWireframeAnnotation(options: WireframeAnnotationOptions) {
+  return function withWireframeAnnotationComponent<P extends object>(WrappedComponent: ComponentType<P> | keyof JSX.IntrinsicElements) {
+    const Component = React.memo<P>((props: P) => <WrappedComponent {...props} />);
+    Component.displayName = `withWireframeAnnotation(${getDisplayName(WrappedComponent)})`;
 
-  // eslint-disable-next-line react/no-multi-comp
-  function WrappedWireframeAnnotation({
-    className, outline = true, isHighlighted = false, ...props
-  }: P & WireframeAnnotationProps): ReactElement<P> {
-    const {
-      register, unregister, onOpen, isOpen, highlightNote, getParentReference,
-    } = useApi();
+    // eslint-disable-next-line react/no-multi-comp
+    function WrappedWireframeAnnotation({
+      className, outline = true, isHighlighted = false, ...props
+    }: P & WireframeAnnotationProps): ReactElement<P> {
+      const {
+        register, unregister, onOpen, isOpen, highlightNote, getParentReference,
+      } = useApi();
 
-    const [annotation, setAnnotation] = useState<WireframeAnnotation>();
-    const [show, setShow] = useState(isOpen());
+      const [annotation, setAnnotation] = useState<WireframeAnnotation>();
+      const [show, setShow] = useState(isOpen());
 
-    useEffect(() => {
-      const cb = onOpen(setShow);
-      setAnnotation(register(Component, options));
+      useEffect(() => {
+        const cb = onOpen(setShow);
+        setAnnotation(register(Component, options));
 
-      return () => {
-        cb.unregister();
-        unregister(Component);
-      };
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+        return () => {
+          cb.unregister();
+          unregister(Component);
+        };
+      }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const handleHighlightNote = useCallback((e) => {
-      e.stopPropagation();
-      highlightNote(Component);
-    }, [highlightNote]);
+      const handleHighlightNote = useCallback((e) => {
+        e.stopPropagation();
+        highlightNote(Component);
+      }, [highlightNote]);
 
-    const handleHighlightNoteReset = useCallback(() => {
-      highlightNote(undefined);
-    }, [highlightNote]);
+      const handleHighlightNoteReset = useCallback(() => {
+        highlightNote(undefined);
+      }, [highlightNote]);
 
-    return (
-      <WireframeAnnotationComponentContext.Provider value={annotation}>
-        <Wrapper
-          show={show}
-          onMouseOver={handleHighlightNote}
-          onFocus={handleHighlightNote}
-          onMouseLeave={handleHighlightNoteReset}
-          className={classnames({ "outline": outline, "outlined": isHighlighted && show }, className)}
-        >
-          {annotation && <Identifier annotation={annotation} parentReference={getParentReference()} show={show} />}
+      return (
+        <WireframeAnnotationComponentContext.Provider value={annotation}>
+          <Wrapper
+            show={show}
+            onMouseOver={handleHighlightNote}
+            onFocus={handleHighlightNote}
+            onMouseLeave={handleHighlightNoteReset}
+            className={classnames({ "outline": outline, "outlined": isHighlighted && show }, className)}
+          >
+            {annotation && <Identifier annotation={annotation} parentReference={getParentReference()} show={show} />}
 
-          <Component
-            {...props as P}
-          />
-        </Wrapper>
-      </WireframeAnnotationComponentContext.Provider>
-    );
-  }
+            <Component
+              {...props as P}
+            />
+          </Wrapper>
+        </WireframeAnnotationComponentContext.Provider>
+      );
+    }
 
-  WrappedWireframeAnnotation.Component = Component;
+    WrappedWireframeAnnotation.Component = Component;
 
-  return WrappedWireframeAnnotation;
+    return WrappedWireframeAnnotation;
+  };
 }
 
 /* istanbul ignore next */
-export const withWireframeAnnotationInterfaceDefinition = <P extends object>(
-  { WrappedComponent, options }: { // eslint-disable-line @typescript-eslint/no-unused-vars
-    WrappedComponent: ComponentType<P>;
-    options: WireframeAnnotationOptions;
-  },
-) => null;
+export const withWireframeAnnotationInterfaceDefinition = (params: {withWireframeAnnotation: (options: WireframeAnnotationOptions) => // eslint-disable-line @typescript-eslint/no-unused-vars
+    <P extends object>(WrappedComponent: ComponentType<P> | keyof JSX.IntrinsicElements) => ReactElement<WireframeAnnotationProps>;}) => null;
 
 /* istanbul ignore next */
 export const WireframeAnnotationPropsInterfaceDefinition = <P extends object>(

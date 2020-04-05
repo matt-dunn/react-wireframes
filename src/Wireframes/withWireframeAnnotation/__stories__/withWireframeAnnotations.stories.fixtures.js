@@ -13,10 +13,10 @@ const Section = styled.div`
   background-color: #f0f0f0;
 `;
 
-export const WASample = withWireframeAnnotation(Section, {
+export const WASample = withWireframeAnnotation({
   title: "Header",
   description: "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
-});
+})(Section);
 
 export const wireframeAPI = API();
 

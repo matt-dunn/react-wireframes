@@ -50,8 +50,8 @@ Returns a *WrappedComponent* decorated with the following props.
 ```js
 import { withWireframeAnnotation } from "@matt-dunn/react-wireframes";
 
-const AnnotatedComponent = withWireframeAnnotation(MyComponent, {
+const AnnotatedComponent = withWireframeAnnotation({
   title: "String title | Component",
   description: "String description | Component",
-});
+})(MyComponent);
 ```
