@@ -17,6 +17,7 @@
   ],
   "author": "Matt Dunn",
   "homepage": "https://matt-dunn.github.io/",
+  "description": "React component to annotate your components — useful for prototypes and proof of concepts",
   "keywords": [
     "react",
     "wireframe",
