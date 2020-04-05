@@ -2,11 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.3](https://github.com/matt-dunn/react-wireframes/compare/v2.0.2...v2.0.3)
+
+> 5 April 2020
+
+- Add package description [`a37b420`](https://github.com/matt-dunn/react-wireframes/commit/a37b420bb350e5b482dbfc06886365ddb30073ca)
+
 #### [v2.0.2](https://github.com/matt-dunn/react-wireframes/compare/v2.0.1...v2.0.2)
 
 > 5 April 2020
 
 - Add license details and package keywords [`1504acc`](https://github.com/matt-dunn/react-wireframes/commit/1504accbc0c26dd9269e01de6102afa535b24364)
+- Release 2.0.2 [`05ca005`](https://github.com/matt-dunn/react-wireframes/commit/05ca005e4254652275df9c6474e34e6f1f3a8ffa)
 
 #### [v2.0.1](https://github.com/matt-dunn/react-wireframes/compare/v2.0.0...v2.0.1)
 
