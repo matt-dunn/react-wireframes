@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+### [v2.0.0](https://github.com/matt-dunn/react-wireframes/compare/v1.3.0...v2.0.0)
+
+> 5 April 2020
+
+- Update package types path [`eda1eca`](https://github.com/matt-dunn/react-wireframes/commit/eda1eca3210fbf042a5f8ef0f4435f5691a5a6f5)
+
 #### [v1.3.0](https://github.com/matt-dunn/react-wireframes/compare/v1.2.3...v1.3.0)
 
 > 5 April 2020
