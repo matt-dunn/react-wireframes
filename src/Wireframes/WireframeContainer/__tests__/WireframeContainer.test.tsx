@@ -65,6 +65,19 @@ describe("Wireframe: WireframeContainer", () => {
     expect(wrapper.find(Component).find("div").at(0).hasClass("open")).toEqual(true);
   });
 
+  it("should support inline", () => {
+    const wrapper = mount(
+      <WireframeProvider api={api}>
+        <Component fixed={false}>
+          <div>Child component 1</div>
+          <div>Child component 2</div>
+        </Component>
+      </WireframeProvider>,
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should render children with annotation options but no wireframe components when closed", () => {
     const wrapper = mount(Fragment);
 

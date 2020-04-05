@@ -42,9 +42,12 @@ type WireframeContainerProps = {
 const transitionDuration = 250;
 const transition = `${transitionDuration}ms ease-in-out`;
 
-const WireframeMainContainer = styled.div`
+const WireframeMainContainer = styled.div<{fixed: boolean}>`
   display: flex;
-  overflow: hidden;
+
+  ${({ fixed }) => fixed === false && css`
+    overflow: hidden;
+  `}
 
   > [data-annotations-container] {
     width: 0;
@@ -83,7 +86,7 @@ const WireframeAnnotationsContainer = styled.section`
   position: relative;
 `;
 
-const WireframeAnnotationsWrapper = styled.div<{fixed?: boolean}>`
+const WireframeAnnotationsWrapper = styled.div<{fixed: boolean}>`
   flex-grow: 0;
   flex-shrink: 0;
   border-left: 2px solid #555;
@@ -274,7 +277,7 @@ export const WireframeContainer = ({
     <WireframeProvider
       api={api}
     >
-      <WireframeMainContainer data-test="container" className={(open && "open") || ""}>
+      <WireframeMainContainer data-test="container" className={(open && "open") || ""} fixed={fixed}>
         <WireframeBody className={className}>
           {children}
         </WireframeBody>
