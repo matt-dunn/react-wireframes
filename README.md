@@ -86,3 +86,7 @@ ReactDOM.render(
   document.getElementById("app"),
 );
 ```
+
+## License
+
+The MIT License (MIT) Copyright (c) 2020 Matt Dunn

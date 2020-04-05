@@ -15,6 +15,17 @@
     "dist",
     "src/Wireframes"
   ],
+  "author": "Matt Dunn",
+  "homepage": "https://matt-dunn.github.io/",
+  "keywords": [
+    "react",
+    "wireframe",
+    "typescript",
+    "prototype",
+    "prototyping",
+    "poc",
+    "mockup"
+  ],
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
