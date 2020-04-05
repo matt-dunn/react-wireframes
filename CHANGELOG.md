@@ -2,12 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.2](https://github.com/matt-dunn/react-wireframes/compare/v2.0.1...v2.0.2)
+
+> 5 April 2020
+
+- Add license details and package keywords [`1504acc`](https://github.com/matt-dunn/react-wireframes/commit/1504accbc0c26dd9269e01de6102afa535b24364)
+
 #### [v2.0.1](https://github.com/matt-dunn/react-wireframes/compare/v2.0.0...v2.0.1)
 
 > 5 April 2020
 
 - Set nested containers overflow hidden [`67f9c0e`](https://github.com/matt-dunn/react-wireframes/commit/67f9c0e2eecb6c769766b457c5f0215d954ded04)
 - Update readme [`a7af660`](https://github.com/matt-dunn/react-wireframes/commit/a7af66052ac46bfba27d8dfd4f9fa24bb857c0ad)
+- Release 2.0.1 [`6582f65`](https://github.com/matt-dunn/react-wireframes/commit/6582f653d6c117c9794633d4d05ba757d3efb0f1)
 
 ### [v2.0.0](https://github.com/matt-dunn/react-wireframes/compare/v1.3.0...v2.0.0)
 
