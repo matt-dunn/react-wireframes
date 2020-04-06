@@ -15,6 +15,8 @@ React component to annotate your components — useful for prototypes and proof 
 
 [Demo](https://matt-dunn.github.io/react-wireframes/)
 
+[CodePen](https://codepen.io/matt-j-dunn/pen/NWqZmQY?editors=0010)
+
 ---
 
 ## Getting Started
