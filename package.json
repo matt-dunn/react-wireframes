@@ -103,7 +103,6 @@
     "@emotion/styled": "^10.0.0",
     "classnames": "^2.2.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
     "react-transition-group": "^4.3.0",
     "scroll-into-view-if-needed": "^2.2.0"
   },
@@ -128,7 +127,7 @@
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
     "build:all": "yarn build && yarn storybook:build && yarn test:e2e",
-    "package:bundle": "microbundle --globals @emotion/styled=styled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
+    "package:bundle": "microbundle --globals classnames=classNames,react=React,@emotion/styled=emotionStyled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=emotionCore.css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
     "serve:prod": "http-server ./dist/ --port 8090 --silent",
