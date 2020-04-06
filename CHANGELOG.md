@@ -2,10 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.4](https://github.com/matt-dunn/react-wireframes/compare/v2.0.3...v2.0.4)
+
+> 6 April 2020
+
+- Add UMD support [`19df13f`](https://github.com/matt-dunn/react-wireframes/commit/19df13f7dfffb41da7afc15741e0c70231eef28b)
+
 #### [v2.0.3](https://github.com/matt-dunn/react-wireframes/compare/v2.0.2...v2.0.3)
 
 > 5 April 2020
 
+- Release 2.0.3 [`1905dde`](https://github.com/matt-dunn/react-wireframes/commit/1905dde98ad3e971837642d61f0a350f0dade60b)
 - Add package description [`a37b420`](https://github.com/matt-dunn/react-wireframes/commit/a37b420bb350e5b482dbfc06886365ddb30073ca)
 
 #### [v2.0.2](https://github.com/matt-dunn/react-wireframes/compare/v2.0.1...v2.0.2)
