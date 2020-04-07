@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
-import assetMJD from "../public/assets/mjd.png";
+import "./styles/main.scss";
 
 const Main = styled.main`
   max-width: 55rem;
@@ -47,44 +47,6 @@ const ListItem = styled.li`
 
 const Footer = styled.footer`
   margin-top: 1rem;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  aside {
-    font-weight: 200;
-  }
-
-  h1 {
-    display: flex;
-    font-weight: lighter;
-    margin: 0;
-
-    &::before {
-      content: " ";
-      background-image: url(${assetMJD});
-      background-size: cover;
-      background-color: #fff;
-      background-repeat: no-repeat;
-      background-position: 50%;
-      border-radius: 500px;
-      border: 1px solid #ccc;
-      overflow: hidden;
-      width: 1em;
-      height: 1em;
-      align-self: center;
-      flex-shrink: 0;
-      flex-grow: 0;
-      margin-right: 0.5rem;
-      opacity: 0.8;
-      display: block;
-    }
-  }
 `;
 
 export const Home = () => (
@@ -130,7 +92,7 @@ export const Home = () => (
       </ListItem>
     </List>
     <Footer>
-      <a href="https://matt-dunn.github.io/" target="_blank" rel="noopener noreferrer">
+      <a href="https://matt-dunn.github.io/" target="_blank" rel="noopener noreferrer" className="avatar">
         <h1>
           Matt Dunn
         </h1>
