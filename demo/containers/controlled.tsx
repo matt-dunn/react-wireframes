@@ -99,7 +99,6 @@ const Options = styled.div`
   border-radius: 0 0 0.5rem 0;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.75);
-  width: fit-content;
   position: fixed;
   top: 0;
   left: 0;
@@ -109,7 +108,12 @@ const Options = styled.div`
     border: 1px solid #ccc;
     background-color: #fafafa;
     margin: 0.5rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 0.35rem;
+    
+    &[disabled] {
+      opacity: 0.5;
+    }
   }
   
   ul {
@@ -125,7 +129,11 @@ export const Controlled = () => {
     <div>
       <Options>
         <p>
-          {open ? "Annotations open" : "Annotations closed"}
+          Annotations
+          {" "}
+          <strong>
+            {open ? "open" : "closed"}
+          </strong>
         </p>
         <ul className="list-unstyled">
           <li>
