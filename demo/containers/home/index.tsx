@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
+import assetMJD from "../public/assets/mjd.png";
+
 const Main = styled.main`
   max-width: 55rem;
   margin: 5rem auto;
@@ -27,7 +29,7 @@ const ListItem = styled.li`
   
   a {
     border-radius: 0.5rem;
-    background-color: #f5f5f5;
+    background-color: #f8f8f8;
     padding: 1rem;
     color: inherit;
     text-decoration: none;
@@ -39,6 +41,48 @@ const ListItem = styled.li`
     
     h1 {
       font-size: 1.75rem
+    }
+  }
+`;
+
+const Footer = styled.footer`
+  margin-top: 1rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  aside {
+    font-weight: 200;
+  }
+
+  h1 {
+    display: flex;
+    font-weight: lighter;
+    margin: 0;
+
+    &::before {
+      content: " ";
+      background-image: url(${assetMJD});
+      background-size: cover;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      border-radius: 500px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      width: 1em;
+      height: 1em;
+      align-self: center;
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin-right: 0.5rem;
+      opacity: 0.8;
+      display: block;
     }
   }
 `;
@@ -85,5 +129,18 @@ export const Home = () => (
         </NavLink>
       </ListItem>
     </List>
+    <Footer>
+      <a href="https://matt-dunn.github.io/" target="_blank" rel="noopener noreferrer">
+        <h1>
+          Matt Dunn
+        </h1>
+
+        <aside className="text-muted">
+          <p>
+            Senior User Interface Developer
+          </p>
+        </aside>
+      </a>
+    </Footer>
   </Main>
 );
