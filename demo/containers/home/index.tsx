@@ -12,10 +12,12 @@ const Main = styled.main`
   > header {
     h1 {
       display: flex;
+      flex-wrap: wrap;
       
       a:first-child {
         flex-grow: 1;
         text-decoration: none;
+        margin-right: 1rem;
       }
     }
   }
@@ -54,7 +56,11 @@ export const Home = () => (
     <header>
       <h1>
         <a href="https://github.com/matt-dunn/react-wireframes" target="_blank" rel="noopener noreferrer">
-          <code>@matt-dunn/react-wireframes</code>
+          <code>
+            @matt-dunn/
+            <wbr />
+            react-wireframes
+          </code>
         </a>
         <a href="https://badge.fury.io/js/%40matt-dunn%2Freact-wireframes" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/%40matt-dunn%2Freact-wireframes.svg" alt="npm version" height="18" /></a>
       </h1>

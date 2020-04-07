@@ -105,8 +105,12 @@ const Options = styled.div`
   border-bottom: 2px solid #ccc;
   border-radius: 0 0 0.5rem 0;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   width: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10020;
   
   button {
     border: 1px solid #ccc;
