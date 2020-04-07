@@ -1,0 +1,40 @@
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &, &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  aside {
+    font-weight: 200;
+  }
+
+  h1 {
+    display: flex;
+    font-weight: lighter;
+    margin: 0;
+
+    &::before {
+      content: " ";
+      background-image: url(../../../public/assets/mjd.png);
+      background-size: cover;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      border-radius: 500px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      width: 1em;
+      height: 1em;
+      align-self: center;
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin-right: 0.5rem;
+      opacity: 0.8;
+      display: block;
+    }
+  }
+}

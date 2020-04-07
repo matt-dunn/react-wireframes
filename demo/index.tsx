@@ -4,8 +4,10 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 
 import { ErrorBoundary } from "../src/ErrorBoundary/ErrorBoundary";
 
+import { Home } from "./containers/home";
 import { Nested } from "./containers/nested";
 import { Simple } from "./containers/simple";
+import { Controlled } from "./containers/controlled";
 
 import "./bootstrap.scss";
 
@@ -25,9 +27,10 @@ const app = (
   >
     <HashRouter>
       <Switch>
-        <Route exact path="/" component={Simple} />
+        <Route exact path="/simple/" component={Simple} />
         <Route exact path="/nested/" component={Nested} />
-        <Route component={Simple} />
+        <Route exact path="/controlled/" component={Controlled} />
+        <Route component={Home} />
       </Switch>
     </HashRouter>
   </ErrorBoundary>

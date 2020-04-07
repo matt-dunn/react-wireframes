@@ -8,7 +8,7 @@ import {
 } from "src/Wireframes";
 
 import {
-  PreviewContainer as Preview, Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter,
+  PreviewContainer as Preview, Main, WAHeader, WASection1, WASection2, WASection3, WASection4, WASection5, WAFooter, Controlled,
 } from "./WireframeContainer.stories.fixtures";
 
 <Meta title="@matt-dunn/react-wireframes/WireframeContainer" component={WireframeContainer} decorators={[withKnobs]} />
@@ -69,7 +69,7 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
     <Story name="Default Closed">
         <WireframeContainer
           className="container"
-          defaultOpen={boolean("Open", false)}
+          defaultOpen={false}
         >
           <Main>
             <div className="row">
@@ -94,6 +94,40 @@ Pellentesque non sapien a dolor aliquet tempor sit amet non nunc. Class aptent t
         </WireframeContainer>
     </Story>
 </Preview>
+
+
+## Controlled
+
+<Preview>
+    <Story name="Controlled">
+        <Controlled
+          className="container"
+          isOpen={boolean("Open", false)}
+        >
+          <Main>
+            <div className="row">
+              <div className="col">
+                <WASection1>Component 1</WASection1>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <WASection3>Component 3</WASection3>
+              </div>
+              <div className="col">
+                <WASection5>Component 5</WASection5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <WASection3>Component 3</WASection3>
+              </div>
+            </div>
+          </Main>
+        </Controlled>
+    </Story>
+</Preview>
+
 
 ## Example with no annotations
 
