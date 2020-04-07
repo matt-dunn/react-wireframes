@@ -108,8 +108,13 @@ const Options = styled.div`
   button {
     border: 1px solid #ccc;
     background-color: #fafafa;
-    margin-right: 0.5rem;
+    margin: 0.5rem;
     border-radius: 0.35rem;
+  }
+  
+  ul {
+    margin: 0;
+    display: flex;
   }
 `;
 
@@ -122,20 +127,26 @@ export const Controlled = () => {
         <p>
           {open ? "Annotations open" : "Annotations closed"}
         </p>
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          disabled={open}
-        >
-          Open
-        </button>
-        <button
-          type="button"
-          onClick={() => setOpen(false)}
-          disabled={!open}
-        >
-          Close
-        </button>
+        <ul className="list-unstyled">
+          <li>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              disabled={open}
+            >
+              Open
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              disabled={!open}
+            >
+              Close
+            </button>
+          </li>
+        </ul>
       </Options>
       <WireframeContainer
         className="container"
