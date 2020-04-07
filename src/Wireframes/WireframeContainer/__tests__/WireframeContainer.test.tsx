@@ -16,6 +16,17 @@ import {
 
 jest.useFakeTimers();
 
+const ComponentTree = ({ api, ...props }: any) => (
+  <ActiveWireframeAnnotationContext.Provider value={api}>
+    <Component
+      {...props}
+    >
+      <div>Child component 1</div>
+      <div>Child component 2</div>
+    </Component>
+  </ActiveWireframeAnnotationContext.Provider>
+);
+
 describe("Wireframe: WireframeContainer", () => {
   let api: WireframeAnnotationAPI;
   let MockedComponent1: FC<any>;
@@ -31,17 +42,7 @@ describe("Wireframe: WireframeContainer", () => {
 
     onHighlightAnnotation = jest.fn();
 
-    Fragment = (
-      <ActiveWireframeAnnotationContext.Provider value={api}>
-        <Component
-          defaultOpen={false}
-          onHighlightAnnotation={onHighlightAnnotation}
-        >
-          <div>Child component 1</div>
-          <div>Child component 2</div>
-        </Component>
-      </ActiveWireframeAnnotationContext.Provider>
-    );
+    Fragment = <ComponentTree api={api} defaultOpen={false} onHighlightAnnotation={onHighlightAnnotation} />;
   });
 
   it("should render children with no wireframe components", () => {
@@ -283,5 +284,87 @@ describe("Wireframe: WireframeContainer", () => {
       api: parentAPI,
       id: 42,
     });
+  });
+
+  it("should call toggle handler", () => {
+    const onToggleOpen = jest.fn();
+
+    const wrapper = mount(
+      <ComponentTree
+        api={api}
+        defaultOpen={false}
+        onToggleOpen={onToggleOpen}
+      />,
+    );
+
+    // Open
+    wrapper.find(WireframeAnnotationsToggle).simulate("click");
+
+    expect(onToggleOpen).toBeCalledWith(true);
+
+    act(() => {
+      wrapper.setProps({
+        open: true,
+      });
+    });
+
+    // Close
+    wrapper.find(WireframeAnnotationsToggle).simulate("click");
+
+    expect(onToggleOpen).toBeCalledWith(false);
+
+    wrapper.find(WireframeAnnotationsClose).simulate("click");
+
+    expect(onToggleOpen).toBeCalledWith(false);
+  });
+
+  it("should create a controlled container", () => {
+    const open = false;
+    const onToggleOpen = jest.fn();
+
+    const wrapper = mount(
+      <ComponentTree
+        api={api}
+        open={open}
+        onToggleOpen={onToggleOpen}
+      />,
+    );
+
+    expect(wrapper).toMatchSnapshot();
+
+    expect(onToggleOpen).not.toHaveBeenCalled();
+
+    act(() => {
+      wrapper.setProps({
+        open: true,
+      });
+    });
+
+    expect(wrapper).toMatchSnapshot();
+
+    // expect(onToggleOpen).toBeCalledWith(true);
+
+    act(() => {
+      wrapper.setProps({
+        open: false,
+      });
+    });
+
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should throw an exception if controlled container does not implement toggle callback", () => {
+    expect(() => {
+      mount(
+        <ComponentTree
+          api={api}
+          open
+        />,
+      );
+    }).toThrow(TypeError);
   });
 });

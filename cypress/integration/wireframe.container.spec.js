@@ -2,7 +2,7 @@
 
 context("WireframeContainer", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/#/simple/");
   });
 
   it("Should open and close the annotations", () => {

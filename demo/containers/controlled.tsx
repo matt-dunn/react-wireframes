@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { Preview } from "@storybook/addon-docs/blocks";
 
 import {
-  WireframeContainer,
-  withWireframeAnnotation,
+  WireframeContainer, withWireframeAnnotation,
 } from "src/Wireframes";
 
 export const Main = styled.div`
@@ -93,13 +91,6 @@ export const WASection5 = withWireframeAnnotation({
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 })(Section);
 
-export const PreviewContainer = styled(Preview)`
-  [scale] {
-    overflow: hidden;
-    border: 1px solid #f5f5f5;
-  }
-`;
-
 const Options = styled.div`
   border-right: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
@@ -116,12 +107,8 @@ const Options = styled.div`
   }
 `;
 
-export const Controlled = ({ className, isOpen, children }) => { // eslint-disable-line react/prop-types
-  const [open, setOpen] = useState(isOpen);
-
-  useEffect(() => {
-    setOpen(isOpen);
-  }, [isOpen, setOpen]);
+export const Controlled = () => {
+  const [open, setOpen] = useState(true);
 
   return (
     <div>
@@ -145,11 +132,41 @@ export const Controlled = ({ className, isOpen, children }) => { // eslint-disab
         </button>
       </Options>
       <WireframeContainer
-        className={className}
+        className="container"
         onToggleOpen={setOpen}
         open={open}
       >
-        {children}
+        <Main>
+          <div className="row">
+            <div className="col">
+              <WAHeader>Header</WAHeader>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <WASection1>Component 1</WASection1>
+            </div>
+            <div className="col-6">
+              <WASection2>Component 2</WASection2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <WASection3>Component 3</WASection3>
+            </div>
+            <div className="col">
+              <WASection4>Component 4</WASection4>
+            </div>
+            <div className="col">
+              <WASection5>Component 5</WASection5>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <WAFooter>Footer</WAFooter>
+            </div>
+          </div>
+        </Main>
       </WireframeContainer>
     </div>
   );

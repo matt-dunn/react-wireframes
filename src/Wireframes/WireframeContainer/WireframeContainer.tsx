@@ -33,8 +33,19 @@ type WireframeContainerProps = {
   fixed?: boolean;
 
   /**
-   * @param wireframeAnnotation   Highlighted annotation
-   * @param element               Attached DOM element
+   * Make the container open state controlled. ```onToggleOpen``` must be implemented to set external state.
+   */
+  open?: boolean;
+
+  /**
+   * Called when open state is changed
+   * @param {boolean}             isOpen                Open state
+   */
+  onToggleOpen?: (isOpen: boolean) => void;
+
+  /**
+   * @param {WireframeAnnotation} wireframeAnnotation   Highlighted annotation
+   * @param {Element}             element               Attached DOM element
    */
   onHighlightAnnotation?: (wireframeAnnotation: WireframeAnnotation, element: Element) => void;
 }
@@ -194,8 +205,12 @@ export const ActiveWireframeAnnotationContext = createContext<WireframeAnnotatio
  * Use the WireframeContainer at the top of your component tree
  * */
 export const WireframeContainer = ({
-  children, className, defaultOpen = true, onHighlightAnnotation, fixed = true,
+  children, open, onToggleOpen, className, defaultOpen = true, onHighlightAnnotation, fixed = true,
 }: WireframeContainerProps) => {
+  if (open !== undefined && !onToggleOpen) {
+    throw new TypeError("Controlled container must implement 'onToggleOpen'");
+  }
+
   const [isClient, setIsClient] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
@@ -222,17 +237,17 @@ export const WireframeContainer = ({
   const [isOpened, setIsOpened] = useState(false);
   const [annotations, setAnnotations] = useState<WireframeAnnotations>();
   const [highlightedNote, setHighlightedNote] = useState<WireframeAnnotation | undefined>(undefined);
-  const [open, setOpen] = useState(defaultOpen);
+  const [isOpen, setIsOpen] = useState(open !== undefined ? open : defaultOpen);
 
   useMemo(() => {
     api.setOptions({
       updater: setAnnotations,
-      highlightNote: wireFrameAnnotation => open && setHighlightedNote(wireFrameAnnotation),
+      highlightNote: wireFrameAnnotation => isOpen && setHighlightedNote(wireFrameAnnotation),
     });
-  }, [api, open]);
+  }, [api, isOpen]);
 
   useEffect(() => {
-    const opener = api.onOpen(setOpen);
+    const opener = api.onOpen(setIsOpen);
 
     return () => {
       opener.unregister();
@@ -240,24 +255,26 @@ export const WireframeContainer = ({
   }, [api]);
 
   useEffect(() => {
-    api.setOpen(open);
-  }, [api, open]);
+    api.setOpen(isOpen);
+  }, [api, isOpen]);
 
   useEffect(() => {
-    setOpen(defaultOpen);
-  }, [api, defaultOpen]);
+    if (open !== undefined) {
+      api.setOpen(open);
+    }
+  }, [api, open]);
 
   useEffect(() => {
     clearTimeout(opening.current);
 
-    if (open) {
+    if (isOpen) {
       setIsOpened(true);
     } else {
       opening.current = setTimeout(() => {
         setIsOpened(false);
       }, transitionDuration) as unknown as number;
     }
-  }, [open]);
+  }, [isOpen]);
 
   useScrollElementIntoView({
     element: ((highlightedNote && container.current) && container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`)) || null,
@@ -266,18 +283,30 @@ export const WireframeContainer = ({
   });
 
   const handleToggle = useCallback(() => {
-    setOpen(value => !value);
-  }, [setOpen]);
+    if (open === undefined) {
+      setIsOpen(value => !value);
+    }
+
+    if (onToggleOpen) {
+      onToggleOpen(!open);
+    }
+  }, [setIsOpen, open, onToggleOpen]);
 
   const handleClose = useCallback(() => {
-    setOpen(false);
-  }, [setOpen]);
+    if (open === undefined) {
+      setIsOpen(false);
+    }
+
+    if (onToggleOpen) {
+      onToggleOpen(!open);
+    }
+  }, [setIsOpen, open, onToggleOpen]);
 
   return (
     <WireframeProvider
       api={api}
     >
-      <WireframeMainContainer data-test="container" className={(open && "open") || ""} fixed={fixed}>
+      <WireframeMainContainer data-test="container" className={(isOpen && "open") || ""} fixed={fixed}>
         <WireframeBody className={className}>
           {children}
         </WireframeBody>
@@ -285,7 +314,7 @@ export const WireframeContainer = ({
         {isClient && (
         <WireframeAnnotationsContainer data-annotations-container ref={container}>
           <WireframeAnnotationsWrapper data-annotations fixed={fixed}>
-            <WireframeAnnotationsToggle open={open} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
+            <WireframeAnnotationsToggle open={isOpen} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireframeAnnotationsToggle>
 
