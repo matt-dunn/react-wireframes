@@ -62,22 +62,22 @@ export const Home = () => (
         </NavLink>
       </ListItem>
       <ListItem>
+        <NavLink to="/controlled/">
+          <header>
+            <h1>Controlled container</h1>
+          </header>
+          <p>
+            Example with controlled open / close annotations state and maintain active state in local storage.
+          </p>
+        </NavLink>
+      </ListItem>
+      <ListItem>
         <NavLink to="/nested/">
           <header>
             <h1>Nested containers</h1>
           </header>
           <p>
             Example with nested containers and identifier hierarchy.
-          </p>
-        </NavLink>
-      </ListItem>
-      <ListItem>
-        <NavLink to="/controlled/">
-          <header>
-            <h1>Controlled container</h1>
-          </header>
-          <p>
-            Example with controlled open / close annotations state.
           </p>
         </NavLink>
       </ListItem>

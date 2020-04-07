@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 import {
   WireframeContainer, withWireframeAnnotation,
 } from "src/Wireframes";
+
+import { useLocalStorage } from "src/useLocalStorage";
 
 export const Main = styled.div`
   padding: 2em 4em;
@@ -108,7 +110,7 @@ const Options = styled.div`
 `;
 
 export const Controlled = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useLocalStorage("open", true);
 
   return (
     <div>
