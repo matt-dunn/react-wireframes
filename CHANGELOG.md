@@ -2,10 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.5](https://github.com/matt-dunn/react-wireframes/compare/v2.0.4...v2.0.5)
+
+> 8 April 2020
+
+- Feature/controlled [`#22`](https://github.com/matt-dunn/react-wireframes/pull/22)
+- Add props for controlled container [`7bd8bf0`](https://github.com/matt-dunn/react-wireframes/commit/7bd8bf02a68787dbfdd6822820eb8ff913cfa41e)
+
 #### [v2.0.4](https://github.com/matt-dunn/react-wireframes/compare/v2.0.3...v2.0.4)
 
 > 6 April 2020
 
+- Release 2.0.4 [`9550049`](https://github.com/matt-dunn/react-wireframes/commit/95500491916da4e4c4e63cc11b3ec2206c67d718)
 - Add UMD support [`19df13f`](https://github.com/matt-dunn/react-wireframes/commit/19df13f7dfffb41da7afc15741e0c70231eef28b)
 
 #### [v2.0.3](https://github.com/matt-dunn/react-wireframes/compare/v2.0.2...v2.0.3)
