@@ -1,91 +1,128 @@
-import React, { useEffect } from "react";
-import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
+
+import { mountHook } from "../../test/utils";
 
 import { useLocalStorage } from "../useLocalStorage";
 
 describe("useLocalStorage", () => {
   let getItem: any;
   let setItem: any;
-  let updaterMock: any;
-  let Mock: React.FC<any>;
+  let removeItem: any;
 
   beforeEach(() => {
+    localStorage.clear();
+
     getItem = jest.spyOn(Storage.prototype, "getItem");
     setItem = jest.spyOn(Storage.prototype, "setItem");
-    updaterMock = jest.fn();
-
-    // eslint-disable-next-line react/display-name
-    Mock = ({ updateValue, updater }: any) => {
-      const [value, setValue] = useLocalStorage("test", updateValue);
-
-      useEffect(() => {
-        setValue(updateValue);
-      }, [setValue, updateValue]);
-
-      useEffect(() => {
-        updater(value);
-      }, [updater, value]);
-
-      return <div>{value}</div>;
-    };
+    removeItem = jest.spyOn(Storage.prototype, "removeItem");
   });
 
-  it("should get initial value if no storage value", () => {
-    const wrapper = mount(<Mock updateValue={1} updater={updaterMock} />);
-
-    expect(updaterMock).nthCalledWith(1, 1);
-
-    expect(getItem).lastCalledWith("test");
-    expect(updaterMock).lastCalledWith(1);
-
-    act(() => {
-      wrapper.setProps({
-        updateValue: 123,
-      });
-    });
-
-    expect(setItem).lastCalledWith("test", "123");
-    expect(updaterMock).lastCalledWith(123);
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
-  it("should get storage value", () => {
+  it("should return undefined if no storage or initial value", () => {
+    const { context } = mountHook(() => useLocalStorage("test"));
+
+    const [value] = context.current;
+
+    expect(getItem).toBeCalledWith("test");
+    expect(setItem).not.toHaveBeenCalled();
+
+    expect(value).toEqual(undefined);
+  });
+
+  it("should get initial number value if no storage value", () => {
+    const { context } = mountHook(() => useLocalStorage("test", 123));
+
+    const [value] = context.current;
+
+    expect(getItem).toBeCalledWith("test");
+    expect(setItem).not.toHaveBeenCalled();
+
+    expect(value).toEqual(123);
+  });
+
+  it("should get initial boolean value if no storage value", () => {
+    const { context } = mountHook(() => useLocalStorage("test", false));
+
+    const [value] = context.current;
+
+    expect(getItem).toBeCalledWith("test");
+    expect(setItem).not.toHaveBeenCalled();
+
+    expect(value).toEqual(false);
+  });
+
+  it("should not get initial value and get value from local storage", () => {
     localStorage.setItem("test", JSON.stringify(55));
 
-    const wrapper = mount(<Mock updateValue={1} updater={updaterMock} />);
+    const { context } = mountHook(() => useLocalStorage("test", 123));
 
-    expect(updaterMock).nthCalledWith(1, 55);
+    const [value] = context.current;
 
-    expect(getItem).lastCalledWith("test");
-    expect(updaterMock).lastCalledWith(1);
+    expect(getItem).toBeCalledWith("test");
 
-    act(() => {
-      wrapper.setProps({
-        updateValue: 123,
-      });
-    });
-
-    expect(setItem).lastCalledWith("test", "123");
-    expect(updaterMock).lastCalledWith(123);
+    expect(value).toEqual(55);
   });
 
-  it("should remove storage value when undefined", () => {
-    localStorage.setItem("test", JSON.stringify(55));
+  it("should update number value", () => {
+    const { context } = mountHook(() => useLocalStorage("test", 123));
 
-    const wrapper = mount(<Mock updateValue={1} updater={updaterMock} />);
+    const [value, setValue] = context.current;
 
-    expect(updaterMock).nthCalledWith(1, 55);
+    expect(getItem).toBeCalledWith("test");
 
-    expect(getItem).lastCalledWith("test");
-    expect(updaterMock).lastCalledWith(1);
+    expect(value).toEqual(123);
 
     act(() => {
-      wrapper.setProps({
-        updateValue: undefined,
-      });
+      setValue(42);
     });
 
-    expect(setItem).lastCalledWith("test", "1");
-    expect(updaterMock).lastCalledWith(undefined);
+    const [updatedValue] = context.current;
+
+    expect(setItem).toBeCalledWith("test", "42");
+    expect(removeItem).not.toHaveBeenCalled();
+    expect(updatedValue).toEqual(42);
+  });
+
+  it("should update boolean value", () => {
+    const { context } = mountHook(() => useLocalStorage("test", false));
+
+    const [value, setValue] = context.current;
+
+    expect(getItem).toBeCalledWith("test");
+
+    expect(value).toEqual(false);
+
+    act(() => {
+      setValue(true);
+    });
+
+    const [updatedValue] = context.current;
+
+    expect(setItem).toBeCalledWith("test", "true");
+    expect(removeItem).not.toHaveBeenCalled();
+    expect(updatedValue).toEqual(true);
+  });
+
+  it("should remove value from local storage if undefined", () => {
+    const { context } = mountHook(() => useLocalStorage("test", 42));
+
+    const [value, setValue] = context.current;
+
+    expect(getItem).toBeCalledWith("test");
+
+    expect(value).toEqual(42);
+
+    act(() => {
+      setValue(undefined);
+    });
+
+    const [updatedValue] = context.current;
+
+    expect(setItem).not.toHaveBeenCalled();
+    expect(removeItem).toBeCalledWith("test");
+    expect(updatedValue).toEqual(undefined);
   });
 });
