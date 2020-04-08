@@ -95,6 +95,13 @@ const WireframeAnnotationsContainer = styled.section`
   padding: 0;
   transition: width ${transition}, min-width ${transition};
   position: relative;
+  
+  &:hover {
+    [data-annotations-toggle] {
+      transform: translate(-100%, -50%);
+    }
+  }
+  
 `;
 
 const WireframeAnnotationsWrapper = styled.div<{fixed: boolean}>`
@@ -147,8 +154,8 @@ export const WireframeAnnotationsToggle = styled.button<{open: boolean}>`
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  transform: translate(-100%, -50%);
-  transition: opacity 100ms;
+  transform: ${({ open }) => (open && css`translate(0, -50%)`) || css`translate(-100%, -50%)`};
+  transition: opacity 100ms, transform 100ms;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -193,10 +200,16 @@ export const WireframeAnnotationsClose = styled.button`
 `;
 
 const WireframeAnnotationNotesContainer = styled.div`
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: flex;
+  flex-grow: 1;
+  
+  > * {
+    overflow: auto;
+  }
 `;
 
 export const ActiveWireframeAnnotationContext = createContext<WireframeAnnotationAPI | undefined>(undefined);
@@ -314,7 +327,7 @@ export const WireframeContainer = ({
         {isClient && (
         <WireframeAnnotationsContainer data-annotations-container ref={container}>
           <WireframeAnnotationsWrapper data-annotations fixed={fixed}>
-            <WireframeAnnotationsToggle open={isOpen} data-test="toggle" title="Toggle annotations" onClick={handleToggle}>
+            <WireframeAnnotationsToggle open={isOpen} data-test="toggle" data-annotations-toggle title="Toggle annotations" onClick={handleToggle}>
               <span>→</span>
             </WireframeAnnotationsToggle>
 
