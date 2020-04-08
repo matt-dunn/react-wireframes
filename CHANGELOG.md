@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.6](https://github.com/matt-dunn/react-wireframes/compare/v2.0.5...v2.0.6)
+
+> 8 April 2020
+
+- Wireframe notes option [`#23`](https://github.com/matt-dunn/react-wireframes/pull/23)
+- Only scroll when open [`7210f30`](https://github.com/matt-dunn/react-wireframes/commit/7210f30ff7d386956aaf37164f91a5e9e0ca2aff)
+
 #### [v2.0.5](https://github.com/matt-dunn/react-wireframes/compare/v2.0.4...v2.0.5)
 
 > 8 April 2020
