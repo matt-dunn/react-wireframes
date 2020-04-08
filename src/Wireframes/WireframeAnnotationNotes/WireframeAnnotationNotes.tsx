@@ -36,8 +36,15 @@ export const NoAnnotations = styled.div`
   font-size: 2rem;
   font-weight: lighter;
   line-height: 1;
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  > p {
+    max-width: 75%;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export const WireframeAnnotationNotes = ({
@@ -60,6 +67,10 @@ export const WireframeAnnotationNotes = ({
   }
 
   return (
-    <NoAnnotations>No annotations on this page</NoAnnotations>
+    <NoAnnotations>
+      <p>
+        No annotations on this page
+      </p>
+    </NoAnnotations>
   );
 };

@@ -55,6 +55,12 @@ exports[`Wireframe: WireframeContainer should create a controlled container 1`] 
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -128,8 +134,9 @@ exports[`Wireframe: WireframeContainer should create a controlled container 1`] 
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -246,6 +253,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 1`] 
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -253,6 +261,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 1`] 
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -329,6 +338,12 @@ exports[`Wireframe: WireframeContainer should create a controlled container 2`] 
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -402,8 +417,9 @@ exports[`Wireframe: WireframeContainer should create a controlled container 2`] 
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -520,6 +536,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 2`] 
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -527,6 +544,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 2`] 
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -603,6 +621,12 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
   position: relative;
 }
 
+.emotion-12:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-10 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -673,11 +697,12 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -736,10 +761,22 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
 }
 
 .emotion-8 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-8 > * {
+  overflow: auto;
 }
 
 .emotion-6 {
@@ -749,14 +786,24 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
   font-size: 2rem;
   font-weight: lighter;
   line-height: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 > p {
+  max-width: 75%;
+  margin: 0;
+  padding: 0;
 }
 
 <ComponentTree
@@ -834,6 +881,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -841,6 +889,7 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -879,7 +928,9 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
                           <div
                             className="emotion-6 emotion-7"
                           >
-                            No annotations on this page
+                            <p>
+                              No annotations on this page
+                            </p>
                           </div>
                         </NoAnnotations>
                       </WireframeAnnotationNotes>
@@ -949,6 +1000,12 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   position: relative;
+}
+
+.emotion-12:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
 }
 
 .emotion-10 {
@@ -1021,11 +1078,12 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1084,10 +1142,22 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 }
 
 .emotion-8 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-8 > * {
+  overflow: auto;
 }
 
 .emotion-6 {
@@ -1097,14 +1167,24 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
   font-size: 2rem;
   font-weight: lighter;
   line-height: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 > p {
+  max-width: 75%;
+  margin: 0;
+  padding: 0;
 }
 
 <WireframeProvider
@@ -1177,6 +1257,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -1184,6 +1265,7 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -1222,7 +1304,9 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
                           <div
                             className="emotion-6 emotion-7"
                           >
-                            No annotations on this page
+                            <p>
+                              No annotations on this page
+                            </p>
                           </div>
                         </NoAnnotations>
                       </WireframeAnnotationNotes>
@@ -1292,6 +1376,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   -webkit-transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   transition: width 250ms ease-in-out,min-width 250ms ease-in-out;
   position: relative;
+}
+
+.emotion-30:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
 }
 
 .emotion-28 {
@@ -1364,11 +1454,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1427,10 +1518,22 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-26 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-26 > * {
+  overflow: auto;
 }
 
 .emotion-24 {
@@ -1880,6 +1983,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -1887,6 +1991,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -2187,6 +2292,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   position: relative;
 }
 
+.emotion-30:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-28 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -2257,11 +2368,12 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2320,10 +2432,22 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-26 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-26 > * {
+  overflow: auto;
 }
 
 .emotion-24 {
@@ -3005,6 +3129,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -3012,6 +3137,7 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -3312,6 +3438,12 @@ exports[`Wireframe: WireframeContainer should nest containers 1`] = `
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -3385,8 +3517,9 @@ exports[`Wireframe: WireframeContainer should nest containers 1`] = `
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3555,6 +3688,7 @@ exports[`Wireframe: WireframeContainer should nest containers 1`] = `
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -3562,6 +3696,7 @@ exports[`Wireframe: WireframeContainer should nest containers 1`] = `
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -3638,6 +3773,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   position: relative;
 }
 
+.emotion-30:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-28 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -3708,11 +3849,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3771,10 +3913,22 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-26 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-26 > * {
+  overflow: auto;
 }
 
 .emotion-24 {
@@ -3951,6 +4105,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -3958,6 +4113,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -4247,6 +4403,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -4320,8 +4482,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4438,6 +4601,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -4445,6 +4609,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -4521,6 +4686,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -4594,8 +4765,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4712,6 +4884,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -4719,6 +4892,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -4795,6 +4969,12 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -4868,8 +5048,9 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4986,6 +5167,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -4993,6 +5175,7 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -5069,6 +5252,12 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   position: relative;
 }
 
+.emotion-6:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-4 {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -5142,8 +5331,9 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
   -webkit-transform: translate(-100%,-50%);
   -ms-transform: translate(-100%,-50%);
   transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5260,6 +5450,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={false}
@@ -5267,6 +5458,7 @@ exports[`Wireframe: WireframeContainer should render children with no wireframe 
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={false}
@@ -5314,6 +5506,12 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
   position: relative;
 }
 
+.emotion-12:hover [data-annotations-toggle] {
+  -webkit-transform: translate(-100%,-50%);
+  -ms-transform: translate(-100%,-50%);
+  transform: translate(-100%,-50%);
+}
+
 .emotion-2 {
   margin: 0;
   padding: 0;
@@ -5324,11 +5522,12 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
   color: #fff;
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
-  -webkit-transform: translate(-100%,-50%);
-  -ms-transform: translate(-100%,-50%);
-  transform: translate(-100%,-50%);
-  -webkit-transition: opacity 100ms;
-  transition: opacity 100ms;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-transition: opacity 100ms,-webkit-transform 100ms;
+  -webkit-transition: opacity 100ms,transform 100ms;
+  transition: opacity 100ms,transform 100ms;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5387,10 +5586,22 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
 }
 
 .emotion-8 {
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   background-color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-8 > * {
+  overflow: auto;
 }
 
 .emotion-6 {
@@ -5400,14 +5611,24 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
   font-size: 2rem;
   font-weight: lighter;
   line-height: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 > p {
+  max-width: 75%;
+  margin: 0;
+  padding: 0;
 }
 
 .emotion-14 {
@@ -5571,6 +5792,7 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
                   data-annotations={true}
                 >
                   <WireframeAnnotationsToggle
+                    data-annotations-toggle={true}
                     data-test="toggle"
                     onClick={[Function]}
                     open={true}
@@ -5578,6 +5800,7 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
                   >
                     <button
                       className="emotion-2 emotion-3"
+                      data-annotations-toggle={true}
                       data-test="toggle"
                       onClick={[Function]}
                       open={true}
@@ -5616,7 +5839,9 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
                           <div
                             className="emotion-6 emotion-7"
                           >
-                            No annotations on this page
+                            <p>
+                              No annotations on this page
+                            </p>
                           </div>
                         </NoAnnotations>
                       </WireframeAnnotationNotes>
