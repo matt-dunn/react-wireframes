@@ -290,7 +290,7 @@ export const WireframeContainer = ({
   }, [isOpen]);
 
   useScrollElementIntoView({
-    element: ((highlightedNote && container.current) && container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`)) || null,
+    element: ((highlightedNote && container.current && isOpen) && container.current.querySelector(`[data-annotation-id='${highlightedNote.id}']`)) || null,
     boundary: annotationsContainer.current,
     onScrollIntoView: useCallback(el => (onHighlightAnnotation && highlightedNote) && onHighlightAnnotation(highlightedNote, el), [onHighlightAnnotation, highlightedNote]),
   });
