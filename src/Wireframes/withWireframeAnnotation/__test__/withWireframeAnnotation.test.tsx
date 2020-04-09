@@ -80,7 +80,7 @@ describe("Wireframe: withWireframeAnnotation", () => {
 
     expect(highlightNote).not.toHaveBeenCalled();
 
-    wrapper.simulate("mouseover");
+    wrapper.simulate("mousemove");
 
     expect(highlightNote).toHaveBeenCalledWith(api.getAnnotations()[0]);
 

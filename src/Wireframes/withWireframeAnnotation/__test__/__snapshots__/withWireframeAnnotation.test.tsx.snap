@@ -155,14 +155,14 @@ exports[`Wireframe: withWireframeAnnotation should highlight annotation 1`] = `
       className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      onMouseMove={[Function]}
       show={true}
     >
       <span
         className="outline emotion-7 emotion-8"
         onFocus={[Function]}
         onMouseLeave={[Function]}
-        onMouseOver={[Function]}
+        onMouseMove={[Function]}
       >
         <Identifier
           annotation={
@@ -458,14 +458,14 @@ exports[`Wireframe: withWireframeAnnotation should nest providers 1`] = `
       className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      onMouseMove={[Function]}
       show={true}
     >
       <span
         className="outline emotion-7 emotion-8"
         onFocus={[Function]}
         onMouseLeave={[Function]}
-        onMouseOver={[Function]}
+        onMouseMove={[Function]}
       >
         <Identifier
           annotation={
@@ -656,14 +656,14 @@ exports[`Wireframe: withWireframeAnnotation should render annotation identifier 
       className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      onMouseMove={[Function]}
       show={false}
     >
       <span
         className="outline emotion-0 emotion-1"
         onFocus={[Function]}
         onMouseLeave={[Function]}
-        onMouseOver={[Function]}
+        onMouseMove={[Function]}
       >
         <Identifier
           annotation={
@@ -764,14 +764,14 @@ exports[`Wireframe: withWireframeAnnotation should render without identifier whe
       className="outline"
       onFocus={[Function]}
       onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      onMouseMove={[Function]}
       show={false}
     >
       <span
         className="outline emotion-0 emotion-1"
         onFocus={[Function]}
         onMouseLeave={[Function]}
-        onMouseOver={[Function]}
+        onMouseMove={[Function]}
       >
         <Identifier
           annotation={
@@ -992,14 +992,14 @@ exports[`Wireframe: withWireframeAnnotation should show annotation highlighted 1
       className="outline outlined"
       onFocus={[Function]}
       onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      onMouseMove={[Function]}
       show={true}
     >
       <span
         className="outline outlined emotion-7 emotion-8"
         onFocus={[Function]}
         onMouseLeave={[Function]}
-        onMouseOver={[Function]}
+        onMouseMove={[Function]}
       >
         <Identifier
           annotation={

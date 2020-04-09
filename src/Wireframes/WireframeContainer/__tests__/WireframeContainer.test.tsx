@@ -10,6 +10,9 @@ import { act } from "react-dom/test-utils";
 
 import { WireframeAnnotationContext, WireframeProvider, WireframeAnnotationComponentContext } from "../../WireframeProvider";
 import { API, WireframeAnnotation, WireframeAnnotationAPI } from "../../api";
+import { WireframeAnnotationNotes } from "../../WireframeAnnotationNotes";
+import { useApi } from "../../useApi";
+
 import {
   WireframeContainer as Component, WireframeAnnotationsToggle, WireframeAnnotationsClose, ActiveWireframeAnnotationContext,
 } from "../WireframeContainer";
@@ -366,5 +369,38 @@ describe("Wireframe: WireframeContainer", () => {
         />,
       );
     }).toThrow(TypeError);
+  });
+
+  it("should create api if no context", () => {
+    let componentAPI: WireframeAnnotationAPI;
+
+    const ContextComponent = () => {
+      componentAPI = useApi();
+      return null;
+    };
+
+    const wrapper = mount(
+      <Component>
+        <ContextComponent />
+      </Component>,
+    );
+
+    act(() => {
+      componentAPI.register(MockedComponent1, {
+        title: "Test component 1",
+        description: "Test description 1",
+      });
+
+      componentAPI.highlightNote(MockedComponent1);
+    });
+
+    wrapper.update();
+
+    expect(wrapper.find(WireframeAnnotationNotes).props().highlightedNote).toMatchObject({
+      options: {
+        title: "Test component 1",
+        description: "Test description 1",
+      },
+    });
   });
 });
