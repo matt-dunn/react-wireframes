@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.7](https://github.com/matt-dunn/react-wireframes/compare/v2.0.6...v2.0.7)
+
+> 9 April 2020
+
+- Optimise annotation highlight [`#24`](https://github.com/matt-dunn/react-wireframes/pull/24)
+
 #### [v2.0.6](https://github.com/matt-dunn/react-wireframes/compare/v2.0.5...v2.0.6)
 
 > 8 April 2020
 
 - Wireframe notes option [`#23`](https://github.com/matt-dunn/react-wireframes/pull/23)
-- Only scroll when open [`7210f30`](https://github.com/matt-dunn/react-wireframes/commit/7210f30ff7d386956aaf37164f91a5e9e0ca2aff)
+- Release 2.0.6 [`9231abd`](https://github.com/matt-dunn/react-wireframes/commit/9231abd99f76c0fc0cceac5cf67e5d0e9c58f29e)
 
 #### [v2.0.5](https://github.com/matt-dunn/react-wireframes/compare/v2.0.4...v2.0.5)
 
