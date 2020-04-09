@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@matt-dunn/react-wireframes UMD Test</title>
+    <meta charset="UTF-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div data-app-root id="app"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
+<script src="https://unpkg.com/@emotion/core@10.0.28/dist/core.umd.min.js"></script>
+<script src="https://unpkg.com/@emotion/styled@10.0.27/dist/styled.umd.min.js"></script>
+<script src="https://unpkg.com/scroll-into-view-if-needed@2.2.24/umd/scroll-into-view-if-needed.min.js"></script>
+<script src="https://unpkg.com/react-transition-group@4.3.0/dist/react-transition-group.min.js"></script>
+<script src="https://unpkg.com/@matt-dunn/react-wireframes@2.0.6/dist/index.umd.js"></script>
+
+<script>
+  const { WireframeContainer, withWireframeAnnotation } = reactWireframes;
+  const styled = emotionStyled;
+  const createElement = React.createElement;
+
+  const Main = styled.main`
+    margin: 3rem;
+  `;
+
+  const Section = styled.div`
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+
+  const SecionLarge = styled(Section)`
+    min-height: 10rem;
+  `;
+
+  const MyComponent1 = () => createElement(Section, undefined, "Component 1");
+
+  const AnnotatedMyComponent1 = withWireframeAnnotation({
+    title: "MyComponent 1 title",
+    description:
+      "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero."
+  })(MyComponent1);
+
+  const AnnotatedMyComponent2 = withWireframeAnnotation({
+    title: "MyComponent 2 title",
+    description:
+      "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero."
+  })(MyComponent1);
+
+  const MyComponent3 = () => createElement(SecionLarge, undefined, "Component 3");
+
+  const AnnotatedMyComponent3 = withWireframeAnnotation({
+    title: "MyComponent 3 title",
+    description:
+      "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero."
+  })(MyComponent3);
+
+  const AnnotatedMyComponent4 = withWireframeAnnotation({
+    title: "MyComponent 4 title",
+    description:
+      "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero."
+  })(MyComponent1);
+
+  const AnnotatedMyComponent5 = withWireframeAnnotation({
+    title: "MyComponent 5 title",
+    description:
+      "Header description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero."
+  })(MyComponent1);
+
+  const app = (
+    createElement(
+      WireframeContainer,
+      undefined,
+      createElement(
+        Main,
+        undefined,
+        [
+          createElement(
+            "div",
+            {className: "row"},
+            [
+              createElement(
+                "div",
+                {className: "col"},
+                createElement(
+                  AnnotatedMyComponent1
+                )
+              ),
+              createElement(
+                "div",
+                {className: "col"},
+                createElement(
+                  AnnotatedMyComponent2
+                )
+              )
+            ]
+          ),
+          createElement(
+            "div",
+            {className: "row"},
+            [
+              createElement(
+                "div",
+                {className: "col"},
+                createElement(
+                  AnnotatedMyComponent3
+                )
+              ),
+            ]
+          ),
+          createElement(
+            "div",
+            {className: "row"},
+            [
+              createElement(
+                "div",
+                {className: "col-8"},
+                createElement(
+                  AnnotatedMyComponent4
+                )
+              ),
+              createElement(
+                "div",
+                {className: "col-4"},
+                createElement(
+                  AnnotatedMyComponent5
+                )
+              )
+            ]
+          )
+        ]
+      )
+    )
+  );
+
+  ReactDOM.render(app, document.getElementById("app"));
+</script>
+</body>
+</html>

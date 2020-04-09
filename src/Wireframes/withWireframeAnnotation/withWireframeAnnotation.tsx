@@ -82,18 +82,25 @@ export function withWireframeAnnotation(options: WireframeAnnotationOptions) {
 
       const handleHighlightNote = useCallback((e) => {
         e.stopPropagation();
-        highlightNote(Component);
-      }, [highlightNote]);
+
+        /* istanbul ignore else */
+        if (show) {
+          highlightNote(Component);
+        }
+      }, [show, highlightNote]);
 
       const handleHighlightNoteReset = useCallback(() => {
-        highlightNote(undefined);
-      }, [highlightNote]);
+        /* istanbul ignore else */
+        if (show) {
+          highlightNote(undefined);
+        }
+      }, [show, highlightNote]);
 
       return (
         <WireframeAnnotationComponentContext.Provider value={annotation}>
           <Wrapper
             show={show}
-            onMouseOver={handleHighlightNote}
+            onMouseMove={handleHighlightNote}
             onFocus={handleHighlightNote}
             onMouseLeave={handleHighlightNoteReset}
             className={classnames({ "outline": outline, "outlined": isHighlighted && show }, className)}

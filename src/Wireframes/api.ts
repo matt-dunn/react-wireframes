@@ -51,6 +51,7 @@ export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
   let annotations: WireframeAnnotations = [];
   let apiOptions: APIOptions = defaultOptions || {} as APIOptions;
   let parentReference: ParentReference | undefined;
+  let highlightedComponent: ComponentType<any> | undefined;
 
   let openCallbacks: OpenCallback[] = [];
   let isOpen = false;
@@ -113,7 +114,16 @@ export function API(defaultOptions?: APIOptions): WireframeAnnotationAPI {
         }
       }
     },
-    highlightNote: Component => apiOptions && apiOptions.highlightNote && apiOptions.highlightNote(getWireframeAnnotation(annotations, Component)),
+    highlightNote: (Component) => {
+      if (highlightedComponent !== Component) {
+        highlightedComponent = Component;
+
+        /* istanbul ignore else */
+        if (apiOptions && apiOptions.highlightNote) {
+          apiOptions.highlightNote(getWireframeAnnotation(annotations, Component));
+        }
+      }
+    },
     setOpen: (open) => {
       if (open !== isOpen) {
         isOpen = open;

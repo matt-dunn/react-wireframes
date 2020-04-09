@@ -232,32 +232,39 @@ export const WireframeContainer = ({
 
   const activeAPI = useContext(ActiveWireframeAnnotationContext);
 
-  const api = useMemo(() => activeAPI || API(), [activeAPI]);
-
   const parentAPI = useContext(WireframeAnnotationContext);
   const parentAnnotation = useContext(WireframeAnnotationComponentContext);
+
+  const [annotations, setAnnotations] = useState<WireframeAnnotations>();
+  const [highlightedNote, setHighlightedNote] = useState<WireframeAnnotation | undefined>(undefined);
+
+  const [isOpened, setIsOpened] = useState(false);
+  const [isOpen, setIsOpen] = useState(open !== undefined ? open : defaultOpen);
+
+  const opening = useRef<number>();
+  const container = useRef<HTMLDivElement>(null);
+  const annotationsContainer = useRef<HTMLDivElement>(null);
+
+  const api = useMemo(() => {
+    if (activeAPI) {
+      activeAPI.setOptions({
+        updater: setAnnotations,
+        highlightNote: wireFrameAnnotation => setHighlightedNote(wireFrameAnnotation),
+      });
+      return activeAPI;
+    }
+
+    return API({
+      updater: setAnnotations,
+      highlightNote: wireFrameAnnotation => setHighlightedNote(wireFrameAnnotation),
+    });
+  }, [activeAPI]);
 
   useMemo(() => {
     if (parentAPI && parentAnnotation) {
       api.setParentReference({ api: parentAPI, id: parentAnnotation.id });
     }
   }, [api, parentAPI, parentAnnotation]);
-
-  const opening = useRef<number>();
-  const container = useRef<HTMLDivElement>(null);
-  const annotationsContainer = useRef<HTMLDivElement>(null);
-
-  const [isOpened, setIsOpened] = useState(false);
-  const [annotations, setAnnotations] = useState<WireframeAnnotations>();
-  const [highlightedNote, setHighlightedNote] = useState<WireframeAnnotation | undefined>(undefined);
-  const [isOpen, setIsOpen] = useState(open !== undefined ? open : defaultOpen);
-
-  useMemo(() => {
-    api.setOptions({
-      updater: setAnnotations,
-      highlightNote: wireFrameAnnotation => isOpen && setHighlightedNote(wireFrameAnnotation),
-    });
-  }, [api, isOpen]);
 
   useEffect(() => {
     const opener = api.onOpen(setIsOpen);
@@ -269,6 +276,9 @@ export const WireframeContainer = ({
 
   useEffect(() => {
     api.setOpen(isOpen);
+    if (!isOpen) {
+      api.highlightNote(undefined);
+    }
   }, [api, isOpen]);
 
   useEffect(() => {
