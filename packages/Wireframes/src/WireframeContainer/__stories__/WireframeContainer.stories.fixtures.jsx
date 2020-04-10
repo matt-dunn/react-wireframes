@@ -5,7 +5,7 @@ import { Preview } from "@storybook/addon-docs/blocks";
 import {
   WireframeContainer,
   withWireframeAnnotation,
-} from "src/Wireframes";
+} from "packages/Wireframes/src";
 
 export const Main = styled.div`
   padding: 2em 4em;

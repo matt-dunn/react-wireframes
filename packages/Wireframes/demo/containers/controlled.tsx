@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 
 import {
   WireframeContainer, withWireframeAnnotation,
-} from "src/Wireframes";
+} from "packages/Wireframes/src";
 
-import { useLocalStorage } from "src/useLocalStorage";
+import { useLocalStorage } from "packages/hooks/src/useLocalStorage";
 
 export const Main = styled.div`
   padding: 2em 4em;
