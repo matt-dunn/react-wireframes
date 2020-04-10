@@ -4,6 +4,7 @@ module.exports = {
   collectCoverageFrom: [
     "packages/**/*.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
+    "!**/demo/**",
     "!**/*.stories.*",
     "!**/dist/**",
     "!**/test/**",
@@ -23,4 +24,7 @@ module.exports = {
     "/dist/",
     "/node_modules",
   ],
+  "moduleNameMapper": {
+    "^packages/(.*)$": "<rootDir>/packages/$1",
+  },
 };
