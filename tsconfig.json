@@ -23,8 +23,7 @@
     }
   },
   "include": [
-    "src/**/*.ts*",
-    "demo/**/*.ts*"
+    "packages/**/*.ts*"
   ],
   "exclude": [
     "node_modules"

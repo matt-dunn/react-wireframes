@@ -71,7 +71,7 @@ module.exports =  {
         "import/resolver": {
             "alias": {
                 map: [
-                    [ "src", "./src" ]
+                    [ "packages", "./packages" ]
                 ],
                 extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
             }
