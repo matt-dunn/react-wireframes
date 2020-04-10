@@ -102,6 +102,8 @@
     "storybook": "start-storybook --ci --port 8080",
     "storybook:build": "build-storybook --output-dir dist/storybook --quiet",
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
+    "build-packsXXX": "lerna exec --scope '@matt-dunn/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
+    "build-packs": "lerna exec --scope '@matt-dunn/*' -- yarn build:all",
     "build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
     "build:all": "yarn build && yarn storybook:build && yarn test:e2e",
     "package:bundle": "microbundle --globals classnames=classNames,react=React,@emotion/styled=emotionStyled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=emotionCore.css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
