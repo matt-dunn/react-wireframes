@@ -63,17 +63,19 @@ export const WASection3 = withWireframeAnnotation({
       <p>
         Component 3 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis.
       </p>
-      <div className="row">
-        <div className="col-6">
-          <SectionSmall>1</SectionSmall>
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <SectionSmall>1</SectionSmall>
+          </div>
+          <div className="col-6">
+            <SectionSmall>2</SectionSmall>
+          </div>
         </div>
-        <div className="col-6">
-          <SectionSmall>2</SectionSmall>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <SectionSmall>3</SectionSmall>
+        <div className="row">
+          <div className="col">
+            <SectionSmall>3</SectionSmall>
+          </div>
         </div>
       </div>
       <p>

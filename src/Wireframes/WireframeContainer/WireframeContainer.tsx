@@ -208,7 +208,8 @@ const WireframeAnnotationNotesContainer = styled.div`
   flex-grow: 1;
   
   > * {
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 `;
 

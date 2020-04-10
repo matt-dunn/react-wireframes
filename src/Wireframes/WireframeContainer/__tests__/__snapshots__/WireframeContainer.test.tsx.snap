@@ -776,7 +776,8 @@ exports[`Wireframe: WireframeContainer should create a controlled container 3`] 
 }
 
 .emotion-8 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-6 {
@@ -1157,7 +1158,8 @@ exports[`Wireframe: WireframeContainer should default to open 1`] = `
 }
 
 .emotion-8 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-6 {
@@ -1533,7 +1535,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 1`] = `
 }
 
 .emotion-26 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-24 {
@@ -2447,7 +2450,8 @@ exports[`Wireframe: WireframeContainer should highlight annotation 2`] = `
 }
 
 .emotion-26 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-24 {
@@ -3928,7 +3932,8 @@ exports[`Wireframe: WireframeContainer should render children with annotation op
 }
 
 .emotion-26 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-24 {
@@ -5601,7 +5606,8 @@ exports[`Wireframe: WireframeContainer should support inline 1`] = `
 }
 
 .emotion-8 > * {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .emotion-6 {
