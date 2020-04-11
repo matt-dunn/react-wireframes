@@ -47,7 +47,7 @@
     "coverage": "jest --collectCoverage",
     "__prebuild": "yarn type-check && yarn lint && yarn coverage",
     "__build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
-    "build": "echo 'build'"
+    "build": "echo 'build hooks'"
   },
   "engines": {
     "node": ">=10",
