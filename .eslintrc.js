@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports =  {
     plugins: [
         "react-hooks",
@@ -71,7 +73,7 @@ module.exports =  {
         "import/resolver": {
             "alias": {
                 map: [
-                    [ "packages", "./packages" ]
+                    [ "packages", path.join(__dirname, "packages") ]
                 ],
                 extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
             }

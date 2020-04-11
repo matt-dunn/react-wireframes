@@ -48,7 +48,7 @@
   },
   "dependencies": {},
   "alias": {
-    "packages": "../",
+    "packages": "../../",
     "__packages/Wireframes": "./dist"
   },
   "scripts": {
@@ -59,7 +59,7 @@
     "test:e2e:dev": "concurrently --success first --kill-others \"cross-env CYPRESS_BASE_URL=https://127.0.0.1:1234/ cypress open\" \"yarn start\"",
     "test:e2e:local": "jest --config ./e2e/jest.config.js ./e2e/",
     "test:e2e:stack": "USE_BROWSER_STACK=true jest --config ./e2e/jest.config.js ./e2e/",
-    "coverage": "jest --collectCoverage",
+    "coverage": "jest  --config ../../jest.config.js --collectCoverage ../Wireframes",
     "coverage:report": "cat ./reports/coverage/lcov.info | coveralls",
     "start": "parcel demo/public/index.html --https --out-dir .build",
     "prebuild": "yarn type-check && yarn lint && yarn coverage",

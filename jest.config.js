@@ -11,7 +11,7 @@ module.exports = {
     "!**/*.d.ts",
   ],
   coverageDirectory: "./reports/coverage",
-  setupFiles: ["./test/setupTests.js"],
+  setupFiles: ["<rootDir>/test/setupTests.js"],
   // setupFilesAfterEnv: ["./test/setupTests.js"],
   snapshotSerializers: ["enzyme-to-json/serializer", "jest-emotion"],
   reporters: [
