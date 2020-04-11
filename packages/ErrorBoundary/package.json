@@ -1,11 +1,7 @@
 {
   "name": "@matt-dunn/error-boundary",
   "version": "2.0.7",
-  "source": "src/Wireframes/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "dist/src/Wireframes/index.d.ts",
+  "source": "src/index.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,19 +9,15 @@
   },
   "files": [
     "dist",
-    "src/Wireframes"
+    "src"
   ],
   "author": "Matt Dunn",
   "homepage": "https://matt-dunn.github.io/",
-  "description": "React component to annotate your components — useful for prototypes and proof of concepts",
+  "description": "React Error Boundary component",
   "keywords": [
     "react",
-    "wireframe",
     "typescript",
-    "prototype",
-    "prototyping",
-    "poc",
-    "mockup"
+    "error"
   ],
   "devDependencies": {
     "enzyme": "^3.11.0"

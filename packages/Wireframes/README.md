@@ -35,18 +35,18 @@ yarn add @matt-dunn/react-wireframes
 
 ```jsx
 const AnnotatedMyComponent = withWireframeAnnotation({
-    title: "MyComponent title",
-    description: "MyComponent description.",
+  title: "MyComponent title",
+  description: "MyComponent description.",
 })(MyComponent);
 ```
 
 ### Wrap your application with the container
 
 ```jsx
-  <WireframeContainer>
-    <AnnotatedMyComponent />
-    {/*...application*/}
-  </WireframeContainer>
+<WireframeContainer>
+  <AnnotatedMyComponent />
+  {/*...application*/}
+</WireframeContainer>
 ```
 
 ## API
@@ -67,19 +67,19 @@ import ReactDOM from "react-dom";
 import React from "react";
 
 import {
-    WireframeContainer, withWireframeAnnotation,
+  WireframeContainer, withWireframeAnnotation,
 } from "@matt-dunn/react-wireframes";
 
 const MyComponent = () => <article>Hello world</article>;
 
 const AnnotatedMyComponent = withWireframeAnnotation({
-    title: "MyComponent title",
-    description: "MyComponent description.",
+  title: "MyComponent title",
+  description: "MyComponent description.",
 })(MyComponent);
 
 const app = (
   <WireframeContainer>
-      <AnnotatedMyComponent />
+    <AnnotatedMyComponent />
   </WireframeContainer>
 );
 
