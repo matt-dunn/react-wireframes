@@ -2,7 +2,7 @@ module.exports = {
   testEnvironment: "node",
   verbose: true,
   collectCoverageFrom: [
-    "packages/**/*.{js,jsx,ts,tsx}",
+    "packages/**/src/**/*.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
     "!**/demo/**",
     "!**/*.stories.*",

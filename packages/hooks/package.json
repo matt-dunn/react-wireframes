@@ -45,9 +45,9 @@
     "lint": "eslint ./ --ext .jsx,.js,.ts,.tsx,.mdx --fix",
     "test": "jest",
     "coverage": "jest --collectCoverage",
-    "prebuild": "yarn type-check && yarn lint && yarn coverage",
+    "__prebuild": "yarn type-check && yarn lint && yarn coverage",
     "__build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
-    "build:all": "yarn build"
+    "build": "echo 'build'"
   },
   "engines": {
     "node": ">=10",
