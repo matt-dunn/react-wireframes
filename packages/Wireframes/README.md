@@ -13,7 +13,7 @@ React component to annotate your components — useful for prototypes and proof 
 
 [Storybook](https://matt-dunn.github.io/react-wireframes/storybook/?path=/story/)
 
-[Demo](https://matt-dunn.github.io/react-wireframes/)
+[Demo](https://matt-dunn.github.io/react-wireframes/react-wireframes/)
 
 [CodePen](https://codepen.io/matt-j-dunn/pen/NWqZmQY?editors=0010)
 
