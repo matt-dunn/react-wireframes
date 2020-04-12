@@ -91,7 +91,7 @@
     }
   },
   "auto-changelog": {
-    "template": "./etc/changelog-template.hbs",
+    "template": "../../etc/changelog-template.hbs",
     "unreleased": true,
     "commitLimit": true,
     "includeBranch": []
