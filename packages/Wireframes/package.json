@@ -1,6 +1,6 @@
 {
   "name": "@matt-dunn/react-wireframes",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "source": "src/Wireframes/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -46,7 +46,6 @@
     "react-transition-group": "^4.3.0",
     "scroll-into-view-if-needed": "^2.2.0"
   },
-  "dependencies": {},
   "alias": {
     "packages": "../",
     "__packages/Wireframes": "./dist"
@@ -63,10 +62,8 @@
     "coverage:report": "cat ./reports/coverage/lcov.info | coveralls",
     "start": "parcel demo/public/index.html --https --out-dir .build",
     "___prebuild": "yarn type-check && yarn lint && yarn coverage",
-
     "build": "rimraf ../../dist/react-wireframes && parcel build ./demo/public/index.html --public-url ./ --no-cache --out-dir ../../dist/react-wireframes",
     "postbuild": "yarn test:e2e",
-
     "package:bundle": "microbundle --globals classnames=classNames,react=React,@emotion/styled=emotionStyled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=emotionCore.css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
