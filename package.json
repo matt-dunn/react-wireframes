@@ -105,8 +105,9 @@
     "prebuild-packs": "yarn type-check && yarn lint && yarn coverage",
 
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
-    "build": "rimraf dist && lerna exec --scope '@matt-dunn/*' -- yarn build",
+    "build": "rimraf dist && lerna exec --parallel --root-mode upward --scope '@matt-dunn/*' -- yarn build",
     "postbuild": "yarn storybook:build",
+    "_build": "lerna exec --parallel 'BABEL_ENV=build babel --root-mode upward src --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments'",
 
     "__build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
     "__build:all": "yarn build && yarn storybook:build && yarn test:e2e",
