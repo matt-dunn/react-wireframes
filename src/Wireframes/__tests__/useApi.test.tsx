@@ -36,10 +36,4 @@ describe("Wireframe: useApi", () => {
 
     expect(getApi).toBeCalledWith(mockApi);
   });
-
-  it("should throw exception if api is not provided", () => {
-    expect(() => {
-      shallow(<Mock />);
-    }).toThrow(TypeError);
-  });
 });

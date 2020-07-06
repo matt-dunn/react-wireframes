@@ -25,20 +25,6 @@ const annotations = [
 ];
 
 describe("Wireframe: Utils", () => {
-  describe("getWireframeAnnotation", () => {
-    it("should return undefined if annotation is not found", () => {
-      expect(getWireframeAnnotation(
-        annotations,
-        MockedComponent1,
-      )).toEqual(annotations[0]);
-
-      expect(getWireframeAnnotation(
-        annotations,
-        MockedComponent2,
-      )).toEqual(annotations[1]);
-    });
-  });
-
   describe("updateWireframeAnnotation", () => {
     it("should update an annotation and return a new collection when found", () => {
       const updatedAnnotations = updateWireframeAnnotation(
@@ -62,18 +48,5 @@ describe("Wireframe: Utils", () => {
         },
       }, annotations[1]]);
     });
-  });
-
-  it("should not update collection when not found", () => {
-    const updatedAnnotations = updateWireframeAnnotation(
-      annotations,
-      {} as any,
-      {
-        ...annotations[0],
-        count: 2,
-      },
-    );
-
-    expect(updatedAnnotations === annotations).toEqual(true);
   });
 });
