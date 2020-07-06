@@ -28,4 +28,28 @@ describe("Wireframe: WireframeAnnotationsNote", () => {
       },
     };
   });
+
+  it("should render ID with nested parent ID", () => {
+    const wrapper = shallow(
+      <Component
+        annotation={{
+          ...annotation,
+          id: 12,
+        }}
+        parentReference={{
+          id: 1,
+          api: {
+            getParentReference: () => ({
+              id: 2,
+              api: {
+                getParentReference: () => {},
+              } as WireframeAnnotationAPI,
+            }),
+          } as WireframeAnnotationAPI,
+        }}
+      />,
+    );
+
+    expect(wrapper.text()).toBe("2.1.12");
+  });
 });
