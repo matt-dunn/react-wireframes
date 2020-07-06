@@ -27,52 +27,6 @@ describe("Wireframe: API", () => {
   });
 
   describe("register", () => {
-    it("should register a component as a single wireframe annotation", () => {
-      const annotation = api.register(MockedComponent, {
-        title: "Test component",
-        description: "Test description",
-      });
-
-      expect(annotation).toEqual({
-        id: 1,
-        count: 1,
-        Component: MockedComponent,
-        options: {
-          title: "Test component",
-          description: "Test description",
-        },
-      });
-
-      expect(api.getAnnotations().length).toEqual(1);
-
-      expect(api.getAnnotations()[0]).toEqual({
-        id: 1,
-        count: 1,
-        Component: MockedComponent,
-        options: {
-          title: "Test component",
-          description: "Test description",
-        },
-      });
-
-      api.register(MockedComponent, {
-        title: "Test component with different title",
-        description: "Test description with different title",
-      });
-
-      expect(api.getAnnotations().length).toEqual(1);
-
-      expect(api.getAnnotations()[0]).toEqual({
-        id: 1,
-        count: 2,
-        Component: MockedComponent,
-        options: {
-          title: "Test component",
-          description: "Test description",
-        },
-      });
-    });
-
     it("should call updater when a component is registered", () => {
       const annotation = api.register(MockedComponent, {
         title: "Test component",

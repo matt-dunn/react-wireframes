@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Wireframe: WireframeAnnotationsNote should render correctly 1`] = `
-<IdentifierContainer
-  data-annotation-identifier={true}
->
-  1
-</IdentifierContainer>
-`;
