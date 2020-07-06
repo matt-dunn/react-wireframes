@@ -26,18 +26,6 @@ const annotations = [
 
 describe("Wireframe: Utils", () => {
   describe("getWireframeAnnotation", () => {
-    it("should return a found annotation", () => {
-      expect(getWireframeAnnotation(
-        annotations,
-        MockedComponent1,
-      )).toEqual(annotations[0]);
-
-      expect(getWireframeAnnotation(
-        annotations,
-        MockedComponent2,
-      )).toEqual(annotations[1]);
-    });
-
     it("should return undefined if annotation is not found", () => {
       expect(getWireframeAnnotation(
         annotations,
