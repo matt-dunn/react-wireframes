@@ -95,7 +95,7 @@
     "scroll-into-view-if-needed": "^2.2.24",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.8.0"
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.0",
