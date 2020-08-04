@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import {
   WireframeContainer, withWireframeAnnotation,
-} from "src/Wireframes";
+} from "packages/Wireframes/src";
 
 export const Main = styled.div`
   padding: 2em 4em;
@@ -17,13 +17,6 @@ const SectionBase = styled.div`
   justify-content: center;
 `;
 
-const SectionSmall = styled(SectionBase)`
-  padding: 1.5rem;
-  margin: 0 0 1rem 0;
-  background-color: #eee;
-  border: 2px solid #ccc;
-`;
-
 const Section = styled(SectionBase)`
   padding: 2rem;
   margin: 0 0 1.4rem 0;
@@ -32,6 +25,15 @@ const Section = styled(SectionBase)`
 
 const SectionLarge = styled(Section)`
   min-height: 14rem;
+`;
+
+export const WANested = withWireframeAnnotation({
+  title: "Nested Annotations",
+  description: "Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
+})("div");
+
+const WireframeContainerInner = styled(WireframeContainer)`
+  margin: 25px 40px 0 40px;
 `;
 
 export const WAHeader = withWireframeAnnotation({
@@ -56,31 +58,7 @@ export const WASection2 = withWireframeAnnotation({
 
 export const WASection3 = withWireframeAnnotation({
   title: "Component 3",
-  description: (
-    <div>
-      <p>
-        Component 3 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis.
-      </p>
-      <div className="container">
-        <div className="row">
-          <div className="col-6">
-            <SectionSmall>1</SectionSmall>
-          </div>
-          <div className="col-6">
-            <SectionSmall>2</SectionSmall>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <SectionSmall>3</SectionSmall>
-          </div>
-        </div>
-      </div>
-      <p>
-        Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.
-      </p>
-    </div>
-  ),
+  description: "Component 3 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 })(Section);
 
 export const WASection4 = withWireframeAnnotation({
@@ -93,7 +71,7 @@ export const WASection5 = withWireframeAnnotation({
   description: "Component 5 description. Morbi tempor libero id accumsan sodales. Etiam maximus convallis faucibus. Nunc hendrerit sit amet ante in lobortis. Aliquam feugiat nibh sit amet nunc varius laoreet. Aliquam pharetra odio mi, sed convallis massa sagittis at. Nullam nibh tortor, commodo ac risus vitae, venenatis lobortis libero.",
 })(Section);
 
-export const Simple = () => (
+export const Nested = () => (
   <WireframeContainer
     className="container"
   >
@@ -109,6 +87,64 @@ export const Simple = () => (
         </div>
         <div className="col-6">
           <WASection2>Component 2</WASection2>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <WANested
+            outline={false}
+          >
+            <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+              <WireframeContainerInner
+                fixed={false}
+                defaultOpen={false}
+              >
+                <WAHeader>Header</WAHeader>
+                <div className="row">
+                  <div className="col">
+                    <WANested
+                      outline={false}
+                    >
+                      <div style={{ border: "1px solid #eee", margin: "0 0 30px 0" }}>
+                        <WireframeContainerInner
+                          fixed={false}
+                          defaultOpen={false}
+                        >
+                          <WAHeader>Header</WAHeader>
+                          <div className="row">
+                            <div className="col-6">
+                              <WASection3>Component 3</WASection3>
+                            </div>
+                            <div className="col-6">
+                              <WASection4>Component 4</WASection4>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col">
+                              <WAFooter>Footer</WAFooter>
+                            </div>
+                          </div>
+                        </WireframeContainerInner>
+                      </div>
+                    </WANested>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <WASection3>Component 3</WASection3>
+                  </div>
+                  <div className="col-6">
+                    <WASection4>Component 4</WASection4>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <WAFooter>Footer</WAFooter>
+                  </div>
+                </div>
+              </WireframeContainerInner>
+            </div>
+          </WANested>
         </div>
       </div>
       <div className="row">

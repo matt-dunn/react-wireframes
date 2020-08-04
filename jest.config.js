@@ -2,15 +2,16 @@ module.exports = {
   testEnvironment: "node",
   verbose: true,
   collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
+    "packages/**/src/**/*.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
+    "!**/demo/**",
     "!**/*.stories.*",
     "!**/dist/**",
     "!**/test/**",
     "!**/*.d.ts",
   ],
   coverageDirectory: "./reports/coverage",
-  setupFiles: ["./test/setupTests.js"],
+  setupFiles: ["<rootDir>/test/setupTests.js"],
   // setupFilesAfterEnv: ["./test/setupTests.js"],
   snapshotSerializers: ["enzyme-to-json/serializer", "jest-emotion"],
   reporters: [
@@ -23,4 +24,7 @@ module.exports = {
     "/dist/",
     "/node_modules",
   ],
+  "moduleNameMapper": {
+    "^packages/(.*)$": "<rootDir>/packages/$1",
+  },
 };

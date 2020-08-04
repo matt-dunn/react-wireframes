@@ -1,0 +1,61 @@
+{
+  "name": "@matt-dunn/error-boundary",
+  "version": "2.0.8",
+  "source": "src/index.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-dunn/react-wireframes.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "author": "Matt Dunn",
+  "homepage": "https://matt-dunn.github.io/",
+  "description": "React Error Boundary component",
+  "keywords": [
+    "react",
+    "typescript",
+    "error"
+  ],
+  "devDependencies": {
+    "enzyme": "^3.11.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.0"
+  },
+  "alias": {
+    "packages": "../",
+    "__packages/Wireframes": "./dist"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint ./ --ext .jsx,.js,.ts,.tsx,.mdx --fix",
+    "test": "jest",
+    "coverage": "jest --collectCoverage",
+    "__prebuild": "yarn type-check && yarn lint && yarn coverage",
+    "__build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
+    "build": "echo 'build ErrorBoundary'"
+  },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.19.x"
+  },
+  "engineStrict": true,
+  "release-it": {
+    "github": {
+      "release": true,
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p"
+    }
+  },
+  "auto-changelog": {
+    "template": "./etc/changelog-template.hbs",
+    "unreleased": true,
+    "commitLimit": true,
+    "includeBranch": []
+  }
+}

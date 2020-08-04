@@ -1,6 +1,6 @@
 import { act } from "react-dom/test-utils";
 
-import { mountHook } from "../../test/utils";
+import { mountHook } from "../../../../test/utils";
 
 import { useLocalStorage } from "../useLocalStorage";
 

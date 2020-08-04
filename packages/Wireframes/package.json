@@ -1,0 +1,96 @@
+{
+  "name": "@matt-dunn/react-wireframes",
+  "version": "2.0.8",
+  "source": "src/Wireframes/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/src/Wireframes/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-dunn/react-wireframes.git"
+  },
+  "files": [
+    "dist",
+    "src/Wireframes"
+  ],
+  "author": "Matt Dunn",
+  "homepage": "https://matt-dunn.github.io/",
+  "description": "React component to annotate your components — useful for prototypes and proof of concepts",
+  "keywords": [
+    "react",
+    "wireframe",
+    "typescript",
+    "prototype",
+    "prototyping",
+    "poc",
+    "mockup"
+  ],
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.17",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/react": "^5.3.17",
+    "enzyme": "^3.11.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "scroll-into-view-if-needed": "^2.2.24"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/css": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "classnames": "^2.2.0",
+    "react": "^16.13.0",
+    "react-transition-group": "^4.3.0",
+    "scroll-into-view-if-needed": "^2.2.0"
+  },
+  "alias": {
+    "packages": "../",
+    "__packages/Wireframes": "./dist"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint ./ --ext .jsx,.js,.ts,.tsx,.mdx --fix",
+    "test": "jest --config ../../jest.config.js ../Wireframes",
+    "test:e2e": "concurrently --success first --kill-others \"cross-env CYPRESS_BASE_URL=http://127.0.0.1:8090/ cypress run\" \"yarn serve:prod\"",
+    "test:e2e:dev": "concurrently --success first --kill-others \"cross-env CYPRESS_BASE_URL=https://127.0.0.1:1234/ cypress open\" \"yarn start\"",
+    "test:e2e:local": "jest --config ./e2e/jest.config.js ./e2e/",
+    "test:e2e:stack": "USE_BROWSER_STACK=true jest --config ./e2e/jest.config.js ./e2e/",
+    "coverage": "jest  --config ../../jest.config.js --collectCoverage ../Wireframes",
+    "coverage:report": "cat ./reports/coverage/lcov.info | coveralls",
+    "start": "parcel demo/public/index.html --https --out-dir .build",
+    "___prebuild": "yarn type-check && yarn lint && yarn coverage",
+    "build": "rimraf ../../dist/react-wireframes && parcel build ./demo/public/index.html --public-url ./ --no-cache --out-dir ../../dist/react-wireframes",
+    "postbuild": "yarn test:e2e",
+    "package:bundle": "microbundle --globals classnames=classNames,react=React,@emotion/styled=emotionStyled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=emotionCore.css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
+    "package:dev": "microbundle watch -w --jsx=React.createElement",
+    "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
+    "serve:prod": "http-server ../../dist/react-wireframes --port 8090 --silent",
+    "ci": "yarn build:all",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "prerelease": "yarn package:build",
+    "release": "release-it"
+  },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.19.x"
+  },
+  "engineStrict": true,
+  "release-it": {
+    "github": {
+      "release": true,
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p"
+    }
+  },
+  "auto-changelog": {
+    "template": "../../etc/changelog-template.hbs",
+    "unreleased": true,
+    "commitLimit": true,
+    "includeBranch": []
+  }
+}

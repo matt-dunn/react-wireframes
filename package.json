@@ -1,20 +1,12 @@
 {
-  "name": "@matt-dunn/react-wireframes",
+  "name": "@matt-dunn/root",
+  "private": true,
   "version": "2.0.7",
-  "source": "src/Wireframes/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "dist/src/Wireframes/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/matt-dunn/react-wireframes.git"
   },
-  "files": [
-    "dist",
-    "src/Wireframes"
-  ],
   "author": "Matt Dunn",
   "homepage": "https://matt-dunn.github.io/",
   "description": "React component to annotate your components — useful for prototypes and proof of concepts",
@@ -38,10 +30,6 @@
     "@emotion/css": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@loadable/babel-plugin": "^5.12.0",
-    "@storybook/addon-a11y": "^5.3.17",
-    "@storybook/addon-docs": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.17",
-    "@storybook/react": "^5.3.17",
     "@types/classnames": "^2.2.10",
     "@types/enzyme": "^3.10.5",
     "@types/react-dom": "^16.9.5",
@@ -80,6 +68,7 @@
     "jest-emotion": "^10.0.27",
     "jest-junit": "^10.0.0",
     "jsdom": "^16.2.1",
+    "lerna": "^3.20.2",
     "microbundle": "^0.12.0-next.8",
     "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
@@ -87,29 +76,17 @@
     "react-docgen-typescript-loader": "^3.7.1",
     "react-dom": "^16.13.0",
     "react-is": "^16.13.0",
-    "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.3.0",
     "regenerator-runtime": "^0.13.5",
     "release-it": "^13.1.1",
     "rimraf": "^3.0.2",
-    "scroll-into-view-if-needed": "^2.2.24",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3"
   },
-  "peerDependencies": {
-    "@emotion/core": "^10.0.0",
-    "@emotion/css": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
-    "classnames": "^2.2.0",
-    "react": "^16.13.0",
-    "react-transition-group": "^4.3.0",
-    "scroll-into-view-if-needed": "^2.2.0"
-  },
-  "dependencies": {},
   "alias": {
-    "src": "./src",
-    "__src/Wireframes": "./dist"
+    "packages": "./packages",
+    "__packages/Wireframes": "./dist"
   },
   "scripts": {
     "type-check": "tsc --noEmit --skipLibCheck",
@@ -124,14 +101,21 @@
     "start": "parcel demo/public/index.html --https --out-dir .build",
     "storybook": "start-storybook --ci --port 8080",
     "storybook:build": "build-storybook --output-dir dist/storybook --quiet",
+    "build-packsXXX": "lerna exec --scope '@matt-dunn/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
+    "prebuild-packs": "yarn type-check && yarn lint && yarn coverage",
+
     "prebuild": "yarn type-check && yarn lint && yarn coverage",
-    "build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
-    "build:all": "yarn build && yarn storybook:build && yarn test:e2e",
+    "build": "rimraf dist && lerna exec --parallel --root-mode upward --scope '@matt-dunn/*' -- yarn build",
+    "postbuild": "yarn storybook:build",
+    "_build": "lerna exec --parallel 'BABEL_ENV=build babel --root-mode upward src --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments'",
+
+    "__build": "rimraf dist && parcel build demo/public/index.html --public-url ./ --no-cache",
+    "__build:all": "yarn build && yarn storybook:build && yarn test:e2e",
     "package:bundle": "microbundle --globals classnames=classNames,react=React,@emotion/styled=emotionStyled,scroll-into-view-if-needed=scrollIntoView,@emotion/css=emotionCore.css,react-transition-group=ReactTransitionGroup --jsx=React.createElement",
     "package:dev": "microbundle watch -w --jsx=React.createElement",
     "package:build": "yarn prebuild && rimraf dist && yarn package:bundle",
     "serve:prod": "http-server ./dist/ --port 8090 --silent",
-    "ci": "yarn build:all",
+    "ci": "yarn build",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "prerelease": "yarn package:build",
     "release": "release-it"
@@ -155,5 +139,8 @@
     "unreleased": true,
     "commitLimit": true,
     "includeBranch": []
-  }
+  },
+  "workspaces": [
+    "packages/**/*"
+  ]
 }

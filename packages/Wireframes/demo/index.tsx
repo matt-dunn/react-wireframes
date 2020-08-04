@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
-import { ErrorBoundary } from "../src/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "packages/ErrorBoundary/src";
 
 import { Home } from "./containers/home";
 import { Nested } from "./containers/nested";

@@ -2,12 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+#### [v2.0.8](https://github.com/matt-dunn/react-wireframes/compare/v2.0.7...v2.0.8)
+
+> 12 April 2020
+
+- Initial re-org and setup [`f77eff2`](https://github.com/matt-dunn/react-wireframes/commit/f77eff20458722aa4ef8fb34f6dae3b110b8e5ca)
+- Updates to config [`b180efd`](https://github.com/matt-dunn/react-wireframes/commit/b180efdce76419fc216db30edf1edc93452e8b91)
+- Update build [`e45d2d3`](https://github.com/matt-dunn/react-wireframes/commit/e45d2d303ac4488eae6b2fcc7a43517b4f02bdff)
+
 #### [v2.0.7](https://github.com/matt-dunn/react-wireframes/compare/v2.0.6...v2.0.7)
 
 > 9 April 2020
 
 - Optimise annotation highlight [`#24`](https://github.com/matt-dunn/react-wireframes/pull/24)
-- Initial re-org and setup [`f77eff2`](https://github.com/matt-dunn/react-wireframes/commit/f77eff20458722aa4ef8fb34f6dae3b110b8e5ca)
+- Release 2.0.7 [`4300009`](https://github.com/matt-dunn/react-wireframes/commit/430000964d7cc99f3fa9478b37f9dfa92f0b7e79)
 
 #### [v2.0.6](https://github.com/matt-dunn/react-wireframes/compare/v2.0.5...v2.0.6)
 

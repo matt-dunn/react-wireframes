@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "outDir": "./dist/",
     "sourceMap": true,
-    "declaration": true,
+    "declaration": false,
     "declarationMap": false,
     "noImplicitAny": true,
     "module": "esNext",
@@ -23,8 +23,7 @@
     }
   },
   "include": [
-    "src/**/*.ts*",
-    "demo/**/*.ts*"
+    "packages/**/*.ts*"
   ],
   "exclude": [
     "node_modules"

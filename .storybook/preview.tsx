@@ -3,7 +3,7 @@ import { addDecorator } from '@storybook/react';
 import styled from "@emotion/styled";
 import { withA11y } from '@storybook/addon-a11y';
 
-import { ErrorBoundary } from "src/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "packages/ErrorBoundary/src";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
